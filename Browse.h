@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Browse : Action {
+class Browse : public Action {
 
 
 public:

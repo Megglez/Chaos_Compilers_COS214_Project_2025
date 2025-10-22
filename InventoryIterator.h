@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class InventoryIterator : Iterator {
+class InventoryIterator : public Iterator {
 
 
 public:

@@ -1,9 +1,10 @@
 #ifndef PRIME_H
 #define PRIME_H
 #include <iostream>
+#include "StageOfDevelopment.h"
 using namespace std;
 
-class Prime : StageOfDevelopment {
+class Prime : public StageOfDevelopment {
 
 
 public:

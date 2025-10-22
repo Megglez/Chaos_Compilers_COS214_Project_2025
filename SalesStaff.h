@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class SalesStaff : Staff_ {
+class SalesStaff : public Staff {
 
 
 public:

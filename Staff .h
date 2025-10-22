@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Staff_ {
+class Staff {
 
 private:
 	String name;

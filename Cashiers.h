@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Cashiers : Staff_ {
+class Cashiers : public Staff {
 
 public:
 	Inventory* subject;

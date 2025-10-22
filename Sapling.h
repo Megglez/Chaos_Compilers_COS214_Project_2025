@@ -1,9 +1,10 @@
 #ifndef SAPLING_H
 #define SAPLING_H
 #include <iostream>
+#include "StageOfDevelopment.h"
 using namespace std;
 
-class Sapling : StageOfDevelopment {
+class Sapling : public StageOfDevelopment {
 
 
 public:

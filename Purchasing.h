@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Purchasing : Action {
+class Purchasing : public Action {
 
 public:
 	State state;

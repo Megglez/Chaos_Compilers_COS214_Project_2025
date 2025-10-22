@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Manager : Staff_ {
+class Manager : Staff {
 
 public:
 	Inventory* subject;

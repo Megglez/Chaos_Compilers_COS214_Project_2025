@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class SucculentStrategy : CareStrategy {
+class SucculentStrategy : public CareStrategy {
 
 
 public:

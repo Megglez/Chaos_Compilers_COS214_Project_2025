@@ -1,9 +1,10 @@
 #ifndef SEED_H
 #define SEED_H
 #include <iostream>
+#include "StageOfDevelopment.h"
 using namespace std;
 
-class Seed : StageOfDevelopment {
+class Seed : public StageOfDevelopment {
 
 
 public:

@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class FindAvaibableStaff : InfoDesk {
+class FindAvaibableStaff : public InfoDesk {
 
 public:
 	Staff* staffList;

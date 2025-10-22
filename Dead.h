@@ -1,9 +1,10 @@
 #ifndef DEAD_H
 #define DEAD_H
 #include <iostream>
+#include "StageOfDevelopment.h"
 using namespace std;
 
-class Dead : StageOfDevelopment {
+class Dead : public StageOfDevelopment {
 
 
 public:

@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class AddStock : Command {
+class AddStock : public Command {
 
 public:
 	bool isEmpty;

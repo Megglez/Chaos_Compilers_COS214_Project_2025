@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Busy : StaffState {
+class Busy : public StaffState {
 
 
 public:
