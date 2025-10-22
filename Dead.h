@@ -8,6 +8,10 @@ public:
 	virtual StageOfDevelopment getNextStage() = 0;
 
 	void handle();
+
+	Dead();
+
+	virtual void ~Dead() = 0;
 };
 
 #endif

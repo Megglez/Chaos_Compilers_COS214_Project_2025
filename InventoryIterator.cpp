@@ -19,3 +19,8 @@ void InventoryIterator::currentItem() {
 	// TODO - implement InventoryIterator::currentItem
 	throw "Not yet implemented";
 }
+
+InventoryIterator::InventoryIterator() {
+	// TODO - implement InventoryIterator::InventoryIterator
+	throw "Not yet implemented";
+}

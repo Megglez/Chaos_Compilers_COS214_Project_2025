@@ -13,6 +13,10 @@ public:
 	Memento createMemento();
 
 	void setMemento(Memento memento);
+
+	Purchasing();
+
+	virtual void ~Purchasing() = 0;
 };
 
 #endif

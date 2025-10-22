@@ -35,6 +35,8 @@ protected:
 
 public:
 	Iterator* createIterator();
+
+	virtual void ~Inventory() = 0;
 };
 
 #endif

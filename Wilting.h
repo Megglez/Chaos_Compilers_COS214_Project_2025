@@ -8,6 +8,10 @@ public:
 	void handle();
 
 	virtual StageOfDevelopment getNextStage() = 0;
+
+	Wilting();
+
+	virtual void ~Wilting() = 0;
 };
 
 #endif

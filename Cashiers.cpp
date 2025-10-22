@@ -14,3 +14,8 @@ void Cashiers::setAvailability() {
 	// TODO - implement Cashiers::setAvailability
 	throw "Not yet implemented";
 }
+
+Cashiers::Cashiers() {
+	// TODO - implement Cashiers::Cashiers
+	throw "Not yet implemented";
+}

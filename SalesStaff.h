@@ -14,6 +14,10 @@ public:
 	void getAvailability();
 
 	void setAvailability();
+
+	SalesStaff();
+
+	virtual void ~SalesStaff() = 0;
 };
 
 #endif

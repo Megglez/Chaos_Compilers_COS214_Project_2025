@@ -14,3 +14,8 @@ void Manager::setAvailability() {
 	// TODO - implement Manager::setAvailability
 	throw "Not yet implemented";
 }
+
+Manager::Manager() {
+	// TODO - implement Manager::Manager
+	throw "Not yet implemented";
+}

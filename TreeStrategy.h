@@ -6,6 +6,10 @@ class TreeStrategy : CareStrategy {
 
 public:
 	void helpPlant();
+
+	TreeStrategy();
+
+	virtual void ~TreeStrategy() = 0;
 };
 
 #endif

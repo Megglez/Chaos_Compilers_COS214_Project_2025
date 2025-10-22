@@ -13,6 +13,10 @@ public:
 	void getAvailability();
 
 	void setAvailability();
+
+	Gardener();
+
+	virtual void ~Gardener() = 0;
 };
 
 #endif

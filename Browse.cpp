@@ -9,3 +9,8 @@ Action Browse::getNextAction() {
 	// TODO - implement Browse::getNextAction
 	throw "Not yet implemented";
 }
+
+Browse::Browse() {
+	// TODO - implement Browse::Browse
+	throw "Not yet implemented";
+}

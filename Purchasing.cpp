@@ -19,3 +19,8 @@ void Purchasing::setMemento(Memento memento) {
 	// TODO - implement Purchasing::setMemento
 	throw "Not yet implemented";
 }
+
+Purchasing::Purchasing() {
+	// TODO - implement Purchasing::Purchasing
+	throw "Not yet implemented";
+}

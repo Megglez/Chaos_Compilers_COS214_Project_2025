@@ -6,6 +6,10 @@ class StaffState {
 
 public:
 	virtual void handle() = 0;
+
+	StaffState();
+
+	virtual void ~StaffState() = 0;
 };
 
 #endif

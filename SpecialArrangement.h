@@ -6,6 +6,10 @@ class SpecialArrangement : PlantDecorator {
 
 public:
 	void package();
+
+	SpecialArrangement();
+
+	virtual void ~SpecialArrangement() = 0;
 };
 
 #endif

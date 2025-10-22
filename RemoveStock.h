@@ -7,6 +7,10 @@ public:
 	bool isEmpty;
 
 	void execute();
+
+	RemoveStock();
+
+	virtual void ~RemoveStock() = 0;
 };
 
 #endif

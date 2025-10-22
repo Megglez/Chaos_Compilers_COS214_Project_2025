@@ -10,6 +10,10 @@ public:
 	void request();
 
 	void setAction();
+
+	Customer();
+
+	virtual void ~Customer() = 0;
 };
 
 #endif

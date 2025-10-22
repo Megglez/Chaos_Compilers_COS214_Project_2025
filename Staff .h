@@ -16,6 +16,10 @@ public:
 	virtual void getAvailability() = 0;
 
 	virtual void setAvailability() = 0;
+
+	Staff_();
+
+	virtual void ~Staff() = 0;
 };
 
 #endif

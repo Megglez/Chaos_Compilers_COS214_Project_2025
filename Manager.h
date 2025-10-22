@@ -11,6 +11,10 @@ public:
 	void getAvailability();
 
 	void setAvailability();
+
+	Manager();
+
+	virtual void ~Manager() = 0;
 };
 
 #endif

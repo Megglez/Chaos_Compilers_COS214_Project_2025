@@ -7,6 +7,8 @@ public:
 	Staff* staffList;
 
 	virtual void notify(Staff* staffList) = 0;
+
+	FindAvaibableStaff();
 };
 
 #endif

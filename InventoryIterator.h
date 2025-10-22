@@ -12,6 +12,10 @@ public:
 	void isDone();
 
 	void currentItem();
+
+	InventoryIterator();
+
+	virtual void ~InventoryIterator() = 0;
 };
 
 #endif

@@ -9,6 +9,11 @@ private:
 	Action getAction();
 
 	void setAction(State state);
+
+public:
+	Memento();
+
+	virtual void ~Memento() = 0;
 };
 
 #endif

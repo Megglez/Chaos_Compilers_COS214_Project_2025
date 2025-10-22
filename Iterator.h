@@ -12,6 +12,10 @@ public:
 	virtual void isDone() = 0;
 
 	virtual void currentItem() = 0;
+
+	Iterator();
+
+	virtual void ~Iterator() = 0;
 };
 
 #endif

@@ -8,6 +8,10 @@ public:
 	void handle();
 
 	Action getNextAction();
+
+	Enquire();
+
+	virtual void ~Enquire() = 0;
 };
 
 #endif

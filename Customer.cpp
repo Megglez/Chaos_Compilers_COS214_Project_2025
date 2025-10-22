@@ -9,3 +9,8 @@ void Customer::setAction() {
 	// TODO - implement Customer::setAction
 	throw "Not yet implemented";
 }
+
+Customer::Customer() {
+	// TODO - implement Customer::Customer
+	throw "Not yet implemented";
+}

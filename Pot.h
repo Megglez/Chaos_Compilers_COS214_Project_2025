@@ -6,6 +6,10 @@ class Pot : PlantDecorator {
 
 public:
 	void package();
+
+	Pot();
+
+	virtual void ~Pot() = 0;
 };
 
 #endif

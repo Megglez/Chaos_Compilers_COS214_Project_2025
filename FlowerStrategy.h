@@ -6,6 +6,10 @@ class FlowerStrategy : CareStrategy {
 
 public:
 	void helpPlant();
+
+	FlowerStrategy();
+
+	virtual void ~FlowerStrategy() = 0;
 };
 
 #endif

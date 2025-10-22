@@ -6,6 +6,10 @@ class Available : StaffState {
 
 public:
 	void handle();
+
+	Available();
+
+	virtual void ~Available() = 0;
 };
 
 #endif

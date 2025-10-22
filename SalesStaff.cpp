@@ -24,3 +24,8 @@ void SalesStaff::setAvailability() {
 	// TODO - implement SalesStaff::setAvailability
 	throw "Not yet implemented";
 }
+
+SalesStaff::SalesStaff() {
+	// TODO - implement SalesStaff::SalesStaff
+	throw "Not yet implemented";
+}

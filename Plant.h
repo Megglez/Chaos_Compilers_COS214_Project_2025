@@ -18,6 +18,10 @@ public:
 	void grow();
 
 	void helpPlant();
+
+	Plant();
+
+	virtual void ~Plant() = 0;
 };
 
 #endif

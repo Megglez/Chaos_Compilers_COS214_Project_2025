@@ -8,6 +8,10 @@ public:
 	virtual StageOfDevelopment getNextStage() = 0;
 
 	void handle();
+
+	Seed();
+
+	virtual void ~Seed() = 0;
 };
 
 #endif

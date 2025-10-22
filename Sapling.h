@@ -8,6 +8,10 @@ public:
 	virtual StageOfDevelopment getNextStage() = 0;
 
 	void handle();
+
+	Sapling();
+
+	virtual void ~Sapling() = 0;
 };
 
 #endif

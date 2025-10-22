@@ -6,6 +6,10 @@ class Busy : StaffState {
 
 public:
 	void handle();
+
+	Busy();
+
+	virtual void ~Busy() = 0;
 };
 
 #endif

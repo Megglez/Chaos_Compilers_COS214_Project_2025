@@ -19,3 +19,8 @@ void Gardener::setAvailability() {
 	// TODO - implement Gardener::setAvailability
 	throw "Not yet implemented";
 }
+
+Gardener::Gardener() {
+	// TODO - implement Gardener::Gardener
+	throw "Not yet implemented";
+}

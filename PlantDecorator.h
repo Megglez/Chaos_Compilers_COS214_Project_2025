@@ -7,6 +7,10 @@ public:
 	Plant* plant;
 
 	void package();
+
+	PlantDecorator();
+
+	virtual void ~PlantDecorator() = 0;
 };
 
 #endif

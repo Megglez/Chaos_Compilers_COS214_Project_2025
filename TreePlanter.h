@@ -6,6 +6,10 @@ class TreePlanter : Planter {
 
 public:
 	Plant* planterMethod();
+
+	TreePlanter();
+
+	virtual void ~TreePlanter() = 0;
 };
 
 #endif

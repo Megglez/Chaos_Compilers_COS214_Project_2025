@@ -8,6 +8,10 @@ public:
 	virtual Plant* clone() = 0;
 
 	void package();
+
+	HerbPlant();
+
+	virtual void ~HerbPlant() = 0;
 };
 
 #endif

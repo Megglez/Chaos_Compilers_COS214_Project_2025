@@ -8,6 +8,10 @@ public:
 	virtual StageOfDevelopment getNextStage() = 0;
 
 	void handle();
+
+	Prime();
+
+	virtual void ~Prime() = 0;
 };
 
 #endif

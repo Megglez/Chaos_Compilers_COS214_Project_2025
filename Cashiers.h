@@ -11,6 +11,10 @@ public:
 	void getAvailability();
 
 	void setAvailability();
+
+	Cashiers();
+
+	virtual void ~Cashiers() = 0;
 };
 
 #endif
