@@ -9,7 +9,7 @@ public:
 
 	Busy();
 
-	virtual void ~Busy() = 0;
+	virtual ~Busy();
 };
 
 #endif

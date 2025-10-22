@@ -9,3 +9,7 @@ FlowerStrategy::FlowerStrategy() {
 	// TODO - implement FlowerStrategy::FlowerStrategy
 	throw "Not yet implemented";
 }
+
+FlowerStrategy::~FlowerStrategy()
+{
+}

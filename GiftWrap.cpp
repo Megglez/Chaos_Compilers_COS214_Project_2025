@@ -9,3 +9,7 @@ GiftWrap::GiftWrap() {
 	// TODO - implement GiftWrap::GiftWrap
 	throw "Not yet implemented";
 }
+
+GiftWrap::~GiftWrap()
+{
+}

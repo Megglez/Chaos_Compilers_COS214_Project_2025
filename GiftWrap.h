@@ -9,7 +9,7 @@ public:
 
 	GiftWrap();
 
-	virtual void ~GiftWrap() = 0;
+	virtual ~GiftWrap();
 };
 
 #endif

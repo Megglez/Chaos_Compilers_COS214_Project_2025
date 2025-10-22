@@ -11,7 +11,7 @@ public:
 
 	HerbPlant();
 
-	virtual void ~HerbPlant() = 0;
+	virtual ~HerbPlant();
 };
 
 #endif

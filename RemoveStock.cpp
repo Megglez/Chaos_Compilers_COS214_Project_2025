@@ -9,3 +9,7 @@ RemoveStock::RemoveStock() {
 	// TODO - implement RemoveStock::RemoveStock
 	throw "Not yet implemented";
 }
+
+RemoveStock::~RemoveStock()
+{
+}

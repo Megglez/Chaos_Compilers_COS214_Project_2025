@@ -11,7 +11,7 @@ public:
 
 	Sapling();
 
-	virtual void ~Sapling() = 0;
+	virtual ~Sapling();
 };
 
 #endif

@@ -9,3 +9,7 @@ Prime::Prime() {
 	// TODO - implement Prime::Prime
 	throw "Not yet implemented";
 }
+
+Prime::~Prime()
+{
+}

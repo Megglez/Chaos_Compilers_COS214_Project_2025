@@ -9,7 +9,7 @@ public:
 
 	SpecialArrangement();
 
-	virtual void ~SpecialArrangement() = 0;
+	virtual ~SpecialArrangement();
 };
 
 #endif

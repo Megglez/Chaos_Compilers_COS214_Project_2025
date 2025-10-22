@@ -21,7 +21,7 @@ public:
 
 	Plant();
 
-	virtual void ~Plant() = 0;
+	virtual ~Plant();
 };
 
 #endif

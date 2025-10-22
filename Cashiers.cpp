@@ -19,3 +19,7 @@ Cashiers::Cashiers() {
 	// TODO - implement Cashiers::Cashiers
 	throw "Not yet implemented";
 }
+
+Cashiers::~Cashiers()
+{
+}

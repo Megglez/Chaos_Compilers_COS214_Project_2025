@@ -19,7 +19,7 @@ public:
 
 	Staff_();
 
-	virtual void ~Staff() = 0;
+	virtual ~Staff();
 };
 
 #endif

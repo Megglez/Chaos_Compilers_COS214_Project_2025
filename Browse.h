@@ -11,7 +11,7 @@ public:
 
 	Browse();
 
-	virtual void ~Browse() = 0;
+	virtual ~Browse();
 };
 
 #endif

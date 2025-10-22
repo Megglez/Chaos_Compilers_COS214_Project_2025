@@ -9,3 +9,7 @@ Pot::Pot() {
 	// TODO - implement Pot::Pot
 	throw "Not yet implemented";
 }
+
+Pot::~Pot()
+{
+}

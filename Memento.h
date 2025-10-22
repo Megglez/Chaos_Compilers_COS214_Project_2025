@@ -13,7 +13,7 @@ private:
 public:
 	Memento();
 
-	virtual void ~Memento() = 0;
+	virtual ~Memento();
 };
 
 #endif

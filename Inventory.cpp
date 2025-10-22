@@ -54,3 +54,7 @@ Iterator* Inventory::createIterator() {
 	// TODO - implement Inventory::createIterator
 	throw "Not yet implemented";
 }
+
+Inventory::~Inventory()
+{
+}

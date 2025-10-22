@@ -24,3 +24,7 @@ Purchasing::Purchasing() {
 	// TODO - implement Purchasing::Purchasing
 	throw "Not yet implemented";
 }
+
+Purchasing::~Purchasing()
+{
+}

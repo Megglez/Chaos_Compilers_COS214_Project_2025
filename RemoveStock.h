@@ -10,7 +10,7 @@ public:
 
 	RemoveStock();
 
-	virtual void ~RemoveStock() = 0;
+	virtual ~RemoveStock();
 };
 
 #endif

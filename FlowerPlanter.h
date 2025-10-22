@@ -9,7 +9,7 @@ public:
 
 	FlowerPlanter();
 
-	virtual void ~FlowerPlanter() = 0;
+	virtual ~FlowerPlanter();
 };
 
 #endif

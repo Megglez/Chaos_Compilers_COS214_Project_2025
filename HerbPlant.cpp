@@ -9,3 +9,7 @@ HerbPlant::HerbPlant() {
 	// TODO - implement HerbPlant::HerbPlant
 	throw "Not yet implemented";
 }
+
+HerbPlant::~HerbPlant()
+{
+}

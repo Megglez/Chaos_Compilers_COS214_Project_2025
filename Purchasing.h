@@ -16,7 +16,7 @@ public:
 
 	Purchasing();
 
-	virtual void ~Purchasing() = 0;
+	virtual ~Purchasing();
 };
 
 #endif

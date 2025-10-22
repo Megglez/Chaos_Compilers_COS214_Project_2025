@@ -9,3 +9,7 @@ AddStock::AddStock() {
 	// TODO - implement AddStock::AddStock
 	throw "Not yet implemented";
 }
+
+AddStock::~AddStock()
+{
+}

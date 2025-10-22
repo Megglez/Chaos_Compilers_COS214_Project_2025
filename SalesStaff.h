@@ -17,7 +17,7 @@ public:
 
 	SalesStaff();
 
-	virtual void ~SalesStaff() = 0;
+	virtual ~SalesStaff();
 };
 
 #endif

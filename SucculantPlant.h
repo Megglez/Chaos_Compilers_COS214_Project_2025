@@ -11,7 +11,7 @@ public:
 
 	SucculantPlant();
 
-	virtual void ~SucculantPlant() = 0;
+	virtual ~SucculantPlant();
 };
 
 #endif

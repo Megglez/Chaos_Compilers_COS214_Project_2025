@@ -9,3 +9,7 @@ HerbStrategy::HerbStrategy() {
 	// TODO - implement HerbStrategy::HerbStrategy
 	throw "Not yet implemented";
 }
+
+HerbStrategy::~HerbStrategy()
+{
+}

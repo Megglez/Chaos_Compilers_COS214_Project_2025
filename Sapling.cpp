@@ -9,3 +9,7 @@ Sapling::Sapling() {
 	// TODO - implement Sapling::Sapling
 	throw "Not yet implemented";
 }
+
+Sapling::~Sapling()
+{
+}

@@ -10,7 +10,7 @@ public:
 
 	PlantDecorator();
 
-	virtual void ~PlantDecorator() = 0;
+	virtual ~PlantDecorator();
 };
 
 #endif

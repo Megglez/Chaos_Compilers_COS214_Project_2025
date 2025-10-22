@@ -11,7 +11,7 @@ public:
 
 	Action();
 
-	virtual void ~Action() = 0;
+	virtual ~Action();
 };
 
 #endif

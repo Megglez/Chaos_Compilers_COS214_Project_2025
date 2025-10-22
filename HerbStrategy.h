@@ -9,7 +9,7 @@ public:
 
 	HerbStrategy();
 
-	virtual void ~HerbStrategy() = 0;
+	virtual ~HerbStrategy();
 };
 
 #endif

@@ -11,7 +11,7 @@ public:
 
 	Seed();
 
-	virtual void ~Seed() = 0;
+	virtual ~Seed();
 };
 
 #endif

@@ -9,3 +9,7 @@ SucculantPlant::SucculantPlant() {
 	// TODO - implement SucculantPlant::SucculantPlant
 	throw "Not yet implemented";
 }
+
+SucculantPlant::~SucculantPlant()
+{
+}

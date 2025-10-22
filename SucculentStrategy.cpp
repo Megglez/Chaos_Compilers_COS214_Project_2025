@@ -9,3 +9,7 @@ SucculentStrategy::SucculentStrategy() {
 	// TODO - implement SucculentStrategy::SucculentStrategy
 	throw "Not yet implemented";
 }
+
+SucculentStrategy::~SucculentStrategy()
+{
+}

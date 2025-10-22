@@ -9,3 +9,7 @@ Wilting::Wilting() {
 	// TODO - implement Wilting::Wilting
 	throw "Not yet implemented";
 }
+
+Wilting::~Wilting()
+{
+}

@@ -9,7 +9,7 @@ public:
 
 	FlowerStrategy();
 
-	virtual void ~FlowerStrategy() = 0;
+	virtual ~FlowerStrategy();
 };
 
 #endif

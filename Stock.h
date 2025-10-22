@@ -7,7 +7,7 @@ class Stock {
 public:
 	Stock();
 
-	virtual void ~Stock() = 0;
+	virtual ~Stock();
 };
 
 #endif

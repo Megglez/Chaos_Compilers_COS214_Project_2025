@@ -9,7 +9,7 @@ public:
 
 	Pot();
 
-	virtual void ~Pot() = 0;
+	virtual ~Pot();
 };
 
 #endif

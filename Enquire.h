@@ -11,7 +11,7 @@ public:
 
 	Enquire();
 
-	virtual void ~Enquire() = 0;
+	virtual ~Enquire();
 };
 
 #endif

@@ -10,7 +10,7 @@ public:
 
 	AddStock();
 
-	virtual void ~AddStock() = 0;
+	virtual ~AddStock();
 };
 
 #endif

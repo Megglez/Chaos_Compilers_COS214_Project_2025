@@ -15,7 +15,7 @@ public:
 
 	Iterator();
 
-	virtual void ~Iterator() = 0;
+	virtual ~Iterator();
 };
 
 #endif

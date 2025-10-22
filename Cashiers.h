@@ -14,7 +14,7 @@ public:
 
 	Cashiers();
 
-	virtual void ~Cashiers() = 0;
+	virtual ~Cashiers();
 };
 
 #endif

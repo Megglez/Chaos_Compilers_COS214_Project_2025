@@ -9,3 +9,7 @@ TreeStrategy::TreeStrategy() {
 	// TODO - implement TreeStrategy::TreeStrategy
 	throw "Not yet implemented";
 }
+
+TreeStrategy::~TreeStrategy()
+{
+}

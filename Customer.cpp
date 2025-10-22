@@ -14,3 +14,7 @@ Customer::Customer() {
 	// TODO - implement Customer::Customer
 	throw "Not yet implemented";
 }
+
+Customer::~Customer()
+{
+}

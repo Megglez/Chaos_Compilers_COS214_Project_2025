@@ -11,7 +11,7 @@ public:
 
 	Wilting();
 
-	virtual void ~Wilting() = 0;
+	virtual ~Wilting();
 };
 
 #endif

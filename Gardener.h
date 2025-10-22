@@ -16,7 +16,7 @@ public:
 
 	Gardener();
 
-	virtual void ~Gardener() = 0;
+	virtual ~Gardener();
 };
 
 #endif

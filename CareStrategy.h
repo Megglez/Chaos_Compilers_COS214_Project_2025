@@ -9,7 +9,7 @@ public:
 
 	CareStrategy();
 
-	virtual void ~CareStrategy() = 0;
+	virtual ~CareStrategy();
 };
 
 #endif

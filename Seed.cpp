@@ -9,3 +9,7 @@ Seed::Seed() {
 	// TODO - implement Seed::Seed
 	throw "Not yet implemented";
 }
+
+Seed::~Seed()
+{
+}

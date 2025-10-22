@@ -11,7 +11,7 @@ public:
 
 	Prime();
 
-	virtual void ~Prime() = 0;
+	virtual ~Prime();
 };
 
 #endif

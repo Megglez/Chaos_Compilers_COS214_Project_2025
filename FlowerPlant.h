@@ -11,7 +11,7 @@ public:
 
 	FlowerPlant();
 
-	virtual void ~FlowerPlant() = 0;
+	virtual ~FlowerPlant();
 };
 
 #endif

@@ -9,3 +9,7 @@ PlantDecorator::PlantDecorator() {
 	// TODO - implement PlantDecorator::PlantDecorator
 	throw "Not yet implemented";
 }
+
+PlantDecorator::~PlantDecorator()
+{
+}

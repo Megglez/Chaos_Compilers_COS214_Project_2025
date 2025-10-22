@@ -9,7 +9,7 @@ public:
 
 	TreeStrategy();
 
-	virtual void ~TreeStrategy() = 0;
+	virtual ~TreeStrategy();
 };
 
 #endif

@@ -9,7 +9,7 @@ public:
 
 	Planter();
 
-	virtual void ~Planter() = 0;
+	virtual ~Planter();
 };
 
 #endif

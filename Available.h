@@ -9,7 +9,7 @@ public:
 
 	Available();
 
-	virtual void ~Available() = 0;
+	virtual ~Available();
 };
 
 #endif

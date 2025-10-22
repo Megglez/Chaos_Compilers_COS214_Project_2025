@@ -11,7 +11,7 @@ public:
 
 	StageOfDevelopment();
 
-	virtual void ~StageOfDevelopment() = 0;
+	virtual ~StageOfDevelopment();
 };
 
 #endif

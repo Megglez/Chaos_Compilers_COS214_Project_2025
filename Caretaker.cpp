@@ -4,3 +4,7 @@ Caretaker::Caretaker() {
 	// TODO - implement Caretaker::Caretaker
 	throw "Not yet implemented";
 }
+
+Caretaker::~Caretaker()
+{
+}

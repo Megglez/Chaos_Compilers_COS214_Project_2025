@@ -14,3 +14,7 @@ Memento::Memento() {
 	// TODO - implement Memento::Memento
 	throw "Not yet implemented";
 }
+
+Memento::~Memento()
+{
+}

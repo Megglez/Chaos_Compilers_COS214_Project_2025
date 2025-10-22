@@ -15,7 +15,7 @@ public:
 
 	InventoryIterator();
 
-	virtual void ~InventoryIterator() = 0;
+	virtual ~InventoryIterator();
 };
 
 #endif

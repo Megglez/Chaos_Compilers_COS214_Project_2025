@@ -9,3 +9,7 @@ TreePlanter::TreePlanter() {
 	// TODO - implement TreePlanter::TreePlanter
 	throw "Not yet implemented";
 }
+
+TreePlanter::~TreePlanter()
+{
+}

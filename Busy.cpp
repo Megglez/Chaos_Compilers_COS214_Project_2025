@@ -9,3 +9,7 @@ Busy::Busy() {
 	// TODO - implement Busy::Busy
 	throw "Not yet implemented";
 }
+
+Busy::~Busy()
+{
+}

@@ -24,3 +24,7 @@ InventoryIterator::InventoryIterator() {
 	// TODO - implement InventoryIterator::InventoryIterator
 	throw "Not yet implemented";
 }
+
+InventoryIterator::~InventoryIterator()
+{
+}

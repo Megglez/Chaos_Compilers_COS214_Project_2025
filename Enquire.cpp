@@ -14,3 +14,7 @@ Enquire::Enquire() {
 	// TODO - implement Enquire::Enquire
 	throw "Not yet implemented";
 }
+
+Enquire::~Enquire()
+{
+}

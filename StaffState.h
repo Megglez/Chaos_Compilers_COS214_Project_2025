@@ -9,7 +9,7 @@ public:
 
 	StaffState();
 
-	virtual void ~StaffState() = 0;
+	virtual ~StaffState();
 };
 
 #endif

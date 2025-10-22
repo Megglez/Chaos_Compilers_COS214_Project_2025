@@ -9,7 +9,7 @@ public:
 
 	SucculentStrategy();
 
-	virtual void ~SucculentStrategy() = 0;
+	virtual ~SucculentStrategy();
 };
 
 #endif

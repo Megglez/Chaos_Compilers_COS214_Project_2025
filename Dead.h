@@ -11,7 +11,7 @@ public:
 
 	Dead();
 
-	virtual void ~Dead() = 0;
+	virtual ~Dead();
 };
 
 #endif

@@ -24,3 +24,7 @@ Gardener::Gardener() {
 	// TODO - implement Gardener::Gardener
 	throw "Not yet implemented";
 }
+
+Gardener::~Gardener()
+{
+}

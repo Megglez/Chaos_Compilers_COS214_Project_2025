@@ -7,7 +7,7 @@ class Caretaker {
 public:
 	Caretaker();
 
-	virtual void ~Caretaker() = 0;
+	virtual ~Caretaker();
 };
 
 #endif

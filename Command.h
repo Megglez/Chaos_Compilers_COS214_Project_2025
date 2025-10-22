@@ -9,7 +9,7 @@ public:
 
 	Command();
 
-	virtual void ~Command() = 0;
+	virtual ~Command();
 };
 
 #endif

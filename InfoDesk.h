@@ -9,7 +9,7 @@ public:
 
 	InfoDesk();
 
-	virtual void ~InfoDesk() = 0;
+	virtual ~InfoDesk();
 };
 
 #endif

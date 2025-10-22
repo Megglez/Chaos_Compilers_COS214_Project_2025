@@ -14,3 +14,7 @@ Browse::Browse() {
 	// TODO - implement Browse::Browse
 	throw "Not yet implemented";
 }
+
+Browse::~Browse()
+{
+}

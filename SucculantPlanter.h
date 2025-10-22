@@ -9,7 +9,7 @@ public:
 
 	SucculantPlanter();
 
-	virtual void ~SucculantPlanter() = 0;
+	virtual ~SucculantPlanter();
 };
 
 #endif

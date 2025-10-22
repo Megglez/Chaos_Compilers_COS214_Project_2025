@@ -13,7 +13,7 @@ public:
 
 	Customer();
 
-	virtual void ~Customer() = 0;
+	virtual ~Customer();
 };
 
 #endif

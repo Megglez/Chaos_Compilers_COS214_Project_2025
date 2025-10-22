@@ -9,3 +9,7 @@ FlowerPlanter::FlowerPlanter() {
 	// TODO - implement FlowerPlanter::FlowerPlanter
 	throw "Not yet implemented";
 }
+
+FlowerPlanter::~FlowerPlanter()
+{
+}

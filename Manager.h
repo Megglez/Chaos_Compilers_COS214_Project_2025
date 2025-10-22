@@ -14,7 +14,7 @@ public:
 
 	Manager();
 
-	virtual void ~Manager() = 0;
+	virtual ~Manager();
 };
 
 #endif

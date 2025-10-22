@@ -9,6 +9,8 @@ public:
 	virtual void notify(Staff* staffList) = 0;
 
 	FindAvaibableStaff();
+
+	virtual ~FindAvaibableStaff();
 };
 
 #endif

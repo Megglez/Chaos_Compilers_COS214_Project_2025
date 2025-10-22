@@ -11,7 +11,7 @@ public:
 
 	TreePlant();
 
-	virtual void ~TreePlant() = 0;
+	virtual ~TreePlant();
 };
 
 #endif
