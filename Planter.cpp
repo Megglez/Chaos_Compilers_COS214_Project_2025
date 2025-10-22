@@ -8,7 +8,7 @@ Plant *Planter::planterMethod()
 Planter::Planter()
 {
     // TODO - implement Planter::Planter
-	throw "Not yet implemented";
+	
 }
 
 Planter::~Planter()

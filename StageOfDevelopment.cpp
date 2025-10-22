@@ -12,7 +12,7 @@ StageOfDevelopment StageOfDevelopment::getNextStage()
 StageOfDevelopment::StageOfDevelopment()
 {
     // TODO - implement StageOfDevelopment::StageOfDevelopment
-	throw "Not yet implemented";
+	
 }
 
 StageOfDevelopment::~StageOfDevelopment()

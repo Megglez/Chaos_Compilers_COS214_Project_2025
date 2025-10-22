@@ -1,6 +1,7 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 #include <iostream>
+#include "Staff .h"
 using namespace std;
 
 class Inventory {

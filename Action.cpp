@@ -12,7 +12,7 @@ Action Action::getNextAction()
 Action::Action()
 {
     // TODO - implement Action::Action
-	throw "Not yet implemented";
+	
 }
 
 Action::~Action()
