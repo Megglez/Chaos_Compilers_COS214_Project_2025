@@ -4,15 +4,10 @@
 using namespace std;
 
 class StageOfDevelopment {
-
-
 public:
-	virtual void handle() = 0;
-
-	virtual StageOfDevelopment getNextStage() = 0;
-
+	virtual void handle();
+	virtual StageOfDevelopment getNextStage();
 	StageOfDevelopment();
-
 	virtual ~StageOfDevelopment();
 };
 

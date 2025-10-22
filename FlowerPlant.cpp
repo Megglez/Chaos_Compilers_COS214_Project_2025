@@ -1,7 +1,13 @@
 #include "FlowerPlant.h"
 
-void FlowerPlant::package() {
-	// TODO - implement FlowerPlant::package
+Plant *FlowerPlant::clone()
+{
+    return nullptr;
+}
+
+void FlowerPlant::package()
+{
+    // TODO - implement FlowerPlant::package
 	throw "Not yet implemented";
 }
 

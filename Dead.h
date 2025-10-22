@@ -5,15 +5,10 @@
 using namespace std;
 
 class Dead : public StageOfDevelopment {
-
-
 public:
-	virtual StageOfDevelopment getNextStage() = 0;
-
+	virtual StageOfDevelopment getNextStage();
 	void handle();
-
 	Dead();
-
 	virtual ~Dead();
 };
 

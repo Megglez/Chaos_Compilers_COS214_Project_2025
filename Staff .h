@@ -1,26 +1,25 @@
-#ifndef STAFF _H
-#define STAFF _H
+#ifndef STAFF_H
+#define STAFF_H
 #include <iostream>
+#include "Plant.h"
+#include "StaffState.h"
+#include "Inventory.h"
+#include "InfoDesk.h"
 using namespace std;
 
 class Staff {
-
 private:
-	String name;
-	String staffID;
-	String workArea;
+	string name;
+	string staffID;
+	string workArea;
 	StaffState state;
 	InfoDesk infoDesk;
 
 public:
 	void changeState();
-
-	virtual void getAvailability() = 0;
-
-	virtual void setAvailability() = 0;
-
-	Staff_();
-
+	virtual void getAvailability();
+	virtual void setAvailability();
+	Staff();
 	virtual ~Staff();
 };
 

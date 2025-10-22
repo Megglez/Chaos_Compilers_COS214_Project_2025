@@ -4,13 +4,9 @@
 using namespace std;
 
 class StaffState {
-
-
 public:
-	virtual void handle() = 0;
-
+	virtual void handle();
 	StaffState();
-
 	virtual ~StaffState();
 };
 

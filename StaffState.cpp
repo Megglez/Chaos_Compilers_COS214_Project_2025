@@ -1,7 +1,12 @@
 #include "StaffState.h"
 
-StaffState::StaffState() {
-	// TODO - implement StaffState::StaffState
+void StaffState::handle()
+{
+}
+
+StaffState::StaffState()
+{
+    // TODO - implement StaffState::StaffState
 	throw "Not yet implemented";
 }
 

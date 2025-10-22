@@ -1,7 +1,12 @@
 #include "InfoDesk.h"
 
-InfoDesk::InfoDesk() {
-	// TODO - implement InfoDesk::InfoDesk
+void InfoDesk::notify(Staff *staff)
+{
+}
+
+InfoDesk::InfoDesk()
+{
+    // TODO - implement InfoDesk::InfoDesk
 	throw "Not yet implemented";
 }
 

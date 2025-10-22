@@ -4,15 +4,10 @@
 using namespace std;
 
 class Action {
-
-
 public:
-	virtual void handle() = 0;
-
-	virtual Action getNextAction() = 0;
-
+	virtual void handle();
+	virtual Action getNextAction();
 	Action();
-
 	virtual ~Action();
 };
 

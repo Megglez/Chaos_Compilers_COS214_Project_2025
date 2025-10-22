@@ -5,6 +5,11 @@ void Wilting::handle() {
 	throw "Not yet implemented";
 }
 
+StageOfDevelopment Wilting::getNextStage()
+{
+    return StageOfDevelopment();
+}
+
 Wilting::Wilting() {
 	// TODO - implement Wilting::Wilting
 	throw "Not yet implemented";

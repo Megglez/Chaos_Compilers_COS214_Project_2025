@@ -10,16 +10,6 @@ Action Purchasing::getNextAction() {
 	throw "Not yet implemented";
 }
 
-Memento Purchasing::createMemento() {
-	// TODO - implement Purchasing::createMemento
-	throw "Not yet implemented";
-}
-
-void Purchasing::setMemento(Memento memento) {
-	// TODO - implement Purchasing::setMemento
-	throw "Not yet implemented";
-}
-
 Purchasing::Purchasing() {
 	// TODO - implement Purchasing::Purchasing
 	throw "Not yet implemented";

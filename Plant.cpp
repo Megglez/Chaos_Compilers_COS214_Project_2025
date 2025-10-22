@@ -1,7 +1,17 @@
 #include "Plant.h"
 
-void Plant::grow() {
-	// TODO - implement Plant::grow
+Plant *Plant::clone()
+{
+    return nullptr;
+}
+
+void Plant::package()
+{
+}
+
+void Plant::grow()
+{
+    // TODO - implement Plant::grow
 	throw "Not yet implemented";
 }
 

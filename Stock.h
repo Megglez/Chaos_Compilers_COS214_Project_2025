@@ -4,11 +4,8 @@
 using namespace std;
 
 class Stock {
-
-
 public:
 	Stock();
-
 	virtual ~Stock();
 };
 

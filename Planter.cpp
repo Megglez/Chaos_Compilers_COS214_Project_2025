@@ -1,6 +1,16 @@
 #include "Planter.h"
 
-Planter::Planter() {
-	// TODO - implement Planter::Planter
+Plant *Planter::planterMethod()
+{
+    return nullptr;
+}
+
+Planter::Planter()
+{
+    // TODO - implement Planter::Planter
 	throw "Not yet implemented";
+}
+
+Planter::~Planter()
+{
 }

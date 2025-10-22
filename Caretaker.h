@@ -4,11 +4,8 @@
 using namespace std;
 
 class Caretaker {
-
-
 public:
 	Caretaker();
-
 	virtual ~Caretaker();
 };
 

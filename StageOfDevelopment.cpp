@@ -1,7 +1,17 @@
 #include "StageOfDevelopment.h"
 
-StageOfDevelopment::StageOfDevelopment() {
-	// TODO - implement StageOfDevelopment::StageOfDevelopment
+void StageOfDevelopment::handle()
+{
+}
+
+StageOfDevelopment StageOfDevelopment::getNextStage()
+{
+    return StageOfDevelopment();
+}
+
+StageOfDevelopment::StageOfDevelopment()
+{
+    // TODO - implement StageOfDevelopment::StageOfDevelopment
 	throw "Not yet implemented";
 }
 

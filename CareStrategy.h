@@ -4,13 +4,9 @@
 using namespace std;
 
 class CareStrategy {
-
-
 public:
-	virtual void helpPlant() = 0;
-
+	virtual void helpPlant();
 	CareStrategy();
-
 	virtual ~CareStrategy();
 };
 

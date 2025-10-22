@@ -1,7 +1,13 @@
 #include "Sapling.h"
 
-void Sapling::handle() {
-	// TODO - implement Sapling::handle
+StageOfDevelopment Sapling::getNextStage()
+{
+    return StageOfDevelopment();
+}
+
+void Sapling::handle()
+{
+    // TODO - implement Sapling::handle
 	throw "Not yet implemented";
 }
 

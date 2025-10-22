@@ -1,7 +1,13 @@
 #include "Seed.h"
 
-void Seed::handle() {
-	// TODO - implement Seed::handle
+StageOfDevelopment Seed::getNextStage()
+{
+    return StageOfDevelopment();
+}
+
+void Seed::handle()
+{
+    // TODO - implement Seed::handle
 	throw "Not yet implemented";
 }
 

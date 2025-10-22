@@ -1,7 +1,12 @@
 #include "CareStrategy.h"
 
-CareStrategy::CareStrategy() {
-	// TODO - implement CareStrategy::CareStrategy
+void CareStrategy::helpPlant()
+{
+}
+
+CareStrategy::CareStrategy()
+{
+    // TODO - implement CareStrategy::CareStrategy
 	throw "Not yet implemented";
 }
 

@@ -1,7 +1,13 @@
 #include "HerbPlant.h"
 
-void HerbPlant::package() {
-	// TODO - implement HerbPlant::package
+Plant *HerbPlant::clone()
+{
+    return nullptr;
+}
+
+void HerbPlant::package()
+{
+    // TODO - implement HerbPlant::package
 	throw "Not yet implemented";
 }
 

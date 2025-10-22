@@ -5,15 +5,10 @@
 using namespace std;
 
 class Sapling : public StageOfDevelopment {
-
-
 public:
-	virtual StageOfDevelopment getNextStage() = 0;
-
+	StageOfDevelopment getNextStage();
 	void handle();
-
 	Sapling();
-
 	virtual ~Sapling();
 };
 

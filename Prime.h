@@ -5,15 +5,10 @@
 using namespace std;
 
 class Prime : public StageOfDevelopment {
-
-
 public:
-	virtual StageOfDevelopment getNextStage() = 0;
-
+	StageOfDevelopment getNextStage();
 	void handle();
-
 	Prime();
-
 	virtual ~Prime();
 };
 

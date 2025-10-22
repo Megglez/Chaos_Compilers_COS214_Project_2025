@@ -1,23 +1,14 @@
 #ifndef PURCHASING_H
 #define PURCHASING_H
 #include <iostream>
+#include "Action.h"
 using namespace std;
 
 class Purchasing : public Action {
-
 public:
-	State state;
-
 	void handle();
-
 	Action getNextAction();
-
-	Memento createMemento();
-
-	void setMemento(Memento memento);
-
 	Purchasing();
-
 	virtual ~Purchasing();
 };
 

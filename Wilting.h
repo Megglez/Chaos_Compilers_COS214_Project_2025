@@ -5,15 +5,10 @@
 using namespace std;
 
 class Wilting : public StageOfDevelopment {
-
-
 public:
 	void handle();
-
-	virtual StageOfDevelopment getNextStage() = 0;
-
+	StageOfDevelopment getNextStage();
 	Wilting();
-
 	virtual ~Wilting();
 };
 

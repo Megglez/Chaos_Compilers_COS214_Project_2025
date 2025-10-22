@@ -3,14 +3,11 @@
 #include <iostream>
 using namespace std;
 
+class Staff;
 class InfoDesk {
-
-
 public:
-	virtual void notify(Staff* staff) = 0;
-
+	virtual void notify(Staff* staff);
 	InfoDesk();
-
 	virtual ~InfoDesk();
 };
 

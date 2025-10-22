@@ -1,10 +1,5 @@
 #include "Inventory.h"
 
-static Inventory* Inventory::instance() {
-	// TODO - implement Inventory::instance
-	throw "Not yet implemented";
-}
-
 Inventory::Inventory() {
 	// TODO - implement Inventory::Inventory
 	throw "Not yet implemented";
@@ -42,16 +37,6 @@ void Inventory::detach(Staff* staff) {
 
 void Inventory::notify() {
 	// TODO - implement Inventory::notify
-	throw "Not yet implemented";
-}
-
-Inventory::Inventory(Inventory Inventory_) {
-	// TODO - implement Inventory::Inventory
-	throw "Not yet implemented";
-}
-
-Iterator* Inventory::createIterator() {
-	// TODO - implement Inventory::createIterator
 	throw "Not yet implemented";
 }
 

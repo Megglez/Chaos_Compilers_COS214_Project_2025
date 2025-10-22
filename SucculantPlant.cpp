@@ -1,7 +1,13 @@
 #include "SucculantPlant.h"
 
-void SucculantPlant::package() {
-	// TODO - implement SucculantPlant::package
+Plant *SucculantPlant::clone()
+{
+    return nullptr;
+}
+
+void SucculantPlant::package()
+{
+    // TODO - implement SucculantPlant::package
 	throw "Not yet implemented";
 }
 

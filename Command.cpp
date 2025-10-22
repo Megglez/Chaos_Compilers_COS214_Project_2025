@@ -1,7 +1,12 @@
 #include "Command.h"
 
-Command::Command() {
-	// TODO - implement Command::Command
+void Command::execute()
+{
+}
+
+Command::Command()
+{
+    // TODO - implement Command::Command
 	throw "Not yet implemented";
 }
 
