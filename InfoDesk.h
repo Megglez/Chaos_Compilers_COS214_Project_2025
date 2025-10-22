@@ -1,5 +1,7 @@
 #ifndef INFODESK_H
 #define INFODESK_H
+#include <iostream>
+using namespace std;
 
 class InfoDesk {
 

@@ -1,5 +1,7 @@
 #ifndef ENQUIRE_H
 #define ENQUIRE_H
+#include <iostream>
+using namespace std;
 
 class Enquire : Action {
 

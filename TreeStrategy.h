@@ -1,5 +1,7 @@
 #ifndef TREESTRATEGY_H
 #define TREESTRATEGY_H
+#include <iostream>
+using namespace std;
 
 class TreeStrategy : CareStrategy {
 

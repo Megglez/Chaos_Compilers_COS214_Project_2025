@@ -1,5 +1,7 @@
 #ifndef PLANTER_H
 #define PLANTER_H
+#include <iostream>
+using namespace std;
 
 class Planter {
 

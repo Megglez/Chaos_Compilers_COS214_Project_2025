@@ -1,5 +1,7 @@
 #ifndef CASHIERS_H
 #define CASHIERS_H
+#include <iostream>
+using namespace std;
 
 class Cashiers : Staff_ {
 

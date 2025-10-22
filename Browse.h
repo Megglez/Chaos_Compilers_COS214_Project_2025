@@ -1,5 +1,7 @@
 #ifndef BROWSE_H
 #define BROWSE_H
+#include <iostream>
+using namespace std;
 
 class Browse : Action {
 

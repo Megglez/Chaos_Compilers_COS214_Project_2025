@@ -1,5 +1,7 @@
 #ifndef SEED_H
 #define SEED_H
+#include <iostream>
+using namespace std;
 
 class Seed : StageOfDevelopment {
 

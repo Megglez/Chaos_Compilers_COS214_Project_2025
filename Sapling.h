@@ -1,5 +1,7 @@
 #ifndef SAPLING_H
 #define SAPLING_H
+#include <iostream>
+using namespace std;
 
 class Sapling : StageOfDevelopment {
 

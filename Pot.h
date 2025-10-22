@@ -1,5 +1,7 @@
 #ifndef POT_H
 #define POT_H
+#include <iostream>
+using namespace std;
 
 class Pot : PlantDecorator {
 

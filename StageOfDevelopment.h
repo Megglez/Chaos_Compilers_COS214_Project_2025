@@ -1,5 +1,7 @@
 #ifndef STAGEOFDEVELOPMENT_H
 #define STAGEOFDEVELOPMENT_H
+#include <iostream>
+using namespace std;
 
 class StageOfDevelopment {
 

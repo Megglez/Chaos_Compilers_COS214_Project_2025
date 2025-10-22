@@ -1,5 +1,7 @@
 #ifndef TREEPLANT_H
 #define TREEPLANT_H
+#include <iostream>
+using namespace std;
 
 class TreePlant : Plant {
 

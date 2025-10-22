@@ -1,5 +1,7 @@
 #ifndef INVENTORYITERATOR_H
 #define INVENTORYITERATOR_H
+#include <iostream>
+using namespace std;
 
 class InventoryIterator : Iterator {
 

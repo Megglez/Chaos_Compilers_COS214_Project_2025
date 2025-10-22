@@ -1,5 +1,7 @@
 #ifndef FLOWERPLANT_H
 #define FLOWERPLANT_H
+#include <iostream>
+using namespace std;
 
 class FlowerPlant : Plant {
 

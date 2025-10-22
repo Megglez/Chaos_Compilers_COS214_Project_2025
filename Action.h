@@ -1,5 +1,7 @@
 #ifndef ACTION_H
 #define ACTION_H
+#include <iostream>
+using namespace std;
 
 class Action {
 

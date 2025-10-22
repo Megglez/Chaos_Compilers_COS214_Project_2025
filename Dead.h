@@ -1,5 +1,7 @@
 #ifndef DEAD_H
 #define DEAD_H
+#include <iostream>
+using namespace std;
 
 class Dead : StageOfDevelopment {
 

@@ -1,5 +1,7 @@
 #ifndef PLANT_H
 #define PLANT_H
+#include <iostream>
+using namespace std;
 
 class Plant {
 

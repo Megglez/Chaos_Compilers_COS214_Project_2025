@@ -1,5 +1,7 @@
 #ifndef STAFF _H
 #define STAFF _H
+#include <iostream>
+using namespace std;
 
 class Staff_ {
 

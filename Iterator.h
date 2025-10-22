@@ -1,5 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
+#include <iostream>
+using namespace std;
 
 class Iterator {
 

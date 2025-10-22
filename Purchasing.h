@@ -1,5 +1,7 @@
 #ifndef PURCHASING_H
 #define PURCHASING_H
+#include <iostream>
+using namespace std;
 
 class Purchasing : Action {
 

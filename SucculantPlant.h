@@ -1,5 +1,7 @@
 #ifndef SUCCULANTPLANT_H
 #define SUCCULANTPLANT_H
+#include <iostream>
+using namespace std;
 
 class SucculantPlant : Plant {
 

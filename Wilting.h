@@ -1,5 +1,7 @@
 #ifndef WILTING_H
 #define WILTING_H
+#include <iostream>
+using namespace std;
 
 class Wilting : StageOfDevelopment {
 
