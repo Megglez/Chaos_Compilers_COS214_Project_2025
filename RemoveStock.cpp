@@ -1,13 +1,11 @@
 #include "RemoveStock.h"
 
-void RemoveStock::execute() {
-	// TODO - implement RemoveStock::execute
+void RemoveStock::execute(std::unique_ptr<Plant>&& plant, int quantity) {
+	inventory->removePlant(std::move(plant), quantity);
 	
 }
 
-RemoveStock::RemoveStock() {
-	// TODO - implement RemoveStock::RemoveStock
-	
+RemoveStock::RemoveStock(Inventory* inv): inventory(inv) {
 }
 
 RemoveStock::~RemoveStock()
