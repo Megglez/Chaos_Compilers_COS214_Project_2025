@@ -5,7 +5,7 @@ using namespace std;
 
 class Command {
 public:
-	virtual void execute();
+	virtual void execute(std::unique_ptr<Plant>&& plant, int quantity) = 0;
 	Command();
 	virtual ~Command();
 };
