@@ -9,4 +9,3 @@ void WinterCommand::execute(){
     std::string winter = "winter";
     inventory->seasonalChange(autumn, winter);
 }
-
