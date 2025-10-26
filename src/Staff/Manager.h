@@ -1,12 +1,13 @@
 #ifndef MANAGER_H
 #define MANAGER_H
 #include <iostream>
-#include "Staff .h"
+#include "Staff.h"
 using namespace std;
 
-class Manager : Staff {
+class Manager : Staff
+{
 public:
-	Inventory* subject;
+	Inventory *subject;
 	void trackInventory();
 	void getAvailability();
 	void setAvailability();

@@ -1,15 +1,16 @@
-#ifndef PURCHASING_H
-#define PURCHASING_H
+#ifndef ENQUIRE_H
+#define ENQUIRE_H
 #include <iostream>
 #include "Action.h"
 using namespace std;
 
-class Purchasing : public Action {
+class Enquire : public Action
+{
 public:
 	void handle();
 	Action getNextAction();
-	Purchasing();
-	virtual ~Purchasing();
+	Enquire();
+	virtual ~Enquire();
 };
 
 #endif

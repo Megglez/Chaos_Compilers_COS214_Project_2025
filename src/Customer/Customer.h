@@ -4,9 +4,11 @@
 #include "Action.h"
 using namespace std;
 
-class Customer {
+class Customer
+{
 private:
 	Action action;
+
 public:
 	void request();
 	void setAction();

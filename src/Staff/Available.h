@@ -4,7 +4,8 @@
 #include "StaffState.h"
 using namespace std;
 
-class Available : public StaffState {
+class Available : public StaffState
+{
 public:
 	void handle();
 	Available();

@@ -1,12 +1,13 @@
 #ifndef GARDENER_H
 #define GARDENER_H
 #include <iostream>
-#include "Staff .h"
+#include "Staff.h"
 using namespace std;
 
-class Gardener : public Staff {
+class Gardener : public Staff
+{
 public:
-	Inventory* subject;
+	Inventory *subject;
 	void helpPlant();
 	void getCareStrategy();
 	void getAvailability();

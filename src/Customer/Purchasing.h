@@ -1,15 +1,16 @@
-#ifndef BROWSE_H
-#define BROWSE_H
+#ifndef PURCHASING_H
+#define PURCHASING_H
 #include <iostream>
 #include "Action.h"
 using namespace std;
 
-class Browse : public Action {
+class Purchasing : public Action
+{
 public:
 	void handle();
 	Action getNextAction();
-	Browse();
-	virtual ~Browse();
+	Purchasing();
+	virtual ~Purchasing();
 };
 
 #endif

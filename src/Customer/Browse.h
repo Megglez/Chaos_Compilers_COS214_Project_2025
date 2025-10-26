@@ -1,15 +1,16 @@
-#ifndef ENQUIRE_H
-#define ENQUIRE_H
+#ifndef BROWSE_H
+#define BROWSE_H
 #include <iostream>
 #include "Action.h"
 using namespace std;
 
-class Enquire : public Action {
+class Browse : public Action
+{
 public:
 	void handle();
 	Action getNextAction();
-	Enquire();
-	virtual ~Enquire();
+	Browse();
+	virtual ~Browse();
 };
 
 #endif

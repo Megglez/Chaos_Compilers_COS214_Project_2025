@@ -4,9 +4,10 @@
 #include "Plant.h"
 using namespace std;
 
-class TreePlant : public Plant {
+class TreePlant : public Plant
+{
 public:
-	Plant* clone();
+	Plant *clone();
 	void package();
 	TreePlant();
 	virtual ~TreePlant();

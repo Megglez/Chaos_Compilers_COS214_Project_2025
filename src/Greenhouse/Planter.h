@@ -4,9 +4,10 @@
 #include "Plant.h"
 using namespace std;
 
-class Planter {
+class Planter
+{
 public:
-	virtual Plant* planterMethod();
+	virtual Plant *planterMethod();
 	Planter();
 	virtual ~Planter();
 };

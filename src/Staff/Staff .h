@@ -1,13 +1,14 @@
 #ifndef STAFF_H
 #define STAFF_H
 #include <iostream>
-#include "Plant.h"
+#include "../Greenhouse/Plant.h"
 #include "StaffState.h"
-#include "Inventory.h"
+#include "../Greenhouse/Inventory.h"
 #include "InfoDesk.h"
 using namespace std;
 
-class Staff {
+class Staff
+{
 private:
 	string name;
 	string staffID;
@@ -16,7 +17,7 @@ private:
 	InfoDesk infoDesk;
 
 public:
-	void update(const std::string& update);
+	void update(const std::string &update);
 	void changeState();
 	virtual void getAvailability();
 	virtual void setAvailability();
