@@ -17,15 +17,16 @@ void Inventory::addPlant(std::unique_ptr<Plant> plant, int quantity) {
     if (it != inventoryList.end()) {
         // Plant exists - update quantity
         it->second.second += quantity;
-        std::cout << "Added " << quantity << " " << plantName 
-                  << ". Total: " << it->second.second << std::endl;
+        std::cout << "Added " << quantity << " " << plantName << ". Total: " << it->second.second << std::endl;
     } else {
         // New plant - insert with quantity
         inventoryList[plantName] = std::make_pair(std::move(plant), quantity);
         std::cout << "Added new plant: " << plantName 
                   << " with quantity: " << quantity << std::endl;
+        std::string message = plantName + " has just been added to the Inventory";
+        notify(message);
     }	
-	notify();
+	
 }
 
 void Inventory::removePlant(std::unique_ptr<Plant> plant, int quantity) {
@@ -40,24 +41,38 @@ void Inventory::removePlant(std::unique_ptr<Plant> plant, int quantity) {
             if (it->second.second == 0) {
                 inventoryList.erase(it);
                 std::cout << "Name" << " is now out of stock." << std::endl; // replace with plant->getName()
+                std::string message = "Name is now out of Stock. Please restock soon";// replace with plant->getName()
+                notify(message);
             }
         } else {
-            std::cout << "Error: Only " << it->second.second 
-                      << " " << "plantName" << " available. Cannot remove " // replace with plant->getName()
-                      << quantity << std::endl;
+            std::cout << "Error: Only " << it->second.second << " " << "plantName" << " available. Cannot remove " // replace with plant->getName()
+            << quantity << std::endl;
+
         }
     } else {
         std::cout << "Error: Plant " << "plantName" << " not found in inventory." << std::endl; // replace with plant->getName()
     }
-    notify();
+}
+
+void Inventory::removeAll(std::unique_ptr<Plant> plant){
+    auto it = inventoryList.find("Name"); // replace with plant->getName()
+    std::string message = "PlantName has just been removed from the inventory";
+    if (it != inventoryList.end()) {
+        inventoryList.erase(it);
+        notify(message);
+    }else {
+        std::cout << "Error: Plant " << "plantName" << " not found in inventory." << std::endl; // replace with plant->getName()
+    }
+
 }
 
 void Inventory::seasonalChange(std::string& fromSeason, std::string& toSeason){
     std::cout << "Season changing from " << fromSeason << " to " << toSeason << std::endl;
     adjustStockForSeason(toSeason);
 
+    std::string message = "The Inventory has just been adjusted for the " + toSeason;
     for(Staff* staff: staffList){
-        //staff->notify();
+        staff->update(message);
     }
 }
 
@@ -126,13 +141,13 @@ void Inventory::detach(Staff* staff) {
     if (it != staffList.end()) {
         staffList.erase(it);
     }
+
 }
 
-void Inventory::notify() {
+void Inventory::notify(std::string& message) {
 	for(Staff* staff: staffList){
-		//update staff function
+		staff->update(message);
 	}
-	
 }
 
 Inventory::~Inventory()

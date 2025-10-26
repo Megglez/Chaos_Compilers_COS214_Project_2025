@@ -11,7 +11,7 @@ using namespace std;
 class RemoveStock : public Command {
 public:
 	bool isEmpty;
-	void execute(std::unique_ptr<Plant>&& plant, int quantity) override;
+	void execute(std::unique_ptr<Plant>&& plant, int quantity = 1) override;
 	RemoveStock(Inventory* inv);
 	virtual ~RemoveStock();
 private:
