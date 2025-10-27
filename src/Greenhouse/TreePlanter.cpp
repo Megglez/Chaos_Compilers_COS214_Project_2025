@@ -1,13 +1,20 @@
 #include "TreePlanter.h"
+#include "TreeStrategy.h"
 
-Plant* TreePlanter::planterMethod() {
-	// TODO - implement TreePlanter::planterMethod
-	
+Plant* TreePlanter::planterMethod() 
+{
+	int water =3;
+	int sunlight =2;
+	int soil =1;
+	StageOfDevelopment* stage = new Seed();
+	TreeStrategy* state = new TreeStrategy();
+	Plant* plant = new Plant(water,soil,sunlight,stage,state);
+	return plant;
 }
 
-TreePlanter::TreePlanter() {
-	// TODO - implement TreePlanter::TreePlanter
-	
+TreePlanter::TreePlanter() 
+{
+
 }
 
 TreePlanter::~TreePlanter()

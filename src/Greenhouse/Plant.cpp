@@ -7,8 +7,8 @@ Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStra
     this->water=water;
     this->soil=soil;
     this->sunlight=sunlight;
-    this->stage = stage;
-    this->strategy = strategy;
+    //StageOfDevelopment* stage = new StageOfDevelopment();
+    //CareStrategy* strategy = new CareStrategy(); please fix it keeps trying to make a clone but thats pure virtual idk why it wont use the default constructor
 }
 
 void Plant::grow()

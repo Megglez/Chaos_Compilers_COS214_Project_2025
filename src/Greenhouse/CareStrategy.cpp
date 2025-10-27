@@ -2,6 +2,7 @@
 
 void CareStrategy::helpPlant()
 {
+    
 }
 
 CareStrategy::CareStrategy()
