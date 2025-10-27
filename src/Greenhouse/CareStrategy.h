@@ -6,8 +6,9 @@ using namespace std;
 class CareStrategy {
 public:
 	virtual void helpPlant();
-	CareStrategy();
+	CareStrategy() {};
 	virtual ~CareStrategy();
+	virtual CareStrategy* clone() const = 0;
 };
 
 #endif

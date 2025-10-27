@@ -1,36 +1,28 @@
 #include "Plant.h"
 
-Plant *Plant::clone()
+Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment stage,CareStrategy* strategy)
 {
-    return nullptr;
-}
-
-void Plant::package()
-{
+    this->water=water;
+    this->soil=soil;
+    this->sunlight=sunlight;
+    StageOfDevelopment* stage = new StageOfDevelopment();
+    //CareStrategy* strategy = new CareStrategy(); please fix it keeps trying to make a clone but thats pure virtual idk why it wont use the default constructor
 }
 
 void Plant::grow()
 {
-    // TODO - implement Plant::grow
-	
+    this->grow();
 }
 
-void Plant::setStage(StageOfDevelopment* stage){
-    if(this->stage){
-        delete this->stage;
-    }
-
-    this->stage = stage;
-}
-
-void Plant::helpPlant() {
+void Plant::helpPlant() 
+{
 	// TODO - implement Plant::helpPlant
 	
 }
 
-Plant::Plant() {
-	// TODO - implement Plant::Plant
-	
+void Plant::setState(StageOfDevelopment state)
+{
+    this->stage=state;
 }
 
 Plant::~Plant()
