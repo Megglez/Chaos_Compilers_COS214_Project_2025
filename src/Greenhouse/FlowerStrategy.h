@@ -7,7 +7,7 @@ using namespace std;
 class FlowerStrategy : public CareStrategy 
 {
 public:
-	void helpPlant();
+	virtual void helpPlant(std::string& care) override;
 	FlowerStrategy();
 	virtual ~FlowerStrategy();
 	CareStrategy* clone();

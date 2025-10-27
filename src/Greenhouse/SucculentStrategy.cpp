@@ -1,8 +1,8 @@
 #include "SucculentStrategy.h"
 
-void SucculentStrategy::helpPlant() 
+void SucculentStrategy::helpPlant(std::string& care) 
 {
-	// TODO - implement SucculentStrategy::helpPlant
+	cout << "Succulent currently being cared for by: " << care << std::endl;
 	
 }
 

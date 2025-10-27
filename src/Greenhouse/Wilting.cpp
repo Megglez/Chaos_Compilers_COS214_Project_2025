@@ -52,3 +52,8 @@ Wilting::Wilting() {
 Wilting::~Wilting() {
     // Cleanup code if needed
 }
+
+std::string Wilting::getStageName(){
+    return "Wilting";
+}
+

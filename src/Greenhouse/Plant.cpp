@@ -7,8 +7,8 @@ Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStra
     this->water=water;
     this->soil=soil;
     this->sunlight=sunlight;
-    //StageOfDevelopment* stage = new StageOfDevelopment();
-    //CareStrategy* strategy = new CareStrategy(); please fix it keeps trying to make a clone but thats pure virtual idk why it wont use the default constructor
+    this->stage = new Seed();
+    this->strategy = strategy; 
 }
 
 void Plant::grow()
@@ -18,8 +18,28 @@ void Plant::grow()
 
 void Plant::helpPlant() 
 {
-	// TODO - implement Plant::helpPlant
-	
+    if(stage->getStageName() == "Seed"){ 
+        cout << "Seed care: " << endl;
+        std::string message = "Gentle misting and warm conditions";
+        strategy->helpPlant(message);
+        
+    } else if(stage->getStageName() == "Sapling"){
+        cout << "Sapling care: " << endl;
+        std::string message = "Regular watering and protection from harsh elements";
+        strategy->helpPlant(message);
+        
+    } else if(stage->getStageName() == "Prime"){
+        cout << "Prime care: " << endl;
+        std::string message = "Full care regimen for mature plant";
+        strategy->helpPlant(message);
+        
+    } else if(stage->getStageName() == "Wilting"){
+        cout << "Wilting care: " << endl;
+        std::string message = "Extra attention and recovery measures";
+        strategy->helpPlant(message);
+    } else if(stage->getStageName() == "Dead"){
+        std::cout << "Unfortunately, your plant is dead, and there's no amount of water that can save it. Sorrows, sorrows, prayers" << std::endl;
+    }
 }
 
 void Plant::setState(StageOfDevelopment* state)

@@ -48,6 +48,7 @@ public:
      * @brief Virtual destructor for proper polymorphism
      */
     virtual ~Sapling();
+    virtual std::string getStageName() override;
 };
 
 #endif

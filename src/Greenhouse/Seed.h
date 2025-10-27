@@ -47,6 +47,8 @@ public:
      * @brief Virtual destructor for proper polymorphism
      */
     virtual ~Seed();
+
+    virtual std::string getStageName() override;
 };
 
 #endif

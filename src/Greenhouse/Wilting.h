@@ -51,6 +51,7 @@ public:
      * @brief Virtual destructor for proper polymorphism
      */
     virtual ~Wilting();
+    virtual std::string getStageName() override;
 };
 
 #endif

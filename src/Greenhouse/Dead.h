@@ -51,6 +51,7 @@ public:
      * @brief Virtual destructor for proper polymorphism
      */
     virtual ~Dead();
+    virtual std::string getStageName() override;
 };
 
 #endif

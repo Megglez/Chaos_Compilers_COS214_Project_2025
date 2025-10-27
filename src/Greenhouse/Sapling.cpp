@@ -53,3 +53,7 @@ Sapling::~Sapling()
 {
     // Cleanup code if needed
 }
+
+std::string Sapling::getStageName(){
+    return "Sapling";
+}

@@ -7,7 +7,7 @@ using namespace std;
 class SucculentStrategy : public CareStrategy 
 {
 public:
-	void helpPlant();
+	virtual void helpPlant(std::string& care) override;
 	SucculentStrategy();
 	virtual ~SucculentStrategy();
 };

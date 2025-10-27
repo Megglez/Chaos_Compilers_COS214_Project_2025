@@ -1,7 +1,7 @@
 #include "TreeStrategy.h"
 
-void TreeStrategy::helpPlant() {
-	// TODO - implement TreeStrategy::helpPlant
+void TreeStrategy::helpPlant(std::string& care) {
+	cout << "Tree currently being cared for by: " << care << std::endl;
 }
 
 TreeStrategy::TreeStrategy() {
