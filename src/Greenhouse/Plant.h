@@ -6,8 +6,9 @@
 #include "CareStrategy.h"
 using namespace std;
 
-class Plant {
-private:
+class Plant 
+{
+protected:
 	int water;
 	int soil;
 	int sunlight;
@@ -15,12 +16,12 @@ private:
 	CareStrategy* strategy;
 	string name;
 	string type;
-	
+
 public:
 	virtual Plant* clone();
-	virtual void package();
 	void grow();
 	void helpPlant();
+	virtual void setState(StageOfDevelopment state);
 	virtual string getType();
 	virtual string getName();
 	Plant();
