@@ -1,0 +1,15 @@
+#ifndef SAPLING_H
+#define SAPLING_H
+#include <iostream>
+#include "StageOfDevelopment.h"
+using namespace std;
+
+class Sapling : public StageOfDevelopment {
+public:
+	StageOfDevelopment getNextStage();
+	void handle();
+	Sapling();
+	virtual ~Sapling();
+};
+
+#endif
