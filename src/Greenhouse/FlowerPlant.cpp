@@ -12,20 +12,15 @@ Plant *FlowerPlant::clone()
         this->sunlight,
         this->stage,
         cr,
-        this->name,
-        this->type
+        this->name
     );
 }
 
-void FlowerPlant::setState(StageOfDevelopment state)
-{
-    stage= state;
-}
 
-FlowerPlant::FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment stage,CareStrategy* strategy,string name,string type):Plant(water,soil,sunlight,stage,strategy) 
+FlowerPlant::FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name):Plant(water,soil,sunlight,stage,strategy) 
 {
     this->name=name;
-    this->type=type;
+    this->type= "Flower";
 }
 
 string FlowerPlant::getName()
@@ -42,6 +37,5 @@ string FlowerPlant::getType()
 FlowerPlant::~FlowerPlant()
 {
     delete strategy;
-    delete this;
 }
 

@@ -27,11 +27,8 @@ StageOfDevelopment* Prime::getNextStage()
  */
 void Prime::handle(Plant* plant)
 {
-    // Example implementation:
-    // if (plant->getAge() > MATURE_AGE_THRESHOLD || plant->getHealth() < HEALTH_THRESHOLD) {
-    //     plant->setState(new Wilting());
-    // }
-    // plant->produceFruit(); // Mature plants can produce fruit/flowers
+    
+    plant->setState(new Wilting());
 }
 
 /**

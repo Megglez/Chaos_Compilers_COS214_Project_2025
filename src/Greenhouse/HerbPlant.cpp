@@ -1,9 +1,9 @@
 #include "HerbPlant.h"
 
-HerbPlant::HerbPlant(int water,int soil,int sunlight,StageOfDevelopment stage,CareStrategy* strategy,string name,string type):Plant(water,soil,sunlight,stage,strategy) 
+HerbPlant::HerbPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name):Plant(water,soil,sunlight,stage,strategy) 
 {
     this->name=name;
-    this->type = type;
+    this->type = "Herb";
 }
 
 
@@ -19,8 +19,7 @@ Plant *HerbPlant::clone()
         this->sunlight,
         this->stage,
         cr,
-        this->name,
-        this->type
+        this->name
     );
 }
 
@@ -34,13 +33,9 @@ string HerbPlant::getType()
     return type;
 }
 
-void HerbPlant::setState(StageOfDevelopment state)
-{
-    stage= state;
-}
+
 
 HerbPlant::~HerbPlant()
 {
     delete strategy;
-    delete this;
 }

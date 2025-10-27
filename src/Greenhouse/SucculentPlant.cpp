@@ -1,10 +1,10 @@
 #include "SucculentPlant.h"
 
 
-SucculentPlant::SucculentPlant(int water,int soil,int sunlight,StageOfDevelopment stage,CareStrategy* strategy,string name,string type):Plant(water,soil,sunlight,stage,strategy) 
+SucculentPlant::SucculentPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name):Plant(water,soil,sunlight,stage,strategy) 
 {
     this->name = name;
-    this->type= type;
+    this->type= "Succulent";
 }
 
 string SucculentPlant::getName()
@@ -28,19 +28,13 @@ Plant *SucculentPlant::clone()
         this->sunlight,
         this->stage,
         cr,
-        this->name,
-        this->type
+        this->name
     );
 }
 
-void SucculentPlant::setState(StageOfDevelopment state)
-{
-    stage= state;
-}
 
 
 SucculentPlant::~SucculentPlant()
 {
     delete strategy;
-    delete this;
 }

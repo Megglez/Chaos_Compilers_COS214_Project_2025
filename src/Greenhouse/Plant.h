@@ -2,10 +2,9 @@
 #define PLANT_H
 #include <iostream>
 #include <string>
-#include "StageOfDevelopment.h"
 #include "CareStrategy.h"
 using namespace std;
-
+class StageOfDevelopment;
 class Plant 
 {
 protected:
@@ -22,11 +21,11 @@ public:
 	void grow();
 	void setStage(StageOfDevelopment* stage);
 	void helpPlant();
-	virtual void setState(StageOfDevelopment state);
+	virtual void setState(StageOfDevelopment* state);
 	virtual string getType();
 	virtual string getName();
 	Plant();
-	Plant(int water,int soil,int sunlight,StageOfDevelopment stage,CareStrategy* strategy);
+	Plant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy);
 	virtual ~Plant();
 };
 

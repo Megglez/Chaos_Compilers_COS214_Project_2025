@@ -12,16 +12,15 @@ Plant *TreePlant::clone()
         this->sunlight,
         this->stage,
         cr,
-        this->name,
-        this->type
+        this->name
     );
     delete this;
 }
 
-TreePlant::TreePlant(int water,int soil,int sunlight,StageOfDevelopment stage,CareStrategy* strategy,string name,string type): Plant(water,soil,sunlight, stage,strategy) 
+TreePlant::TreePlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name): Plant(water,soil,sunlight, stage,strategy) 
 {
     this->name=name;
-    this->type=type;
+    this->type= "Tree";
 }
 
 string TreePlant::getName()
@@ -34,13 +33,8 @@ string TreePlant::getType()
     return type;
 }
 
-void TreePlant::setState(StageOfDevelopment state)
-{
-    this->stage=state;
-}
 
 TreePlant::~TreePlant()
 {
     delete strategy;
-    delete this;
 }

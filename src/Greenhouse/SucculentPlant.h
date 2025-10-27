@@ -11,7 +11,7 @@ public:
 	string getName();
 	string getType();
 	void setState(StageOfDevelopment state);
-	SucculentPlant(int water,int soil,int sunlight,StageOfDevelopment stage,CareStrategy* strategy,string name,string type);
+	SucculentPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
 	virtual ~SucculentPlant();
 };
 
