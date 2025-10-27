@@ -12,7 +12,7 @@ protected:
 	int water;
 	int soil;
 	int sunlight;
-	StageOfDevelopment stage;
+	StageOfDevelopment* stage;
 	CareStrategy* strategy;
 	string name;
 	string type;
@@ -20,6 +20,7 @@ protected:
 public:
 	virtual Plant* clone();
 	void grow();
+	void setStage(StageOfDevelopment* stage);
 	void helpPlant();
 	virtual void setState(StageOfDevelopment state);
 	virtual string getType();
