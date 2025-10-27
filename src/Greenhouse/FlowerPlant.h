@@ -11,7 +11,8 @@ public:
 	Plant* clone() override;
 	string getName();
 	string getType();
-	FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
+	void setState(StageOfDevelopment state);
+	FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name,string type);
 	virtual ~FlowerPlant();
 };
 
