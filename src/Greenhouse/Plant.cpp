@@ -15,6 +15,14 @@ void Plant::grow()
 	
 }
 
+void Plant::setStage(StageOfDevelopment* stage){
+    if(this->stage){
+        delete this->stage;
+    }
+
+    this->stage = stage;
+}
+
 void Plant::helpPlant() {
 	// TODO - implement Plant::helpPlant
 	
