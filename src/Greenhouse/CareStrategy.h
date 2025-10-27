@@ -8,6 +8,7 @@ public:
 	virtual void helpPlant();
 	CareStrategy() {};
 	virtual ~CareStrategy();
+	virtual CareStrategy* clone()= 0;
 };
 
 #endif
