@@ -12,7 +12,7 @@ public:
 	string getName();
 	string getType();
 	void setState(StageOfDevelopment state);
-	FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment stage,CareStrategy* strategy,string name,string type);
+	FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name,string type);
 	virtual ~FlowerPlant();
 };
 

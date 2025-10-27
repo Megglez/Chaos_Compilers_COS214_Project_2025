@@ -22,7 +22,7 @@ public:
 	void grow();
 	void setStage(StageOfDevelopment* stage);
 	void helpPlant();
-	virtual void setState(StageOfDevelopment state);
+	virtual void setState(StageOfDevelopment* state);
 	virtual string getType();
 	virtual string getName();
 	Plant();
