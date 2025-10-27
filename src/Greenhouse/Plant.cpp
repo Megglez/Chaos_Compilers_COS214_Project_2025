@@ -1,36 +1,33 @@
 #include "Plant.h"
+#include "StageOfDevelopment.h" 
+#include "Seed.h"
 
-Plant *Plant::clone()
+Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStrategy* strategy)
 {
-    return nullptr;
-}
-
-void Plant::package()
-{
+    this->water=water;
+    this->soil=soil;
+    this->sunlight=sunlight;
+    this->stage = stage;
+    this->strategy = strategy;
 }
 
 void Plant::grow()
 {
-    // TODO - implement Plant::grow
-	
+    stage->handle(this);
 }
 
-void Plant::setStage(StageOfDevelopment* stage){
-    if(this->stage){
-        delete this->stage;
-    }
-
-    this->stage = stage;
-}
-
-void Plant::helpPlant() {
+void Plant::helpPlant() 
+{
 	// TODO - implement Plant::helpPlant
 	
 }
 
-Plant::Plant() {
-	// TODO - implement Plant::Plant
-	
+void Plant::setState(StageOfDevelopment* state)
+{
+    if(stage){
+        delete stage;
+    }
+    this->stage = state;
 }
 
 Plant::~Plant()

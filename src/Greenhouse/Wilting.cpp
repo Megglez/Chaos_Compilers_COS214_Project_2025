@@ -16,11 +16,8 @@
  * (e.g., if water/nutrients are provided) before transitioning to Dead
  */
 void Wilting::handle(Plant* plant) {
-    // Example implementation:
-    // if (plant->getHealth() <= CRITICAL_HEALTH_THRESHOLD) {
-    //     plant->setState(new Dead());
-    // }
-    // plant->deteriorate(); // Continue wilting process
+    plant->setState(new Dead());
+ 
 }
 
 /**
