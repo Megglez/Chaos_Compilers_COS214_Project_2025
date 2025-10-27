@@ -4,7 +4,6 @@
  * @brief Constructs a new StageOfDevelopment object
  * 
  * Base constructor for all plant development stages. Derived classes
- * can extend this to initialize stage-specific properties.
  */
 StageOfDevelopment::StageOfDevelopment()
 {
