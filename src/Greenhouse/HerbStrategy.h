@@ -9,6 +9,7 @@ public:
 	void helpPlant();
 	HerbStrategy();
 	virtual ~HerbStrategy();
+	CareStrategy* clone();
 };
 
 #endif

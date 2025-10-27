@@ -11,7 +11,6 @@ public:
 	Plant* planterMethod();
 	HerbPlanter();
 	virtual ~HerbPlanter();
-	CareStrategy* clone();
 };
 
 #endif
