@@ -39,3 +39,7 @@ HerbPlant::~HerbPlant()
 {
     delete strategy;
 }
+
+void HerbPlant::package(){
+    
+}

@@ -39,3 +39,7 @@ FlowerPlant::~FlowerPlant()
     delete strategy;
 }
 
+void FlowerPlant::package(){
+    
+}
+

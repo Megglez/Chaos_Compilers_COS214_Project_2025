@@ -12,6 +12,7 @@ public:
 	string getType();
 	TreePlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
 	virtual ~TreePlant();
+	virtual void package() override;
 };
 
 #endif

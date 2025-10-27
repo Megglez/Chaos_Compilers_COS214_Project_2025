@@ -13,6 +13,7 @@ public:
 	void setState(StageOfDevelopment state);
 	SucculentPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
 	virtual ~SucculentPlant();
+	virtual void package() override;
 };
 
 #endif

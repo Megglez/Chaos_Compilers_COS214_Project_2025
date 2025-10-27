@@ -13,6 +13,7 @@ public:
 	string getType();
 	HerbPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
 	virtual ~HerbPlant();
+	virtual void package() override;
 };
 
 #endif
