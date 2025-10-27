@@ -8,7 +8,6 @@ public:
 	virtual void helpPlant();
 	CareStrategy() {};
 	virtual ~CareStrategy();
-	virtual CareStrategy* clone() const = 0;
 };
 
 #endif

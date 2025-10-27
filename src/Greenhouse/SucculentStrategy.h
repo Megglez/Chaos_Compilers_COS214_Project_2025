@@ -4,7 +4,8 @@
 #include "CareStrategy.h"
 using namespace std;
 
-class SucculentStrategy : public CareStrategy {
+class SucculentStrategy : public CareStrategy 
+{
 public:
 	void helpPlant();
 	SucculentStrategy();

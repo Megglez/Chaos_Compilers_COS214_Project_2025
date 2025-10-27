@@ -1,11 +1,13 @@
 #include "SucculentStrategy.h"
 
-void SucculentStrategy::helpPlant() {
+void SucculentStrategy::helpPlant() 
+{
 	// TODO - implement SucculentStrategy::helpPlant
 	
 }
 
-SucculentStrategy::SucculentStrategy() {
+SucculentStrategy::SucculentStrategy() 
+{
 	// TODO - implement SucculentStrategy::SucculentStrategy
 	
 }
