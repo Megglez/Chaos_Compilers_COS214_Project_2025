@@ -41,6 +41,11 @@ Summer::Summer(Inventory* inv): inventory(inv){
     commands->execute();
 }
 
+std::string Summer::getSeason() {
+    return "Summer";
+}
+
+
 /**
  * @brief Destructor for Summer season
  * 

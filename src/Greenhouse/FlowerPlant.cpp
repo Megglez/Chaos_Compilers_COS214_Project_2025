@@ -16,10 +16,7 @@ Plant *FlowerPlant::clone()
     );
 }
 
-void FlowerPlant::setState(StageOfDevelopment *state)
-{
-    stage= state;
-}
+
 
 FlowerPlant::FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment *stage,CareStrategy* strategy,string name):Plant(water,soil,sunlight,stage,strategy) 
 {

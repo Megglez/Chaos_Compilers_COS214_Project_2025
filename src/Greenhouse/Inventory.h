@@ -14,7 +14,7 @@ using namespace std;
 #include "Prime.h"
 #include "Wilting.h"
 #include "Dead.h"
-#include "../Staff/Staff.h"
+#include "Staff.h"
 
 /**
  * @class Inventory

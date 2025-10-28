@@ -9,6 +9,7 @@
 #include "src/Greenhouse/FlowerPlant.h"
 #include "src/Greenhouse/HerbPlant.h"
 
+
 int main(){
     Planter* FlowerP = new FlowerPlanter();
     Planter* HerbP = new HerbPlanter();
@@ -20,10 +21,10 @@ int main(){
     Plant* Succ = SuccP->planterMethod("Cactus");
     Plant* Tree = TreeP->planterMethod("Willow");
 
-    /*std::cout << Flower->getName();
-    std::cout << Herb->getName();
-    std::cout << Succ->getName();
-    std::cout <<Tree->getName();*/
+    std::cout << Flower->getName() << std::endl;
+    std::cout << Herb->getName() <<std::endl;
+    std::cout << Succ->getName()<< std::endl;
+    std::cout <<Tree->getName() <<std::endl;
 
     return 0;
 

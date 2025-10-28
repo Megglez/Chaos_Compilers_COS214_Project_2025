@@ -17,15 +17,14 @@ protected:
 	string type;
 
 public:
-	virtual Plant* clone();
+	virtual Plant* clone() =0;
 	void grow();
-	void setStage(StageOfDevelopment* stage);
+	void setState(StageOfDevelopment* stage);
 	void helpPlant();
 	virtual void package() = 0;
-	virtual void setState(StageOfDevelopment* state);
-	virtual string getType();
-	virtual string getName();
-	Plant();
+	virtual string getType() = 0;
+	virtual string getName() = 0;
+	Plant(){};
 	Plant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy);
 	virtual ~Plant();
 };

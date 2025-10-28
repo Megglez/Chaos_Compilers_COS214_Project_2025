@@ -7,7 +7,11 @@ Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStra
     this->water=water;
     this->soil=soil;
     this->sunlight=sunlight;
-    this->stage = new Seed();
+    if(stage->getStageName() != "Seed"){
+        this->stage = stage;
+    }else{
+        this->stage = new Seed();
+    }
     this->strategy = strategy; 
 }
 
