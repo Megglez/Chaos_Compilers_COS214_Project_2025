@@ -8,6 +8,7 @@ class Customer
 {
 private:
 	Action action;
+	int id;
 
 public:
 	void request();
