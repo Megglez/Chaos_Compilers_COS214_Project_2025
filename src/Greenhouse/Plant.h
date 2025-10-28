@@ -11,7 +11,7 @@ private:
 	int water;
 	int soil;
 	int sunlight;
-	StageOfDevelopment stage;
+	StageOfDevelopment* stage;
 	CareStrategy* strategy;
 	string name;
 	string type;
@@ -20,6 +20,7 @@ public:
 	virtual Plant* clone();
 	virtual void package();
 	void grow();
+	void setStage(StageOfDevelopment* stage);
 	void helpPlant();
 	virtual string getType();
 	virtual string getName();
