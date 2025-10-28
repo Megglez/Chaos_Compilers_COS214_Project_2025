@@ -14,6 +14,7 @@ using namespace std;
 #include "Prime.h"
 #include "Wilting.h"
 #include "Dead.h"
+#include "../Staff/Staff.h"
 
 /**
  * @class Inventory
@@ -35,10 +36,7 @@ protected:
      */
     Inventory();
     
-    /**
-     * @brief Protected destructor
-     */
-    ~Inventory() = default;
+   
 
 public:
     /**

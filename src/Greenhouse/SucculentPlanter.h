@@ -10,7 +10,7 @@ class SucculentPlanter : public Planter
 private: 
 	Seed seed;
 public:
-	Plant* planterMethod();
+	virtual Plant* planterMethod(std::string name) override;
 	SucculentPlanter();
 	virtual ~SucculentPlanter();
 };

@@ -14,7 +14,7 @@ CXXFLAGS = -g -std=c++17 -Wall -Wextra
 GCOV_FLAGS = -fprofile-arcs -ftest-coverage
 
 # Find all source files in src subfolders
-SRC_DIRS = src/Customer src/Greenhouse src/Staff
+SRC_DIRS = src/Greenhouse src/Staff
 SRCS = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 OBJS = $(SRCS:.cpp=.o)
 

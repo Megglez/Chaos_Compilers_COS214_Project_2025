@@ -10,3 +10,7 @@ TreeStrategy::TreeStrategy() {
 
 TreeStrategy::~TreeStrategy() {
 }
+
+CareStrategy* TreeStrategy::clone(){
+	return new TreeStrategy();
+}

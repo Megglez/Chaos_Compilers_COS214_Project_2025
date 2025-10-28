@@ -3,7 +3,7 @@
 #include <iostream>
 #include "../Greenhouse/Plant.h"
 #include "StaffState.h"
-#include "../Greenhouse/Inventory.h"
+class Inventory;
 #include "InfoDesk.h"
 using namespace std;
 
