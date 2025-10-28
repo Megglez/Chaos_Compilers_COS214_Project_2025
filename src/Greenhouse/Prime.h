@@ -50,6 +50,7 @@ public:
      * @brief Virtual destructor for proper polymorphism
      */
     virtual ~Prime();
+    virtual std::string getStageName() override;
 };
 
 #endif

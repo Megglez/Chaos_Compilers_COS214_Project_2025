@@ -51,3 +51,7 @@ Prime::~Prime()
 {
     // Cleanup code if needed
 }
+
+std::string Prime::getStageName(){
+    return "Prime";
+}

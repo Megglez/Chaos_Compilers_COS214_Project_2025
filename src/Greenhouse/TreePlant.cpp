@@ -38,3 +38,6 @@ TreePlant::~TreePlant()
 {
     delete strategy;
 }
+
+
+void TreePlant::package(){}

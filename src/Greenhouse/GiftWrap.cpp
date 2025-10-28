@@ -1,7 +1,9 @@
 #include "GiftWrap.h"
 
 void GiftWrap::package() {
-	// TODO - implement GiftWrap::package
+	PlantDecorator::package();
+    
+    cout << "Adding beautiful gift wrap with a bow!" << endl;
 	
 }
 

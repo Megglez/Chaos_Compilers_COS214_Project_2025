@@ -47,3 +47,7 @@ Seed::~Seed()
 {
     // Cleanup code if needed
 }
+
+std::string Seed::getStageName(){
+    return "Seed";
+}
