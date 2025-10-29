@@ -6,7 +6,7 @@ using namespace std;
 
 class HerbStrategy : public CareStrategy {
 public:
-	void helpPlant();
+	virtual void helpPlant(std::string& care) override;
 	HerbStrategy();
 	virtual ~HerbStrategy();
 };
