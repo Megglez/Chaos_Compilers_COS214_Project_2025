@@ -2,8 +2,7 @@
 #include "./ui_nursary.h"
 
 Nursary::Nursary(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::Nursary)
+    : QMainWindow(parent), ui(new Ui::Nursary)
 {
     ui->setupUi(this);
 }

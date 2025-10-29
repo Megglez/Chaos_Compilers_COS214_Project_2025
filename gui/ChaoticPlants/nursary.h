@@ -4,8 +4,9 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class Nursary;
+namespace Ui
+{
+    class Nursary;
 }
 QT_END_NAMESPACE
 
