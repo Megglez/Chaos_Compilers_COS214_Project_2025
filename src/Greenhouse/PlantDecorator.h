@@ -6,10 +6,11 @@ using namespace std;
 
 class PlantDecorator : public Plant {
 public:
-	Plant* plant;
-	void package();
+	virtual void package() override;
 	PlantDecorator();
 	virtual ~PlantDecorator();
+private:
+	Plant* plantDec;
 };
 
 #endif

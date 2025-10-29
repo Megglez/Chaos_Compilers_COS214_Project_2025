@@ -6,7 +6,7 @@ using namespace std;
 
 class SpecialArrangement : public PlantDecorator {
 public:
-	void package();
+	virtual void package() override;
 	SpecialArrangement();
 	virtual ~SpecialArrangement();
 };

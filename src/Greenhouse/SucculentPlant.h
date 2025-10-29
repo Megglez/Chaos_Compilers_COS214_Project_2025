@@ -4,12 +4,16 @@
 #include "Plant.h"
 using namespace std;
 
-class SucculentPlant : public Plant {
+class SucculentPlant : public Plant 
+{
 public:
-	Plant* clone();
-	void package();
-	SucculentPlant();
+	Plant* clone() override;
+	string getName();
+	string getType();
+	void setState(StageOfDevelopment state);
+	SucculentPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
 	virtual ~SucculentPlant();
+	virtual void package() override;
 };
 
 #endif

@@ -1,7 +1,9 @@
 #include "Pot.h"
 
 void Pot::package() {
-	// TODO - implement Pot::package
+	PlantDecorator::package();
+    
+    cout << "Adding the plant to a pot!" << endl;
 	
 }
 

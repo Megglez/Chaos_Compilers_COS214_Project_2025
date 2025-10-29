@@ -1,11 +1,13 @@
 #include "SucculentStrategy.h"
 
-void SucculentStrategy::helpPlant() {
-	// TODO - implement SucculentStrategy::helpPlant
+void SucculentStrategy::helpPlant(std::string& care) 
+{
+	cout << "Succulent currently being cared for by: " << care << std::endl;
 	
 }
 
-SucculentStrategy::SucculentStrategy() {
+SucculentStrategy::SucculentStrategy() 
+{
 	// TODO - implement SucculentStrategy::SucculentStrategy
 	
 }
