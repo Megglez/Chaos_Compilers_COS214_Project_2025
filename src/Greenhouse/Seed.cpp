@@ -25,7 +25,7 @@ StageOfDevelopment* Seed::getNextStage()
  */
 void Seed::handle(Plant* plant)
 {
-    plant->setStage(new Sapling());
+    plant->setState(new Sapling());
 }
 
 /**

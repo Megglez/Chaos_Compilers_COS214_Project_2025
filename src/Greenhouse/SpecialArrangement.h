@@ -7,8 +7,10 @@ using namespace std;
 class SpecialArrangement : public PlantDecorator {
 public:
 	virtual void package() override;
-	SpecialArrangement();
+	SpecialArrangement(Plant* plant);
 	virtual ~SpecialArrangement();
+	virtual Plant* clone() override;
+
 };
 
 #endif

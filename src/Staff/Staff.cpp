@@ -18,3 +18,8 @@ Staff::Staff()
 Staff::~Staff()
 {
 }
+
+void Staff::getAvailability(){
+	
+}
+void Staff::setAvailability(){}

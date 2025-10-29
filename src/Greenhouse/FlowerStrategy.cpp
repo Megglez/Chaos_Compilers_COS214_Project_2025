@@ -15,3 +15,7 @@ FlowerStrategy::FlowerStrategy()
 FlowerStrategy::~FlowerStrategy()
 {
 }
+
+CareStrategy* FlowerStrategy::clone(){
+	return new FlowerStrategy();
+}

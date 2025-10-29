@@ -47,8 +47,8 @@ WinterCommand::WinterCommand(Inventory* inv): inventory(inv){
  * @see Inventory::updatePlantStagesForSeason
  */
 void WinterCommand::execute(){
-    std::string autumn = "autumn";
-    std::string winter = "winter";
+    std::string autumn = "Autumn";
+    std::string winter = "Winter";
     inventory->seasonalChange(autumn, winter);
 }
 

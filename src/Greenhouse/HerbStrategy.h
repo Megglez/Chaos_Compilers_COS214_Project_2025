@@ -9,6 +9,7 @@ public:
 	virtual void helpPlant(std::string& care) override;
 	HerbStrategy();
 	virtual ~HerbStrategy();
+	virtual CareStrategy* clone() override;
 };
 
 #endif

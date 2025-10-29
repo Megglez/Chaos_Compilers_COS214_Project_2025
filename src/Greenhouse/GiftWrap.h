@@ -7,8 +7,9 @@ using namespace std;
 class GiftWrap : public PlantDecorator {
 public:
 	virtual void package() override;
-	GiftWrap();
+	GiftWrap(Plant* plant);
 	virtual ~GiftWrap();
+	virtual Plant* clone() override;
 };
 
 #endif

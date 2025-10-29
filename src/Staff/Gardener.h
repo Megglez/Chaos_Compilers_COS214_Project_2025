@@ -10,8 +10,8 @@ public:
 	Inventory *subject;
 	void helpPlant();
 	void getCareStrategy();
-	void getAvailability();
-	void setAvailability();
+	virtual void getAvailability();
+	virtual void setAvailability();
 	Gardener();
 	virtual ~Gardener();
 };
