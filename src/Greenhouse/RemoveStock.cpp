@@ -39,6 +39,7 @@
  */
 void RemoveStock::execute(std::unique_ptr<Plant>&& plant, int quantity) {
 	inventory->removeAll(std::move(plant));
+	std::cout << quantity;
 }
 
 /**

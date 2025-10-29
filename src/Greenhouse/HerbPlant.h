@@ -8,9 +8,9 @@ using namespace std;
 class HerbPlant : public Plant 
 {
 public:
-	Plant* clone() override;
-	string getName();
-	string getType();
+	virtual Plant* clone() override;
+	virtual string getName() override;
+	virtual string getType() override;
 	HerbPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
 	virtual ~HerbPlant();
 	virtual void package() override;

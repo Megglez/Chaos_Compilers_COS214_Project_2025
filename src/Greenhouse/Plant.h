@@ -17,17 +17,21 @@ protected:
 	string type;
 
 public:
-	virtual Plant* clone();
-	void grow();
-	void setStage(StageOfDevelopment* stage);
-	void helpPlant();
+	virtual Plant* clone() =0;
+	virtual void grow();
+	virtual void setState(StageOfDevelopment* stage);
+	virtual void helpPlant();
 	virtual void package() = 0;
-	virtual void setState(StageOfDevelopment* state);
-	virtual string getType();
-	virtual string getName();
-	Plant();
+	virtual string getType() = 0;
+	virtual string getName() = 0;
+	virtual StageOfDevelopment* getState();
+	virtual int getWater();
+	virtual int getSoil();
+	virtual int getSunlight();
+	Plant(){};
 	Plant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy);
 	virtual ~Plant();
+	virtual bool isWinter()  const ;
 };
 
 #endif

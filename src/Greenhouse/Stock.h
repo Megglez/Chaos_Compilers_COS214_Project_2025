@@ -76,11 +76,11 @@ public:
      * Currently displays placeholder information.
      */
     void printStock();
-
+    int getTotalPlants();
 private:
     Command* command; ///< Current command being executed
     Inventory* inventory; ///< Reference to the main inventory system
-    std::vector<std::unique_ptr<Plant>> StockList; ///< Local collection of plants
+    std::vector<Plant*> StockList; ///< Local collection of plants
 };
 
 #endif

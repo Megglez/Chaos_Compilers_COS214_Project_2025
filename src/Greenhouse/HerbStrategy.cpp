@@ -12,3 +12,7 @@ HerbStrategy::HerbStrategy() {
 HerbStrategy::~HerbStrategy()
 {
 }
+
+CareStrategy* HerbStrategy::clone(){
+	return new HerbStrategy();
+}

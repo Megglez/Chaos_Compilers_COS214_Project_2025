@@ -15,3 +15,8 @@ SucculentStrategy::SucculentStrategy()
 SucculentStrategy::~SucculentStrategy()
 {
 }
+
+
+CareStrategy* SucculentStrategy::clone(){
+	return new SucculentStrategy();
+}

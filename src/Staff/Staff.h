@@ -3,7 +3,7 @@
 #include <iostream>
 #include "../Greenhouse/Plant.h"
 #include "StaffState.h"
-#include "../Greenhouse/Inventory.h"
+class Inventory;
 #include "InfoDesk.h"
 using namespace std;
 
@@ -17,7 +17,7 @@ private:
 	InfoDesk infoDesk;
 
 public:
-	void update(const std::string &update);
+	virtual void update(const std::string &update);
 	void changeState();
 	virtual void getAvailability();
 	virtual void setAvailability();

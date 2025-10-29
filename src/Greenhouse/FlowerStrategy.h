@@ -10,7 +10,7 @@ public:
 	virtual void helpPlant(std::string& care) override;
 	FlowerStrategy();
 	virtual ~FlowerStrategy();
-	CareStrategy* clone();
+	virtual CareStrategy* clone() override;
 };
 
 #endif

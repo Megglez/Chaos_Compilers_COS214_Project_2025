@@ -6,7 +6,7 @@ using namespace std;
 class CareStrategy {
 public:
 	virtual void helpPlant(std::string& care) = 0;
-	CareStrategy() {};
+	CareStrategy();
 	virtual ~CareStrategy();
 	virtual CareStrategy* clone()= 0;
 };
