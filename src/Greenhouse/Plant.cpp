@@ -57,3 +57,19 @@ void Plant::setState(StageOfDevelopment* state)
 Plant::~Plant()
 {
 }
+
+bool Plant::isWinter() const  { return false; }
+
+StageOfDevelopment* Plant::getState(){
+    return stage;
+}
+
+int Plant::getWater(){
+    return water;
+}
+int Plant::getSoil(){
+    return soil;
+}
+int Plant::getSunlight(){
+    return sunlight;
+}

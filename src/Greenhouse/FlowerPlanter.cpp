@@ -8,13 +8,13 @@ Plant* FlowerPlanter::planterMethod(std::string name)
 	int soil =1;
 	StageOfDevelopment* stage = new Seed();
 	FlowerStrategy* state = new FlowerStrategy();
-	Plant* plant = new FlowerPlant(water, soil, sunlight, stage, state, name);
+	Plant* plant = new FlowerPlant(water, soil, sunlight, stage, state, name, isWinter);
 	return plant;
 }
 
-FlowerPlanter::FlowerPlanter() 
+FlowerPlanter::FlowerPlanter(bool isWinter) 
 {
-	// TODO - implement FlowerPlanter::FlowerPlanter
+	this->isWinter = isWinter;
 	
 }
 

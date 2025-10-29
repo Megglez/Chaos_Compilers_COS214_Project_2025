@@ -63,7 +63,7 @@ Spring::~Spring(){
  * @note This method needs to be implemented to return the actual season name
  */
 std::string Spring::getSeason() {
-    return "spring";
+    return "Spring";
 }
 
 /**

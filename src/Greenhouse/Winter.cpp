@@ -66,7 +66,7 @@ Winter::~Winter(){
  * @note This method needs to be implemented to return the actual season name
  */
 std::string Winter::getSeason() {
-    return "winter";
+    return "Winter";
 }
 
 /**

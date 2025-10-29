@@ -89,7 +89,7 @@ void Inventory::removePlant(std::unique_ptr<Plant> plant, int quantity) {
  */
 void Inventory::removeAll(std::unique_ptr<Plant> plant){
     auto it = inventoryList.find(plant->getName()); // replace with plant->getName()
-    std::string message = "PlantName has just been removed from the inventory";
+    std::string message = plant->getName() + " has just been removed from the inventory";
     if (it != inventoryList.end()) {
         inventoryList.erase(it);
         notify(message);
@@ -132,47 +132,69 @@ void Inventory::updatePlantStagesForSeason(const std::string& season) {
  * based on seasonal changes.
  */
 StageOfDevelopment* Inventory::determineStageForSeason(Plant* plant, const std::string& season) {
-    std::string plantType = getPlantType(plant);
+    std::string plantType = plant->getType();
     
-    if (season == "spring") {
+    if (season == "Spring") {
         // Spring: Most plants start growing
-        if (plantType == "flower" || plantType == "herb") {
-            return new Seed(); // or new Sapling() depending on your logic
-        } else if (plantType == "tree") {
+        if (plantType == "flower") {
+            if(plant->isWinter()){
+                return new Wilting();
+            }else{
+                return new Seed();
+            }
+        } else if(plantType == "Herb"){
+            return new Seed();
+        }else if (plantType == "Tree") {
             return new Sapling();
-        } else if (plantType == "succulent") {
+        } else if (plantType == "Succulent") {
             return new Prime(); // Succulents are resilient
         }
         
-    } else if (season == "summer") {
+    } else if (season == "Summer") {
         // Summer: Peak growth for most plants
-        if (plantType == "flower" || plantType == "herb") {
+        if (plantType == "flower") {
+            if(plant->isWinter()){
+                return new Dead();
+            }else{
+                return new Prime();
+            }
+        } else if(plantType == "Herb"){
             return new Prime();
-        } else if (plantType == "tree") {
+        } else if (plantType == "Tree") {
             return new Prime();
-        } else if (plantType == "succulent") {
+        } else if (plantType == "Succulent") {
             return new Prime();
         }
         
-    } else if (season == "autumn") {
+    } else if (season == "Autumn") {
         // Autumn: Plants start declining
-        if (plantType == "flower") {
-            return new Wilting(); // Annual flowers die back
-        } else if (plantType == "herb") {
+        if (plantType == "Flower") {
+            if(plant->isWinter()){
+                return new Sapling();
+            }else{
+                return new Wilting();
+            }
+        } else if (plantType == "Herb") {
             return new Wilting(); // Herbs start fading
-        } else if (plantType == "tree") {
+        } else if (plantType == "Tree") {
             return new Prime(); // Trees still okay
-        } else if (plantType == "succulent") {
+        } else if (plantType == "Succulent") {
             return new Wilting(); // Succulents struggle with cold
         }
         
-    } else if (season == "winter") {
+    } else if (season == "Winter") {
         // Winter: Most plants dormant or dead
-        if (plantType == "flower" || plantType == "herb") {
-            return new Dead(); // Most die in winter
-        } else if (plantType == "tree") {
+        if (plantType == "Flower") {
+            if(plant->isWinter()){
+                return new Prime();
+            }else{
+                return new Dead();
+            }
+        } else if (plantType == "Herb") {
+            return new Dead(); // Most die in Winter
+        } else if (plantType == "Tree") {
             return new Wilting(); // Trees dormant but not dead
-        } else if (plantType == "succulent") {
+        } else if (plantType == "Succulent") {
             return new Dead(); // Succulents can't handle frost
         }
     }
@@ -199,38 +221,7 @@ void Inventory::seasonalChange(std::string& fromSeason, std::string& toSeason){
     }
 }
 
-/**
- * @brief Updates stock level for a specific plant type
- * @param targetType The type of plant to update (e.g., "herb", "flower")
- * @param newStockLevel The new stock level to set
- * 
- * Iterates through all plants of the specified type and updates their
- * quantities to the new stock level. Used primarily for seasonal adjustments.
- */
-void Inventory::updateStockByPlantType(const std::string& targetType, int newStockLevel) {
-    for (auto& [plantName, plantData] : inventoryList) {
-        auto& [plantPtr, currentStock] = plantData;
-        
-        if (plantPtr && getPlantType(plantPtr.get()) == targetType) {
-            std::cout << "Updating " << plantName << " (" << targetType 
-                      << ") stock from " << currentStock << " to " << newStockLevel << std::endl;
-            currentStock = newStockLevel;
-        }
-    }
-}
 
-/**
- * @brief Gets the type classification of a plant
- * @param plant Pointer to the plant to check
- * @return String representing the plant type (e.g., "herb", "flower")
- * 
- * Returns the categorical type of the plant, used for seasonal
- * adjustments and inventory management operations.
- */
-std::string Inventory::getPlantType(Plant* plant) {
-    if (!plant) return "unknown";
-    return "Herb"; //plant->returnType(); // This returns "succulent", "herb", "flower", "tree", etc.
-}
 
 /**
  * @brief Adjusts stock levels based on seasonal requirements
@@ -239,37 +230,98 @@ std::string Inventory::getPlantType(Plant* plant) {
  * Modifies inventory quantities for different plant types according to
  * seasonal demand and growing conditions. Each season has specific
  * stock level requirements for different plant categories.
+ * 
+ * Decided modify it to include WinterFlowers
  */
-void Inventory::adjustStockForSeason(const std::string& season){
-     if (season == "summer") {
-        // Spring → Summer changes
-        updateStockByPlantType("succulent", 100);  // High stock - peak season
-        updateStockByPlantType("herb", 100);       // High stock - all types available  
-        updateStockByPlantType("flower", 100);     // High stock - summer annuals
-        updateStockByPlantType("tree", 70);        // Medium stock
+void Inventory::adjustStockForSeason(const std::string& season) {
+    std::cout << "Adjusting stock for season: " << season << std::endl;
+    
+
+    for (auto& [plantName, plantData] : inventoryList) {
         
-    } else if (season == "autumn") {
-        // Summer → Autumn changes
-        updateStockByPlantType("succulent", 10);   // Low stock - frost kills them
-        updateStockByPlantType("herb", 20);        // Low stock - basil dies, others fade
-        updateStockByPlantType("flower", 50);      // Changing stock
-        updateStockByPlantType("tree", 100);       // High stock - prime planting time
+        auto& [plantPtr, currentStock] = plantData;
         
-    } else if (season == "winter") {
-        // Autumn → Winter changes
-        updateStockByPlantType("succulent", 0);    // Out of stock
-        updateStockByPlantType("herb", 0);         // Out of stock
-        updateStockByPlantType("flower", 5);       // Very low stock
-        updateStockByPlantType("tree", 30);        // Low stock
-        
-    } else if (season == "spring") {
-        // Winter → Spring changes
-        updateStockByPlantType("succulent", 25);   // Low stock - still risky
-        updateStockByPlantType("herb", 80);        // Good stock
-        updateStockByPlantType("flower", 90);      // High stock
-        updateStockByPlantType("tree", 100);       // High stock
+        if (plantPtr) {
+            int newStockLevel = currentStock; // Default to current stock
+            
+            // Check if it's a Winter flower using the virtual method
+            if (plantPtr->isWinter()) {
+                // Winter flowers have reversed seasonal cycle
+                if (season == "Winter") {
+                    newStockLevel = 100;  // Peak season - high stock
+                } else if (season == "Autumn") {
+                    newStockLevel = 80;   // Planting season - good stock
+                } else if (season == "Spring") {
+                    newStockLevel = 20;   // Fading season - low stock
+                } else if (season == "Summer") {
+                    newStockLevel = 0;    // Dormant season - no stock
+                }
+                
+                std::cout << "Winter flower '" << plantName << "' stock adjusted from " 
+                          << currentStock << " to " << newStockLevel << " for " << season << std::endl;
+                          
+            } else {
+                // Handle regular plants by type
+                std::string plantType = plantPtr->getType();
+                
+                if (season == "Spring") {
+                    if (plantType == "Succulent") {
+                        newStockLevel = 55;   // Low stock - still risky
+                    } else if (plantType == "Herb") {
+                        newStockLevel = 80;   // Good stock - starting to grow
+                    } else if (plantType == "Flower") {
+                        newStockLevel = 90;   // High stock - Spring blooms
+                    } else if (plantType == "Tree") {
+                        newStockLevel = 100;  // High stock - prime planting
+                    }
+                    
+                } else if (season == "Summer") {
+                    if (plantType == "Succulent") {
+                        newStockLevel = 100;  // High stock - peak season
+                    } else if (plantType == "Herb") {
+                        newStockLevel = 100;  // High stock - all types available
+                    } else if (plantType == "Flower") {
+                        newStockLevel = 100;  // High stock - Summer annuals
+                    } else if (plantType == "Tree") {
+                        newStockLevel = 70;   // Medium stock
+                    }
+                    
+                } else if (season == "Autumn") {
+                    if (plantType == "Succulent") {
+                        newStockLevel = 50;   // Low stock - frost kills them
+                    } else if (plantType == "Herb") {
+                        newStockLevel = 20;   // Low stock - basil dies, others fade
+                    } else if (plantType == "Flower") {
+                        newStockLevel = 50;   // Changing stock
+                    } else if (plantType == "Tree") {
+                        newStockLevel = 90;   // High stock - prime planting time
+                    }
+                    
+                } else if (season == "Winter") {
+                    if (plantType == "Succulent") {
+                        newStockLevel = 0;    // Out of stock
+                    } else if (plantType == "Herb") {
+                        newStockLevel = 0;    // Out of stock
+                    } else if (plantType == "Flower") {
+                        newStockLevel = 5;    // Very low stock
+                    } else if (plantType == "Tree") {
+                        newStockLevel = 60;   // Low stock
+                    }
+                }
+                
+                std::cout << "Regular " << plantType << " '" << plantName 
+                          << "' stock adjusted from " << currentStock << " to " 
+                          << newStockLevel << " for " << season << std::endl;
+            }
+            
+            // Update the stock level
+            currentStock = newStockLevel;
+        }
     }
+    
+    std::cout << "Seasonal stock adjustment completed for " << season << std::endl;
 }
+
 
 /**
  * @brief Displays the current inventory catalogue
@@ -310,6 +362,10 @@ void Inventory::detach(Staff* staff) {
         staffList.erase(it);
     }
 
+}
+
+std::map<std::string, std::pair<std::unique_ptr<Plant>, int>>& Inventory::getInventory(){
+    return inventoryList;
 }
 
 /**

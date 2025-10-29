@@ -76,7 +76,7 @@ public:
      * Currently displays placeholder information.
      */
     void printStock();
-
+    int getTotalPlants();
 private:
     Command* command; ///< Current command being executed
     Inventory* inventory; ///< Reference to the main inventory system

@@ -9,8 +9,11 @@ using namespace std;
 class FlowerPlanter : public Planter {
 public:
 	virtual Plant* planterMethod(std::string name) override;
-	FlowerPlanter();
+	FlowerPlanter(bool isWinter  = false);
 	virtual ~FlowerPlanter();
+private:
+	bool isWinter;
+
 };
 
 #endif

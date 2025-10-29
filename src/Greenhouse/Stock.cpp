@@ -86,8 +86,16 @@ void Stock::Remove(std::unique_ptr<Plant> plant){
  * 
  */
 void Stock::printStock(){
+	std::cout << "======STOCK CATALOGUE======" << std::endl;
 	for (auto it = StockList.begin(); it != StockList.end(); ++it) {
-    	std::cout << "======STOCK CATALOGUE======" << std::endl;
-		std::cout << (*it)->getName() <<  (*it)->getType() << std::endl; //replace with (*it)->getName() + (*it)->getType()
+		std::cout << (*it)->getName() << "-" << (*it)->getType() << std::endl; //replace with (*it)->getName() + (*it)->getType()
 	}
+}
+
+int Stock::getTotalPlants(){
+	int total = 0;
+	for (auto it = StockList.begin(); it != StockList.end(); ++it) {
+		total++;
+	}
+	return total;
 }

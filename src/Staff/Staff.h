@@ -17,7 +17,7 @@ private:
 	InfoDesk infoDesk;
 
 public:
-	void update(const std::string &update);
+	virtual void update(const std::string &update);
 	void changeState();
 	virtual void getAvailability();
 	virtual void setAvailability();
