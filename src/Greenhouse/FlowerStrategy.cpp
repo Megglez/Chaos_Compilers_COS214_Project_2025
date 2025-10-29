@@ -1,13 +1,15 @@
 #include "FlowerStrategy.h"
 
-void FlowerStrategy::helpPlant() {
-	// TODO - implement FlowerStrategy::helpPlant
-	
+void FlowerStrategy::helpPlant(std::string& care) 
+{
+	cout << "Flower currently being cared for by: " << care << std::endl;
 }
 
-FlowerStrategy::FlowerStrategy() {
-	// TODO - implement FlowerStrategy::FlowerStrategy
-	
+
+
+FlowerStrategy::FlowerStrategy() 
+{
+
 }
 
 FlowerStrategy::~FlowerStrategy()

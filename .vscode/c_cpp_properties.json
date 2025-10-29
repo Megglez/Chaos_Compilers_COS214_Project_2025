@@ -3,12 +3,25 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/tests",
+                "${workspaceFolder}/build/_deps/googletest-src/googletest/include",
+                "${workspaceFolder}/build/_deps/googletest-src/googlemock/include",
+                "/usr/include/c++/15",
+                "/usr/include/x86_64-linux-gnu/c++/15",
+                "/usr/include/c++/15/backward",
+                "/usr/local/include",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include",
+                "/usr/include/qt5",
+                "/usr/include/qt5/QtWidgets",
+                "/usr/include/qt5/QtCore",
+                "/usr/include/qt5/QtGui"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c17",
-            "cppStandard": "gnu++17",
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64"
         }
     ],
