@@ -12,7 +12,11 @@
                 "/usr/include/c++/15/backward",
                 "/usr/local/include",
                 "/usr/include/x86_64-linux-gnu",
-                "/usr/include"
+                "/usr/include",
+                "/usr/include/qt5",
+                "/usr/include/qt5/QtWidgets",
+                "/usr/include/qt5/QtCore",
+                "/usr/include/qt5/QtGui"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
