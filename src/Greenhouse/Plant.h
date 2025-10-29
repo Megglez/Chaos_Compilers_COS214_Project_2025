@@ -10,12 +10,13 @@ private:
 	int water;
 	int soil;
 	int sunlight;
-	StageOfDevelopment stage;
+	StageOfDevelopment* stage;
 	CareStrategy* strategy;
 public:
 	virtual Plant* clone();
 	virtual void package();
 	void grow();
+	void setStage(StageOfDevelopment* stage);
 	void helpPlant();
 	Plant();
 	virtual ~Plant();
