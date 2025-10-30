@@ -63,6 +63,7 @@ int main(){
     test_st->Add(std::move(Herb), 50);
     test_st->Add(std::move(Succ), 60);
     test_st->Add(std::move(FlowerWinter), 60);
+    test_st->Remove(nullptr);
     //test_st->Remove(std::unique_ptr<Plant>(FlowerP->planterMethod("Rose")));
     test_st->printStock();
     test_inv->getCatalogue();
@@ -71,7 +72,7 @@ int main(){
     StateCommand* command = new SpringCommand(test_inv);
     command->execute();
     test_inv->getCatalogue();
-
+    
 
     StateCommand* command2 = new SummerCommand(test_inv);
     command2->execute();
