@@ -34,8 +34,6 @@ void Plant::setStage(StageOfDevelopment* stage){
 }
 
 void Plant::helpPlant() {
->>>>>>> 230abb5af0d65aed0c55dae95f15c304ff260b5a
-	// TODO - implement Plant::helpPlant
 	
 }
 

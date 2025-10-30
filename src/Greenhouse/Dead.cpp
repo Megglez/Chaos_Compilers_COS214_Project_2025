@@ -31,7 +31,7 @@ StageOfDevelopment* Dead::getNextStage()
  */
 void Dead::handle(Plant* plant)
 {
-    plant->setState(nullptr);
+    plant->setStage(nullptr);
 }
 
 /**
