@@ -11,7 +11,6 @@ public:
 	virtual Plant* planterMethod(std::string name) override;
 	HerbPlanter();
 	virtual ~HerbPlanter();
-	CareStrategy* clone();
 };
 
 #endif
