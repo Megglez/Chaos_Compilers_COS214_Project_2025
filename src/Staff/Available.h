@@ -7,9 +7,11 @@ using namespace std;
 class Available : public StaffState
 {
 public:
-	void handle();
+	void handle() override;
 	Available();
-	virtual ~Available();
+	~Available();
+	std::string getStateName()const override;
+	bool canAcceptCustomer() override;
 };
 
 #endif

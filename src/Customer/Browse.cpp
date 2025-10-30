@@ -5,7 +5,7 @@ void Browse::handle() {
 	
 }
 
-Action Browse::getNextAction() {
+Action* Browse::getNextAction() {
 	// TODO - implement Browse::getNextAction
 	
 }
@@ -17,4 +17,9 @@ Browse::Browse() {
 
 Browse::~Browse()
 {
+}
+
+std::string Browse::getActionName() 
+{
+ return "Browsing";
 }

@@ -8,9 +8,13 @@ class Enquire : public Action
 {
 public:
 	void handle();
-	Action getNextAction();
+	Action*getNextAction();
 	Enquire();
 	virtual ~Enquire();
+	std::string getActionName() override;
+	void requestStaffAssistance() override;
+
+
 };
 
 #endif

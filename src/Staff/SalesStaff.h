@@ -14,6 +14,7 @@ public:
 	void setAvailability();
 	SalesStaff();
 	virtual ~SalesStaff();
+
 };
 
 #endif

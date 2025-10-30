@@ -8,9 +8,11 @@ class Browse : public Action
 {
 public:
 	void handle();
-	Action getNextAction();
+	Action* getNextAction();
 	Browse();
 	virtual ~Browse();
+	void requestStaffAssistance() override;
+	std::string getActionName() override;
 };
 
 #endif
