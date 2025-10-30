@@ -6,17 +6,18 @@ void Busy::handle() {
 	if(staff)
 	{
 
-		/*if(customer.request=)
-		*/
-		
 		
 		this->staff->changeState();
 		this->staff->setAvailability(true);
 		std::cout<< "Staff has assisted customer. Staff is now Available."<<std::endl;
-		/*if(staff.getInfodesk())
-		{
+		
+		this->staff->changeState();
+		this->staff->setAvailability(true);	
+		
+		
 
-		}*/
+		//remove staff from Infodesk::AvailableStaff
+
 	}
 	
 	

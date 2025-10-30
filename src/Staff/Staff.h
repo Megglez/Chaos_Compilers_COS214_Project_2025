@@ -1,16 +1,16 @@
 #ifndef STAFF_H
 #define STAFF_H
 #include <iostream>
-#include "../Greenhouse/Plant.h"
+//#include "../Greenhouse/Plant.h"
 #include "StaffState.h"
 #include "Available.h"
 #include "Busy.h"
-#include "../Greenhouse/Inventory.h"
+//#include "../Greenhouse/Inventory.h"
 #include "InfoDesk.h"
-#include "Customer.h"
+//#include "Customer.h"
 using namespace std;
 
-
+class Inventory;
 class Staff
 {
 private:
@@ -19,7 +19,7 @@ private:
 	string workArea;
 	StaffState *state;
 	InfoDesk infoDesk;
-	bool isAvailable;  
+	bool available;  
 
 public:
 	void update(const std::string &update);

@@ -4,21 +4,30 @@
 #include <queue>
 #include <vector>
 #include "Customer.h"
+#include "Staff.h"
+
 using namespace std;
 
-class Staff;
+//class Staff;
 class InfoDesk {
 	private:
+	 // 
 	Staff*chainHead; //staff member with most priority
-	std::queue<Customer*> waitingCustomers;
-	std::vector<Staff*> AllStaff;
+	std::queue<Customer*> waitingCustomers; // queued customers 
+	std::vector<Staff*> AllStaff; 
+	std::vector<Staff*> AvailableStaff;
+
 public:
-	virtual void notify(Staff* staff);
+	virtual void notify(Staff* staff);// notify 
 	InfoDesk();
-	virtual ~InfoDesk();
-	Staff *staffList;
-	//FindAvailableStaff();
-	//virtual ~FindAvailableStaff();
+	virtual ~InfoDesk(); 
+	InfoDesk* getInfodesk();
+	void handleCustomer(); // called by requestAssistance
+	bool FindAvailableStaff(Customer cc);
+	bool removeAvailableStaff(Staff ss);
+	bool addAvailableStaff(Staff ss);
+
+
 };
 
 #endif
