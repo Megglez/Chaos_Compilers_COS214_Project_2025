@@ -4,10 +4,12 @@ void Action::handle()
 {
 }
 
-Action Action::getNextAction()
+//getNextAction() is virtual, what does getNextAction do?
+Action* Action::getNextAction()
 {
-    return Action();
+    
 }
+
 
 Action::Action()
 {
