@@ -16,7 +16,7 @@ Clock::Clock(QObject *parent)
     qDebug() << "Timer started.";
 }
 
-void Clock::Clock()
+void Clock::onTimerTimeout()
 {
     // This is the code that runs every time the timer fires
     qDebug() << "Timer executed!";

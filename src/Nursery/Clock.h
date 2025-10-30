@@ -1,7 +1,7 @@
 #ifndef CLOCK_H
 #define CLOCK_H
 
-#include <./Nursery/QObject>
+#include <QObject>
 #include <QTimer>
 
 class Clock : public QObject

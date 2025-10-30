@@ -33,10 +33,6 @@ void Plant::setStage(StageOfDevelopment* stage){
     this->stage = stage;
 }
 
-void Plant::helpPlant() {
-	
-}
-
 Plant::~Plant()
 {
 }

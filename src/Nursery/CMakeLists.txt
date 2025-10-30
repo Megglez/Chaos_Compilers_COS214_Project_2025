@@ -33,6 +33,7 @@ else()
         add_library(Nursery SHARED
             ${PROJECT_SOURCES}
         )
+
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
@@ -41,7 +42,11 @@ else()
         )
     endif()
 endif()
+    # Locate the section where your library is defined, for example:
+    # add_library(project_lib SHARED ${LIBRARY_SOURCES}) 
 
+    # Add this line immediately after the library is created:
+target_link_libraries(project_lib PRIVATE Qt::Core)
 target_link_libraries(Nursery PRIVATE Qt::Widgets Qt::Core)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

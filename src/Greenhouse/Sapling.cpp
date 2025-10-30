@@ -26,7 +26,7 @@ StageOfDevelopment* Sapling::getNextStage()
  */
 void Sapling::handle(Plant* plant)
 {
-    plant->setState(new Prime());
+    plant->setStage(new Prime());
 }
 
 /**

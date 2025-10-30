@@ -16,7 +16,7 @@
  * (e.g., if water/nutrients are provided) before transitioning to Dead
  */
 void Wilting::handle(Plant* plant) {
-    plant->setState(new Dead());
+    plant->setStage(new Dead());
  
 }
 

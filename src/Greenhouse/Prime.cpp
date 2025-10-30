@@ -28,7 +28,7 @@ StageOfDevelopment* Prime::getNextStage()
 void Prime::handle(Plant* plant)
 {
     
-    plant->setState(new Wilting());
+    plant->setStage(new Wilting());
 }
 
 /**

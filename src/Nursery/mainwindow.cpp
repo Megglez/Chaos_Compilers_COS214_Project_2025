@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#include "ui_mainwindow.h"
 #include <QDebug> // <-- ADD THIS for console output
 
 MainWindow::MainWindow(QWidget *parent)
