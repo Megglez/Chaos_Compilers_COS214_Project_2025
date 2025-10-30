@@ -47,6 +47,10 @@ Autumn::~Autumn(){
 
 }
 
+std::string Autumn::getSeason(){
+    return "Autumn";
+}
+
 /**
  * @brief Handles transition from autumn to winter
  * 

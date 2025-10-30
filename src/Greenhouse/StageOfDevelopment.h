@@ -71,6 +71,11 @@ public:
      * through a base class pointer.
      */
     virtual ~StageOfDevelopment();
+     /**
+     * @brief returns the name of he current stage the plant is in
+     * @return a string of the name of the curent stage
+     */
+    virtual std::string getStageName() = 0;
 
 };
 

@@ -6,9 +6,10 @@ using namespace std;
 
 class GiftWrap : public PlantDecorator {
 public:
-	void package();
-	GiftWrap();
+	virtual void package() override;
+	GiftWrap(Plant* plant);
 	virtual ~GiftWrap();
+	virtual Plant* clone() override;
 };
 
 #endif

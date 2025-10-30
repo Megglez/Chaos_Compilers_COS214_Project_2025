@@ -25,7 +25,7 @@ StageOfDevelopment* Seed::getNextStage()
  */
 void Seed::handle(Plant* plant)
 {
-    plant->setStage(new Sapling());
+    plant->setState(new Sapling());
 }
 
 /**
@@ -46,4 +46,8 @@ Seed::Seed() {
 Seed::~Seed()
 {
     // Cleanup code if needed
+}
+
+std::string Seed::getStageName(){
+    return "Seed";
 }

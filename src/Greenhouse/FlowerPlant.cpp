@@ -12,20 +12,20 @@ Plant *FlowerPlant::clone()
         this->sunlight,
         this->stage,
         cr,
-        this->name
+        this->name,
+        this->isWinterFlower
     );
 }
 
-void FlowerPlant::setState(StageOfDevelopment *state)
-{
-    stage= state;
-}
 
-FlowerPlant::FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment *stage,CareStrategy* strategy,string name):Plant(water,soil,sunlight,stage,strategy) 
+
+FlowerPlant::FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment *stage,CareStrategy* strategy,string name,bool isWinter):Plant(water,soil,sunlight,stage,strategy) 
 {
     this->name=name;
     this->type= "Flower";
+    this->isWinterFlower = isWinter;
 }
+
 
 string FlowerPlant::getName()
 {
@@ -43,3 +43,11 @@ FlowerPlant::~FlowerPlant()
     delete strategy;
 }
 
+void FlowerPlant::package(){
+    
+}
+
+
+bool FlowerPlant::isWinter() const  {
+     return isWinterFlower;
+}

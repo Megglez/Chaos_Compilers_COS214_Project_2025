@@ -7,11 +7,12 @@ using namespace std;
 class TreePlant : public Plant
 {
 public:
-	Plant* clone() override;
-	string getName();
-	string getType();
+	virtual Plant* clone() override;
+	virtual string getName()override;
+	virtual string getType() override;
 	TreePlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
 	virtual ~TreePlant();
+	virtual void package() override;
 };
 
 #endif

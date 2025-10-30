@@ -8,7 +8,7 @@ using namespace std;
 class TreePlanter : public Planter 
 {
 public:
-	Plant* planterMethod();
+	virtual Plant* planterMethod(std::string name) override;
 	TreePlanter();
 	virtual ~TreePlanter();
 };

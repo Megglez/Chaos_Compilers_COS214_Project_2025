@@ -38,3 +38,5 @@ SucculentPlant::~SucculentPlant()
 {
     delete strategy;
 }
+
+void SucculentPlant::package(){}

@@ -1,8 +1,7 @@
 #include "HerbStrategy.h"
 
-void HerbStrategy::helpPlant() {
-	// TODO - implement HerbStrategy::helpPlant
-	
+void HerbStrategy::helpPlant(std::string& care) {
+	cout << "Herb currently being cared for by: " << care << std::endl;
 }
 
 HerbStrategy::HerbStrategy() {
@@ -12,4 +11,8 @@ HerbStrategy::HerbStrategy() {
 
 HerbStrategy::~HerbStrategy()
 {
+}
+
+CareStrategy* HerbStrategy::clone(){
+	return new HerbStrategy();
 }

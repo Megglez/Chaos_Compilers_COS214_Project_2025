@@ -31,13 +31,7 @@ StageOfDevelopment* Dead::getNextStage()
  */
 void Dead::handle(Plant* plant)
 {
-    // Terminal state - typically does nothing
-    // Could implement:
-    // - Decay animation/effects
-    // - Cleanup triggers
-    // - State validation to prevent operations on dead plants
-    
-    // Example: plant->triggerDecay(); or plant->markForRemoval();
+    plant->setState(nullptr);
 }
 
 /**
@@ -59,4 +53,8 @@ Dead::Dead() {
 Dead::~Dead()
 {
     // Cleanup code if needed
+}
+
+std::string Dead::getStageName(){
+    return "Dead";
 }

@@ -26,11 +26,7 @@ StageOfDevelopment* Sapling::getNextStage()
  */
 void Sapling::handle(Plant* plant)
 {
-    // Example implementation:
-    // if (plant->getGrowthProgress() >= MATURITY_THRESHOLD) {
-    //     plant->setState(new Prime());
-    // }
-    // plant->increaseSize(SAPLING_GROWTH_RATE);
+    plant->setState(new Prime());
 }
 
 /**
@@ -52,4 +48,8 @@ Sapling::Sapling() {
 Sapling::~Sapling()
 {
     // Cleanup code if needed
+}
+
+std::string Sapling::getStageName(){
+    return "Sapling";
 }

@@ -1,9 +1,6 @@
 #include "CareStrategy.h"
 
-void CareStrategy::helpPlant()
-{
-    
-}
+
 
 CareStrategy::CareStrategy()
 {

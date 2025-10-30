@@ -83,7 +83,7 @@ public:
      * @note Even though the class is abstract, it needs a virtual
      *       destructor for proper cleanup of derived objects.
      */
-    ~StateCommand(){};
+    virtual ~StateCommand(){};
 };
 
 #endif

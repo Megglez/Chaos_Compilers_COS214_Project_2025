@@ -6,9 +6,10 @@ using namespace std;
 
 class Pot : public PlantDecorator {
 public:
-	void package();
-	Pot();
+	virtual void package() override;
+	Pot(Plant* plant);
 	virtual ~Pot();
+	virtual Plant* clone() override;
 };
 
 #endif
