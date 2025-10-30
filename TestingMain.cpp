@@ -115,8 +115,30 @@ int main(){
     for (const auto& entry : inv) {
         std::cout << "- " << entry.second.first.get()->getState()->getStageName();
     }
-    
-    
+
+
+    delete gift;
+    delete pot;
+
+ //   delete Flower2;
+//    delete Flower3;
+//    delete Herb4;
+//    delete Succ5;
+//    delete Tree6;
+
+//    delete sapling;
+//    delete prime;
+//    delete wilting;
+//    delete dead;
+
+//    delete test_st;
+ //   delete test_inv;
+
+ //   delete FlowerP;
+ //   delete HerbP;
+ //   delete SuccP;
+ //   delete TreeP;
+ //   delete FlowerW;
     
     return 0;
 
