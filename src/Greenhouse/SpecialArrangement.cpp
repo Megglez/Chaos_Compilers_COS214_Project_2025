@@ -7,11 +7,15 @@ void SpecialArrangement::package() {
 	
 }
 
-SpecialArrangement::SpecialArrangement() {
+SpecialArrangement::SpecialArrangement(Plant* plant):PlantDecorator(plant) {
 	// TODO - implement SpecialArrangement::SpecialArrangement
 	
 }
 
 SpecialArrangement::~SpecialArrangement()
 {
+}
+
+Plant* SpecialArrangement::clone() {
+    return new SpecialArrangement(plantDec ? plantDec->clone() : nullptr);
 }

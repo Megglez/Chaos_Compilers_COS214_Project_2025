@@ -8,13 +8,16 @@ using namespace std;
 class FlowerPlant : public Plant 
 {
 public:
-	Plant* clone() override;
-	string getName();
-	string getType();
-	void setState(StageOfDevelopment* state);
-	FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name);
+	virtual Plant* clone() override;
+	virtual string getName() override;
+	virtual string getType() override;
+	virtual bool isWinter() const override;
+	FlowerPlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name, bool isWinter);
 	virtual ~FlowerPlant();
 	virtual void package() override;
+	
+private:
+	bool isWinterFlower;
 };
 
 #endif

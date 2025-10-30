@@ -7,11 +7,15 @@ void GiftWrap::package() {
 	
 }
 
-GiftWrap::GiftWrap() {
+GiftWrap::GiftWrap(Plant* plant):PlantDecorator(plant) {
 	// TODO - implement GiftWrap::GiftWrap
 	
 }
 
 GiftWrap::~GiftWrap()
 {
+}
+
+Plant* GiftWrap::clone() {
+    return new GiftWrap(plantDec ? plantDec->clone() : nullptr);
 }

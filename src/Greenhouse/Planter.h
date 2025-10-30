@@ -7,7 +7,7 @@ using namespace std;
 class Planter
 {
 public:
-	virtual Plant *planterMethod();
+	virtual Plant *planterMethod(std::string name) =0;
 	Planter();
 	virtual ~Planter();
 };
