@@ -54,7 +54,33 @@ int main(){
     gift->package();
     pot->package();
 
-    //StaffT* staff1 = new StaffT();
+    //testing the different strategies 
+    cout<<"\n=====Plants Help Strategies====="<<endl;
+    std::unique_ptr<Plant> Flower1(FlowerP->planterMethod("Agapanthus"));
+    std::unique_ptr<Plant> Herb1(HerbP->planterMethod("Thym"));
+    std::unique_ptr<Plant> Succ1(SuccP->planterMethod("Aloe Vera"));
+    std::unique_ptr<Plant> Tree1(TreeP->planterMethod("Acaccia"));
+
+    Plant* Flower3 = FlowerP->planterMethod("Thym");
+    Plant* Herb4 = HerbP->planterMethod("Agapanthus Bush");    
+    Plant* Succ5 = SuccP->planterMethod("Aloe Vera");
+    Plant* Tree6 = TreeP->planterMethod("Acaccia");
+
+
+    Sapling* sapling= new Sapling();
+    Prime* prime= new Prime();
+    Wilting* wilting= new Wilting();
+    Dead* dead= new Dead();
+
+    Flower3->helpPlant();
+    sapling->handle(Herb4);
+    Herb4->helpPlant();
+    prime->handle(Succ5);
+    Succ5->helpPlant();
+    wilting->handle(Tree6);
+    Tree6->helpPlant();
+    dead->handle(Flower3);
+    Flower3->helpPlant();
 
     Inventory* test_inv = new Inventory();
     //test_inv->attach(staff1);
