@@ -1,13 +1,13 @@
-#include "nursary.h"
-#include "./ui_nursary.h"
+#include "nursery.h"
+#include "./ui_nursery.h"
 
-Nursary::Nursary(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::Nursary)
+Nursery::Nursery(QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::Nursery)
 {
     ui->setupUi(this);
 }
 
-Nursary::~Nursary()
+Nursery::~Nursery()
 {
     delete ui;
 }

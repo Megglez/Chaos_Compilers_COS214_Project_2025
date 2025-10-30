@@ -1,24 +1,24 @@
-#ifndef NURSARY_H
-#define NURSARY_H
+#ifndef NURSERY_H
+#define NURSERY_H
 
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui
 {
-    class Nursary;
+    class Nursery;
 }
 QT_END_NAMESPACE
 
-class Nursary : public QMainWindow
+class Nursery : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    Nursary(QWidget *parent = nullptr);
-    ~Nursary();
+    Nursery(QWidget *parent = nullptr);
+    ~Nursery();
 
 private:
-    Ui::Nursary *ui;
+    Ui::Nursery *ui;
 };
-#endif // NURSARY_H
+#endif // NURSERY_H
