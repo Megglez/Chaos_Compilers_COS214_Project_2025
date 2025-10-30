@@ -21,10 +21,10 @@ void Plant::grow()
 
 }
 
-<<<<<<< HEAD
-void Plant::helpPlant() 
-{
-=======
+void Plant::helpPlant() {
+
+}
+
 void Plant::setStage(StageOfDevelopment* stage){
     if(this->stage){
         delete this->stage;

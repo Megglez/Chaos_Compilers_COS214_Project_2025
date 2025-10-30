@@ -19,7 +19,7 @@ protected:
 public:
 	virtual Plant* clone() =0;
 	virtual void grow();
-	virtual void setState(StageOfDevelopment* stage);
+	virtual void setStage(StageOfDevelopment* stage);
 	virtual void helpPlant();
 	virtual void package() = 0;
 	virtual string getType() = 0;
