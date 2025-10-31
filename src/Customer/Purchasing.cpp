@@ -8,7 +8,7 @@ void Purchasing::handle() {
 
 Action* Purchasing::getNextAction() {
 	// TODO - implement Purchasing::getNextAction
-	
+	return Action();
 }
 
 Purchasing::Purchasing() {

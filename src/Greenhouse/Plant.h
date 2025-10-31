@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "CareStrategy.h"
+#
 using namespace std;
 class StageOfDevelopment;
 class Plant 
@@ -32,6 +33,7 @@ public:
 	Plant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy);
 	virtual ~Plant();
 	virtual bool isWinter()  const ;
+	virtual CareStrategy* getCare();
 };
 
 #endif

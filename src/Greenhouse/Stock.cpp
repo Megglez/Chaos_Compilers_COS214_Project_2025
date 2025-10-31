@@ -29,6 +29,9 @@ Stock::Stock(Inventory* inv): inventory(inv) {
  */
 Stock::~Stock()
 {
+	 for (Plant* plant : StockList) {
+        delete plant;
+    }
 }
 
 /**
@@ -52,6 +55,8 @@ void Stock::Add(std::unique_ptr<Plant> plant, int quantity){
 	StockList.push_back(plant->clone());  
 	command = new AddStock(inventory);
 	command->execute(std::move(plant), quantity);
+	delete command;  // Clean up!
+    command = nullptr;
 }
 
 /**
@@ -72,6 +77,8 @@ void Stock::Remove(std::unique_ptr<Plant> plant){
 	}
 	command = new RemoveStock(inventory);
 	command->execute(std::move(plant), 1);
+	delete command;
+	command = nullptr;
 }
 
 /**

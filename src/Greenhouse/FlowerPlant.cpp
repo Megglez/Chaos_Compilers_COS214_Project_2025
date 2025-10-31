@@ -1,16 +1,21 @@
 #include "FlowerPlant.h"
 #include <string>
+#include "StageOfDevelopment.h"
 
 Plant *FlowerPlant::clone()
 {
     CareStrategy* cr = nullptr;
+    StageOfDevelopment* st = nullptr;
     if (this->strategy != nullptr)
         cr = this->strategy->clone();
+    if(this->stage != nullptr){
+        st = stage->clone();
+    }
     return new FlowerPlant(
         this->water,
         this->soil,
         this->sunlight,
-        this->stage,
+        st,
         cr,
         this->name,
         this->isWinterFlower
@@ -40,7 +45,6 @@ string FlowerPlant::getType()
 
 FlowerPlant::~FlowerPlant()
 {
-    delete strategy;
 }
 
 void FlowerPlant::package(){

@@ -1,20 +1,24 @@
 #include "TreePlant.h"
+#include "StageOfDevelopment.h"
 
 Plant *TreePlant::clone()
 {
     CareStrategy* cr = nullptr;
+    StageOfDevelopment* st = nullptr;
     if (this->strategy != nullptr)
         cr = this->strategy->clone();
+    if(this->stage != nullptr){
+        st = stage->clone();
+    }
     return new TreePlant
     (
         this->water,
         this->soil,
         this->sunlight,
-        this->stage,
+        st,
         cr,
         this->name
     );
-    delete this;
 }
 
 TreePlant::TreePlant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy,string name): Plant(water,soil,sunlight, stage,strategy) 
@@ -36,7 +40,6 @@ string TreePlant::getType()
 
 TreePlant::~TreePlant()
 {
-    delete strategy;
 }
 
 

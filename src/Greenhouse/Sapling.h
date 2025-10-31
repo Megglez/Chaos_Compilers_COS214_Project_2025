@@ -49,6 +49,7 @@ public:
      */
     virtual ~Sapling();
     virtual std::string getStageName() override;
+    virtual StageOfDevelopment* clone()  override;
 };
 
 #endif
