@@ -55,3 +55,7 @@ Prime::~Prime()
 std::string Prime::getStageName(){
     return "Prime";
 }
+
+StageOfDevelopment* Prime::clone(){
+    return new Prime();
+}

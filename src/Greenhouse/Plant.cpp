@@ -7,11 +7,7 @@ Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStra
     this->water=water;
     this->soil=soil;
     this->sunlight=sunlight;
-    if(stage->getStageName() != "Seed"){
-        this->stage = stage;
-    }else{
-        this->stage = new Seed();
-    }
+    this->stage = stage;
     this->strategy = strategy; 
 }
 
@@ -57,6 +53,14 @@ void Plant::setState(StageOfDevelopment* state)
 
 Plant::~Plant()
 {
+    if(stage != nullptr){
+        delete stage;
+        stage = nullptr;
+    }
+    if(strategy != nullptr){
+        delete strategy;
+        strategy =  nullptr;
+    }
 }
 
 bool Plant::isWinter() const  { return false; }
@@ -73,4 +77,8 @@ int Plant::getSoil(){
 }
 int Plant::getSunlight(){
     return sunlight;
+}
+
+CareStrategy* Plant::getCare(){
+    return strategy;
 }
