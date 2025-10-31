@@ -58,3 +58,7 @@ Dead::~Dead()
 std::string Dead::getStageName(){
     return "Dead";
 }
+
+StageOfDevelopment* Dead::clone(){  
+    return new Dead();
+}

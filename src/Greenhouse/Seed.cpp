@@ -51,3 +51,7 @@ Seed::~Seed()
 std::string Seed::getStageName(){
     return "Seed";
 }
+
+StageOfDevelopment* Seed::clone() {
+    return new Seed();
+}

@@ -14,6 +14,8 @@ public:
 	void setAvailability();
 	Cashiers();
 	virtual ~Cashiers();
+	std::string getName() override;
+	std::string getID() override;
 };
 
 #endif

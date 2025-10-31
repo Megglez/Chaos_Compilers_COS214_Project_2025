@@ -49,8 +49,8 @@ int main(){
     std::unique_ptr<Plant> FlowerWinter(FlowerW->planterMethod("Snowdrops"));
     
     Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
-    PlantDecorator* gift = new GiftWrap(Flower2);
-    PlantDecorator* pot = new Pot(Flower2);
+    GiftWrap* gift = new GiftWrap(Flower2);
+    Pot* pot = new Pot(gift);
     gift->package();
     pot->package();
 
@@ -63,6 +63,7 @@ int main(){
     test_st->Add(std::move(Herb), 50);
     test_st->Add(std::move(Succ), 60);
     test_st->Add(std::move(FlowerWinter), 60);
+    test_st->Remove(nullptr);
     //test_st->Remove(std::unique_ptr<Plant>(FlowerP->planterMethod("Rose")));
     test_st->printStock();
     test_inv->getCatalogue();
@@ -71,7 +72,7 @@ int main(){
     StateCommand* command = new SpringCommand(test_inv);
     command->execute();
     test_inv->getCatalogue();
-
+    
 
     StateCommand* command2 = new SummerCommand(test_inv);
     command2->execute();
@@ -91,6 +92,21 @@ int main(){
     }
     
     
+    delete test_st;
+    delete test_inv;
+    delete FlowerP;
+    delete SuccP;
+    delete HerbP;
+    delete TreeP;
+    //delete pot;
+    delete FlowerW;
+    
+
+    delete command;
+    delete command2;
+    delete command3;
+    delete command4;
+
     
     return 0;
 
