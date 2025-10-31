@@ -4,13 +4,14 @@
 
 #include "Plant.h"
 
+
 class PlantDecorator : public Plant {
 protected:
     Plant* plantDec;
 
 public:
     PlantDecorator(Plant* plant);
-    virtual ~PlantDecorator();
+    ~PlantDecorator() override;
     
     // Implement pure virtual functions from Plant
     virtual Plant* clone() = 0;
@@ -20,7 +21,7 @@ public:
     
     // Delegate other methods to the decorated plant
     virtual void grow() override;
-    virtual void setState(StageOfDevelopment* stage) override;
+    virtual void setState(StageOfDevelopment* stage);
     virtual void helpPlant() override;
     virtual StageOfDevelopment* getState() override;
     bool isWinter() const override;

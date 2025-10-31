@@ -49,15 +49,15 @@ Customer::Customer() {
 Customer::~Customer()
 {
 	delete action;
-	delete basket;
 }
 
 bool Customer::addToBasket(Plant*plants,int quantity)
 {
-
+return false;
 }
+
 bool Customer::removeFromBasket(Plant* plants,int quantity)
 {
-
+ return true;
 }
 

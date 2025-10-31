@@ -28,7 +28,7 @@ StageOfDevelopment* Prime::getNextStage()
 void Prime::handle(Plant* plant)
 {
     
-    plant->setState(new Wilting());
+    plant->setStage(new Wilting());
 }
 
 /**
@@ -54,4 +54,8 @@ Prime::~Prime()
 
 std::string Prime::getStageName(){
     return "Prime";
+}
+
+StageOfDevelopment* Prime::clone(){
+    return new Prime();
 }

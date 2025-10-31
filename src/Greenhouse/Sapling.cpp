@@ -26,7 +26,7 @@ StageOfDevelopment* Sapling::getNextStage()
  */
 void Sapling::handle(Plant* plant)
 {
-    plant->setState(new Prime());
+    plant->setStage(new Prime());
 }
 
 /**
@@ -52,4 +52,8 @@ Sapling::~Sapling()
 
 std::string Sapling::getStageName(){
     return "Sapling";
+}
+
+StageOfDevelopment* Sapling::clone(){
+    return new Sapling();
 }

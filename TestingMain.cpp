@@ -49,8 +49,8 @@ int main(){
     std::unique_ptr<Plant> FlowerWinter(FlowerW->planterMethod("Snowdrops"));
     
     Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
-    PlantDecorator* gift = new GiftWrap(Flower2);
-    PlantDecorator* pot = new Pot(Flower2);
+    GiftWrap* gift = new GiftWrap(Flower2);
+    Pot* pot = new Pot(gift);
     gift->package();
     pot->package();
 
@@ -89,6 +89,7 @@ int main(){
     test_st->Add(std::move(Herb), 50);
     test_st->Add(std::move(Succ), 60);
     test_st->Add(std::move(FlowerWinter), 60);
+    test_st->Remove(nullptr);
     //test_st->Remove(std::unique_ptr<Plant>(FlowerP->planterMethod("Rose")));
     test_st->printStock();
     test_inv->getCatalogue();
@@ -97,7 +98,7 @@ int main(){
     StateCommand* command = new SpringCommand(test_inv);
     command->execute();
     test_inv->getCatalogue();
-
+    
 
     StateCommand* command2 = new SummerCommand(test_inv);
     command2->execute();
@@ -115,30 +116,23 @@ int main(){
     for (const auto& entry : inv) {
         std::cout << "- " << entry.second.first.get()->getState()->getStageName();
     }
+    
+    
+    delete test_st;
+    delete test_inv;
+    delete FlowerP;
+    delete SuccP;
+    delete HerbP;
+    delete TreeP;
+    //delete pot;
+    delete FlowerW;
+    
 
+    delete command;
+    delete command2;
+    delete command3;
+    delete command4;
 
-    delete gift;
-    delete pot;
-
- //   delete Flower2;
-//    delete Flower3;
-//    delete Herb4;
-//    delete Succ5;
-//    delete Tree6;
-
-//    delete sapling;
-//    delete prime;
-//    delete wilting;
-//    delete dead;
-
-//    delete test_st;
- //   delete test_inv;
-
- //   delete FlowerP;
- //   delete HerbP;
- //   delete SuccP;
- //   delete TreeP;
- //   delete FlowerW;
     
     return 0;
 
