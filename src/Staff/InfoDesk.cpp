@@ -36,7 +36,7 @@ void InfoDesk::handleCustomer(Customer* customer) // called by enquiring custome
 
   if(customer->getAction()->getActionName()=="Enquiring")
   {
-    std::cout<<"Requesting assistance for customer "+customer->getId()<<std::endl;
+    std::cout<<".....Requesting assistance for customer..... "+customer->getId()<<std::endl;
     
     //get a staff member
     Staff *assignedStaff;
@@ -47,16 +47,48 @@ void InfoDesk::handleCustomer(Customer* customer) // called by enquiring custome
     assignedStaff->assistCustomer(customer);
     customer->setAssignedStaff(assignedStaff);
   }
+
+  else
+  {
+    waitingCustomers.push(customer);
+    std::cout<<"All staff unavailable. Queue customer "<< waitingCustomers.size()<<" for assistance."<<std::endl;
+
+  }
 }
 }
 
 bool InfoDesk::FindAvailableStaff(Customer *cc)
 {
-    if(!chainHead)
+    Staff *assignedStaff;
+    assignedStaff= findAvailableStaffThroughChain();
+    if(assignedStaff)
     {
+
+        std::cout<<"Found staff member. Staff - "+assignedStaff->getName()<<std::endl;
+
+    }
+    else{
         std::cout<<"Currently no staff available. Please queue for assistance."<<std::endl;
         return false;
     }
+return assignedStaff;
+}
+
+void InfoDesk::processWaitingCustomers()
+{
+std::cout<<"....Processing Waiting Customers....."<<std::endl;
+
+if(waitingCustomers.empty())
+{
+    std::cout<<"No customers waiting in queue."<<std::endl;
+    return;
+}
+
+int processed=0;
+while(!waitingCustomers.empty())
+{
+    
+}
 
 }
 

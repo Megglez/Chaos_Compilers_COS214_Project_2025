@@ -27,8 +27,10 @@ public:
 	void EnquiryChain();
 	void buildChain();
 	void clearChain();
+	//assogns staff to customer
 	void handleCustomer(Customer* customer); // called by requestAssistance
 	bool FindAvailableStaff(Customer *cc);
+	
 	bool removeStaff(Staff *ss);
 	bool addStaff(Staff* ss); //doing
 	void processWaitingCustomers();
