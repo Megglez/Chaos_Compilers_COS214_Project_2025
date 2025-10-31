@@ -76,6 +76,7 @@ public:
      * @return a string of the name of the curent stage
      */
     virtual std::string getStageName() = 0;
+    virtual StageOfDevelopment* clone()= 0;
 
 };
 
