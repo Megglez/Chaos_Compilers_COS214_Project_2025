@@ -2,6 +2,7 @@
 #define CUSTOMERCREATOR_H
 
 #include "Customer.h"
+#include "Stock.h"
 
 class CustomerCreator
 {
