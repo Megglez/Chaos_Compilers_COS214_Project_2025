@@ -2,10 +2,11 @@
 
 void Purchasing::handle() {
 	// TODO - implement Purchasing::handle
+
 	
 }
 
-Action Purchasing::getNextAction() {
+Action* Purchasing::getNextAction() {
 	// TODO - implement Purchasing::getNextAction
 	return Action();
 }
@@ -17,4 +18,9 @@ Purchasing::Purchasing() {
 
 Purchasing::~Purchasing()
 {
+}
+
+std::string Purchasing::getActionName() 
+{
+	return "Purchasing";
 }

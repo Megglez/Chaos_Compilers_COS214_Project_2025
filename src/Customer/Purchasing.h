@@ -8,9 +8,12 @@ class Purchasing : public Action
 {
 public:
 	void handle();
-	virtual Action getNextAction() override;
+	Action* getNextAction();
 	Purchasing();
 	virtual ~Purchasing();
+	std::string getActionName() override;
+	virtual void requestStaffAssistance() override;
+
 };
 
 #endif

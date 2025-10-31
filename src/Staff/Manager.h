@@ -13,6 +13,7 @@ public:
 	void setAvailability();
 	Manager();
 	virtual ~Manager();
+
 };
 
 #endif
