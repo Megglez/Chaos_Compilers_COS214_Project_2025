@@ -14,7 +14,7 @@ class Customer
 private:
 	Action * action;
 	int id;
-	vector<Plant> *basket;
+	vector<Plant*> basket;
 
 
 
