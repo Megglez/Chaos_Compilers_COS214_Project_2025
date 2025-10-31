@@ -18,8 +18,10 @@ private:
 	string staffID;
 	string workArea;
 	StaffState *state;
-	InfoDesk infoDesk;
+	InfoDesk *infoDesk;
 	bool available;  
+	Staff * nextInChain;
+	Customer *currentCustomer;
 
 public:
 	void update(const std::string &update);
@@ -28,10 +30,13 @@ public:
 	void setAvailability(bool isAvailable);
 	Staff();
 	virtual ~Staff();
-	virtual void setNextStaff(Staff next);
-	virtual void handleCustomer(Customer cc);
+	virtual void setNextInChain(Staff* next);
+	virtual void assistCustomer(Customer *cc); //start Assisting customer
 	std::string getName();
 	std::string getID();
+	std::string getStaffType();
+	Staff* getNextInChain();
+
 	
 
 

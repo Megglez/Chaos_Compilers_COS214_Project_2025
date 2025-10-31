@@ -1,10 +1,10 @@
 #include "Customer.h"
 
-void Customer::request() {
+void Customer::request(InfoDesk& desk) {
 	// TODO - implement Customer::request
 	if(action)
 	{
-		action->requestStaffAssistance();
+		action->requestStaffAssistance(this,desk); //delegates to state
 	}
 	
 }
@@ -61,3 +61,17 @@ bool Customer::removeFromBasket(Plant* plants,int quantity)
 
 }
 
+int Customer::getId()
+{
+	return id;
+}
+
+Action* Customer::getAction()
+{
+	return this->action;
+}
+
+void Customer::setAssignedStaff(Staff*ss)
+{
+
+}

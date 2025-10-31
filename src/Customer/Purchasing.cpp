@@ -24,3 +24,8 @@ std::string Purchasing::getActionName()
 {
 	return "Purchasing";
 }
+
+void Purchasing::requestStaffAssistance(Customer *customer,InfoDesk& desk)
+{
+	std::cout<< "Currently in the queue. You need to leave the queue for assistance.";
+}

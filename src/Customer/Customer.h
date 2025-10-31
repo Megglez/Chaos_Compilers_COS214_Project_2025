@@ -19,12 +19,16 @@ private:
 
 
 public:
-	void request();
+	void request(InfoDesk& desk); 
 	void setAction(std::string ss);
 	Customer();
 	virtual ~Customer();
-	bool addToBasket(Plant*plants,int quantity);
-	bool removeFromBasket(Plant* plants,int quantity);
+	bool addToBasket(Plant*plants,int quantity); //to-do
+	bool removeFromBasket(Plant* plants,int quantity); //to-do
+	int getId();
+	Action* getAction();
+	void setAssignedStaff(Staff*ss);
+	
 };
 
 #endif

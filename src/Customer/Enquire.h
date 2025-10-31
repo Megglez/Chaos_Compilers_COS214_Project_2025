@@ -12,7 +12,7 @@ public:
 	Enquire();
 	virtual ~Enquire();
 	std::string getActionName() override;
-	void requestStaffAssistance() override;
+	void requestStaffAssistance(Customer *customer,InfoDesk& desk) override;
 
 
 };

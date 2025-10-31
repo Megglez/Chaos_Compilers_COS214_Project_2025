@@ -23,3 +23,17 @@ Cashiers::Cashiers() {
 Cashiers::~Cashiers()
 {
 }
+
+
+std::string getName()
+{
+
+}
+std::string getID()
+{
+
+}
+std::string getStaffType() 
+{
+
+}

@@ -11,7 +11,7 @@ public:
 	Action* getNextAction();
 	Browse();
 	virtual ~Browse();
-	void requestStaffAssistance() override;
+	void requestStaffAssistance(Customer *customer,InfoDesk& desk) override;
 	std::string getActionName() override;
 };
 

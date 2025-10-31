@@ -42,3 +42,30 @@ void Staff::setAvailability(bool isAvailable)
 {
 	available=isAvailable;
 }
+
+Staff* Staff::getNextInChain()
+{
+
+}
+
+void Staff::setNextInChain(Staff*ss)
+{
+
+}
+
+std::string Staff::getName()
+{
+return name;
+}
+
+std::string Staff::getID()
+{
+ return staffID;
+}
+
+std::string Staff::getStaffType()
+{
+	
+	return state->getStateName();
+
+}

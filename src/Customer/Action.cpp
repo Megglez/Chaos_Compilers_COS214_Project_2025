@@ -5,10 +5,6 @@ void Action::handle()
 }
 
 //getNextAction() is virtual, what does getNextAction do?
-Action* Action::getNextAction()
-{
-    
-}
 
 
 Action::Action()
@@ -20,3 +16,5 @@ Action::Action()
 Action::~Action()
 {
 }
+
+

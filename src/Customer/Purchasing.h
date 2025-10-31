@@ -12,7 +12,7 @@ public:
 	Purchasing();
 	virtual ~Purchasing();
 	std::string getActionName() override;
-	virtual void requestStaffAssistance() override;
+	virtual void requestStaffAssistance(Customer *customer,InfoDesk& desk) override;
 
 };
 

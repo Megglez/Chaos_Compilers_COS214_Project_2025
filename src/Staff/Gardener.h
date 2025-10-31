@@ -14,6 +14,7 @@ public:
 	void setAvailability();
 	Gardener();
 	virtual ~Gardener();
+	
 
 };
 
