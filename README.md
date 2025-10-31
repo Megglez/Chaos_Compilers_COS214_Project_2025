@@ -27,7 +27,7 @@ https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025
 | Name | GitHub | LinkedIn | Description |
 |:------|:-----:|:-----:|:------|
 | Megan Lai | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/Megglez)| [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](https://www.linkedin.com/in/megan-lai-720685368/) | |
-| Inge Keyser | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)]() | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](www.linkedin.com/in/inge-keyser) | |
+| Inge Keyser | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)]() | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](https://www.linkedin.com/in/inge-keyser)| |
 | Blessing Gibendi | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)]() | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)]() | |
 | Divo Köhler | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)]() | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)]() | |
 | Langa Vakalisa | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)]()| [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)]() | | 
