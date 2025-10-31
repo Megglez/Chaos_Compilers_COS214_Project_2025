@@ -47,7 +47,7 @@ endif()
 
     # Add this line immediately after the library is created:
 target_link_libraries(project_lib PRIVATE Qt::Core)
-target_link_libraries(Nursery PRIVATE Qt::Widgets Qt::Core)
+target_link_libraries(Nursery PRIVATE Qt::Widgets Qt::Core project_lib)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

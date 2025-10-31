@@ -1,24 +1,24 @@
 #include "Clock.h"
-#include <QDebug> // For simple console output
+#include <QDebug>
 
 Clock::Clock(QObject *parent)
     : QObject(parent)
 {
-    // Create the timer
-    timer = new QTimer(this);
-    
-    // Connect the timer's timeout signal to your slot
-    connect(timer, &QTimer::timeout, this, &Clock::onTimerTimeout);
-
-    // Set the interval in milliseconds (e.g., 1000ms = 1 second)
-    timer->start(1000); 
-
-    qDebug() << "Timer started.";
+    internalTimer = new QTimer(this);
+    // Connect the QTimer to the base class's private slot
+    connect(internalTimer, &QTimer::timeout, this, &Clock::onInternalTimeout);
 }
 
-void Clock::onTimerTimeout()
+void Clock::startClock(int intervalMs)
 {
-    // This is the code that runs every time the timer fires
-    qDebug() << "Timer executed!";
-    // If you want it to stop after one time, use timer->stop() or QTimer::singleShot()
+    if (intervalMs > 0) {
+        internalTimer->start(intervalMs);
+        qDebug() << "Base Clock started with interval:" << intervalMs << "ms";
+    }
+}
+
+void Clock::onInternalTimeout()
+{
+    // The base clock's only job: emit a generic tick event
+    emit ticked(); 
 }

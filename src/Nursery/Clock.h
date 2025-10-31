@@ -2,22 +2,29 @@
 #define CLOCK_H
 
 #include <QObject>
-#include <QTimer>
+#include <QTimer> 
 
 class Clock : public QObject
 {
-    // Required macro for signal/slot system
     Q_OBJECT 
 
 public:
     explicit Clock(QObject *parent = nullptr);
+    virtual ~Clock() = default; // Important for base classes
+    
+    // Starts the internal timer with the given interval (reusable function)
+    void startClock(int intervalMs); 
 
-public slots:
-    // A slot is a function that can be connected to a signal
-    void onTimerTimeout(); 
+signals:
+    // A generic signal all derived classes can connect to internally
+    void ticked(); 
+
+private slots:
+    // Catches the internal QTimer's signal and emits the custom 'ticked' signal
+    void onInternalTimeout(); 
 
 private:
-    QTimer *timer;
+    QTimer *internalTimer;
 };
 
 #endif

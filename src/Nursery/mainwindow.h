@@ -2,12 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QTimer> // <-- ADD THIS
+#include <QDebug> // Always good to have for debugging
+
+// Include all three specialized headers
+#include "PlantClock.h"
+#include "SeasonClock.h"
+#include "CustomerClock.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -18,11 +21,18 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots: // <-- ADD THIS SECTION
-    void updateTimer();
+private slots:
+    // Slots to handle events from each clock
+    void handlePlantUpdate();
+    void handleSeasonChange(Season newSeason); // Takes the enum as a parameter
+    void handleCustomerArrival();
 
 private:
     Ui::MainWindow *ui;
-    QTimer *timer; // <-- ADD THIS
+    
+    // Member pointers for all three specialized clocks
+    PlantClock *plantClock;
+    SeasonClock *seasonClock;
+    CustomerClock *customerClock;
 };
 #endif // MAINWINDOW_H

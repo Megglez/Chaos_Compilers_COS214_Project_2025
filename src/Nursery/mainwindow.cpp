@@ -1,6 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <QDebug> // <-- ADD THIS for console output
+#include "ui_mainwindow.h" // Assuming you fixed the "./ui_mainwindow.h" path
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -8,33 +7,62 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // 1. Initialize the QTimer
-    timer = new QTimer(this);
+    // 1. Initialize and start the three clocks
+    plantClock = new PlantClock(this);
+    seasonClock = new SeasonClock(this);
+    customerClock = new CustomerClock(this);
 
-    // 2. Connect the timer's 'timeout' signal to your 'updateTimer' slot
-    // The '&' syntax is the modern, safe way to connect signals and slots.
-    connect(timer, &QTimer::timeout, this, &MainWindow::updateTimer);
+    // 2. Connect Signals to Slots
+    
+    // Plant Clock Connection
+    connect(plantClock, &PlantClock::plantUpdate, 
+            this,       &MainWindow::handlePlantUpdate);
+    
+    // Season Clock Connection (Note the enum parameter)
+    connect(seasonClock, &SeasonClock::seasonChanged, 
+            this,        &MainWindow::handleSeasonChange);
+            
+    // Customer Clock Connection
+    connect(customerClock, &CustomerClock::customerArrived, 
+            this,          &MainWindow::handleCustomerArrival);
+    
+    // 3. Start the timers
+    plantClock->startPlantClock();
+    seasonClock->startSeasonClock();
+    customerClock->startCustomerClock();
 
-    // 3. Start the timer (e.g., every 1000 milliseconds = 1 second)
-    timer->start(1000); 
-
-    qDebug() << "MainWindow initialized and QTimer started.";
+    qDebug() << "All Clocks initialized and running.";
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    // The 'timer' is parented to 'this', so it will be automatically deleted when 'MainWindow' is.
+    // Clocks are parented to 'this', so they are deleted automatically.
 }
 
-// 4. Implement the slot that runs on every timeout
-void MainWindow::updateTimer()
-{
-    // This code runs every second
-    static int counter = 0;
-    counter++;
-    qDebug() << "Timer Tick:" << counter;
+// --- Specialized Event Handlers ---
 
-    // You can update a QLabel or other UI element here
-    // Example: ui->myLabel->setText(QString::number(counter));
+void MainWindow::handlePlantUpdate()
+{
+    qDebug() << "ACTION: Update all plant growth/water/health status.";
+    // Call functions in your Nursery simulation class here.
+}
+
+void MainWindow::handleSeasonChange(Season newSeason)
+{
+    QString seasonName;
+    switch (newSeason) {
+        case SPRING: seasonName = "Spring"; break;
+        case SUMMER: seasonName = "Summer"; break;
+        case AUTUMN: seasonName = "Autumn"; break;
+        case WINTER: seasonName = "Winter"; break;
+    }
+    qDebug() << "ACTION: SEASON CHANGED to" << seasonName;
+    // Update UI labels and change conditions for plants/customers in the Nursery.
+}
+
+void MainWindow::handleCustomerArrival()
+{
+    qDebug() << "ACTION: New customer has ARRIVED!";
+    // Call your Nursery function to create a new Customer object.
 }
