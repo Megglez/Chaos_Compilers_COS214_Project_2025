@@ -1,8 +1,8 @@
 #include "Planter.h"
 
-Plant *Planter::planterMethod()
+Plant* Planter::planterMethod()
 {
-    return nullptr;
+    
 }
 
 Planter::Planter()

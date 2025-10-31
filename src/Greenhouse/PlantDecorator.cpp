@@ -1,7 +1,9 @@
 #include "PlantDecorator.h"
 
 void PlantDecorator::package() {
-	// TODO - implement PlantDecorator::package
+	if(plantDec){
+		plantDec->package();
+	}
 	
 }
 

@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/qt5",
+                "/usr/include/qt5/QtWidgets",
+                "/usr/include/qt5/QtCore",
+                "/usr/include/qt5/QtGui",
+                "${workspaceFolder}/gui/ChaoticPlants/build",
+                "${workspaceFolder}/gui/ChaoticPlants/build/ChaoticPlants_autogen/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
