@@ -7,11 +7,7 @@ Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStra
     this->water=water;
     this->soil=soil;
     this->sunlight=sunlight;
-    if(stage->getStageName() != "Seed"){
-        this->stage = stage;
-    }else{
-        this->stage = new Seed();
-    }
+    this->stage = stage;
     this->strategy = strategy; 
 }
 
@@ -21,8 +17,31 @@ void Plant::grow()
 
 }
 
-void Plant::helpPlant() {
-
+void Plant::helpPlant() 
+{
+    if(stage->getStageName() == "Seed"){ 
+        cout << "Seed care: " << endl;
+        std::string message = "Gentle misting and warm conditions\n";
+        strategy->helpPlant(message);
+        
+    } else if(stage->getStageName() == "Sapling"){
+        cout << "Sapling care: " << endl;
+        std::string message = "Regular watering and protection from harsh elements\n";
+        strategy->helpPlant(message);
+        
+    } else if(stage->getStageName() == "Prime"){
+        cout << "Prime care: " << endl;
+        std::string message = "Full care regimen for mature plant\n";
+        strategy->helpPlant(message);
+        
+    } else if(stage->getStageName() == "Wilting"){
+        cout << "Wilting care: " << endl;
+        std::string message = "Extra attention and recovery measures\n";
+        strategy->helpPlant(message);
+    } else if(stage->getStageName() == "Dead"){
+        cout<<"Dead:"<<endl;
+        std::cout << "Unfortunately, your plant is dead, and there's no amount of water that can save it. Sorrows, sorrows, prayers\n" << std::endl;
+    }
 }
 
 void Plant::setStage(StageOfDevelopment* stage){
@@ -35,6 +54,14 @@ void Plant::setStage(StageOfDevelopment* stage){
 
 Plant::~Plant()
 {
+    if(stage != nullptr){
+        delete stage;
+        stage = nullptr;
+    }
+    if(strategy != nullptr){
+        delete strategy;
+        strategy =  nullptr;
+    }
 }
 
 bool Plant::isWinter() const  { return false; }
@@ -51,4 +78,8 @@ int Plant::getSoil(){
 }
 int Plant::getSunlight(){
     return sunlight;
+}
+
+CareStrategy* Plant::getCare(){
+    return strategy;
 }

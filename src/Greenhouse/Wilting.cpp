@@ -57,3 +57,7 @@ std::string Wilting::getStageName(){
     return "Wilting";
 }
 
+
+StageOfDevelopment* Wilting::clone(){
+    return new Wilting();
+}

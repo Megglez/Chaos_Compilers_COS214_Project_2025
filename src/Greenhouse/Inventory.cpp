@@ -29,22 +29,25 @@ Inventory::Inventory() {
  */
 
 void Inventory::addPlant(std::unique_ptr<Plant> plant, int quantity) {
-	std::string plantName = plant->getName(); // Assuming Plant has getName()
-    
-    auto it = inventoryList.find(plantName);
-    if (it != inventoryList.end()) {
-        // Plant exists - update quantity
-        it->second.second += quantity;
-        std::cout << "Added " << quantity << " " << plantName << ". Total: " << it->second.second << std::endl;
-    } else {
-        // New plant - insert with quantity
-        inventoryList[plantName] = std::make_pair(std::move(plant), quantity);
-        std::cout << "Added new plant: " << plantName 
-                  << " with quantity: " << quantity << std::endl;
-        std::string message = plantName + " has just been added to the Inventory";
-        notify(message);
-    }	
-	
+    if(plant){
+        std::string plantName = plant->getName(); // Assuming Plant has getName()
+        
+        auto it = inventoryList.find(plantName);
+        if (it != inventoryList.end()) {
+            // Plant exists - update quantity
+            it->second.second += quantity;
+            std::cout << "Added " << quantity << " " << plantName << ". Total: " << it->second.second << std::endl;
+        } else {
+            // New plant - insert with quantity
+            inventoryList[plantName] = std::make_pair(std::move(plant), quantity);
+            std::cout << "Added new plant: " << plantName 
+                    << " with quantity: " << quantity << std::endl;
+            std::string message = plantName + " has just been added to the Inventory";
+            notify(message);
+        }	
+    }else{
+        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
+    }
 }
 
 /**
@@ -56,27 +59,31 @@ void Inventory::addPlant(std::unique_ptr<Plant> plant, int quantity) {
  * removes the plant entirely from inventory. Notifies staff of changes.
  */
 void Inventory::removePlant(std::unique_ptr<Plant> plant, int quantity) {
-	auto it = inventoryList.find(plant->getName()); 
-    if (it != inventoryList.end()) {
-        if (it->second.second >= quantity) {
-            it->second.second -= quantity;
-            std::cout << "Removed " << quantity << " " << plant->getName() 
-                      << ". Remaining: " << it->second.second << std::endl;
-            
-            // Remove entry if quantity reaches zero
-            if (it->second.second == 0) {
-                inventoryList.erase(it);
-                std::cout << plant->getName() << " is now out of stock." << std::endl; // replace with plant->getName()
-                std::string message = plant->getName() + "is now out of Stock. Please restock soon";// replace with plant->getName()
-                notify(message);
+    if(plant){
+        auto it = inventoryList.find(plant->getName()); 
+        if (it != inventoryList.end()) {
+            if (it->second.second >= quantity) {
+                it->second.second -= quantity;
+                std::cout << "Removed " << quantity << " " << plant->getName() 
+                        << ". Remaining: " << it->second.second << std::endl;
+                
+                // Remove entry if quantity reaches zero
+                if (it->second.second == 0) {
+                    inventoryList.erase(it);
+                    std::cout << plant->getName() << " is now out of stock." << std::endl; // replace with plant->getName()
+                    std::string message = plant->getName() + "is now out of Stock. Please restock soon";// replace with plant->getName()
+                    notify(message);
+                }
+            } else {
+                std::cout << "Error: Only " << it->second.second << " " << plant->getName() << " available. Cannot remove " // replace with plant->getName()
+                << quantity << std::endl;
+
             }
         } else {
-            std::cout << "Error: Only " << it->second.second << " " << plant->getName() << " available. Cannot remove " // replace with plant->getName()
-            << quantity << std::endl;
-
+            std::cout << "Error: Plant " << plant->getName() << " not found in inventory." << std::endl; // replace with plant->getName()
         }
-    } else {
-        std::cout << "Error: Plant " << plant->getName() << " not found in inventory." << std::endl; // replace with plant->getName()
+    }else{
+        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
     }
 }
 
@@ -88,13 +95,17 @@ void Inventory::removePlant(std::unique_ptr<Plant> plant, int quantity) {
  * Useful for discontinuing plant types or complete stock clearance.
  */
 void Inventory::removeAll(std::unique_ptr<Plant> plant){
-    auto it = inventoryList.find(plant->getName()); // replace with plant->getName()
-    std::string message = plant->getName() + " has just been removed from the inventory";
-    if (it != inventoryList.end()) {
-        inventoryList.erase(it);
-        notify(message);
-    }else {
-        std::cout << "Error: Plant " << plant->getName() << " not found in inventory." << std::endl; // replace with plant->getName()
+    if(plant){
+        auto it = inventoryList.find(plant->getName()); // replace with plant->getName()
+        std::string message = plant->getName() + " has just been removed from the inventory";
+        if (it != inventoryList.end()) {
+            inventoryList.erase(it);
+            notify(message);
+        }else {
+            std::cout << "Error: Plant " << plant->getName() << " not found in inventory." << std::endl; // replace with plant->getName()
+        }
+    }else{
+        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
     }
 
 }
@@ -357,9 +368,13 @@ void Inventory::attach(Staff* staff) {
  * member will no longer receive inventory updates.
  */
 void Inventory::detach(Staff* staff) {
-	auto it = std::find(staffList.begin(), staffList.end(), staff);
-    if (it != staffList.end()) {
-        staffList.erase(it);
+    if(staff){
+        auto it = std::find(staffList.begin(), staffList.end(), staff);
+        if (it != staffList.end()) {
+            staffList.erase(it);
+        }
+    }else{
+        std::cout << "Error: staff pointer is null. Please pass an actual staff object :>" << std::endl;
     }
 
 }

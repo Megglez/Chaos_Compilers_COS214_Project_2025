@@ -5,8 +5,9 @@ void Enquire::handle() {
 	
 }
 
-Action Enquire::getNextAction() {
+Action* Enquire::getNextAction() {
 	// TODO - implement Enquire::getNextAction
+	//return Enquire();
 	
 }
 
@@ -17,4 +18,19 @@ Enquire::Enquire() {
 
 Enquire::~Enquire()
 {
+}
+
+std::string Enquire::getActionName() 
+{
+	return "Enquiring";
+}
+
+void Enquire::requestStaffAssistance()
+{
+	std::cout<<"Customer is requesting assistance at infodesk."<<std::endl;
+	// call staff at infodesk
+	
+
+
+
 }

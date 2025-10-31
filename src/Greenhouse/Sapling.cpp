@@ -53,3 +53,7 @@ Sapling::~Sapling()
 std::string Sapling::getStageName(){
     return "Sapling";
 }
+
+StageOfDevelopment* Sapling::clone(){
+    return new Sapling();
+}

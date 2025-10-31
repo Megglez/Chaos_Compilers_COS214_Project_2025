@@ -49,7 +49,7 @@ $(TEST_TARGET): $(TEST_OBJS) $(OBJS)
 
 # Valgrind targets
 valgrind: $(TARGET)
-	valgrind --leak-check=full --track-origins=yes ./$(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(TARGET)
 
 valgrind_test: $(TEST_TARGET)
 	valgrind --leak-check=full --track-origins=yes ./$(TEST_TARGET)

@@ -4,13 +4,14 @@
 
 #include "Plant.h"
 
+
 class PlantDecorator : public Plant {
 protected:
     Plant* plantDec;
 
 public:
     PlantDecorator(Plant* plant);
-    virtual ~PlantDecorator();
+    ~PlantDecorator() override;
     
     // Implement pure virtual functions from Plant
     virtual Plant* clone() = 0;

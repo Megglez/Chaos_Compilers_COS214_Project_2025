@@ -10,7 +10,7 @@ class FlowerPlanter : public Planter {
 public:
 	virtual Plant* planterMethod(std::string name) override;
 	FlowerPlanter(bool isWinter  = false);
-	virtual ~FlowerPlanter();
+	~FlowerPlanter();
 private:
 	bool isWinter;
 
