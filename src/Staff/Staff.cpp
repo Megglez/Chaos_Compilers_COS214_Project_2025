@@ -42,3 +42,8 @@ void Staff::setAvailability(bool isAvailable)
 {
 	available=isAvailable;
 }
+
+void Staff::getAvailability(){
+	
+}
+void Staff::setAvailability(){}

@@ -1,11 +1,5 @@
 .PHONY: cmake_test
 
-# Run CMake and execute unit tests
-unit_tests:
-	mkdir -p build
-	cd build && cmake .. && $(MAKE)
-	cd build && ctest --output-on-failure
-
 
 # Makefile for COS214_Project_2025
 
@@ -14,8 +8,9 @@ CXXFLAGS = -g -std=c++17 -Wall -Wextra
 GCOV_FLAGS = -fprofile-arcs -ftest-coverage
 
 # Find all source files in src subfolders
-SRC_DIRS = src/Customer src/Greenhouse src/Staff
+SRC_DIRS = src/Greenhouse src/Staff
 SRCS = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
+SRCS := $(filter-out %_test.cpp %Test.cpp, $(SRCS))
 OBJS = $(SRCS:.cpp=.o)
 
 
@@ -27,7 +22,7 @@ all: $(TARGET)
 
 
 $(TARGET): TestingMain.cpp $(OBJS)
-	$(CXX) $(CXXFLAGS) $^ $< -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -49,7 +44,7 @@ $(TEST_TARGET): $(TEST_OBJS) $(OBJS)
 
 # Valgrind targets
 valgrind: $(TARGET)
-	valgrind --leak-check=full --track-origins=yes ./$(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(TARGET)
 
 valgrind_test: $(TEST_TARGET)
 	valgrind --leak-check=full --track-origins=yes ./$(TEST_TARGET)
@@ -82,3 +77,9 @@ clean:
 	rm -f $(OBJS) $(TEST_OBJS) $(TARGET) $(TEST_TARGET) *.o *.gcov *.gcda *.gcno *.gz *.html *.css output.txt coverage.txt
 
 .PHONY: all run clean test valgrind valgrind_test gdb gdb_test coverage coverage_test report clean_gcda
+
+# Run CMake and execute unit tests
+unit_tests:
+	mkdir -p build
+	cd build && cmake .. && $(MAKE)
+	cd build && ctest --output-on-failure
