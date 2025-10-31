@@ -6,7 +6,7 @@ void Browse::handle() {
 }
 
 Action Browse::getNextAction() {
-	// TODO - implement Browse::getNextAction
+	return Action();
 	
 }
 

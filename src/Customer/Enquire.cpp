@@ -7,7 +7,7 @@ void Enquire::handle() {
 
 Action Enquire::getNextAction() {
 	// TODO - implement Enquire::getNextAction
-	
+	return Action();
 }
 
 Enquire::Enquire() {

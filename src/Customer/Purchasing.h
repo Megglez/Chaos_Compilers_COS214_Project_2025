@@ -8,7 +8,7 @@ class Purchasing : public Action
 {
 public:
 	void handle();
-	Action getNextAction();
+	virtual Action getNextAction() override;
 	Purchasing();
 	virtual ~Purchasing();
 };

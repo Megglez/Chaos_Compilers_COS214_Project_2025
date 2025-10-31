@@ -8,7 +8,7 @@ class Enquire : public Action
 {
 public:
 	void handle();
-	Action getNextAction();
+	virtual Action getNextAction() override;
 	Enquire();
 	virtual ~Enquire();
 };

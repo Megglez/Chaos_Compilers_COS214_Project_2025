@@ -49,8 +49,8 @@ int main(){
     std::unique_ptr<Plant> FlowerWinter(FlowerW->planterMethod("Snowdrops"));
     
     Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
-    PlantDecorator* gift = new GiftWrap(Flower2);
-    PlantDecorator* pot = new Pot(Flower2);
+    GiftWrap* gift = new GiftWrap(Flower2);
+    Pot* pot = new Pot(gift);
     gift->package();
     pot->package();
 
@@ -92,6 +92,21 @@ int main(){
     }
     
     
+    delete test_st;
+    delete test_inv;
+    delete FlowerP;
+    delete SuccP;
+    delete HerbP;
+    delete TreeP;
+    //delete pot;
+    delete FlowerW;
+    
+
+    delete command;
+    delete command2;
+    delete command3;
+    delete command4;
+
     
     return 0;
 
