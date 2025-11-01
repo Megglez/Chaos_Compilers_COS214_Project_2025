@@ -1,16 +1,13 @@
 #include "Customer.h"
 
 void Customer::request() {
-	// TODO - implement Customer::request
 	if(action)
 	{
 		action->requestStaffAssistance();
 	}
-	
 }
 
-void Customer::setAction(std::string ss) {
-	// TODO - implement Customer::setAction
+void Customer::setAction(string ss) {
 	delete action;
 	if(ss=="Enquiring")
 	{
@@ -32,7 +29,7 @@ void Customer::setAction(std::string ss) {
 
 	else
 	{
-		std::cout<<"unknown State. Default to Browsing.";
+		cout<<"unknown State. Default to Browsing.";
 		this->action = new Browse();
 	}
 
@@ -40,10 +37,9 @@ void Customer::setAction(std::string ss) {
 	
 }
 
-Customer::Customer() {
-	// TODO - implement Customer::Customer
-	setAction("Browsing");
-	
+Customer::Customer(Action* action) {
+	id = 0;
+	this->action = action;
 }
 
 Customer::~Customer()
@@ -53,11 +49,11 @@ Customer::~Customer()
 
 bool Customer::addToBasket(Plant*plants,int quantity)
 {
-return false;
+	return false;
 }
 
 bool Customer::removeFromBasket(Plant* plants,int quantity)
 {
- return true;
+	return true;
 }
 

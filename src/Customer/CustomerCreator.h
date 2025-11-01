@@ -3,14 +3,15 @@
 
 #include <iostream>
 #include "Customer.h"
+#include "Browse.h"
+#include "Enquire.h"
 #include "./Greenhouse/Stock.h"
 using namespace std;
-
 
 class CustomerCreator
 {
 public:
-    CustomerCreator() = default;
+    CustomerCreator();
     
     // Factory method to create a new Customer object
     // It takes a QObject parent (the Nursery) for proper memory cleanup
