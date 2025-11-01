@@ -6,7 +6,7 @@
 #include "Available.h"
 #include "Busy.h"
 //#include "../Greenhouse/Inventory.h"
-#include "InfoDesk.h"
+#include "../Staff/InfoDesk.h"
 //#include "Customer.h"
 using namespace std;
 
