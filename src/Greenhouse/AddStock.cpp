@@ -45,7 +45,8 @@ void AddStock::execute(std::unique_ptr<Plant>&& plant, int quantity) {
  * @warning The inventory pointer must not be null. The caller is responsible
  *          for ensuring the inventory object remains valid.
  */
-AddStock::AddStock(Inventory* inv): inventory(inv) {
+AddStock::AddStock(Inventory* inv): inventory(inv) 
+{
 
 }
 
