@@ -1,20 +1,23 @@
 #ifndef ENQUIRE_H
 #define ENQUIRE_H
-#include <iostream>
+
 #include "Action.h"
-using namespace std;
+#include "../Greenhouse/Plant.h"
+
+class Customer;
+class InfoDesk;
 
 class Enquire : public Action
 {
+private:
+    Plant* plantOfInterest;
+
 public:
-	void handle();
-	Action*getNextAction();
-	Enquire();
-	virtual ~Enquire();
-	std::string getActionName() override;
-	void requestStaffAssistance(Customer *customer,InfoDesk& desk) override;
-
-
+    Enquire(Plant* plant) : Action("Enquiring"), plantOfInterest(plant) {}
+    virtual ~Enquire() {}
+    
+    void handle() override;
+    Action* getNextAction() override;
+    void requestStaffAssistance(Customer *customer, InfoDesk& desk) override;
 };
-
 #endif

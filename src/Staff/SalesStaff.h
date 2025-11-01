@@ -10,8 +10,10 @@ public:
 	void interact();
 	void QnA();
 	void findPlant();
-	void getAvailability();
-	void setAvailability();
+	bool getAvailability() override;
+	void setAvailability(bool isAvailable) override;
+	void performDuty() override;
+	bool canHandleEnquiry() override;
 	SalesStaff();
 	virtual ~SalesStaff();
 	

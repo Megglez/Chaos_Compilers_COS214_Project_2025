@@ -1,37 +1,20 @@
 #include "Enquire.h"
+#include "Customer.h"
+#include "../Staff/InfoDesk.h"
+#include <iostream>
+using namespace std;
 
 void Enquire::handle() {
-	// TODO - implement Enquire::handle
-	
+    // TODO - implement Enquire::handle
+    cout << "Customer is handling the Enquire action" << endl;
 }
 
 Action* Enquire::getNextAction() {
-	// TODO - implement Enquire::getNextAction
-	//return Enquire();
-	
+    // For now, return nullptr as there is no next action after enquiring
+    return nullptr;
 }
 
-Enquire::Enquire() {
-	// TODO - implement Enquire::Enquire
-	
-}
-
-Enquire::~Enquire()
-{
-}
-
-std::string Enquire::getActionName() 
-{
-	return "Enquiring";
-}
-
-void Enquire::requestStaffAssistance(Customer *customer, InfoDesk& desk)
-{
-	std::cout<<"Customer is requesting assistance at infodesk."<<std::endl;
-	// call staff at infodesk
-	desk.handleCustomer(customer);
-	
-	
-
-
+void Enquire::requestStaffAssistance(Customer* customer, InfoDesk& desk) {
+    cout << "Customer is requesting assistance at infodesk." << endl;
+    desk.handleCustomer(customer);
 }

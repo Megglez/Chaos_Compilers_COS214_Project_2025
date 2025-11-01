@@ -1,4 +1,6 @@
 #include "Staff.h"
+#include "../Customer/Customer.h"
+#include "InfoDesk.h"
 
 
 void Staff::changeState()
@@ -28,15 +30,14 @@ void Staff::update(const std::string &update)
 
 Staff::Staff()
 {
-	// TODO - implement Staff ::Staff
-name=name;
-id=id;
-available= true;
-infoDesk=nullptr;
-nextInChain=nullptr;
-currentCustomer=nullptr;
-state=new Available();
-state->setContext(this);
+    name = "";
+    staffID = "";
+    available = true;
+    infoDesk = nullptr;
+    nextInChain = nullptr;
+    currentCustomer = nullptr;
+    state = new Available();
+    state->setContext(this);
 
 }
 
@@ -52,12 +53,12 @@ void Staff::setAvailability(bool isAvailable)
 
 Staff* Staff::getNextInChain()
 {
-return nextInChain;
+    return nextInChain;return nextInChain;
 }
 
-void Staff::setNextInChain(Staff*ss)
+void Staff::setNextInChain(Staff* ss)
 {
-nextInChain=ss;
+    nextInChain = ss;nextInChain=ss;
 }
 
 std::string Staff::getName()
