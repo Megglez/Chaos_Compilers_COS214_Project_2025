@@ -10,13 +10,14 @@
 using namespace std;
 
 //class Staff;
+//class Customer;
 class InfoDesk {
 	private:
 	 // 
 	Staff*chainHead; //staff member with most priority
 	std::queue<Customer*> waitingCustomers; // queued customers 
 	std::vector<Staff*> AllStaff; 
-	std::vector<Staff*> AvailableStaf;
+	//std::vector<Staff*> AvailableStaff;
 	Staff* findAvailableStaffThroughChain();
 
 public:
@@ -24,19 +25,18 @@ public:
 	InfoDesk();
 	virtual ~InfoDesk(); 
 	InfoDesk* getInfodesk();
-	void EnquiryChain();
 	void buildChain();
 	void clearChain();
 	//assogns staff to customer
 	void handleCustomer(Customer* customer); // called by requestAssistance
-	bool FindAvailableStaff(Customer *cc);
+	bool FindAvailableStaff();
 	
 	bool removeStaff(Staff *ss);
 	bool addStaff(Staff* ss); //doing
 	void processWaitingCustomers();
 	void notifyStaffAvailable(Staff* freedStaff);
 	std::vector<Staff*> getStaffByType(std::string ss);
-	
+	void AssignStaffToCustomer(Customer * c);
 
 
 
