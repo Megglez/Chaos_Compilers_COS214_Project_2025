@@ -2,14 +2,15 @@
 #define STAFF_H
 #include <iostream>
 //#include "../Greenhouse/Plant.h"
-#include "StaffState.h"
+//#include "StaffState.h"
 #include "Available.h"
 #include "Busy.h"
 //#include "../Greenhouse/Inventory.h"
+#include "../Customer/Customer.h"
 #include "../Staff/InfoDesk.h"
-//#include "Customer.h"
 using namespace std;
-
+ 
+class StaffState;
 class Inventory;
 class Staff
 {
@@ -36,6 +37,17 @@ public:
 	std::string getID();
 	std::string getStaffType();
 	Staff* getNextInChain();
+	std::string getStateName();
+	Customer * getCurrentCustomer();
+	void setCurrentCustomer(Customer * cc);
+	InfoDesk* getInfodesk();
+	Staff* handleEnquiryRequest();
+	virtual void performDuty();
+	void completeTask();
+	virtual bool canHandleEnquiry()=0;
+	void registerToAllStaff(InfoDesk*desk);
+	void unregisterFromAllStaff();
+ 	
 	
 	
 

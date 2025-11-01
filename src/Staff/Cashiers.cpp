@@ -1,22 +1,10 @@
 #include "Cashiers.h"
 
-void Cashiers::makeTransaction() {
-	// TODO - implement Cashiers::makeTransaction
-	
-}
 
-void Cashiers::getAvailability() {
-	// TODO - implement Cashiers::getAvailability
-	
-}
 
-void Cashiers::setAvailability() {
-	// TODO - implement Cashiers::setAvailability
-	
-}
-
-Cashiers::Cashiers() {
+Cashiers::Cashiers(std::string& name,std::string& id):Staff(name,id) {
 	// TODO - implement Cashiers::Cashiers
+	workArea="Till";
 	
 }
 
@@ -24,16 +12,12 @@ Cashiers::~Cashiers()
 {
 }
 
-
-std::string getName()
-{
-
+std::string Cashiers::getStaffType() 
+ {
+return "Cashier";
 }
-std::string getID()
+ 
+bool Cashiers::canHandleEnquiry()
 {
-
-}
-std::string getStaffType() 
-{
-
-}
+	return false;
+ }

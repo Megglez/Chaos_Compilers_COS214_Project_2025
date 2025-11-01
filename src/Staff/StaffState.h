@@ -2,6 +2,7 @@
 #define STAFFSTATE_H
 #include <iostream>
 using namespace std;
+//#include "./Staff.h"
 
 class Staff;
 class Customer;
