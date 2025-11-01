@@ -1,5 +1,6 @@
 #include "InfoDesk.h"
 #include "Staff.h"
+#include "../Customer/Customer.h"
 
 void InfoDesk::notify(Staff *staff)
 {
@@ -37,7 +38,7 @@ void InfoDesk::handleCustomer(Customer* customer) // called by enquiring custome
 
   if(customer->getAction()->getActionName()=="Enquiring")
   {
-    std::cout<<".....Requesting assistance for customer..... "+customer->getId()<<std::endl;
+    std::cout<<".....Requesting assistance for customer..... " << customer->getId()<<std::endl;
     
     //get a staff member
     Staff *assignedStaff;
@@ -72,7 +73,8 @@ bool InfoDesk::FindAvailableStaff(Customer *cc)
         std::cout<<"Currently no staff available. Please queue for assistance."<<std::endl;
         return false;
     }
-return assignedStaff;
+    // Return true if a staff member was found, false otherwise
+    return (assignedStaff != nullptr);
 }
 
 void InfoDesk::processWaitingCustomers()
@@ -96,54 +98,49 @@ while(!waitingCustomers.empty())
 
 bool InfoDesk::removeStaff(Staff* ss)
 {
- if(!ss)
- {
-    std::cout<<"staff is NULL. Cannot remove Staff member."<<std::endl;
-    return;
- }
-
- auto it = std::find(AllStaff.begin(),AllStaff.end(),ss);
-
- 
-if(it!=AllStaff.end())
+    if(!ss)
     {
-        AllStaff.erase(it);
-
-        std::cout<<"Staff is now Busy."<<std::endl;
-    
-    buildChain();
-
+        std::cout<<"staff is NULL. Cannot remove Staff member."<<std::endl;
+        return false;
     }
 
-    else{
-
-std::cout<<"Could not find staff member. "<<std::endl;
-
-}
+    auto it = std::find(AllStaff.begin(),AllStaff.end(),ss);
+    
+    if(it!=AllStaff.end())
+    {
+        AllStaff.erase(it);
+        std::cout<<"Staff is now Busy."<<std::endl;
+        buildChain();
+        return true;
+    }
+    else
+    {
+        std::cout<<"Could not find staff member. "<<std::endl;
+        return false;
+    }
 }
 
 
 bool InfoDesk::addStaff(Staff *ss)
 {
- if(!ss)
- {
-    std::cout<<"staff is NULL. Cannot add Staff member."<<std::endl;
-    return;
- }
+    if(!ss)
+    {
+        std::cout<<"staff is NULL. Cannot add Staff member."<<std::endl;
+        return false;
+    }
 
- auto it = std::find(AllStaff.begin(),AllStaff.end(),ss);
-
- 
+    auto it = std::find(AllStaff.begin(),AllStaff.end(),ss);
+    
     if(it!=AllStaff.end())
     {
         std::cout<<"Staff Already set as Available."<<std::endl;
-        return;
-    
+        return false;
     }
 
-AllStaff.push_back(ss); //added
-std::cout<<ss->getName()+" is now available for assistance."<<std::endl;
-buildChain();
+    AllStaff.push_back(ss); //added
+    std::cout<<ss->getName()+" is now available for assistance."<<std::endl;
+    buildChain();
+    return true;
 
 }
 
@@ -238,30 +235,46 @@ void InfoDesk::buildChain()
 
 void InfoDesk::clearChain()
 {
-if(chainHead)
-{
-    Staff*current=chainHead;
-    while (current)
+    if(chainHead)
     {
-      Staff*next=current->getNextInChain();
-      current->setNextInChain(nullptr);
-      current=next;
-
-    }
-    chainHead=nullptr;
-}
-}
-
-std::vector<Staff*> InfoDesk::getStaffByType(std::string type)
-{
-std::vector<Staff*> result;
-for(Staff* ss: AllStaff)
-{
-    if(ss->getStaffType()== type)
-    {
-        result.push_back(ss);
+        Staff*current=chainHead;
+        while (current)
+        {
+          Staff*next=current->getNextInChain();
+          current->setNextInChain(nullptr);
+          current=next;
+        }
+        chainHead=nullptr;
     }
 }
-return result;
+
+Staff* InfoDesk::findAvailableStaffThroughChain()
+{
+    if (!chainHead) {
+        return nullptr;
+    }
+
+    Staff* current = chainHead;
+    while (current) {
+        // Check if the current staff member is available
+        if (current->getStaffType() == "Available") {
+            return current;
+        }
+        current = current->getNextInChain();
+    }
+    return nullptr; // No available staff found
+}
+
+std::vector<Staff*> InfoDesk::getStaffByType(std::string type) const
+{
+    std::vector<Staff*> result;
+    for(Staff* ss: AllStaff)
+    {
+        if(ss->getStaffType()== type)
+        {
+            result.push_back(ss);
+        }
+    }
+    return result;
 }
 

@@ -27,13 +27,15 @@ Cashiers::~Cashiers()
 
 std::string getName()
 {
-
+    return "Cashier";
 }
+
 std::string getID()
 {
-
+    return "C001"; // Default ID for now
 }
+
 std::string getStaffType() 
 {
-
+    return "Cashier";
 }

@@ -2,43 +2,42 @@
 #define CUSTOMER_H
 #include <iostream>
 #include <vector>
-#include <QObject>
+#include <QObject> 
 #include "Action.h"
 #include "Enquire.h"
 #include "Browse.h"
 #include "Purchasing.h"
-#include"./Greenhouse/Plant.h"
-using namespace std;
+#include "../Staff/Staff.h" 
+#include "./Greenhouse/Plant.h" 
 
+class InfoDesk; 
+using namespace std;
 
 class Customer : public QObject
 {
+    Q_OBJECT
+
 private:
 	Action* action;
 	int id;
-	vector<Plant*> basket;
-
-
-
-
-	
-	int getId();
-	Action* getAction();
-	void setAssignedStaff(Staff*ss);
-	
-	Q_OBJECT
+	vector<Plant*> basket;	
+    Staff* assignedStaff = nullptr;
 
 public:
-	void request();
-	void setAction(string ss);
-	Customer(Action* action);
+    Customer(Action* action, QObject* parent = nullptr); 
 	virtual ~Customer();
-	bool addToBasket(Plant*plants,int quantity);
-	bool removeFromBasket(Plant* plants,int quantity);
-	explicit Customer(QObject *parent = nullptr) : QObject(parent) {}
-	int getId();
-	Action* getAction();
-	void setAssignedStaff(Staff*ss);
+
+    void request();
+    void setAction(Action* newAction); 
+	
+	bool addToBasket(Plant* plants, int quantity);
+	bool removeFromBasket(Plant* plants, int quantity);
+	
+	int getId() const;
+	Action* getAction() const; 
+	
+	void setAssignedStaff(Staff* staff);
+    Staff* getAssignedStaff() const { return assignedStaff; } 
 };
 
 #endif

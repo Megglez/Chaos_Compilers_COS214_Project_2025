@@ -24,12 +24,9 @@ void Busy::handle() {
 }
 
 
-//constructor uneccessary
-/*
 Busy::Busy() {
-	// TODO - implement Busy::Busy
-	
-}*/
+    // Initialize Busy state
+}
 
 Busy::~Busy()
 {

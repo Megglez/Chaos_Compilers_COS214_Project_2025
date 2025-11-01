@@ -2,19 +2,21 @@
 #define INVENTORY_H
 
 #include <iostream>
-#include "../Staff/Staff.h"
 #include <vector>
 #include <memory>
 #include <algorithm>
 #include <map>
-using namespace std;
+#include <string>
+#include "Plant.h"
 #include "StageOfDevelopment.h"
-#include "Seed.h"
-#include "Sapling.h"
-#include "Prime.h"
-#include "Wilting.h"
-#include "Dead.h"
-#include "../Staff/Staff.h"
+
+// Forward declarations for stage classes
+class Seed;
+class Sapling;
+class Prime;
+class Wilting;
+class Dead;
+class Staff;
 
 /**
  * @class Inventory

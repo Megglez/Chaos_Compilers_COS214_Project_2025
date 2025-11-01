@@ -45,12 +45,12 @@ void Staff::setAvailability(bool isAvailable)
 
 Staff* Staff::getNextInChain()
 {
-
+    return nextInChain;
 }
 
-void Staff::setNextInChain(Staff*ss)
+void Staff::setNextInChain(Staff* ss)
 {
-
+    nextInChain = ss;
 }
 
 std::string Staff::getName()
