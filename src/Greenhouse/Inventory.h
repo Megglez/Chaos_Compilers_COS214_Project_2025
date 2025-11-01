@@ -2,7 +2,6 @@
 #define INVENTORY_H
 
 #include <iostream>
-#include "../Staff/Staff.h"
 #include <vector>
 #include <memory>
 #include <algorithm>
