@@ -22,7 +22,7 @@ private:
 
 public:
 	void request();
-	void setAction(std::string ss);
+	void setAction(string ss);
 	Customer();
 	virtual ~Customer();
 	bool addToBasket(Plant*plants,int quantity);
