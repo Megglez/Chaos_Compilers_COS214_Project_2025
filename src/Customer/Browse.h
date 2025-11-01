@@ -1,18 +1,23 @@
 #ifndef BROWSE_H
 #define BROWSE_H
-#include <iostream>
 #include "Action.h"
-using namespace std;
+#include "../Greenhouse/Plant.h" 
+class Customer; 
+class InfoDesk; 
 
 class Browse : public Action
 {
+private:
+    Plant* plantToBuy;
+    int quantity;
+
 public:
-	void handle();
-	Action* getNextAction();
-	Browse();
-	virtual ~Browse();
-	void requestStaffAssistance() override;
-	string getActionName() override;
+    Browse(Plant* plant, int quantity) : Action("Browsing"), plantToBuy(plant), quantity(quantity) {}
+    virtual ~Browse() {}
+    
+    void handle() override;
+    Action* getNextAction() override;
+    void requestStaffAssistance(Customer *customer, InfoDesk& desk) override;
 };
 
-#endif
+#endif // BROWSE_H

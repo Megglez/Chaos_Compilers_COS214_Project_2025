@@ -1,4 +1,5 @@
 #include "Busy.h"
+#include "Staff.h"
 #include "InfoDesk.h"
 void Busy::handle() {
 	// TODO - implement Busy::handle
@@ -25,12 +26,9 @@ void Busy::handle() {
 }
 
 
-//constructor uneccessary
-/*
 Busy::Busy() {
-	// TODO - implement Busy::Busy
-	
-}*/
+    // Initialize Busy state
+}
 
 Busy::~Busy()
 {

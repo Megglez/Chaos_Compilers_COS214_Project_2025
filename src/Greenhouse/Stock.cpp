@@ -100,9 +100,26 @@ void Stock::printStock(){
 }
 
 int Stock::getTotalPlants(){
-	int total = 0;
-	for (auto it = StockList.begin(); it != StockList.end(); ++it) {
-		total++;
-	}
-	return total;
+	return StockList.size();
+}
+
+/**
+ * @brief Returns the total number of plants in stock
+ * @return size_t Number of plants in the stock list
+ */
+size_t Stock::getStockListSize() const {
+    return StockList.size();
+}
+
+/**
+ * @brief Retrieves a plant at the specified index
+ * @param index Index of the plant to retrieve
+ * @return Plant* Pointer to the plant at the specified index
+ * @throws std::out_of_range if index is out of bounds
+ */
+Plant* Stock::getPlantByIndex(size_t index) {
+    if (index >= StockList.size()) {
+        throw std::out_of_range("Plant index out of range");
+    }
+    return StockList[index];
 }

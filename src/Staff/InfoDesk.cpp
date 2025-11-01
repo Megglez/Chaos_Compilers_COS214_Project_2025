@@ -1,5 +1,6 @@
 #include "InfoDesk.h"
 #include "Staff.h"
+#include "../Customer/Customer.h"
 
 void InfoDesk::notify(Staff *staff)
 {
@@ -37,7 +38,7 @@ void InfoDesk::handleCustomer(Customer* customer) // called by enquiring custome
 
   if(customer->getAction()->getActionName()=="Enquiring")
   {
-    std::cout<<".....Requesting assistance for customer..... "+customer->getId()<<std::endl;
+    std::cout<<".....Requesting assistance for customer..... " << customer->getId()<<std::endl;
     
     //get a staff member
     Staff *assignedStaff;
@@ -72,36 +73,36 @@ bool InfoDesk::FindAvailableStaff(Customer *cc)
         std::cout<<"Currently no staff available. Please queue for assistance."<<std::endl;
         return false;
     }
-return assignedStaff;
+    // Return true if a staff member was found, false otherwise
+    return (assignedStaff != nullptr);
 }
 
 void InfoDesk::processWaitingCustomers()
 {
-std::cout<<"....Processing Waiting Customers....."<<std::endl;
+    std::cout<<"....Processing Waiting Customers....."<<std::endl;
 
-if(waitingCustomers.empty())
-{
-    std::cout<<"No customers waiting in queue."<<std::endl;
-    return;
-}
+    if(waitingCustomers.empty())
+    {
+        std::cout<<"No customers waiting in queue."<<std::endl;
+        return;
+    }
 
-int processed=0;
-while(!waitingCustomers.empty())
-{
-   Staff *assignedStaff;
-   assignedStaff= findAvailableStaffThroughChain();
-   if(!assignedStaff)
-   {
-       std::cout<<"No staff available. Remain in queue."<<std::endl;
-       break;
- }
- Customer*customer= waitingCustomers.pop();  
- std::cout<<"InfoDesk assigning" <<assignedStaff->getName()<<" to customer "<<customer.getID()<<std::endl;
- assignedStaff->assistCustomer(customer);
- customer->setAssignedStaff();
-  processed ++;
-
-}
+    int processed = 0;
+    while(!waitingCustomers.empty())
+    {
+        Staff *assignedStaff = findAvailableStaffThroughChain();
+        if(!assignedStaff)
+        {
+            std::cout<<"No staff available. Remain in queue."<<std::endl;
+            break;
+        }
+        Customer* customer = waitingCustomers.front();
+        waitingCustomers.pop();
+        std::cout<<"InfoDesk assigning " << assignedStaff->getName() << " to customer " << customer->getId() << std::endl;
+        assignedStaff->assistCustomer(customer);
+        customer->setAssignedStaff(assignedStaff);
+        processed++;
+    }
 
  std::cout<<"Processed customers: "<<processed<<std::endl;
  std::cout<<waitingCustomers.size() << "still in queue."<<std::endl;
@@ -110,54 +111,49 @@ while(!waitingCustomers.empty())
 
 bool InfoDesk::removeStaff(Staff* ss)
 {
- if(!ss)
- {
-    std::cout<<"staff is NULL. Cannot remove Staff member."<<std::endl;
-    return;
- }
-
- auto it = std::find(AllStaff.begin(),AllStaff.end(),ss);
-
- 
-if(it!=AllStaff.end())
+    if(!ss)
     {
-        AllStaff.erase(it);
-
-        std::cout<<"Staff is now Busy."<<std::endl;
-    
-    buildChain();
-
+        std::cout<<"staff is NULL. Cannot remove Staff member."<<std::endl;
+        return false;
     }
 
-    else{
-
-std::cout<<"Could not find staff member. "<<std::endl;
-
-}
+    auto it = std::find(AllStaff.begin(),AllStaff.end(),ss);
+    
+    if(it!=AllStaff.end())
+    {
+        AllStaff.erase(it);
+        std::cout<<"Staff is now Busy."<<std::endl;
+        buildChain();
+        return true;
+    }
+    else
+    {
+        std::cout<<"Could not find staff member. "<<std::endl;
+        return false;
+    }
 }
 
 
 bool InfoDesk::addStaff(Staff *ss)
 {
- if(!ss)
- {
-    std::cout<<"staff is NULL. Cannot add Staff member."<<std::endl;
-    return;
- }
+    if(!ss)
+    {
+        std::cout<<"staff is NULL. Cannot add Staff member."<<std::endl;
+        return false;
+    }
 
- auto it = std::find(AllStaff.begin(),AllStaff.end(),ss);
-
- 
+    auto it = std::find(AllStaff.begin(),AllStaff.end(),ss);
+    
     if(it!=AllStaff.end())
     {
         std::cout<<"Staff Already set as Available."<<std::endl;
-        return;
-    
+        return false;
     }
 
-AllStaff.push_back(ss); //added
-std::cout<<ss->getName()+" is now available for assistance."<<std::endl;
-buildChain();
+    AllStaff.push_back(ss); //added
+    std::cout<<ss->getName()+" is now available for assistance."<<std::endl;
+    buildChain();
+    return true;
 
 }
 
@@ -252,34 +248,50 @@ void InfoDesk::buildChain()
 
 void InfoDesk::clearChain()
 {
-if(chainHead)
-{
-    Staff*current=chainHead;
-    while (current)
+    if(chainHead)
     {
-      Staff*next=current->getNextInChain();
-      current->setNextInChain(nullptr);
-      current=next;
-
-    }
-    chainHead=nullptr;
-}
-}
-
-std::vector<Staff*> InfoDesk::getStaffByType(std::string type)
-{
-std::vector<Staff*> result;
-for(Staff* ss: AllStaff)
-{
-    if(ss->getStaffType()== type)
-    {
-        result.push_back(ss);
+        Staff*current=chainHead;
+        while (current)
+        {
+          Staff*next=current->getNextInChain();
+          current->setNextInChain(nullptr);
+          current=next;
+        }
+        chainHead=nullptr;
     }
 }
-return result;
+
+Staff* InfoDesk::findAvailableStaffThroughChain()
+{
+    if (!chainHead) {
+        return nullptr;
+    }
+
+    Staff* current = chainHead;
+    while (current) {
+        // Check if the current staff member is available
+        if (current->getStaffType() == "Available") {
+            return current;
+        }
+        current = current->getNextInChain();
+    }
+    return nullptr; // No available staff found
 }
 
-oid InfoDesk::notifyStaffAvailable(Staff* freedStaff)
+std::vector<Staff*> InfoDesk::getStaffByType(std::string type) const
+{
+    std::vector<Staff*> result;
+    for(Staff* ss: AllStaff)
+    {
+        if(ss->getStaffType()== type)
+        {
+            result.push_back(ss);
+        }
+    }
+    return result;
+}
+
+void InfoDesk::notifyStaffAvailable(Staff* freedStaff)
 {
 if(!freedStaff)
 {
@@ -304,7 +316,7 @@ Staff *assignedStaff;
     if(assignedStaff)
     {
         std::cout<<"Assigning immediately."<<std::endl;
-        std::cout<<assignedStaff->getName()<" assigned to customer "<<cc->getId()<<std::endl;
+        std::cout << assignedStaff->getName() << " assigned to customer " << cc->getId() << std::endl;
        assignedStaff->assistCustomer(cc);
        cc->setAssignedStaff(assignedStaff);
   }
@@ -312,18 +324,8 @@ Staff *assignedStaff;
   else{
     waitingCustomers.push(cc);
     std::cout<<"No Staff available. Customer added to queue."<<std::endl;
-    std::cout<<"Current queue size: "<<waitCustomers.size()<<std::endl;
+    std::cout<<"Current queue size: "<<waitingCustomers.size()<<std::endl;
 
   }
 }
-
-Staff* InfoDesk::findAvailableStaffThroughChain()
-{
-if(!chainHead)
-{
-   return nullptr;
-}
-return chainHead->handleEnquiryRequest();
-}
-
 

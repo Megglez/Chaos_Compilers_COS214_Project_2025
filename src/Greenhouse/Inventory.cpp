@@ -7,6 +7,14 @@
  */
 
 #include "Inventory.h"
+#include "../Staff/Staff.h"
+#include "Plant.h"
+#include "StageOfDevelopment.h"
+#include "Seed.h"
+#include "Sapling.h"
+#include "Prime.h"
+#include "Wilting.h"
+#include "Dead.h"
 
 /**
  * @brief Default constructor for Inventory

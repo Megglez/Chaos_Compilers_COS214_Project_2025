@@ -3,20 +3,19 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-#include "../Customer/Customer.h"
-#include "Staff.h"
+#include <algorithm>
+#include <string>
 
-using namespace std;
-
-//class Staff;
-//class Customer;
+// Forward declarations
+class Staff;
+class Customer;
 class InfoDesk {
 	private:
 	 // 
 	Staff*chainHead; //staff member with most priority
 	std::queue<Customer*> waitingCustomers; // queued customers 
 	std::vector<Staff*> AllStaff; 
-	//std::vector<Staff*> AvailableStaff;
+	std::vector<Staff*> AvailableStaff;
 	Staff* findAvailableStaffThroughChain();
 
 public:
@@ -28,14 +27,14 @@ public:
 	void clearChain();
 	//assogns staff to customer
 	void handleCustomer(Customer* customer); // called by requestAssistance
-	bool FindAvailableStaff();
-	
-	bool removeStaff(Staff *ss);
-	bool addStaff(Staff* ss); //doing
+	bool FindAvailableStaff(Customer* cc);
+	bool removeStaff(Staff *);
+	bool addStaff(Staff* ss);
 	void processWaitingCustomers();
 	void notifyStaffAvailable(Staff* freedStaff);
-	std::vector<Staff*> getStaffByType(std::string ss);
-	void AssignStaffToCustomer(Customer * c);
+	std::vector<Staff*> getStaffByType(std::string ss) const;
+	void AssignStaffToCustomer(Customer* cc);
+	
 
 
 
