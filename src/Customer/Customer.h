@@ -5,7 +5,7 @@
 #include "Enquire.h"
 #include "Browse.h"
 #include "Purchasing.h"
-#include"Greenhouse/Plant.h"
+#include"../Greenhouse/Plant.h"
 using namespace std;
 
 
