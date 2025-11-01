@@ -3,8 +3,21 @@
 
 Nursery::Nursery(QObject *parent) : QObject(parent) {
     qDebug() << "Nursery simulation core initialized.";
-    // Initialize the stock with a new Inventory
-    stock = new Stock(new Inventory());
+    
+    // Initialize Customer Management
+    customerFactory = new CustomerCreator();
+    customerCount = 0;
+    customerLimit = 20; // Can be adjusted as needed
+    
+    // Initialize Plant Management
+    inventory = new Inventory();
+    stock = new Stock(inventory);
+    flowerFactory = new FlowerPlanter();
+    herbFactory = new HerbPlanter();
+    currentSeason = new Seasons();
+    
+    // Initialize Staff Management
+    infoDesk = new InfoDesk();
 }
 
 Nursery::~Nursery() {
@@ -13,22 +26,51 @@ Nursery::~Nursery() {
         delete customer;
     }
     activeCustomers.clear();
+    delete customerFactory;
     
-    // Clean up stock
+    // Clean up staff
+    delete infoDesk;
+    for (Staff* s : staff) {
+        delete s;
+    }
+    staff.clear();
+    
+    // Clean up plant management
     delete stock;
+    delete inventory;
+    delete flowerFactory;
+    delete herbFactory;
+    delete currentSeason;
 }
 
 void Nursery::handleCustomerArrivalSignal() {
-    // 1. Delegate the creation job to the CustomerCreator
-    // Pass both the parent QObject and the stock system
-    Customer* newCustomer = customerFactory.createNewCustomer(this, stock);
-    
-    // 2. Manage the newly created customer
-    activeCustomers.push_back(newCustomer);
+    if (customerCount >= customerLimit) {
+        qDebug() << "Nursery is at capacity, cannot accept more customers.";
+        return;
+    }
 
-    qDebug() << "Nursery: Added new customer. Total active customers:" << activeCustomers.size();
-    
-    // This is where the Nursery would call methods to:
-    // - Assign the customer to a staff member
-    // - Display the customer in the GUI/simulation viewport
+    Customer* newCustomer = customerFactory->createNewCustomer(this, stock);
+    if (newCustomer) {
+        activeCustomers.push_back(newCustomer);
+        customerCount++;
+        qDebug() << "Nursery: Added new customer. Total active customers:" << activeCustomers.size();
+        
+        // Assign customer to InfoDesk for staff allocation
+        infoDesk->handleCustomer(newCustomer);
+    }
+}
+
+void Nursery::addCustomer(Customer* customer) {
+    if (customer && customerCount < customerLimit) {
+        activeCustomers.push_back(customer);
+        customerCount++;
+    }
+}
+
+void Nursery::removeCustomer(Customer* customer) {
+    auto it = std::find(activeCustomers.begin(), activeCustomers.end(), customer);
+    if (it != activeCustomers.end()) {
+        activeCustomers.erase(it);
+        customerCount--;
+    }
 }
