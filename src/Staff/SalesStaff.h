@@ -14,6 +14,7 @@ public:
 	void setAvailability();
 	SalesStaff();
 	virtual ~SalesStaff();
+	bool canHandleEnquiry();
 	
 };
 

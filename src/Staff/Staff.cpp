@@ -26,7 +26,7 @@ void Staff::update(const std::string &update)
 	std::cout << "New Notification: " << update << std::endl;
 }
 
-Staff::Staff()
+Staff::Staff(std::string &name,std::string &id)
 {
 	// TODO - implement Staff ::Staff
 name=name;

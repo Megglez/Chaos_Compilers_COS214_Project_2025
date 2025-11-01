@@ -5,11 +5,11 @@
 #include <vector>
 #include <algorithm>
 #include "./Customer/Customer.h"
-#include "Staff.h"
+//#include "Staff.h"
 
 using namespace std;
 
-//class Staff;
+class Staff;
 //class Customer;
 class InfoDesk {
 	private:
@@ -17,7 +17,7 @@ class InfoDesk {
 	Staff*chainHead; //staff member with most priority
 	std::queue<Customer*> waitingCustomers; // queued customers 
 	std::vector<Staff*> AllStaff; 
-	//std::vector<Staff*> AvailableStaff;
+	
 	Staff* findAvailableStaffThroughChain();
 
 public:
