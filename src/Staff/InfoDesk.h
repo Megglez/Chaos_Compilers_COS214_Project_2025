@@ -3,8 +3,7 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-#include <algorithm>
-#include "./Customer/Customer.h"
+#include "../Customer/Customer.h"
 #include "Staff.h"
 
 using namespace std;
