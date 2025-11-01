@@ -69,3 +69,6 @@ std::string Staff::getStaffType()
 	return state->getStateName();
 
 }
+void Staff::getAvailability(){
+	
+}

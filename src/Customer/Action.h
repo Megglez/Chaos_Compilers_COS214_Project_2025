@@ -9,10 +9,10 @@ class Action {
 public:
 	virtual void handle();
 	virtual Action* getNextAction();
-	virtual std::string getActionName() = 0;
+	virtual string getActionName() = 0;
 	Action();
 	virtual ~Action();
-	virtual void requestStaffAssistance(Customer *customer,InfoDesk& desk)=0;
+	virtual void requestStaffAssistance() = 0;
 };
 
 #endif

@@ -19,7 +19,12 @@ Browse::~Browse()
 {
 }
 
-std::string Browse::getActionName() 
+void Browse::requestStaffAssistance()
+{
+	
+}
+
+string Browse::getActionName() 
 {
  return "Browsing";
 }

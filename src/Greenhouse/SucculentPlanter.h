@@ -2,11 +2,15 @@
 #define SUCCULENTPLANTER_H
 #include <iostream>
 #include "Planter.h"
+#include "Seed.h"
 using namespace std;
 
-class SucculentPlanter : public Planter {
+class SucculentPlanter : public Planter 
+{
+private: 
+	Seed seed;
 public:
-	Plant* planterMethod();
+	virtual Plant* planterMethod(std::string name) override;
 	SucculentPlanter();
 	virtual ~SucculentPlanter();
 };
