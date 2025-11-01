@@ -16,7 +16,7 @@ QT_LIBS = -L$(QT_DIR)/lib -lQt6Core -lQt6Gui -lQt6Widgets
 GCOV_FLAGS = -fprofile-arcs -ftest-coverage
 
 # Find all source files in src subfolders
-SRC_DIRS = src/Greenhouse 
+SRC_DIRS = src/Greenhouse src/Staff src/Customer
 SRCS = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 SRCS := $(filter-out %_test.cpp %Test.cpp, $(SRCS))
 OBJS = $(SRCS:.cpp=.o)

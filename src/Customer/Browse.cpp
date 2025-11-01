@@ -19,6 +19,7 @@ Action* Browse::getNextAction() {
 void Browse::requestStaffAssistance(Customer* customer, InfoDesk& desk)
 {
     // Browsing customer decides to Enquire. Transition to the Enquire state.
+    desk.getInfodesk();
     std::cout << "Customer wants to Enquire while browsing. Transitioning to Enquire state." << std::endl;
     customer->setAction(new Enquire(plantToBuy)); 
 }

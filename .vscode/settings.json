@@ -68,6 +68,9 @@
         "charconv": "cpp",
         "expected": "cpp",
         "format": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "codecvt": "cpp",
+        "future": "cpp",
+        "ranges": "cpp"
     }
 }

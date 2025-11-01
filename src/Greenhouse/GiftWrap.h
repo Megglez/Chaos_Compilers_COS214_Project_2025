@@ -8,7 +8,7 @@ class GiftWrap : public PlantDecorator {
 public:
 	virtual void package() override;
 	GiftWrap(Plant* plant);
-	~GiftWrap() override;
+	virtual ~GiftWrap();
 	virtual Plant* clone() override;
 };
 

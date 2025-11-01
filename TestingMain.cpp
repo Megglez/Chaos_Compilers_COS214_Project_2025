@@ -48,11 +48,12 @@ int main(){
     std::unique_ptr<Plant> Tree(TreeP->planterMethod("Willow"));
     std::unique_ptr<Plant> FlowerWinter(FlowerW->planterMethod("Snowdrops"));
     
-    /*Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
+    Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
     GiftWrap* gift = new GiftWrap(Flower2);
-    Pot* pot = new Pot(gift);
+    //Pot* pot = new Pot(gift);
     gift->package();
-    pot->package();*/
+    //pot->package();
+    delete gift;
 
     //testing the different strategies 
     cout<<"\n=====Plants Help Strategies====="<<endl;
@@ -72,6 +73,7 @@ int main(){
     Herb4->helpPlant();
     Succ5->helpPlant();
     Tree6->helpPlant();
+    Flower3->helpPlant();
     Flower3->helpPlant();
 
     Inventory* test_inv = new Inventory();
