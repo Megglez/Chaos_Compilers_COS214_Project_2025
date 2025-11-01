@@ -12,7 +12,7 @@ public:
 	Browse();
 	virtual ~Browse();
 	void requestStaffAssistance() override;
-	std::string getActionName() override;
+	string getActionName() override;
 };
 
 #endif
