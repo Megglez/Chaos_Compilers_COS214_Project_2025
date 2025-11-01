@@ -1,36 +1,37 @@
 #include "Cashiers.h"
 
-
-
-Cashiers::Cashiers(std::string& name,std::string& id):Staff(name,id) {
-	// TODO - implement Cashiers::Cashiers
-	workArea="Till";
-	
+Cashiers::Cashiers(std::string& name, std::string& id) : Staff(name, id) {
+    currentCustomer = nullptr;
+    subject = nullptr;
 }
 
-Cashiers::~Cashiers()
-{
+Cashiers::~Cashiers() {
+    if (subject) {
+        delete subject;
+    }
 }
 
-
-std::string getName()
-{
-    return "Cashier";
-std::string Cashiers::getStaffType() 
- {
-return "Cashier";
-}
-
-std::string getID()
-{
-    return "C001"; // Default ID for now
-}
-
-std::string getStaffType() 
- 
-bool Cashiers::canHandleEnquiry()
-{
+std::string Cashiers::getStaffType() {
     return "Cashier";
 }
-	return false;
- }
+
+bool Cashiers::canHandleEnquiry() {
+    return false;
+}
+
+void Cashiers::performDuty() {
+    if (currentCustomer != nullptr) {
+        makeTransaction();
+    }
+}
+
+void Cashiers::makeTransaction() {
+    if (currentCustomer != nullptr) {
+        emptyBasket();
+    }
+}
+
+void Cashiers::emptyBasket() {
+    // Implementation for emptying the customer's basket
+    // This will be implemented when basket functionality is added
+}

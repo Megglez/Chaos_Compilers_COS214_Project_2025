@@ -25,12 +25,13 @@ private:
 public:
 	virtual void update(const std::string &update);
 	void changeState();
-	virtual void getAvailability();
-	void setAvailability(bool isAvailable);
+	virtual bool getAvailability();
+	virtual void setAvailability(bool isAvailable);
 	Staff();
+	Staff(const std::string& name, const std::string& id);
 	virtual ~Staff();
 	virtual void setNextInChain(Staff* next);
-	virtual void assistCustomer(Customer *cc) = 0; //start Assisting customer - pure virtual
+	virtual void assistCustomer(Customer *cc); // start Assisting customer
 	std::string getName();
 	std::string getID();
 	std::string getStaffType();
@@ -40,16 +41,11 @@ public:
 	void setCurrentCustomer(Customer * cc);
 	InfoDesk* getInfodesk();
 	Staff* handleEnquiryRequest();
-	virtual void performDuty();
+	virtual void performDuty() = 0;
 	void completeTask();
 	virtual bool canHandleEnquiry()=0;
 	void registerToAllStaff(InfoDesk*desk);
 	void unregisterFromAllStaff();
- 	
-	
-	
-
-
 };
 
 #endif

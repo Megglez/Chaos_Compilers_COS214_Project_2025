@@ -4,13 +4,15 @@
 #include "Staff.h"
 using namespace std;
 
-class Manager : Staff
+class Manager : public Staff
 {
 public:
 	Inventory *subject;
 	void trackInventory();
-	void getAvailability();
-	void setAvailability();
+	bool getAvailability() override;
+	void setAvailability(bool isAvailable) override;
+	void performDuty() override;
+	bool canHandleEnquiry() override;
 	Manager();
 	virtual ~Manager();
 	
