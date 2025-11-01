@@ -1,8 +1,9 @@
 #ifndef BUSY_H
 #define BUSY_H
 #include <iostream>
-#include "StaffState.h"
-#include "Staff.h"
+//#include "StaffState.h"
+#include "./StaffState.h"
+
 using namespace std;
 
 class Busy : public StaffState

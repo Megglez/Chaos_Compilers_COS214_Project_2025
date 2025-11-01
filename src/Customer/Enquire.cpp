@@ -25,12 +25,13 @@ std::string Enquire::getActionName()
 	return "Enquiring";
 }
 
-void Enquire::requestStaffAssistance()
+void Enquire::requestStaffAssistance(Customer *customer, InfoDesk& desk)
 {
 	std::cout<<"Customer is requesting assistance at infodesk."<<std::endl;
 	// call staff at infodesk
+	desk.handleCustomer(customer);
 	
-
+	
 
 
 }

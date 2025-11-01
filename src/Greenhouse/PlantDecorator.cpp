@@ -26,7 +26,7 @@ void PlantDecorator::grow() {
 
 void PlantDecorator::setState(StageOfDevelopment* stage) {
     if(plantDec) {
-        plantDec->setState(stage);
+        plantDec->setStage(stage);
     }
 }
 

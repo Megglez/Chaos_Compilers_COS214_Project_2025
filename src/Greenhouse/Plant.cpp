@@ -13,7 +13,8 @@ Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStra
 
 void Plant::grow()
 {
-    stage->handle(this);
+    this->grow();
+
 }
 
 void Plant::helpPlant() 
@@ -43,12 +44,12 @@ void Plant::helpPlant()
     }
 }
 
-void Plant::setState(StageOfDevelopment* state)
-{
-    if(stage){
-        delete stage;
+void Plant::setStage(StageOfDevelopment* stage){
+    if(this->stage){
+        delete this->stage;
     }
-    this->stage = state;
+
+    this->stage = stage;
 }
 
 Plant::~Plant()

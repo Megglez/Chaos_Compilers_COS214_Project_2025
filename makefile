@@ -1,3 +1,8 @@
+# Qt GUI build and run (combined)
+.PHONY: gui
+
+gui:
+	cd gui/ChaoticPlants && mkdir -p build && cd build && cmake .. && $(MAKE) && ./ChaoticPlants
 .PHONY: cmake_test
 
 

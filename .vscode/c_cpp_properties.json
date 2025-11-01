@@ -3,10 +3,16 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/src/**",
-                "${workspaceFolder}/tests",
-                "${workspaceFolder}/build/_deps/googletest-src/googletest/include",
-                "${workspaceFolder}/build/_deps/googletest-src/googlemock/include"
+                "${workspaceFolder}/**",
+                "/usr/include/qt5",
+                "/usr/include/qt5/QtWidgets",
+                "/usr/include/qt5/QtCore",
+                "/usr/include/qt5/QtGui",
+                "/usr/include",
+                "/usr/local/include",
+                "/usr/include/x86_64-linux-gnu",
+                "${workspaceFolder}/gui/ChaoticPlants/build",
+                "${workspaceFolder}/gui/ChaoticPlants/build/ChaoticPlants_autogen/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

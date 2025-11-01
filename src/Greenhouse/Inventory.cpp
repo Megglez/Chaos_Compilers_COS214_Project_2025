@@ -125,7 +125,7 @@ void Inventory::updatePlantStagesForSeason(const std::string& season) {
         if (plantPtr) {
             StageOfDevelopment* newStage = determineStageForSeason(plantPtr.get(), season);
             if (newStage) {
-                plantPtr->setState(newStage); // Assuming you have a setter for the stage
+                plantPtr->setStage(newStage); // Assuming you have a setter for the stage
                 std::cout << plantName << " stage updated for " << season << std::endl;
             }
         }

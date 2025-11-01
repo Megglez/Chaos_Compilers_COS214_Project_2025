@@ -7,7 +7,7 @@ void Browse::handle() {
 
 Action* Browse::getNextAction() {
 	// TODO - implement Browse::getNextAction
-	
+	//random - either go to enquiry or purchase if basket<1
 }
 
 Browse::Browse() {
@@ -19,7 +19,17 @@ Browse::~Browse()
 {
 }
 
-std::string Browse::getActionName() 
+void Browse::requestStaffAssistance()
+{
+	
+}
+
+string Browse::getActionName() 
 {
  return "Browsing";
+}
+
+void Browse::requestStaffAssistance(Customer *customer,InfoDesk& desk)
+{
+	std::cout<<"Please go to the InfoDesk to receive assistance."<<std::endl;
 }
