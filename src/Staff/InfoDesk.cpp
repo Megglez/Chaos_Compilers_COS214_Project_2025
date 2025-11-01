@@ -90,9 +90,23 @@ if(waitingCustomers.empty())
 int processed=0;
 while(!waitingCustomers.empty())
 {
-    
+   Staff *assignedStaff;
+   assignedStaff= findAvailableStaffThroughChain();
+   if(!assignedStaff)
+   {
+       std::cout<<"No staff available. Remain in queue."<<std::endl;
+       break;
+ }
+ Customer*customer= waitingCustomers.pop();  
+ std::cout<<"InfoDesk assigning" <<assignedStaff->getName()<<" to customer "<<customer.getID()<<std::endl;
+ assignedStaff->assistCustomer(customer);
+ customer->setAssignedStaff();
+  processed ++;
+
 }
 
+ std::cout<<"Processed customers: "<<processed<<std::endl;
+ std::cout<<waitingCustomers.size() << "still in queue."<<std::endl;
 }
 
 
@@ -277,4 +291,52 @@ std::vector<Staff*> InfoDesk::getStaffByType(std::string type) const
     }
     return result;
 }
+
+oid InfoDesk::notifyStaffAvailable(Staff* freedStaff)
+{
+if(!freedStaff)
+{
+   std::cout<<"Cannot recognise staff. Staff is null."<<std::endl;
+    return;
+}
+
+std::cout<< freedStaff->getName() <<"is available."<<std::endl;
+
+}
+
+void InfoDesk::AssignStaffToCustomer(Customer *cc)
+{
+if(cc==nullptr)
+{
+    std::cout<<"Customer is Null. Cannot assign staff member to customer."<<std::endl;
+    return;
+}
+
+Staff *assignedStaff;
+    assignedStaff= findAvailableStaffThroughChain();
+    if(assignedStaff)
+    {
+        std::cout<<"Assigning immediately."<<std::endl;
+        std::cout<<assignedStaff->getName()<" assigned to customer "<<cc->getId()<<std::endl;
+       assignedStaff->assistCustomer(cc);
+       cc->setAssignedStaff(assignedStaff);
+  }
+
+  else{
+    waitingCustomers.push(cc);
+    std::cout<<"No Staff available. Customer added to queue."<<std::endl;
+    std::cout<<"Current queue size: "<<waitCustomers.size()<<std::endl;
+
+  }
+}
+
+Staff* InfoDesk::findAvailableStaffThroughChain()
+{
+if(!chainHead)
+{
+   return nullptr;
+}
+return chainHead->handleEnquiryRequest();
+}
+
 

@@ -5,7 +5,8 @@
 #include "Available.h"
 #include "Busy.h"
 using namespace std;
-
+ 
+class StaffState;
 class Inventory;
 class InfoDesk;  // Forward declaration
 class Customer;  // Forward declaration
@@ -34,6 +35,17 @@ public:
 	std::string getID();
 	std::string getStaffType();
 	Staff* getNextInChain();
+	std::string getStateName();
+	Customer * getCurrentCustomer();
+	void setCurrentCustomer(Customer * cc);
+	InfoDesk* getInfodesk();
+	Staff* handleEnquiryRequest();
+	virtual void performDuty();
+	void completeTask();
+	virtual bool canHandleEnquiry()=0;
+	void registerToAllStaff(InfoDesk*desk);
+	void unregisterFromAllStaff();
+ 	
 	
 	
 
