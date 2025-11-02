@@ -17,37 +17,37 @@
 ## Table of Contents
 
 1. [Research of the day to day operations of a nursery and the environmental factors that affect plants](#1.-Research-of-the-day-to-day-operations-of-a-nursery-and-the-environmental-factors-that-affect-plants)\
-   1.1. [Horticultural Expertise and Plant Care (Staff)](1.1.-Horticultural-Expertise-and-Plant-Care-(Staff))\
-   1.2. [Business Management and Commercial Viability](1.2.-Business-Management-and-Commercial-Viability)\
-   1.3. [Community Engagement and Customer Relations (Staff)](1.3.-Community-Engagement-and-Customer-Relations-(Staff))
-2. [Design Influences](2.-Design-Influences)\
-   2.1. [Plant Merchandising and Customer Aesthetics](2.1.-Plant-Merchandising-and-Customer-Aesthetics)\
-   2.2. [Horticultural Lifecycle Management](2.2.-Horticultural-Lifecycle-Management)\
-   2.3. [Staff Specialization and Operational Efficiency](2.3.-Staff-Specialization-and-Operational-Efficiency)\
-   2.4. [Customer Interaction and System Robustness](2.4.-Customer-Interaction-and-System-Robustness)
-3. [Assumptions made](3.-Assumptions-made)
-4. [Design Patterns Used and Their Functional Requirements](4.-Design-Patterns-Used-and-Their-Functional-Requirements)\
-   4.1. [Prototype](4.1.-Prototype)\
-   4.2. [Facade](4.2.-Facade)\
-   4.3. [Observer](4.3.-Observer)\
-   4.4. [Decorator](4.4.-Decorator)\
-   4.5. [Iterator](4.5.-Iterator)\
-   4.6. [Chain of Responsibility](4.6.-Chain-of-Responsibility)\
-   4.7. [State](4.7.-State)\
-   4.8. [Strategy](4.8.-Strategy)\
-   4.9. [Mediator](4.9.-Mediator)\
-   4.10. [Command](4.10.-Command)\
-   4.11. [Factory Method](4.11.-Factory-Method)
-5. [Non-funtional Requirements](5.-Non---functional-requirements)
-6. [UML Diagrams](6.-UML-Diagrams)\
-   6.1. [Class Diagram](6.1.-Class-Diagram)\
-   6.2. [State Diagram](6.2.-State-Diagram)\
-   6.3. [Activity Diagram](6.3.-Activity-Diagram)\
-   6.4. [Sequence Diagram](6.4.-Sequence-Diagram)\
-   6.5. [Object Diagram](6.5.-Object-Diagram)\
-   6.6. [Communication Diagram](6.6.-Communication-Diagram)
-7. [References](7.-References)
-8. [Links](8.-Link)
+   1.1. [Horticultural Expertise and Plant Care (Staff)](#1.1.-Horticultural-Expertise-and-Plant-Care-(Staff))\
+   1.2. [Business Management and Commercial Viability](#1.2.-Business-Management-and-Commercial-Viability)\
+   1.3. [Community Engagement and Customer Relations (Staff)](#1.3.-Community-Engagement-and-Customer-Relations-(Staff))
+2. [Design Influences](#2.-Design-Influences)\
+   2.1. [Plant Merchandising and Customer Aesthetics](#2.1.-Plant-Merchandising-and-Customer-Aesthetics)\
+   2.2. [Horticultural Lifecycle Management](#2.2.-Horticultural-Lifecycle-Management)\
+   2.3. [Staff Specialization and Operational Efficiency](#2.3.-Staff-Specialization-and-Operational-Efficiency)\
+   2.4. [Customer Interaction and System Robustness](#2.4.-Customer-Interaction-and-System-Robustness)
+3. [Assumptions made](#3.-Assumptions-made)
+4. [Design Patterns Used and Their Functional Requirements](#4.-Design-Patterns-Used-and-Their-Functional-Requirements)\
+   4.1. [Prototype](#4.1.-Prototype)\
+   4.2. [Facade](#4.2.-Facade)\
+   4.3. [Observer](#4.3.-Observer)\
+   4.4. [Decorator](#4.4.-Decorator)\
+   4.5. [Iterator](#4.5.-Iterator)\
+   4.6. [Chain of Responsibility](#4.6.-Chain-of-Responsibility)\
+   4.7. [State](#4.7.-State)\
+   4.8. [Strategy](#4.8.-Strategy)\
+   4.9. [Mediator](#4.9.-Mediator)\
+   4.10. [Command](#4.10.-Command)\
+   4.11. [Factory Method](#4.11.-Factory-Method)
+5. [Non-funtional Requirements](#5.-Non---functional-requirements)
+6. [UML Diagrams](#6.-UML-Diagrams)\
+   6.1. [Class Diagram](#6.1.-Class-Diagram)\
+   6.2. [State Diagram](#6.2.-State-Diagram)\
+   6.3. [Activity Diagram](#6.3.-Activity-Diagram)\
+   6.4. [Sequence Diagram](#6.4.-Sequence-Diagram)\
+   6.5. [Object Diagram](#6.5.-Object-Diagram)\
+   6.6. [Communication Diagram](#6.6.-Communication-Diagram)
+7. [References](#7.-References)
+8. [Links](#8.-Link)
 
 </br>
 </br>
@@ -263,3 +263,4 @@ Tackling Design Patterns [WWW Document], n.d. URL https://www.cs.up.ac.za/cs/lma
 GitHub Repository: https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025
 
 Google Document link: https://docs.google.com/document/d/1pNxXny8WA27NGEMK5c35jEXHrr4iKFu1k3Qw_p5Tn5Q/edit?usp=sharing
+
