@@ -7,24 +7,48 @@ Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStra
     this->water=water;
     this->soil=soil;
     this->sunlight=sunlight;
-    if(stage->getStageName() != "Seed"){
-        this->stage = stage;
-    }else{
-        this->stage = new Seed();
-    }
+    this->stage = stage;
     this->strategy = strategy; 
 }
 
 void Plant::grow()
 {
-    this->grow();
+    stage->handle(this);
 
 }
 
-<<<<<<< HEAD
 void Plant::helpPlant() 
 {
-=======
+    if(stage->getStageName() == "Seed"){ 
+        cout << "Seed care: " << endl;
+        std::string message = "Gentle misting and warm conditions\n";
+        strategy->helpPlant(message);
+        grow();
+        
+    } else if(stage->getStageName() == "Sapling"){
+        cout << "Sapling care: " << endl;
+        std::string message = "Regular watering and protection from harsh elements\n";
+        strategy->helpPlant(message);
+        grow();
+        
+    } else if(stage->getStageName() == "Prime"){
+        cout << "Prime care: " << endl;
+        std::string message = "Full care regimen for mature plant\n";
+        strategy->helpPlant(message);
+        grow();
+        
+    } else if(stage->getStageName() == "Wilting"){
+        cout << "Wilting care: " << endl;
+        std::string message = "Extra attention and recovery measures\n";
+        strategy->helpPlant(message);
+        grow();
+
+    } else if(stage->getStageName() == "Dead"){
+        cout<<"Dead:"<<endl;
+        std::cout << "Unfortunately, your plant is dead, and there's no amount of water that can save it. Sorrows, sorrows, prayers\n" << std::endl;
+    }
+}
+
 void Plant::setStage(StageOfDevelopment* stage){
     if(this->stage){
         delete this->stage;
@@ -33,14 +57,10 @@ void Plant::setStage(StageOfDevelopment* stage){
     this->stage = stage;
 }
 
-void Plant::helpPlant() {
->>>>>>> 230abb5af0d65aed0c55dae95f15c304ff260b5a
-	// TODO - implement Plant::helpPlant
-	
-}
-
 Plant::~Plant()
 {
+    if(stage) delete stage;
+    if(strategy) delete strategy;
 }
 
 bool Plant::isWinter() const  { return false; }
@@ -57,4 +77,8 @@ int Plant::getSoil(){
 }
 int Plant::getSunlight(){
     return sunlight;
+}
+
+CareStrategy* Plant::getCare(){
+    return strategy;
 }

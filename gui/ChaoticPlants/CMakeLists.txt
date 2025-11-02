@@ -26,9 +26,9 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        nursary.cpp
-        nursary.h
-        nursary.ui
+        nursery.cpp
+        nursery.h
+        nursery.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

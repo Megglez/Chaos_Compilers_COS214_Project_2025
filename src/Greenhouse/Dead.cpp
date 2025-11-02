@@ -31,7 +31,7 @@ StageOfDevelopment* Dead::getNextStage()
  */
 void Dead::handle(Plant* plant)
 {
-    plant->setState(nullptr);
+    plant->setStage(nullptr);
 }
 
 /**
@@ -57,4 +57,8 @@ Dead::~Dead()
 
 std::string Dead::getStageName(){
     return "Dead";
+}
+
+StageOfDevelopment* Dead::clone(){  
+    return new Dead();
 }

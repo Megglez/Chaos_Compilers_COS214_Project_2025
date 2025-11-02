@@ -4,10 +4,13 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/include/qt5",
-                "/usr/include/qt5/QtWidgets",
-                "/usr/include/qt5/QtCore",
-                "/usr/include/qt5/QtGui",
+                "/home/blegibz/Qt/6.10.0/gcc_64/include",
+                "/home/blegibz/Qt/6.10.0/gcc_64/include/QtCore",
+                "/home/blegibz/Qt/6.10.0/gcc_64/include/QtGui",
+                "/home/blegibz/Qt/6.10.0/gcc_64/include/QtWidgets",
+                "/usr/include",
+                "/usr/local/include",
+                "/usr/include/x86_64-linux-gnu",
                 "${workspaceFolder}/gui/ChaoticPlants/build",
                 "${workspaceFolder}/gui/ChaoticPlants/build/ChaoticPlants_autogen/include"
             ],

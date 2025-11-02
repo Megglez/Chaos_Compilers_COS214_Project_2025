@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "CareStrategy.h"
+#
 using namespace std;
 class StageOfDevelopment;
 class Plant 
@@ -19,7 +20,7 @@ protected:
 public:
 	virtual Plant* clone() =0;
 	virtual void grow();
-	virtual void setState(StageOfDevelopment* stage);
+	virtual void setStage(StageOfDevelopment* stage);
 	virtual void helpPlant();
 	virtual void package() = 0;
 	virtual string getType() = 0;
@@ -32,6 +33,7 @@ public:
 	Plant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy);
 	virtual ~Plant();
 	virtual bool isWinter()  const ;
+	virtual CareStrategy* getCare();
 };
 
 #endif

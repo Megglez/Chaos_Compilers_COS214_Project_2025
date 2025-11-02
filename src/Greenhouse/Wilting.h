@@ -52,6 +52,7 @@ public:
      */
     virtual ~Wilting();
     virtual std::string getStageName() override;
+    virtual StageOfDevelopment* clone() override;
 };
 
 #endif

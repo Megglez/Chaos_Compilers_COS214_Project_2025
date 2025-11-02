@@ -49,12 +49,32 @@ int main(){
     std::unique_ptr<Plant> FlowerWinter(FlowerW->planterMethod("Snowdrops"));
     
     Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
-    PlantDecorator* gift = new GiftWrap(Flower2);
-    PlantDecorator* pot = new Pot(Flower2);
+    GiftWrap* gift = new GiftWrap(Flower2);
+    //Pot* pot = new Pot(gift);
     gift->package();
-    pot->package();
+    //pot->package();
+    delete gift;
 
-    //StaffT* staff1 = new StaffT();
+    //testing the different strategies 
+    cout<<"\n=====Plants Help Strategies====="<<endl;
+    std::unique_ptr<Plant> Flower1(FlowerP->planterMethod("Agapanthus"));
+    std::unique_ptr<Plant> Herb1(HerbP->planterMethod("Thym"));
+    std::unique_ptr<Plant> Succ1(SuccP->planterMethod("Aloe Vera"));
+    std::unique_ptr<Plant> Tree1(TreeP->planterMethod("Acaccia"));
+
+    Plant* Flower3 = FlowerP->planterMethod("Thym");
+    Plant* Herb4 = HerbP->planterMethod("Agapanthus Bush");    
+    Plant* Succ5 = SuccP->planterMethod("Aloe Vera");
+    Plant* Tree6 = TreeP->planterMethod("Acaccia");
+
+
+    
+    Flower3->helpPlant();
+    Herb4->helpPlant();
+    Succ5->helpPlant();
+    Tree6->helpPlant();
+    Flower3->helpPlant();
+    Flower3->helpPlant();
 
     Inventory* test_inv = new Inventory();
     //test_inv->attach(staff1);
@@ -63,6 +83,7 @@ int main(){
     test_st->Add(std::move(Herb), 50);
     test_st->Add(std::move(Succ), 60);
     test_st->Add(std::move(FlowerWinter), 60);
+    test_st->Remove(nullptr);
     //test_st->Remove(std::unique_ptr<Plant>(FlowerP->planterMethod("Rose")));
     test_st->printStock();
     test_inv->getCatalogue();
@@ -71,7 +92,7 @@ int main(){
     StateCommand* command = new SpringCommand(test_inv);
     command->execute();
     test_inv->getCatalogue();
-
+    
 
     StateCommand* command2 = new SummerCommand(test_inv);
     command2->execute();
@@ -91,6 +112,25 @@ int main(){
     }
     
     
+    delete test_st;
+    delete test_inv;
+    delete FlowerP;
+    delete SuccP;
+    delete HerbP;
+    delete TreeP;
+    //delete pot;
+    delete FlowerW;
+    delete Flower3;
+    delete Herb4;
+    delete Succ5;
+    delete Tree6;
+    
+
+    delete command;
+    delete command2;
+    delete command3;
+    delete command4;
+
     
     return 0;
 
