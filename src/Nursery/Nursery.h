@@ -19,46 +19,48 @@ using namespace std;
 class Nursery : public QObject // <-- INHERIT FROM QObject
 {
 Q_OBJECT // REQUIRED
-private:
+    private :
     // Customer Management
-    vector<Customer*> activeCustomers;
-    CustomerCreator* customerFactory;
+    vector<Customer *>
+        activeCustomers;
+    CustomerCreator *customerFactory;
     int customerCount;
     int customerLimit;
 
     // Staff Management
-    InfoDesk* infoDesk;
-    vector<Staff*> staff;
+    InfoDesk *infoDesk;
+    vector<Staff *> staff;
 
     // Plant Management
-    Stock* stock;
-    Inventory* inventory;
-    FlowerPlanter* flowerFactory;
-    HerbPlanter* herbFactory;
-    Seasons* currentSeason;
+    Stock *stock;
+    Inventory *inventory;
+    FlowerPlanter *flowerFactory;
+    HerbPlanter *herbFactory;
+    Seasons *currentSeason;
 
 public:
     explicit Nursery(QObject *parent = nullptr);
     virtual ~Nursery() override;
 
     // Getters
-    Stock* getStock() const { return stock; }
-    Inventory* getInventory() const { return inventory; }
-    InfoDesk* getInfoDesk() const { return infoDesk; }
-    Seasons* getCurrentSeason() const { return currentSeason; }
-    
+    Stock *getStock() const { return stock; }
+    Inventory *getInventory() const { return inventory; }
+    InfoDesk *getInfoDesk() const { return infoDesk; }
+    Seasons *getCurrentSeason() const { return currentSeason; }
+
     // Plant Factory Access
-    FlowerPlanter* getFlowerFactory() const { return flowerFactory; }
-    HerbPlanter* getHerbFactory() const { return herbFactory; }
+    FlowerPlanter *getFlowerFactory() const { return flowerFactory; }
+    HerbPlanter *getHerbFactory() const { return herbFactory; }
 
     // Customer Management
-    void addCustomer(Customer* customer);
-    void removeCustomer(Customer* customer);
-    const std::vector<Customer*>& getActiveCustomers() const { return activeCustomers; }
+    void addCustomer(Customer *customer);
+    void removeCustomer(Customer *customer);
+    void handleCustomerDeparture(Customer *customer);
+    const std::vector<Customer *> &getActiveCustomers() const { return activeCustomers; }
 
 public slots:
     // This slot receives the signal from the CustomerClock
-    void handleCustomerArrivalSignal(); 
+    void handleCustomerArrivalSignal();
 };
 
 #endif
