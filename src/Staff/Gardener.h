@@ -1,7 +1,7 @@
 #ifndef GARDENER_H
 #define GARDENER_H
 #include <iostream>
-#include "Staff.h"
+#include "../Staff/Staff.h"
 using namespace std;
 
 class Gardener : public Staff
