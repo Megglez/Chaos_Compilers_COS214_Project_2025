@@ -7,6 +7,7 @@ class PlantClock : public Clock
     Q_OBJECT
 public:
     explicit PlantClock(QObject *parent = nullptr);
+    ~PlantClock() {}
     void startPlantClock(); 
 
 signals:
