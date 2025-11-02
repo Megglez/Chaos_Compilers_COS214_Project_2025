@@ -14,6 +14,45 @@
 </br>
 </br>
 
+## Table of Contents
+
+1. [Research of the day to day operations of a nursery and the environmental factors that affect plants](1.-Research-of-the-day-to-day-operations-of-a-nursery-and-the-environmental-factors-that-affect-plants)\
+   1.1. [Horticultural Expertise and Plant Care (Staff)](1.1.-Horticultural-Expertise-and-Plant-Care-(Staff))\
+   1.2. [Business Management and Commercial Viability](1.2.-Business-Management-and-Commercial-Viability)\
+   1.3. [Community Engagement and Customer Relations (Staff)](1.3.-Community-Engagement-and-Customer-Relations-(Staff))
+2. [Design Influences](2.-Design-Influences)\
+   2.1. [Plant Merchandising and Customer Aesthetics](2.1.-Plant-Merchandising-and-Customer-Aesthetics)\
+   2.2. [Horticultural Lifecycle Management](2.2.-Horticultural-Lifecycle-Management)\
+   2.3. [Staff Specialization and Operational Efficiency](2.3.-Staff-Specialization-and-Operational-Efficiency)\
+   2.4. [Customer Interaction and System Robustness](2.4.-Customer-Interaction-and-System-Robustness)
+3. [Assumptions made](3.-Assumptions-made)
+4. [Design Patterns Used and Their Functional Requirements](4.-Design-Patterns-Used-and-Their-Functional-Requirements)\
+   4.1. [Prototype](4.1.-Prototype)\
+   4.2. [Facade](4.2.-Facade)\
+   4.3. [Observer](4.3.-Observer)\
+   4.4. [Decorator](4.4.-Decorator)\
+   4.5. [Iterator](4.5.-Iterator)\
+   4.6. [Chain of Responsibility](4.6.-Chain-of-Responsibility)\
+   4.7. [State](4.7.-State)\
+   4.8. [Strategy](4.8.-Strategy)\
+   4.9. [Mediator](4.9.-Mediator)\
+   4.10. [Command](4.10.-Command)\
+   4.11. [Factory Method](4.11.-Factory-Method)
+5. [Non-funtional Requirements](5.-Non---functional-requirements)
+6. [UML Diagrams](6.-UML-Diagrams)\
+   6.1. [Class Diagram](6.1.-Class-Diagram)\
+   6.2. [State Diagram](6.2.-State-Diagram)\
+   6.3. [Activity Diagram](6.3.-Activity-Diagram)\
+   6.4. [Sequence Diagram](6.4.-Sequence-Diagram)\
+   6.5. [Object Diagram](6.5.-Object-Diagram)\
+   6.6. [Communication Diagram](6.6.-Communication-Diagram)
+7. [References](7.-References)
+8. [Links](8.-Link)
+
+</br>
+</br>
+</br>
+
 ## 1. Research of the day to day operations of a nursery and the environmental factors that affect plants
 This report focuses specifically on nurseries, plant stock, and biomes relevant to the Pretoria region in South Africa. The successful operation of a commercial nursery is predicated on three integrated components: Plant Care, Business Management and Commercial Viability, and Community Engagement and Customer Relations.
 
@@ -54,8 +93,10 @@ The diverse requirements of running a commercial enterprise directly influenced 
 
 ### 2.4. Customer Interaction and System Robustness
 Integrating the abstract concept of the customer posed a significant design challenge. We resolved this by programming for customer dissatisfaction, where customers who cannot find a desired item will express their disappointment and leave, rather than entering a persistent, unresolvable waiting state (a "soft-lock"). This design choice not only adds realism but also significantly enhances the system's robustness and flow.
+</br>
+</br>
 
-## 3. Assumptions made:  
+## 3. Assumptions made  
 - We assume that the customers will always have enough money to buy the plants, therefore there will be no refusal of service or requirement of prices for plants.
 
 - We assume that when first starting the game, there is a default plant in stock to sell.
@@ -92,7 +133,6 @@ Integrating the abstract concept of the customer posed a significant design chal
      - red pagoda, winter, spring/summer,autumn
      - Portulaca, summer ,winter, summer
 
-    
     - Flowering plants:
       - Bush lily, winter, summer, autumn
       - Wild hibiscus ,summer, winter, summer
@@ -103,13 +143,123 @@ Integrating the abstract concept of the customer posed a significant design chal
       - Poppy, winter ,summer ,autumn
       - Orchid, summer, winter ,spring
 
-   
     - Trees:
       - Jacaranda, winter, spring ,perennial
       - Acacia tree ,winter, summer, perennial
 
-
     - Herbs:
       - Thymn,Oregon,chives parsley,sage, spring ,summer, perennial.
+</br>
 
+## 4. Design Patterns Used and Their Functional Requirements
+### 4.1. Prototype
+The inventory requires many plants to be grown within a set list of plants. The creation of new flowers is very expensive computation wise, hence, cloning allows for the right stock to be added to stock and inventory.
 
+### 4.2. Facade
+The system will initialise the initial objects of the nursery so that the application can run. This includes the different seasons, the plant factories, the clock objects, staff members and default plants in stock. Furthermore, this system will manage the changes in seasons, the creation of customers and the plant growth.
+
+### 4.3. Observer
+The system needs to be aware of both the current season and the current state of the plants as time passes in order to remove dead plants from inventory, plant seeds, harvest and add to the inventory and notify a gardener when a plant needs a specific care strategy.
+
+The observers wait on signals sent from the subjects (the clocks). The clocks send signals at certain time intervals, when the observers receive these signals they do a process. The SeasonObserver lets the season state know to change seasons, the PlantObserver tells the plant to go to the next state and the CustomerCreator creates a customer.
+
+### 4.4. Decorator
+The system requires a way to provide bouquets of different plants and decorative aspects to the plant bundle such as pots and gift wrapping, as customers do not always buy types of plants in isolation.
+
+### 4.5. Iterator
+The system will iterate through the customers that are waiting in a queue to purchase their plants. If a customer has a dead plant this will be removed from their cart, if their cart is empty they leave.
+
+### 4.6. Chain of Responsibility
+Staff need to be able to assist customers but not all staff have the capacity to take care of customers, ensure the plants are cared for, and be cashiers, but a customer could need all these different types of staff depending on their individual needs
+
+### 4.7. State
+The system needs to be able to track the lifecycle of the plants to ensure that there is stock to sell and what plants to remove once out of season (dead) as well as to know when to plant and harvest the plants based on their stage of development.
+
+The system needs to accommodate the different needs of a customer to ensure customer satisfaction. A customer has 3 states in which they can be in, namely browse, enquire or purchasing. 
+
+The system needs staff members to change their state according to whether they are busy or available to show if they are helping a customer or are available to assist a new customer. This is achieved by an info desk that customers can go to as the info desk can appoint an available staff member to a customer who requires help.
+
+### 4.8. Strategy
+The system needs to provide a variety of different types of plants to sell all year round. These plant types require a different care strategy in order for them to grow and keep alive.
+
+### 4.9. Mediator
+The system requires a way for staff and customers to interact with each other  without allowing direct communication with all staff (staff with many customers or customers to other customers). The info desk acts as a mediator to ensure no coupling has taken place.
+
+### 4.10. Command
+The system needs to be able to add and remove stock from the inventory representing the inflow of plants when new stock of plants is added to the inventory and the outflow of plants when plants have been purchased by customers Not sure about this one need to ask blessing and check.
+
+### 4.11. Factory Method
+The nursery requires a way to produce plant objects that have many varying factors such as the type of plant, soil type, ect. in order to have stock.
+</br>
+</br>
+
+## 5. Non-functional Requirements:
+1. **Maintainability:** The system shall have a modular design so that new plant types will be able to be added without changing the existing plant classes.
+
+2. **Reliability:** The system will handle invalid user inputs with appropriate error messages to limit system downtime.
+
+3. **Extensibility:** The system will allow the addition of new plant care strategies and plant decorations without having to change the original Strategy and Decorator design patterns.
+</br>
+
+## 6. UML Diagrams
+### 6.1. Class Diagram
+
+<p align="center">
+  
+</p>
+</br>
+
+### 6.2. State Diagram
+
+<p align="center">
+  <img width="681" height="730" alt="State Diagram" src="https://github.com/user-attachments/assets/d5f189a7-03dc-4fa9-998a-0a363a069957" />
+</p>
+</br>
+
+### 6.3. Activity Diagram
+
+<p align="center">
+  <img width="1202" height="734" alt="Activity Diagram" src="https://github.com/user-attachments/assets/8f06c59a-0baf-482b-a8d8-58c24cdee8d5" />
+</p>
+</br>
+
+### 6.4. Sequence Diagram
+
+<p align="center">
+  <img width="800" height="751" alt="Sequence Diagram" src="https://github.com/user-attachments/assets/039f310f-3dea-42da-8e08-9439dc83e34b" />
+</p>
+</br>
+
+### 6.5. Object Diagram
+
+<p align="center">
+  <img width="586" height="398" alt="Object Diagram" src="https://github.com/user-attachments/assets/f5cb6891-02a3-4d07-9346-622038ff29fb" />
+</p>
+</br>
+
+### 6.6. Communication Diagram
+
+<p align="center">
+  <img width="1109" height="455" alt="Communication Diagram" src="https://github.com/user-attachments/assets/4e6819d7-70d8-458a-b308-43659d00335e" />
+</p>
+</br>
+
+## 7. References
+Admin, 2025. Different types of Succulents for Beginners [WWW Document]. Stanler Farms. URL https://www.stanlerfarms.co.za/different-types-of-succulents-for-beginners/ (accessed 10.30.25).
+
+Indigenous Plant Nursery - Muldersdrift [WWW Document], n.d. . Guest House Accommodation. URL http://randomharvest.co.za (accessed 10.30.25).
+
+Petal Faire Nursery in Pretoria Gauteng supplying unusual and exotic plants for the enthusiastic gardener [WWW Document], n.d. URL https://petalfaire.co.za/index.php?content=page&id=18&submenu=32 (accessed 10.30.25).
+
+South Africa Online [WWW Document], n.d. . Discover the Beauty and Wonders of South Africa. URL http://southafrica.co.za (accessed 10.30.25).
+
+Top 20 Most Common Plants in Gauteng [WWW Document], n.d. . PictureThis. URL https://www.picturethisai.com/region/South-Africa-Gauteng.html (accessed 10.30.25).
+
+Tackling Design Patterns [WWW Document], n.d. URL https://www.cs.up.ac.za/cs/lmarshall/TDP/TDP.html (accessed 10.30.25). 
+</br>
+</br>
+
+## 8. Links
+GitHub Repository: https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025
+
+Google Document link: https://docs.google.com/document/d/1pNxXny8WA27NGEMK5c35jEXHrr4iKFu1k3Qw_p5Tn5Q/edit?usp=sharing
