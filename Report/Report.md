@@ -16,7 +16,7 @@
 
 ## Table of Contents
 
-1. [Research of the day to day operations of a nursery and the environmental factors that affect plants](1.-Research-of-the-day-to-day-operations-of-a-nursery-and-the-environmental-factors-that-affect-plants)\
+1. [Research of the day to day operations of a nursery and the environmental factors that affect plants](#1.-Research-of-the-day-to-day-operations-of-a-nursery-and-the-environmental-factors-that-affect-plants)\
    1.1. [Horticultural Expertise and Plant Care (Staff)](1.1.-Horticultural-Expertise-and-Plant-Care-(Staff))\
    1.2. [Business Management and Commercial Viability](1.2.-Business-Management-and-Commercial-Viability)\
    1.3. [Community Engagement and Customer Relations (Staff)](1.3.-Community-Engagement-and-Customer-Relations-(Staff))
