@@ -374,7 +374,7 @@ void Inventory::detach(Staff* staff) {
             staffList.erase(it);
         }
     }else{
-        std::cout << "Error: staff pointer is null. Please pass an actual staff object :>" << std::endl;
+        std::cout << "Error: staff pointer is null. Please pass an actual  :>" << std::endl;
     }
 
 }
