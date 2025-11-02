@@ -50,9 +50,10 @@ int main(){
     
     Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
     GiftWrap* gift = new GiftWrap(Flower2);
-    Pot* pot = new Pot(gift);
+    //Pot* pot = new Pot(gift);
     gift->package();
-    pot->package();
+    //pot->package();
+    delete gift;
 
     //testing the different strategies 
     cout<<"\n=====Plants Help Strategies====="<<endl;
@@ -67,19 +68,12 @@ int main(){
     Plant* Tree6 = TreeP->planterMethod("Acaccia");
 
 
-    Sapling* sapling= new Sapling();
-    Prime* prime= new Prime();
-    Wilting* wilting= new Wilting();
-    Dead* dead= new Dead();
-
+    
     Flower3->helpPlant();
-    sapling->handle(Herb4);
     Herb4->helpPlant();
-    prime->handle(Succ5);
     Succ5->helpPlant();
-    wilting->handle(Tree6);
     Tree6->helpPlant();
-    dead->handle(Flower3);
+    Flower3->helpPlant();
     Flower3->helpPlant();
 
     Inventory* test_inv = new Inventory();
@@ -126,6 +120,10 @@ int main(){
     delete TreeP;
     //delete pot;
     delete FlowerW;
+    delete Flower3;
+    delete Herb4;
+    delete Succ5;
+    delete Tree6;
     
 
     delete command;

@@ -8,7 +8,7 @@
 #include "Browse.h"
 #include "Purchasing.h"
 #include "../Staff/Staff.h" 
-#include "./Greenhouse/Plant.h" 
+#include "../Greenhouse/Plant.h" 
 
 class InfoDesk; 
 using namespace std;

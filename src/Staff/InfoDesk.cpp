@@ -5,7 +5,7 @@
 void InfoDesk::notify(Staff *staff)
 {
     std::cout << "Customer needs your assistance";
-
+    staff->getID(); // remove later
 
 }
 
@@ -61,6 +61,7 @@ void InfoDesk::handleCustomer(Customer* customer) // called by enquiring custome
 
 bool InfoDesk::FindAvailableStaff(Customer *cc)
 {
+    cc->getId();
     Staff *assignedStaff;
     assignedStaff= findAvailableStaffThroughChain();
     if(assignedStaff)

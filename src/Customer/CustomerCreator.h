@@ -5,7 +5,7 @@
 #include "Customer.h"
 #include "Browse.h"
 #include "Enquire.h"
-#include "./Greenhouse/Stock.h"
+#include "../Greenhouse/Stock.h"
 using namespace std;
 
 class CustomerCreator

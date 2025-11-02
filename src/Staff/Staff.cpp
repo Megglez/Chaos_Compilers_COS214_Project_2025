@@ -23,6 +23,17 @@ void Staff::changeState()
 	}
 }
 
+Staff::Staff(const std::string& name, const std::string& id){
+	this->name=name;
+	this->staffID=id;
+	available= true;
+	infoDesk=nullptr;
+	nextInChain=nullptr;
+	currentCustomer=nullptr;
+	state=new Available();
+	state->setContext(this);
+}
+
 void Staff::update(const std::string &update)
 {
 	std::cout << "New Notification: " << update << std::endl;
@@ -104,7 +115,7 @@ void Staff::completeTask()
 		return;
 	}
 
-	cout<<"Staff "<<name<< " is ssisting Customer "<<cc->getId();
+	cout<<"Staff "<<name<< " is assisting Customer "<<cc->getId();
 	currentCustomer=cc;
 	this->changeState();
 	available=false;

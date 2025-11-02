@@ -30,17 +30,21 @@ void Customer::setAction(Action* newAction) {
 
 bool Customer::addToBasket(Plant *plants, int quantity)
 {
+	std::cout << quantity;
+	plants->getName();
     return false;
 }
 
 bool Customer::removeFromBasket(Plant *plants, int quantity)
 {
+	std::cout << quantity;
+	plants->getName();
     return false;
 }
 
 int Customer::getId() const
 {
-    return 0;
+    return id;
 }
 
 Action *Customer::getAction() const
