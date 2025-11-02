@@ -66,3 +66,10 @@ endif()
 # --- 5. Delegate GUI Executable Build to Subdirectory ---
 # This tells CMake to process the CMakeLists.txt file located in the src/Nursery folder.
 add_subdirectory(src/Nursery)
+
+target_include_directories(run_tests PRIVATE
+    /usr/include/qt5
+    /usr/include/qt5/QtCore
+    /usr/include/qt5/QtGui
+    /usr/include/qt5/QtWidgets
+)

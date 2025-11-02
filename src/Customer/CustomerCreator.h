@@ -8,6 +8,8 @@
 #include "../Greenhouse/Stock.h"
 using namespace std;
 
+class Nursery;
+
 class CustomerCreator
 {
 public:
@@ -15,7 +17,7 @@ public:
     ~CustomerCreator();
     // Factory method to create a new Customer object
     // It takes a QObject parent (the Nursery) for proper memory cleanup
-    Customer* createNewCustomer(QObject* parent, Stock* stock);
+    Customer *createNewCustomer(Nursery *nursery, Stock *stock);
 };
 
 #endif
