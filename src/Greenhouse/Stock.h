@@ -89,7 +89,12 @@ public:
      * @return Plant* Pointer to the plant at the specified index
      */
     Plant* getPlantByIndex(size_t index);
-    
+
+
+    /**
+     * @brief Returns the total number of plants in the stock
+     * @return int for the number of plants
+     */
     int getTotalPlants();
 private:
     Command* command; ///< Current command being executed
