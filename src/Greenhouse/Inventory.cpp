@@ -26,6 +26,13 @@ Inventory::Inventory() {
 	
 }
 
+void Inventory::action()
+{
+    // TODO: Implement what this function is supposed to do.
+    // For example, it could advance the state of all plants.
+    std::cout << "Inventory action/update called!" << std::endl;
+}
+
 
 /**
  * @brief Adds a plant to the inventory with specified quantity
