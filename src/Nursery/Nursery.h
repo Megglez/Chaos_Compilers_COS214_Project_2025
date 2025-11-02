@@ -11,6 +11,7 @@
 #include "../Greenhouse/Stock.h"
 #include "../Greenhouse/Inventory.h"
 #include "../Greenhouse/Seasons.h"
+#include "../Greenhouse/Summer.h"
 #include "../Greenhouse/FlowerPlanter.h"
 #include "../Greenhouse/HerbPlanter.h"
 using namespace std;

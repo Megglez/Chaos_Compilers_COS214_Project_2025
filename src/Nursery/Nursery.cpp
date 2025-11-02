@@ -14,7 +14,7 @@ Nursery::Nursery(QObject *parent) : QObject(parent) {
     stock = new Stock(inventory);
     flowerFactory = new FlowerPlanter();
     herbFactory = new HerbPlanter();
-    currentSeason = new Seasons();
+    currentSeason = new Summer(inventory);  // Start with Summer season
     
     // Initialize Staff Management
     infoDesk = new InfoDesk();
