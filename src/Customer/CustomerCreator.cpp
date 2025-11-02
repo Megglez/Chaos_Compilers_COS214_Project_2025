@@ -6,6 +6,10 @@ CustomerCreator::CustomerCreator()
 {
 }
 
+CustomerCreator::~CustomerCreator() 
+{
+}
+
 Customer* CustomerCreator::createNewCustomer(QObject* parent, Stock* stock)
 {
     qDebug() << "CustomerCreator: A new customer is being created.";
