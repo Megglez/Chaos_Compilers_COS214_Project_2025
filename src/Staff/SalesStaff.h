@@ -7,14 +7,13 @@ using namespace std;
 class SalesStaff : public Staff
 {
 public:
-	void interact();
-	void QnA();
-	void findPlant();
-	void getAvailability();
-	void setAvailability();
+
 	SalesStaff();
 	virtual ~SalesStaff();
 	bool canHandleEnquiry();
+	void performDuty() override;
+	string response();
+
 	
 };
 

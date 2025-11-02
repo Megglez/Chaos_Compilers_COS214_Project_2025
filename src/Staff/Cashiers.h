@@ -10,6 +10,7 @@ class Cashiers : public Staff
 private:
 std::queue<Customer*> CustomerQueue;
 Customer *currentCustomer;
+
 public:
 	Inventory *subject;
 	bool canHandleEnquiry() ;
@@ -19,7 +20,7 @@ public:
 	virtual ~Cashiers();
 	string printSlip(vector<Plant*> basket);
 	
-
+	
 };
 
 #endif

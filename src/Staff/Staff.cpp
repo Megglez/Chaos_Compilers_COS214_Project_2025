@@ -103,12 +103,12 @@ void Staff::completeTask()
 		return;
 	}
 
-	cout<<"Staff "<<name<< " is ssisting Customer "<<cc->getId();
+	cout<<"Staff "<<name<< " is assisting Customer "<<cc->getId();
 	currentCustomer=cc;
 	this->changeState();
 	available=false;
-	performDuty();
 	cc->setAssignedStaff(this);
+	performDuty();
 
  }
 

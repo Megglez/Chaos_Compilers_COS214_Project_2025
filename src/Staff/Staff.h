@@ -7,9 +7,10 @@
 #include "Busy.h"
 //#include "../Greenhouse/Inventory.h"
 #include "../Customer/Customer.h"
-#include "../Staff/InfoDesk.h"
+//#include "../Staff/InfoDesk.h"
 using namespace std;
  
+class InfoDesk;
 class StaffState;
 class Inventory;
 class Staff
@@ -23,13 +24,13 @@ private:
 	bool available;  
 	Staff * nextInChain;
 	Customer *currentCustomer;
-
+	
 public:
 	virtual void update(const std::string &update);
 	void changeState();
-	virtual void getAvailability();
+	void getAvailability();
 	void setAvailability(bool isAvailable);
-	Staff();
+	Staff(std::string& name,std::string& id);
 	virtual ~Staff();
 	virtual void setNextInChain(Staff* next);
 	virtual void assistCustomer(Customer *cc); //start Assisting customer
@@ -43,7 +44,7 @@ public:
 	InfoDesk* getInfodesk();
 	Staff* handleEnquiryRequest();
 	virtual void performDuty();
-	void completeTask();
+	virtual void completeTask();
 	virtual bool canHandleEnquiry()=0;
 	void registerToAllStaff(InfoDesk*desk);
 	void unregisterFromAllStaff();

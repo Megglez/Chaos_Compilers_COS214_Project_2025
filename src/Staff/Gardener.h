@@ -6,14 +6,16 @@ using namespace std;
 
 class Gardener : public Staff
 {
+
+private:
+ 
+queue<Plant*>plantRequestList;
+
 public:
 	Inventory *subject;
-	void helpPlant();
-	void getCareStrategy();
-	virtual void getAvailability();
-	virtual void setAvailability();
 	Gardener();
 	virtual ~Gardener();
+	void performDuty();
 	
 
 };
