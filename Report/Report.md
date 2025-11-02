@@ -16,38 +16,38 @@
 
 ## Table of Contents
 
-1. [Research of the day to day operations of a nursery and the environmental factors that affect plants](#1.-Research-of-the-day-to-day-operations-of-a-nursery-and-the-environmental-factors-that-affect-plants)\
-   1.1. [Horticultural Expertise and Plant Care (Staff)](#1.1.-Horticultural-Expertise-and-Plant-Care-(Staff))\
-   1.2. [Business Management and Commercial Viability](#1.2.-Business-Management-and-Commercial-Viability)\
-   1.3. [Community Engagement and Customer Relations (Staff)](#1.3.-Community-Engagement-and-Customer-Relations-(Staff))
-2. [Design Influences](#2.-Design-Influences)\
-   2.1. [Plant Merchandising and Customer Aesthetics](#2.1.-Plant-Merchandising-and-Customer-Aesthetics)\
-   2.2. [Horticultural Lifecycle Management](#2.2.-Horticultural-Lifecycle-Management)\
-   2.3. [Staff Specialization and Operational Efficiency](#2.3.-Staff-Specialization-and-Operational-Efficiency)\
-   2.4. [Customer Interaction and System Robustness](#2.4.-Customer-Interaction-and-System-Robustness)
-3. [Assumptions made](#3.-Assumptions-made)
-4. [Design Patterns Used and Their Functional Requirements](#4.-Design-Patterns-Used-and-Their-Functional-Requirements)\
-   4.1. [Prototype](#4.1.-Prototype)\
-   4.2. [Facade](#4.2.-Facade)\
-   4.3. [Observer](#4.3.-Observer)\
-   4.4. [Decorator](#4.4.-Decorator)\
-   4.5. [Iterator](#4.5.-Iterator)\
-   4.6. [Chain of Responsibility](#4.6.-Chain-of-Responsibility)\
-   4.7. [State](#4.7.-State)\
-   4.8. [Strategy](#4.8.-Strategy)\
-   4.9. [Mediator](#4.9.-Mediator)\
-   4.10. [Command](#4.10.-Command)\
-   4.11. [Factory Method](#4.11.-Factory-Method)
-5. [Non-funtional Requirements](#5.-Non---functional-requirements)
-6. [UML Diagrams](#6.-UML-Diagrams)\
-   6.1. [Class Diagram](#6.1.-Class-Diagram)\
-   6.2. [State Diagram](#6.2.-State-Diagram)\
-   6.3. [Activity Diagram](#6.3.-Activity-Diagram)\
-   6.4. [Sequence Diagram](#6.4.-Sequence-Diagram)\
-   6.5. [Object Diagram](#6.5.-Object-Diagram)\
-   6.6. [Communication Diagram](#6.6.-Communication-Diagram)
-7. [References](#7.-References)
-8. [Links](#8.-Link)
+1. [Research of the day to day operations of a nursery and the environmental factors that affect plants](#1-research-of-the-day-to-day-operations-of-a-nursery-and-the-environmental-factors-that-affect-plants)
+  1.1. [Horticultural Expertise and Plant Care (Staff)](#11-horticultural-expertise-and-plant-care-staff)
+  1.2. [Business Management and Commercial Viability](#12-business-management-and-commercial-viability)
+  1.3. [Community Engagement and Customer Relations (Staff)](#13-community-engagement-and-customer-relations-staff)
+2. [Design Influences](#2-design-influences)
+  2.1. [Plant Merchandising and Customer Aesthetics](#21-plant-merchandising-and-customer-aesthetics)
+  2.2. [Horticultural Lifecycle Management](#22-horticultural-lifecycle-management)
+  2.3. [Staff Specialization and Operational Efficiency](#23-staff-specialization-and-operational-efficiency)
+  2.4. [Customer Interaction and System Robustness](#24-customer-interaction-and-system-robustness)
+3. [Assumptions made](#3-assumptions-made)
+4. [Design Patterns Used and Their Functional Requirements](#4-design-patterns-used-and-their-functional-requirements)
+  4.1. [Prototype](#41-prototype)
+  4.2. [Facade](#42-facade)
+  4.3. [Observer](#43-observer)
+  4.4. [Decorator](#44-decorator)
+  4.5. [Iterator](#45-iterator)
+  4.6. [Chain of Responsibility](#46-chain-of-responsibility)
+  4.7. [State](#47-state)
+  4.8. [Strategy](#48-strategy)
+  4.9. [Mediator](#49-mediator)
+  4.10. [Command](#410-command)
+  4.11. [Factory Method](#411-factory-method)
+5. [Non-functional Requirements](#5-non-functional-requirements)
+6. [UML Diagrams](#6-uml-diagrams)
+  6.1. [Class Diagram](#61-class-diagram)
+  6.2. [State Diagram](#62-state-diagram)
+  6.3. [Activity Diagram](#63-activity-diagram)
+  6.4. [Sequence Diagram](#64-sequence-diagram)
+  6.5. [Object Diagram](#65-object-diagram)
+  6.6. [Communication Diagram](#66-communication-diagram)
+7. [References](#7-references)
+8. [Links](#8-links)
 
 </br>
 </br>
