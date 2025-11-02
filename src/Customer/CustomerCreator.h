@@ -12,7 +12,7 @@ class CustomerCreator
 {
 public:
     CustomerCreator();
-    
+    ~CustomerCreator();
     // Factory method to create a new Customer object
     // It takes a QObject parent (the Nursery) for proper memory cleanup
     Customer* createNewCustomer(QObject* parent, Stock* stock);
