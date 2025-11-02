@@ -16,16 +16,10 @@ class Customer : public QObject
 private:
 	Action* action;
 	int id;
-	vector<Plant*> basket;
-
-
-
-
+	vector<pair<Plant, int>> basket;
 	
-	int getId();
-	Action* getAction();
-	void setAssignedStaff(Staff*ss);
-	
+
+
 	Q_OBJECT
 
 public:
