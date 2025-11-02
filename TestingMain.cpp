@@ -20,6 +20,7 @@
 #include "src/Greenhouse/GiftWrap.h"
 #include "src/Greenhouse/Pot.h"
 #include "src/Greenhouse/SpecialArrangement.h"
+#include "src/Nursery/Nursery.h"
 
 #include <memory>
 
@@ -50,10 +51,10 @@ int main(){
     
     Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
     GiftWrap* gift = new GiftWrap(Flower2);
-    //Pot* pot = new Pot(gift);
+    Pot* pot = new Pot(gift);
     gift->package();
-    //pot->package();
-    delete gift;
+    pot->package();
+    delete pot;
 
     //testing the different strategies 
     cout<<"\n=====Plants Help Strategies====="<<endl;
@@ -89,7 +90,21 @@ int main(){
     test_inv->getCatalogue();
     test_inv->getCatalogue();
 
-    StateCommand* command = new SpringCommand(test_inv);
+    Nursery nursery;
+
+    for (int i = 0; i < 10; i++) {
+        std::cout << "\n--- Cycle " << (i + 1) << " ---" << std::endl;
+        nursery.handleChange();
+        
+        // You can add some debugging output here
+        // For example, check what season it is now:
+        Seasons* currentSeason = nursery.getCurrentSeason();
+        if (currentSeason) {
+            std::cout << "Season changed!" << std::endl;
+        }
+    }
+
+    /*StateCommand* command = new SpringCommand(test_inv);
     command->execute();
     test_inv->getCatalogue();
     
@@ -109,7 +124,7 @@ int main(){
     const auto&  inv = test_inv->getInventory();
     for (const auto& entry : inv) {
         std::cout << "- " << entry.second.first.get()->getState()->getStageName();
-    }
+    }*/
     
     
     delete test_st;
@@ -126,10 +141,10 @@ int main(){
     delete Tree6;
     
 
-    delete command;
+    /*delete command;
     delete command2;
     delete command3;
-    delete command4;
+    delete command4;*/
 
     
     return 0;

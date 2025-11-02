@@ -1,7 +1,9 @@
 #include "Nursery.h"
 #include <QDebug>
+#include "../Greenhouse/Spring.h"
 
-Nursery::Nursery(QObject *parent) : QObject(parent) {
+Nursery::Nursery(QObject *parent) //: QObject(parent) 
+{
     qDebug() << "Nursery simulation core initialized.";
     
     // Initialize Customer Management
@@ -14,7 +16,7 @@ Nursery::Nursery(QObject *parent) : QObject(parent) {
     stock = new Stock(inventory);
     flowerFactory = new FlowerPlanter();
     herbFactory = new HerbPlanter();
-    currentSeason = new Seasons();
+    currentSeason = new Spring(inventory);
     
     // Initialize Staff Management
     infoDesk = new InfoDesk();
@@ -73,4 +75,15 @@ void Nursery::removeCustomer(Customer* customer) {
         activeCustomers.erase(it);
         customerCount--;
     }
+}
+
+void Nursery::setState(Seasons* season){
+    if(this->currentSeason){
+        delete currentSeason;
+    }
+    currentSeason = season;
+}
+
+void Nursery::handleChange(){
+    currentSeason->handleChange(this);
 }

@@ -17,7 +17,7 @@ using namespace std;
 
 class Nursery : public QObject // <-- INHERIT FROM QObject
 {
-Q_OBJECT // REQUIRED
+    Q_OBJECT // REQUIRED
 private:
     // Customer Management
     vector<Customer*> activeCustomers;
@@ -38,7 +38,7 @@ private:
 
 public:
     explicit Nursery(QObject *parent = nullptr);
-    virtual ~Nursery() override;
+    ~Nursery(); //override;
 
     // Getters
     Stock* getStock() const { return stock; }
@@ -54,10 +54,12 @@ public:
     void addCustomer(Customer* customer);
     void removeCustomer(Customer* customer);
     const std::vector<Customer*>& getActiveCustomers() const { return activeCustomers; }
-
+    void setState(Seasons* season);
+    void handleChange();
 public slots:
     // This slot receives the signal from the CustomerClock
     void handleCustomerArrivalSignal(); 
 };
 
 #endif
+

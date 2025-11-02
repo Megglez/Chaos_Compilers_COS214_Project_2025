@@ -29,7 +29,7 @@ public:
 	virtual int getWater();
 	virtual int getSoil();
 	virtual int getSunlight();
-	Plant(){};
+	Plant(){ stage = nullptr; strategy= nullptr;};
 	Plant(int water,int soil,int sunlight,StageOfDevelopment* stage,CareStrategy* strategy);
 	virtual ~Plant();
 	virtual bool isWinter()  const ;
