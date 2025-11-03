@@ -26,6 +26,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 # Main target for TestingMain.cpp
 TARGET = TestingMain
+DEMO_TARGET = DemoMain
 
 all: $(TARGET)
 
@@ -71,6 +72,13 @@ src/Nursery/moc_SeasonClock.cpp: src/Nursery/SeasonClock.h
 run: $(TARGET)
 	./$(TARGET)
 
+# Demo target for DemoMain.cpp
+$(DEMO_TARGET): DemoMain.cpp $(OBJS) $(MOC_OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(QT_LIBS)
+
+demo: $(DEMO_TARGET)
+	./$(DEMO_TARGET)
+
 # Test target (if you add test files in tests/)
 TEST_SRCS = $(wildcard tests/*.cpp)
 TEST_OBJS = $(TEST_SRCS:.cpp=.o)
@@ -114,9 +122,9 @@ clean_gcda:
 	rm -f *.gcda *.gcno
 
 clean:
-	rm -f $(OBJS) $(MOC_OBJS) $(TEST_OBJS) $(TARGET) $(TEST_TARGET) *.o *.gcov *.gcda *.gcno *.gz *.html *.css output.txt coverage.txt $(MOC_SRCS)
+	rm -f $(OBJS) $(MOC_OBJS) $(TEST_OBJS) $(TARGET) $(DEMO_TARGET) $(TEST_TARGET) *.o *.gcov *.gcda *.gcno *.gz *.html *.css output.txt coverage.txt $(MOC_SRCS)
 
-.PHONY: all run clean test valgrind valgrind_test gdb gdb_test coverage coverage_test report clean_gcda
+.PHONY: all run demo clean test valgrind valgrind_test gdb gdb_test coverage coverage_test report clean_gcda
 
 # Run CMake and execute unit tests
 unit_tests:

@@ -1,3 +1,11 @@
+/**
+ * @file Enquire.cpp
+ * @brief Implementation of the Enquire action class
+ *
+ * Implements enquiry behavior including question handling, staff assistance
+ * requests, and state transitions to Browse or leaving the nursery.
+ */
+
 #include "Enquire.h"
 #include "Browse.h"
 #include "Customer.h"

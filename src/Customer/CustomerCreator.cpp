@@ -1,3 +1,14 @@
+/**
+ * @file CustomerCreator.cpp
+ * @brief Implementation of the CustomerCreator factory class
+ *
+ * Implements customer creation with comprehensive randomization including:
+ * - Initial state selection (Browse/Enquire)
+ * - Plant selection with distinct type enforcement
+ * - Question type selection (advice/information)
+ * - Plant decoration application (GiftWrap/Pot/SpecialArrangement)
+ */
+
 #include "CustomerCreator.h"
 #include <QDebug>
 #include <random>
