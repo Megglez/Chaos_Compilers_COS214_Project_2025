@@ -168,6 +168,8 @@ public:
      */
     const vector<Customer *> &getActiveCustomers() const { return activeCustomers; }
 
+    void handleChange();
+
 public slots:
     /**
      * @brief Slot that handles customer arrival signals

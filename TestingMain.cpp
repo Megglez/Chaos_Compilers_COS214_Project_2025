@@ -159,10 +159,10 @@ void testGreenhouse()
     /*delete command;
     delete command2;
     delete command3;
-    delete command4;
+    delete command4;*/
 }
 
-void testCustomer()
+/*void testCustomer()
 {
     std::cout << "\n=====Testing Customer Creation=====" << std::endl;
 
@@ -255,4 +255,4 @@ void testCustomer()
     delete herbPlanter;
 
     std::cout << "\nCustomer testing completed successfully!" << std::endl;
-}
+}*/

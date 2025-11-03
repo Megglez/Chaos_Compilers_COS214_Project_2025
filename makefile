@@ -20,6 +20,8 @@ QT_DIR = /home/blegibz/Qt/6.10.0/gcc_64
 QT_INCLUDES = -I$(QT_DIR)/include -I$(QT_DIR)/include/QtCore -I$(QT_DIR)/include/QtGui -I$(QT_DIR)/include/QtWidgets
 QT_LIBS = -L$(QT_DIR)/lib -lQt6Core -lQt6Gui -lQt6Widgets
 GCOV_FLAGS = -fprofile-arcs -ftest-coverage
+MOC = /home/blegibz/Qt/Tools/QtDesignStudio/qt6_design_studio_reduced_version/libexec/moc
+
 
 # Find all source files in src subfolders
 SRC_DIRS = src/Greenhouse src/Staff src/Customer src/Nursery
@@ -48,22 +50,23 @@ $(TARGET): TestingMain.cpp $(OBJS) $(MOC_OBJS)
 
 # Generate MOC files for Qt classes
 src/Customer/moc_Customer.cpp: src/Customer/Customer.h
-	moc-qt5 $(QT_INCLUDES) $< -o $@
+	$(MOC) $(QT_INCLUDES) $< -o $@
 
 src/Nursery/moc_Nursery.cpp: src/Nursery/Nursery.h
-	moc-qt5 $(QT_INCLUDES) $< -o $@
+	$(MOC) $(QT_INCLUDES) $< -o $@
 
 src/Nursery/moc_Clock.cpp: src/Nursery/Clock.h
-	moc-qt5 $(QT_INCLUDES) $< -o $@
+	$(MOC) $(QT_INCLUDES) $< -o $@
 
 src/Nursery/moc_CustomerClock.cpp: src/Nursery/CustomerClock.h
-	moc-qt5 $(QT_INCLUDES) $< -o $@
+	$(MOC) $(QT_INCLUDES) $< -o $@
 
 src/Nursery/moc_PlantClock.cpp: src/Nursery/PlantClock.h
-	moc-qt5 $(QT_INCLUDES) $< -o $@
+	$(MOC) $(QT_INCLUDES) $< -o $@
 
 src/Nursery/moc_SeasonClock.cpp: src/Nursery/SeasonClock.h
-	moc-qt5 $(QT_INCLUDES) $< -o $@
+	$(MOC) $(QT_INCLUDES) $< -o $@
+
 
 # Compile MOC files
 %.o: %.cpp

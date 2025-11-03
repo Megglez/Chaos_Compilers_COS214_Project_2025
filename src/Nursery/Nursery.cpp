@@ -99,6 +99,10 @@ void Nursery::addCustomer(Customer *customer)
     }
 }
 
+void Nursery::handleChange(){
+    currentSeason->handleChange(this);
+}
+
 void Nursery::removeCustomer(Customer *customer)
 {
     auto it = std::find(activeCustomers.begin(), activeCustomers.end(), customer);
