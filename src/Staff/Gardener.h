@@ -10,10 +10,14 @@ public:
 	Inventory *subject;
 	void helpPlant();
 	void getCareStrategy();
-	void getAvailability();
-	void setAvailability();
+	bool getAvailability() override;
+	void setAvailability(bool isAvailable) override;
+	void performDuty() override;
+	bool canHandleEnquiry() override;
 	Gardener();
 	virtual ~Gardener();
+	
+
 };
 
 #endif

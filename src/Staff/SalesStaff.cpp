@@ -15,13 +15,12 @@ void SalesStaff::findPlant() {
 	
 }
 
-void SalesStaff::getAvailability() {
-	// TODO - implement SalesStaff::getAvailability
-	
+bool SalesStaff::getAvailability() {
+    return Staff::getAvailability();
 }
 
-void SalesStaff::setAvailability() {
-	// TODO - implement SalesStaff::setAvailability
+void SalesStaff::setAvailability(bool isAvailable) {
+    Staff::setAvailability(isAvailable);
 	
 }
 
@@ -32,4 +31,16 @@ SalesStaff::SalesStaff() {
 
 SalesStaff::~SalesStaff()
 {
+}
+
+void SalesStaff::performDuty()
+{
+    interact();
+    QnA();
+    findPlant();
+}
+
+bool SalesStaff::canHandleEnquiry()
+{
+    return true;
 }

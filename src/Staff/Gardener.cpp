@@ -10,13 +10,12 @@ void Gardener::getCareStrategy() {
 	
 }
 
-void Gardener::getAvailability() {
-	// TODO - implement Gardener::getAvailability
-	
+bool Gardener::getAvailability() {
+    return Staff::getAvailability();
 }
 
-void Gardener::setAvailability() {
-	// TODO - implement Gardener::setAvailability
+void Gardener::setAvailability(bool isAvailable) {
+    Staff::setAvailability(isAvailable);
 	
 }
 
@@ -27,4 +26,15 @@ Gardener::Gardener() {
 
 Gardener::~Gardener()
 {
+}
+
+void Gardener::performDuty()
+{
+    helpPlant();
+    getCareStrategy();
+}
+
+bool Gardener::canHandleEnquiry()
+{
+    return true;
 }
