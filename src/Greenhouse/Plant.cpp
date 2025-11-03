@@ -13,7 +13,7 @@ Plant::Plant(int water,int soil,int sunlight, StageOfDevelopment* stage,CareStra
 
 void Plant::grow()
 {
-    this->grow();
+    stage->handle(this);
 
 }
 
@@ -23,21 +23,26 @@ void Plant::helpPlant()
         cout << "Seed care: " << endl;
         std::string message = "Gentle misting and warm conditions\n";
         strategy->helpPlant(message);
+        grow();
         
     } else if(stage->getStageName() == "Sapling"){
         cout << "Sapling care: " << endl;
         std::string message = "Regular watering and protection from harsh elements\n";
         strategy->helpPlant(message);
+        grow();
         
     } else if(stage->getStageName() == "Prime"){
         cout << "Prime care: " << endl;
         std::string message = "Full care regimen for mature plant\n";
         strategy->helpPlant(message);
+        grow();
         
     } else if(stage->getStageName() == "Wilting"){
         cout << "Wilting care: " << endl;
         std::string message = "Extra attention and recovery measures\n";
         strategy->helpPlant(message);
+        grow();
+
     } else if(stage->getStageName() == "Dead"){
         cout<<"Dead:"<<endl;
         std::cout << "Unfortunately, your plant is dead, and there's no amount of water that can save it. Sorrows, sorrows, prayers\n" << std::endl;
@@ -54,14 +59,8 @@ void Plant::setStage(StageOfDevelopment* stage){
 
 Plant::~Plant()
 {
-    if(stage != nullptr){
-        delete stage;
-        stage = nullptr;
-    }
-    if(strategy != nullptr){
-        delete strategy;
-        strategy =  nullptr;
-    }
+    if(stage) delete stage;
+    if(strategy) delete strategy;
 }
 
 bool Plant::isWinter() const  { return false; }

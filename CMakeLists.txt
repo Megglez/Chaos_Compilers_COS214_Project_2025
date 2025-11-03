@@ -57,7 +57,7 @@ target_include_directories(project_lib
 file(GLOB TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp)
 if(TEST_SOURCES)
   add_executable(run_tests ${TEST_SOURCES})
-  target_link_libraries(run_tests PRIVATE project_lib GTest::gtest_main)
+  target_link_libraries(run_tests PRIVATE project_lib GTest::gtest_main Qt::Core)
   include(GoogleTest)
   gtest_discover_tests(run_tests)
 endif()
@@ -66,3 +66,10 @@ endif()
 # --- 5. Delegate GUI Executable Build to Subdirectory ---
 # This tells CMake to process the CMakeLists.txt file located in the src/Nursery folder.
 add_subdirectory(src/Nursery)
+
+target_include_directories(run_tests PRIVATE
+    /usr/include/qt5
+    /usr/include/qt5/QtCore
+    /usr/include/qt5/QtGui
+    /usr/include/qt5/QtWidgets
+)

@@ -11,11 +11,9 @@ void Available::handle() {
 	
 }
 
-//constructor uneccessary
-/*Available::Available() {
-	// TODO - implement Available::Available
-	
-}*/
+Available::Available() {
+    // Initialize Available state
+}
 
 Available::~Available()
 {

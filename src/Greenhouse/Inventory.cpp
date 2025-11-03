@@ -7,6 +7,14 @@
  */
 
 #include "Inventory.h"
+#include "../Staff/Staff.h"
+#include "Plant.h"
+#include "StageOfDevelopment.h"
+#include "Seed.h"
+#include "Sapling.h"
+#include "Prime.h"
+#include "Wilting.h"
+#include "Dead.h"
 
 /**
  * @brief Default constructor for Inventory
@@ -16,6 +24,13 @@
 Inventory::Inventory() {
 	// TODO - implement Inventory::Inventory
 	
+}
+
+void Inventory::action()
+{
+    // TODO: Implement what this function is supposed to do.
+    // For example, it could advance the state of all plants.
+    std::cout << "Inventory action/update called!" << std::endl;
 }
 
 

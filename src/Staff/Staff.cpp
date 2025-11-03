@@ -1,4 +1,6 @@
 #include "Staff.h"
+#include "../Customer/Customer.h"
+#include "InfoDesk.h"
 
 
 void Staff::changeState()
@@ -21,6 +23,17 @@ void Staff::changeState()
 	}
 }
 
+Staff::Staff(const std::string& name, const std::string& id){
+	this->name=name;
+	this->staffID=id;
+	available= true;
+	infoDesk=nullptr;
+	nextInChain=nullptr;
+	currentCustomer=nullptr;
+	state=new Available();
+	state->setContext(this);
+}
+
 void Staff::update(const std::string &update)
 {
 	std::cout << "New Notification: " << update << std::endl;
@@ -28,15 +41,14 @@ void Staff::update(const std::string &update)
 
 Staff::Staff(std::string &name,std::string &id)
 {
-	// TODO - implement Staff ::Staff
-name=name;
-id=id;
-available= true;
-infoDesk=nullptr;
-nextInChain=nullptr;
-currentCustomer=nullptr;
-state=new Available();
-state->setContext(this);
+    name = "";
+    staffID = "";
+    available = true;
+    infoDesk = nullptr;
+    nextInChain = nullptr;
+    currentCustomer = nullptr;
+    state = new Available();
+    state->setContext(this);
 
 }
 
@@ -52,12 +64,12 @@ void Staff::setAvailability(bool isAvailable)
 
 Staff* Staff::getNextInChain()
 {
-return nextInChain;
+    return nextInChain;return nextInChain;
 }
 
-void Staff::setNextInChain(Staff*ss)
+void Staff::setNextInChain(Staff* ss)
 {
-nextInChain=ss;
+    nextInChain = ss;nextInChain=ss;
 }
 
 std::string Staff::getName()

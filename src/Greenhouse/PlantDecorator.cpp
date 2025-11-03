@@ -1,7 +1,7 @@
 #include "PlantDecorator.h"
 #include "StageOfDevelopment.h"
 
-PlantDecorator::PlantDecorator(Plant* plant) :plantDec(plant->clone()){
+PlantDecorator::PlantDecorator(Plant* plant) :plantDec(plant){
 
 }
 

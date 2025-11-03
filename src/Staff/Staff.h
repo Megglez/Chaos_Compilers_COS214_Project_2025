@@ -1,8 +1,7 @@
 #ifndef STAFF_H
 #define STAFF_H
 #include <iostream>
-//#include "../Greenhouse/Plant.h"
-//#include "StaffState.h"
+#include "StaffState.h"
 #include "Available.h"
 #include "Busy.h"
 //#include "../Greenhouse/Inventory.h"
@@ -13,14 +12,16 @@ using namespace std;
 class InfoDesk;
 class StaffState;
 class Inventory;
+class InfoDesk;  // Forward declaration
+class Customer;  // Forward declaration
 class Staff
 {
 private:
 	string name;
 	string staffID;
 	string workArea;
-	StaffState *state;
-	InfoDesk *infoDesk;
+	StaffState* state;
+	InfoDesk* infoDesk;
 	bool available;  
 	Staff * nextInChain;
 	Customer *currentCustomer;
@@ -33,7 +34,7 @@ public:
 	Staff(std::string& name,std::string& id);
 	virtual ~Staff();
 	virtual void setNextInChain(Staff* next);
-	virtual void assistCustomer(Customer *cc); //start Assisting customer
+	virtual void assistCustomer(Customer *cc); // start Assisting customer
 	std::string getName();
 	std::string getID();
 	std::string getStaffType();
@@ -48,11 +49,6 @@ public:
 	virtual bool canHandleEnquiry()=0;
 	void registerToAllStaff(InfoDesk*desk);
 	void unregisterFromAllStaff();
- 	
-	
-	
-
-
 };
 
 #endif

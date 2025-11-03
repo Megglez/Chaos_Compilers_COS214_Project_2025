@@ -7,7 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // 1. Initialize and start the three clocks
+    // Initialize the nursery first
+    nursery = new Nursery(this);
+
+    // Initialize clocks
     plantClock = new PlantClock(this);
     seasonClock = new SeasonClock(this);
     customerClock = new CustomerClock(this);
@@ -45,7 +48,10 @@ MainWindow::~MainWindow()
 void MainWindow::handlePlantUpdate()
 {
     qDebug() << "ACTION: Update all plant growth/water/health status.";
-    // Call functions in your Nursery simulation class here.
+    if (nursery) {
+        nursery->getInventory()->action();
+        nursery->getStock()->printStock();
+    }
 }
 
 void MainWindow::handleSeasonChange(Season newSeason)
@@ -58,11 +64,19 @@ void MainWindow::handleSeasonChange(Season newSeason)
         case WINTER: seasonName = "Winter"; break;
     }
     qDebug() << "ACTION: SEASON CHANGED to" << seasonName;
-    // Update UI labels and change conditions for plants/customers in the Nursery.
+    
+    if (nursery && nursery->getCurrentSeason()) {
+        // Log the season change since we don't have UI labels yet
+        qDebug() << "Season changed to:" << seasonName;
+    }
 }
 
 void MainWindow::handleCustomerArrival()
 {
     qDebug() << "ACTION: New customer has ARRIVED!";
-    // Call your Nursery function to create a new Customer object.
+    if (nursery) {
+        nursery->handleCustomerArrivalSignal();
+        // Log customer count since we don't have UI labels yet
+        qDebug() << "Active Customers:" << nursery->getActiveCustomers().size();
+    }
 }

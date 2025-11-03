@@ -1,37 +1,47 @@
 #include "Enquire.h"
+#include "Browse.h"
+#include "Customer.h"
+#include "../Staff/InfoDesk.h"
+#include <iostream>
+#include <random>
+using namespace std;
 
-void Enquire::handle() {
-	// TODO - implement Enquire::handle
-	
-}
-
-Action* Enquire::getNextAction() {
-	// TODO - implement Enquire::getNextAction
-	//return Enquire();
-	
-}
-
-Enquire::Enquire() {
-	// TODO - implement Enquire::Enquire
-	
-}
-
-Enquire::~Enquire()
+void Enquire::handle()
 {
+    cout << "Customer is handling the Enquire action" << endl;
+    if (!enquiryQuestion.empty())
+    {
+        cout << "Customer's question: " << enquiryQuestion << endl;
+    }
 }
 
-std::string Enquire::getActionName() 
+Action *Enquire::getNextAction()
 {
-	return "Enquiring";
+    // Generate random integer between 0 and 1 to determine next action
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> actionDist(0, 1);
+
+    int nextAction = actionDist(gen);
+
+    if (nextAction == 0)
+    {
+        // Customer leaves the nursery (no next action)
+        cout << "Customer finished enquiring and is leaving the nursery." << endl;
+        return nullptr;
+    }
+    else
+    {
+        // Customer transitions to Browse state
+        cout << "Customer finished enquiring and is now browsing for plants." << endl;
+        // Create Browse action with the same plant they were asking about
+        // Default quantity of 1 if they decide to browse
+        return new Browse(plantOfInterest, 1);
+    }
 }
 
-void Enquire::requestStaffAssistance(Customer *customer, InfoDesk& desk)
+void Enquire::requestStaffAssistance(Customer *customer, InfoDesk &desk)
 {
-	std::cout<<"Customer is requesting assistance at infodesk."<<std::endl;
-	// call staff at infodesk
-	desk.handleCustomer(customer);
-	
-	
-
-
+    cout << "Customer is requesting assistance at infodesk." << endl;
+    desk.handleCustomer(customer);
 }

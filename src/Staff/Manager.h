@@ -4,7 +4,7 @@
 #include "Staff.h"
 using namespace std;
 
-class Manager : Staff
+class Manager : public Staff
 {
 
 private:

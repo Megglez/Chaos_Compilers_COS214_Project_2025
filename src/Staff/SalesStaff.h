@@ -1,7 +1,7 @@
 #ifndef SALESSTAFF_H
 #define SALESSTAFF_H
 #include <iostream>
-#include "./Staff/Staff.h"
+#include "../Staff/Staff.h"
 using namespace std;
 
 class SalesStaff : public Staff

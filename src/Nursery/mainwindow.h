@@ -2,12 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QDebug> // Always good to have for debugging
-
-// Include all three specialized headers
+#include <QDebug>
 #include "PlantClock.h"
 #include "SeasonClock.h"
 #include "CustomerClock.h"
+#include "Nursery.h"
+#include "../Greenhouse/Seasons.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -34,5 +34,6 @@ private:
     PlantClock *plantClock;
     SeasonClock *seasonClock;
     CustomerClock *customerClock;
+    Nursery *nursery;
 };
 #endif // MAINWINDOW_H

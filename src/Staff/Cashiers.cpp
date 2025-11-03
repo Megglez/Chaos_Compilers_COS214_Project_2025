@@ -8,13 +8,14 @@ Cashiers::Cashiers(std::string& name,std::string& id):Staff(name,id) {
 
 }
 
-Cashiers::~Cashiers()
-{
+Cashiers::~Cashiers() {
+    if (subject) {
+        delete subject;
+    }
 }
 
-std::string Cashiers::getStaffType() 
- {
-return "Cashier";
+std::string Cashiers::getStaffType() {
+    return "Cashier";
 }
  
 bool Cashiers::canHandleEnquiry()
