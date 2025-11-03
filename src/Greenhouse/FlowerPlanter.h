@@ -15,6 +15,9 @@ using namespace std;
  * configurations optimized for flowering plants, including seasonal behavior for winter.
  */
 class FlowerPlanter : public Planter {
+private:
+    bool isWinter;  ///< Seasonal flag indicating whether plants should be created in winter mode
+
 public:
     /**
      * @brief Creates a new FlowerPlant instance with flower-specific configurations
@@ -28,7 +31,7 @@ public:
      * Includes seasonal awareness for winter conditions.
      * @warning The caller is responsible for managing the memory of the returned Plant pointer
      */
-    virtual Plant* planterMethod(std::string name) override;
+    virtual Plant* planterMethod(string name) override;
     
     /**
      * @brief Constructs a FlowerPlanter with optional seasonal configuration
@@ -45,9 +48,6 @@ public:
      * @brief Destructor for FlowerPlanter
      */
     ~FlowerPlanter();
-    
-private:
-    bool isWinter;  ///< Seasonal flag indicating whether plants should be created in winter mode
 };
 
 #endif

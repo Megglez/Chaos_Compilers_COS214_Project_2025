@@ -75,7 +75,7 @@ public:
      * @brief returns the name of he current stage the plant is in
      * @return a string of the name of the curent stage
      */
-    virtual std::string getStageName() = 0;
+    virtual string getStageName() = 0;
 
     /**
      * @brief Creates a deep copy of the StageOfDevelopment object

@@ -26,7 +26,7 @@ public:
      * specific types of plants with appropriate configurations.
      * @warning Caller is responsible for memory management of the returned Plant pointer
      */
-    virtual Plant *planterMethod(std::string name) = 0;
+    virtual Plant *planterMethod(string name) = 0;
     
     /**
      * @brief Default constructor for Planter base class

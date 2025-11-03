@@ -34,7 +34,7 @@ public:
      * 
      * Ensures proper destruction of the decorated plant object and any derived decorators
      */
-    ~PlantDecorator() override;
+    virtual ~PlantDecorator() override;
     
     // Implement pure virtual functions from Plant
     /**

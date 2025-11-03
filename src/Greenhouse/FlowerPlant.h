@@ -17,6 +17,9 @@ using namespace std;
  */
 class FlowerPlant : public Plant 
 {
+private:
+    bool isWinterFlower;  ///< Seasonal state indicating whether the flower is in winter conditions
+
 public:
     /**
      * @brief Creates a deep copy of this FlowerPlant object
@@ -82,9 +85,6 @@ public:
      * vase packaging, decorative presentation, etc.).
      */
     virtual void package() override;
-    
-private:
-    bool isWinterFlower;  ///< Seasonal state indicating whether the flower is in winter conditions
 };
 
 #endif

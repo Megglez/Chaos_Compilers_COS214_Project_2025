@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "StageOfDevelopment.h"
-
 using namespace std;
 
 /**
@@ -51,7 +50,7 @@ public:
      * @brief Virtual destructor for proper polymorphism
      */
     virtual ~Dead();
-    virtual std::string getStageName() override;
+    virtual string getStageName() override;
     virtual StageOfDevelopment* clone() override;
 };
 
