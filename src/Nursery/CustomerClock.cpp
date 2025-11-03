@@ -1,3 +1,13 @@
+/**
+ * @file CustomerClock.cpp
+ * @brief Implementation of the CustomerClock class
+ * 
+ * Implements random customer arrival timing for the nursery simulation.
+ * 
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "CustomerClock.h"
 #include <QDebug>
 
