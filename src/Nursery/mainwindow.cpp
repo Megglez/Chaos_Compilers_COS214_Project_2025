@@ -1,3 +1,14 @@
+/**
+ * @file mainwindow.cpp
+ * @brief Implementation of the MainWindow GUI class
+ * 
+ * Contains the implementation of all MainWindow methods for coordinating
+ * the nursery simulation through the Qt GUI framework.
+ * 
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h" // Assuming you fixed the "./ui_mainwindow.h" path
 
@@ -48,11 +59,11 @@ MainWindow::~MainWindow()
 void MainWindow::handlePlantUpdate()
 {
     qDebug() << "ACTION: Update all plant growth/water/health status.";
-    // Update inventory and stock
     if (nursery) {
-        nursery->getInventory()->update();
-        nursery->getStock()->update();
+        nursery->getInventory()->action();
+        nursery->getStock()->printStock();
     }
+}
 
 void MainWindow::handleSeasonChange(Season newSeason)
 {
@@ -64,20 +75,21 @@ void MainWindow::handleSeasonChange(Season newSeason)
         case WINTER: seasonName = "Winter"; break;
     }
     qDebug() << "ACTION: SEASON CHANGED to" << seasonName;
-    
     if (nursery) {
-        nursery->getCurrentSeason()->changeSeason(newSeason);
-        // Update UI to reflect season change
-        ui->seasonLabel->setText("Current Season: " + seasonName);
+        nursery->updateSeason(newSeason);
     }
+    if (nursery && nursery->getCurrentSeason()) {
+        // Log the season change since we don't have UI labels yet
+        qDebug() << "Season changed to:" << seasonName;
+    }
+}
 
 void MainWindow::handleCustomerArrival()
 {
     qDebug() << "ACTION: New customer has ARRIVED!";
     if (nursery) {
         nursery->handleCustomerArrivalSignal();
-        // Update UI to show current customer count
-        ui->customerCountLabel->setText("Active Customers: " + 
-            QString::number(nursery->getActiveCustomers().size()));
+        // Log customer count since we don't have UI labels yet
+        qDebug() << "Active Customers:" << nursery->getActiveCustomers().size();
     }
 }

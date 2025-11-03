@@ -9,6 +9,12 @@ gui:
 # Makefile for COS214_Project_2025
 
 CXX = g++
+CXXFLAGS = -g -std=c++17 -Wall -Wextra $(QT_INCLUDES) $(QT_DEFINES)   # ← added Qt include paths and defines
+
+# Dynamic Qt5 configuration using pkg-config (more portable)
+QT_INCLUDES = $(shell pkg-config --cflags Qt5Core Qt5Gui Qt5Widgets 2>/dev/null || echo "-I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtWidgets")
+QT_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+QT_LIBS = $(shell pkg-config --libs Qt5Core Qt5Gui Qt5Widgets 2>/dev/null || echo "-lQt5Core -lQt5Gui -lQt5Widgets")
 CXXFLAGS = -g -std=c++17 -Wall -Wextra $(QT_INCLUDES)
 QT_DIR = /home/blegibz/Qt/6.10.0/gcc_64
 QT_INCLUDES = -I$(QT_DIR)/include -I$(QT_DIR)/include/QtCore -I$(QT_DIR)/include/QtGui -I$(QT_DIR)/include/QtWidgets
@@ -16,7 +22,7 @@ QT_LIBS = -L$(QT_DIR)/lib -lQt6Core -lQt6Gui -lQt6Widgets
 GCOV_FLAGS = -fprofile-arcs -ftest-coverage
 
 # Find all source files in src subfolders
-SRC_DIRS = src/Greenhouse src/Staff src/Customer
+SRC_DIRS = src/Greenhouse src/Staff src/Customer src/Nursery
 SRCS = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 # Add ONLY Nursery.cpp but NOT mainwindow.cpp
 SRCS += src/Nursery/Nursery.cpp
@@ -29,12 +35,39 @@ OBJS = $(SRCS:.cpp=.o)
 # Main target for TestingMain.cpp
 TARGET = TestingMain
 
-
 all: $(TARGET)
 
+# MOC files needed for Qt classes
+MOC_SRCS = src/Customer/moc_Customer.cpp src/Nursery/moc_Nursery.cpp src/Nursery/moc_Clock.cpp \
+           src/Nursery/moc_CustomerClock.cpp src/Nursery/moc_PlantClock.cpp src/Nursery/moc_SeasonClock.cpp
+MOC_OBJS = $(MOC_SRCS:.cpp=.o)
 
-$(TARGET): TestingMain.cpp $(OBJS)
+# For TestingMain, we need to run MOC on Qt classes first, then compile and link
+$(TARGET): TestingMain.cpp $(OBJS) $(MOC_OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(QT_LIBS)
+
+# Generate MOC files for Qt classes
+src/Customer/moc_Customer.cpp: src/Customer/Customer.h
+	moc-qt5 $(QT_INCLUDES) $< -o $@
+
+src/Nursery/moc_Nursery.cpp: src/Nursery/Nursery.h
+	moc-qt5 $(QT_INCLUDES) $< -o $@
+
+src/Nursery/moc_Clock.cpp: src/Nursery/Clock.h
+	moc-qt5 $(QT_INCLUDES) $< -o $@
+
+src/Nursery/moc_CustomerClock.cpp: src/Nursery/CustomerClock.h
+	moc-qt5 $(QT_INCLUDES) $< -o $@
+
+src/Nursery/moc_PlantClock.cpp: src/Nursery/PlantClock.h
+	moc-qt5 $(QT_INCLUDES) $< -o $@
+
+src/Nursery/moc_SeasonClock.cpp: src/Nursery/SeasonClock.h
+	moc-qt5 $(QT_INCLUDES) $< -o $@
+
+# Compile MOC files
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -86,7 +119,7 @@ clean_gcda:
 	rm -f *.gcda *.gcno
 
 clean:
-	rm -f $(OBJS) $(TEST_OBJS) $(TARGET) $(TEST_TARGET) *.o *.gcov *.gcda *.gcno *.gz *.html *.css output.txt coverage.txt
+	rm -f $(OBJS) $(MOC_OBJS) $(TEST_OBJS) $(TARGET) $(TEST_TARGET) *.o *.gcov *.gcda *.gcno *.gz *.html *.css output.txt coverage.txt $(MOC_SRCS)
 
 .PHONY: all run clean test valgrind valgrind_test gdb gdb_test coverage coverage_test report clean_gcda
 
