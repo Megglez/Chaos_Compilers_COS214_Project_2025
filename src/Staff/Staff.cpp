@@ -39,18 +39,6 @@ void Staff::update(const std::string &update)
 	std::cout << "New Notification: " << update << std::endl;
 }
 
-Staff::Staff(std::string &name,std::string &id)
-{
-    name = "";
-    staffID = "";
-    available = true;
-    infoDesk = nullptr;
-    nextInChain = nullptr;
-    currentCustomer = nullptr;
-    state = new Available();
-    state->setContext(this);
-
-}
 
 Staff::~Staff()
 {

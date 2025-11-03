@@ -32,15 +32,49 @@ Manager::~Manager()
 {
 }
 
-bool SalesStaff::canHandleEnquiry()
+bool Manager::canHandleEnquiry()
 {
 	return true;
 }
 
-void SalesStaff::performDuty()
+void Manager::performDuty()
 {
-	
-}
+	if(getCurrentCustomer())//someone to help
+	{
+		if(getCurrentCustomer()->getQuestionType()==0) //sales advice
+		{
+			switch (/*selectedQuestion*/)
+			{
+			case 0: //"What summer plants are available?"
+				/* code */
+				//get all summer plants from inventory where type 
+				break;
+			case 1: //"What winter plants are available?"
+			//get all winter plants from inventory
+				/* code */
+
+			case 2:   //"What is the best time of day to water my plants?"
+				/* code */ 
+				break;
+
+			case 3:  //"How many categories of plants do you sell?"
+
+				/* code *// 
+				break;	
+			
+			default:
+				break;
+			}
+		}
+		else //garden advice
+		{
+			cout<<"General Enquiry response."<<endl;
+		}
+	}
+	else
+{cout<< trackInventory()<<endl;}
+	}
+
 
 void Manager::setRole()
 {
