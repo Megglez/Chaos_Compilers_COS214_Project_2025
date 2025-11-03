@@ -7,6 +7,14 @@
  */
 
 #include "Inventory.h"
+#include "../Staff/Staff.h"
+#include "Plant.h"
+#include "StageOfDevelopment.h"
+#include "Seed.h"
+#include "Sapling.h"
+#include "Prime.h"
+#include "Wilting.h"
+#include "Dead.h"
 
 /**
  * @brief Default constructor for Inventory
@@ -125,7 +133,7 @@ void Inventory::updatePlantStagesForSeason(const std::string& season) {
         if (plantPtr) {
             StageOfDevelopment* newStage = determineStageForSeason(plantPtr.get(), season);
             if (newStage) {
-                plantPtr->setState(newStage); // Assuming you have a setter for the stage
+                plantPtr->setStage(newStage); // Assuming you have a setter for the stage
                 std::cout << plantName << " stage updated for " << season << std::endl;
             }
         }
@@ -404,4 +412,18 @@ void Inventory::notify(std::string& message) {
  */
 Inventory::~Inventory()
 {
+}
+
+int Inventory::getPlantNumber(std::unique_ptr<Plant> plant){
+    int quantity;
+    if(plant){
+        auto it = inventoryList.find(plant->getName()); 
+        if (it != inventoryList.end()) {
+            quantity = it->second.second;
+        }else{
+            std::cout << "Error: Plant not found." << std::endl;
+        }
+    }else{
+        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
+    }
 }

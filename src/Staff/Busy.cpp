@@ -1,21 +1,23 @@
 #include "Busy.h"
-
+#include "Staff.h"
+#include "InfoDesk.h"
 void Busy::handle() {
 	// TODO - implement Busy::handle
 
 	if(staff)
 	{
-
+		cout<<staff->getName()<< " is completing this task."<<std::endl;
+ 
 		
-		this->staff->changeState();
-		this->staff->setAvailability(true);
-		std::cout<< "Staff has assisted customer. Staff is now Available."<<std::endl;
-		
-		this->staff->changeState();
-		this->staff->setAvailability(true);	
-		
-		
-
+		staff->setCurrentCustomer(nullptr);
+ 		this->staff->changeState();
+ 		this->staff->setAvailability(true);
+		InfoDesk* infod = staff->getInfodesk();
+		if(infod)
+		{
+			infod->notifyStaffAvailable(staff);
+		}
+ 		std::cout<< "Staff has assisted customer. Staff is now Available."<<std::endl;
 		//remove staff from Infodesk::AvailableStaff
 
 	}
@@ -24,12 +26,9 @@ void Busy::handle() {
 }
 
 
-//constructor uneccessary
-/*
 Busy::Busy() {
-	// TODO - implement Busy::Busy
-	
-}*/
+    // Initialize Busy state
+}
 
 Busy::~Busy()
 {

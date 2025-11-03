@@ -1,16 +1,28 @@
+# Qt GUI build and run (combined)
+.PHONY: gui
+
+gui:
+	cd gui/ChaoticPlants && mkdir -p build && cd build && cmake .. && $(MAKE) && ./ChaoticPlants
 .PHONY: cmake_test
 
 
 # Makefile for COS214_Project_2025
 
 CXX = g++
-CXXFLAGS = -g -std=c++17 -Wall -Wextra
+CXXFLAGS = -g -std=c++17 -Wall -Wextra $(QT_INCLUDES)
+QT_DIR = /home/blegibz/Qt/6.10.0/gcc_64
+QT_INCLUDES = -I$(QT_DIR)/include -I$(QT_DIR)/include/QtCore -I$(QT_DIR)/include/QtGui -I$(QT_DIR)/include/QtWidgets
+QT_LIBS = -L$(QT_DIR)/lib -lQt6Core -lQt6Gui -lQt6Widgets
 GCOV_FLAGS = -fprofile-arcs -ftest-coverage
 
 # Find all source files in src subfolders
-SRC_DIRS = src/Greenhouse src/Staff
+SRC_DIRS = src/Greenhouse src/Staff src/Customer
 SRCS = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
+# Add ONLY Nursery.cpp but NOT mainwindow.cpp
+SRCS += src/Nursery/Nursery.cpp
 SRCS := $(filter-out %_test.cpp %Test.cpp, $(SRCS))
+SRCS := $(filter-out src/Nursery/mainwindow.cpp, $(SRCS))  # ← EXCLUDE mainwindow.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 
@@ -22,7 +34,7 @@ all: $(TARGET)
 
 
 $(TARGET): TestingMain.cpp $(OBJS)
-	$(CXX) $(CXXFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(QT_LIBS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

@@ -6,14 +6,17 @@
 #include <memory>
 #include <algorithm>
 #include <map>
-using namespace std;
+#include <string>
+#include "Plant.h"
 #include "StageOfDevelopment.h"
-#include "Seed.h"
-#include "Sapling.h"
-#include "Prime.h"
-#include "Wilting.h"
-#include "Dead.h"
-#include "../Staff/Staff.h"
+
+// Forward declarations for stage classes
+class Seed;
+class Sapling;
+class Prime;
+class Wilting;
+class Dead;
+class Staff;
 
 /**
  * @class Inventory
@@ -126,8 +129,17 @@ public:
      */
     virtual ~Inventory();
 
+    /**
+     * @brief returns the inventoryList
+     * @returns std::map<std::string, std::pair<std::unique_ptr<Plant>
+     */
     std::map<std::string, std::pair<std::unique_ptr<Plant>, int>>& getInventory();
 
+    /**
+     * @brief returns the number of stock of tha plant
+     * @returns int
+     */
+    int getPlantNumber(std::unique_ptr<Plant> plant);
 };
 
 #endif

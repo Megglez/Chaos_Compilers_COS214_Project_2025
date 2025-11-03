@@ -3,12 +3,12 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-#include "../Customer/Customer.h"
-#include "Staff.h"
+#include <algorithm>
+#include <string>
 
-using namespace std;
-
-//class Staff;
+// Forward declarations
+class Staff;
+class Customer;
 class InfoDesk {
 	private:
 	 // 
@@ -16,16 +16,27 @@ class InfoDesk {
 	std::queue<Customer*> waitingCustomers; // queued customers 
 	std::vector<Staff*> AllStaff; 
 	std::vector<Staff*> AvailableStaff;
+	Staff* findAvailableStaffThroughChain();
 
 public:
 	virtual void notify(Staff* staff);// notify 
 	InfoDesk();
 	virtual ~InfoDesk(); 
 	InfoDesk* getInfodesk();
-	void handleCustomer(); // called by requestAssistance
-	bool FindAvailableStaff(Customer cc);
-	bool removeAvailableStaff(Staff ss);
-	bool addAvailableStaff(Staff ss);
+	void buildChain();
+	void clearChain();
+	//assogns staff to customer
+	void handleCustomer(Customer* customer); // called by requestAssistance
+	bool FindAvailableStaff(Customer* cc);
+	bool removeStaff(Staff *);
+	bool addStaff(Staff* ss);
+	void processWaitingCustomers();
+	void notifyStaffAvailable(Staff* freedStaff);
+	std::vector<Staff*> getStaffByType(std::string ss) const;
+	void AssignStaffToCustomer(Customer* cc);
+	
+
+
 
 
 };

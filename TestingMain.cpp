@@ -20,6 +20,7 @@
 #include "src/Greenhouse/GiftWrap.h"
 #include "src/Greenhouse/Pot.h"
 #include "src/Greenhouse/SpecialArrangement.h"
+#include "src/Nursery/Nursery.h"
 
 #include <memory>
 
@@ -53,6 +54,7 @@ int main(){
     Pot* pot = new Pot(gift);
     gift->package();
     pot->package();
+    delete pot;
 
     //testing the different strategies 
     cout<<"\n=====Plants Help Strategies====="<<endl;
@@ -67,19 +69,12 @@ int main(){
     Plant* Tree6 = TreeP->planterMethod("Acaccia");
 
 
-    Sapling* sapling= new Sapling();
-    Prime* prime= new Prime();
-    Wilting* wilting= new Wilting();
-    Dead* dead= new Dead();
-
+    
     Flower3->helpPlant();
-    sapling->handle(Herb4);
     Herb4->helpPlant();
-    prime->handle(Succ5);
     Succ5->helpPlant();
-    wilting->handle(Tree6);
     Tree6->helpPlant();
-    dead->handle(Flower3);
+    Flower3->helpPlant();
     Flower3->helpPlant();
 
     Inventory* test_inv = new Inventory();
@@ -95,7 +90,21 @@ int main(){
     test_inv->getCatalogue();
     test_inv->getCatalogue();
 
-    StateCommand* command = new SpringCommand(test_inv);
+    Nursery nursery;
+
+    for (int i = 0; i < 10; i++) {
+        std::cout << "\n--- Cycle " << (i + 1) << " ---" << std::endl;
+        nursery.handleChange();
+        
+        // You can add some debugging output here
+        // For example, check what season it is now:
+        Seasons* currentSeason = nursery.getCurrentSeason();
+        if (currentSeason) {
+            std::cout << "Season changed!" << std::endl;
+        }
+    }
+
+    /*StateCommand* command = new SpringCommand(test_inv);
     command->execute();
     test_inv->getCatalogue();
     
@@ -115,7 +124,7 @@ int main(){
     const auto&  inv = test_inv->getInventory();
     for (const auto& entry : inv) {
         std::cout << "- " << entry.second.first.get()->getState()->getStageName();
-    }
+    }*/
     
     
     delete test_st;
@@ -126,12 +135,16 @@ int main(){
     delete TreeP;
     //delete pot;
     delete FlowerW;
+    delete Flower3;
+    delete Herb4;
+    delete Succ5;
+    delete Tree6;
     
 
-    delete command;
+    /*delete command;
     delete command2;
     delete command3;
-    delete command4;
+    delete command4;*/
 
     
     return 0;

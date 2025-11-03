@@ -1,16 +1,26 @@
 #ifndef ACTION_H
 #define ACTION_H
 #include <iostream>
+
+// Forward declarations to break circular dependencies
+class Customer; 
+class InfoDesk; 
 using namespace std;
 
 class Action {
+protected: 
+    string name;
+
 public:
-	virtual void handle();
-	virtual Action* getNextAction();
-	virtual std::string getActionName() = 0;
-	Action();
-	virtual ~Action();
-	virtual void requestStaffAssistance()=0;
+	Action(const string& actionName) : name(actionName) {}
+	virtual ~Action() {}
+
+	virtual void handle() = 0;
+	virtual Action* getNextAction() = 0;
+	virtual void requestStaffAssistance(Customer* customer, InfoDesk& desk) = 0;
+
+	string getActionName() const { return name; }
+	bool matches(const string& other_name) const { return name == other_name; }
 };
 
-#endif
+#endif 

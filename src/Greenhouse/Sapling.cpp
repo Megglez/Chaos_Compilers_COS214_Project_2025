@@ -26,7 +26,7 @@ StageOfDevelopment* Sapling::getNextStage()
  */
 void Sapling::handle(Plant* plant)
 {
-    plant->setState(new Prime());
+    plant->setStage(new Prime());
 }
 
 /**
@@ -50,10 +50,25 @@ Sapling::~Sapling()
     // Cleanup code if needed
 }
 
+ /**
+* @brief returns the name of he current stage the plant is in
+* @return a string of the name of the curent stage
+*/
 std::string Sapling::getStageName(){
     return "Sapling";
 }
 
-StageOfDevelopment* Sapling::clone(){
+
+/**
+* @brief Creates a deep copy of the StageOfDevelopment object
+     * 
+     * @return StageOfDevelopment* A pointer to a newly allocated copy of the current object.
+     * The caller is responsible for managing the memory of the returned object.
+     * 
+     * @note This method implements the Prototype pattern, allowing polymorphic copying
+     * of derived stage objects without knowing their concrete types.
+     * 
+     */
+StageOfDevelopment* Sapling::clone() {
     return new Sapling();
 }
