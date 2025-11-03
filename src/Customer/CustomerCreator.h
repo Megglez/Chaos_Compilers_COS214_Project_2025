@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Customer.h"
+#include "./Nursery/ClockObserver.h"
 #include "Browse.h"
 #include "Enquire.h"
 #include "../Greenhouse/Stock.h"
@@ -10,7 +11,7 @@ using namespace std;
 
 class Nursery;
 
-class CustomerCreator
+class CustomerCreator : public ClockObserver
 {
 public:
     CustomerCreator();

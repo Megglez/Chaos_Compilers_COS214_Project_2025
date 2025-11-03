@@ -19,6 +19,12 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
 
     // Initialize Staff Management
     infoDesk = new InfoDesk();
+    startPlants = new AddStock(inplace_merge)
+}
+
+void Nursery::setStock(Plant *plant, int amount)
+{
+    startPlants->execute(plant, amount);
 }
 
 Nursery::~Nursery()
