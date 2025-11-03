@@ -434,7 +434,7 @@ Inventory::~Inventory()
 {
 }
 
-int Inventory::getPlantNumber(std::unique_ptr<Plant> plant){
+int Inventory::getPlantNumber(std::unique_ptr<Plant> plant){ //make plant pointer
     int quantity;
     if(plant){
         auto it = inventoryList.find(plant->getName()); 
@@ -444,6 +444,7 @@ int Inventory::getPlantNumber(std::unique_ptr<Plant> plant){
             std::cout << "Error: Plant not found." << std::endl;
         }
     }else{
+        return -1;
         std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
     }
 }
