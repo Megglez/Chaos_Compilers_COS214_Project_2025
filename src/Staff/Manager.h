@@ -6,15 +6,19 @@ using namespace std;
 
 class Manager : public Staff
 {
+
+private:
+Inventory *subject;
 public:
 	Inventory *subject;
-	void trackInventory();
-	bool getAvailability() override;
-	void setAvailability(bool isAvailable) override;
-	void performDuty() override;
-	bool canHandleEnquiry() override;
+	string trackInventory();
+	string getInventory();
+	void trackStaff();
 	Manager();
 	virtual ~Manager();
+	bool canHandleEnquiry();
+	void performDuty();
+
 	
 };
 

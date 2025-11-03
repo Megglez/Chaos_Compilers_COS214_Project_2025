@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.o CMakeFiles/run_tests.dir/tests/test_main.cpp.o -o run_tests  -Wl,-rpath,/home/langa/Qt/6.9.3/gcc_64/lib libproject_lib.a lib/libgtest_main.a /home/langa/Qt/6.9.3/gcc_64/lib/libQt6Core.so.6.9.3 lib/libgtest.a 
