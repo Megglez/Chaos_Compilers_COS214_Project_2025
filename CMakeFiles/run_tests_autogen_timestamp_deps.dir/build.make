@@ -66,9 +66,10 @@ include CMakeFiles/run_tests_autogen_timestamp_deps.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/run_tests_autogen_timestamp_deps.dir/progress.make
 
+CMakeFiles/run_tests_autogen_timestamp_deps: /home/langa/Qt/6.9.3/gcc_64/lib/libQt6Core.so.6.9.3
+CMakeFiles/run_tests_autogen_timestamp_deps: lib/libgtest_main.a
 CMakeFiles/run_tests_autogen_timestamp_deps: /home/langa/Qt/6.9.3/gcc_64/libexec/moc
 CMakeFiles/run_tests_autogen_timestamp_deps: libproject_lib.a
-CMakeFiles/run_tests_autogen_timestamp_deps: lib/libgtest_main.a
 
 run_tests_autogen_timestamp_deps: CMakeFiles/run_tests_autogen_timestamp_deps
 run_tests_autogen_timestamp_deps: CMakeFiles/run_tests_autogen_timestamp_deps.dir/build.make

@@ -467,12 +467,6 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Action.h",
-			"Mu",
-			"LH4EAUI65S/moc_Action.cpp",
-			null
-		],
-		[
 			"/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Browse.h",
 			"Mu",
 			"LH4EAUI65S/moc_Browse.cpp",
@@ -891,11 +885,6 @@
 	"SETTINGS_FILE" : "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/CMakeFiles/project_lib_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[
-			"/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Action.cpp",
-			"Mu",
-			null
-		],
 		[
 			"/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Browse.cpp",
 			"Mu",

@@ -30,12 +30,13 @@ public:
 	//assogns staff to customer
 	void handleCustomer(Customer* customer); // called by requestAssistance
 	bool FindAvailableStaff(Customer* cc);
-	bool removeStaff(Staff *);
+	bool removeStaff(Staff *ss);
 	bool addStaff(Staff* ss);
 	void processWaitingCustomers();
 	void notifyStaffAvailable(Staff* freedStaff);
-	std::vector<Staff*> getStaffByType(std::string ss) const;
+	vector<Staff*> getStaffByType(std::string ss) const;
 	void AssignStaffToCustomer(Customer* cc);
+	vector<Staff*> getAllStaff();
 	
 
 

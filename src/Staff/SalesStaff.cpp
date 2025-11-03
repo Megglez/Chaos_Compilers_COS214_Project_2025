@@ -4,6 +4,7 @@
 
 SalesStaff::SalesStaff() {
 	// TODO - implement SalesStaff::SalesStaff
+workArea ="Sales Floor";
 	
 }
 
@@ -47,5 +48,9 @@ if(getCurrentCustomer())//someone to help
 return response;
 }
 
+ void SalesStaff::setRole()
+ {
+	 this->role = "SalesStaff";
+ }
 
 

@@ -11,7 +11,7 @@ void Busy::handle() {
 
  
 		
-		staff->setCurrentCustomer(nullptr);
+		//staff->setCurrentCustomer(nullptr);
  		this->staff->changeState();
  		this->staff->setAvailability(true);
 		InfoDesk* infod = staff->getInfodesk();

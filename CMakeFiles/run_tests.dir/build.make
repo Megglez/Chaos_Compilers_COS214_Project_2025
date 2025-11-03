@@ -89,10 +89,24 @@ CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests_autogen/mocs_compilation.cpp -o CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.s
 
+CMakeFiles/run_tests.dir/tests/test_customer.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/tests/test_customer.cpp.o: tests/test_customer.cpp
+CMakeFiles/run_tests.dir/tests/test_customer.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/langa/project214/Chaos_Compilers_COS214_Project_2025/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/run_tests.dir/tests/test_customer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_customer.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_customer.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_customer.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_customer.cpp
+
+CMakeFiles/run_tests.dir/tests/test_customer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/test_customer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_customer.cpp > CMakeFiles/run_tests.dir/tests/test_customer.cpp.i
+
+CMakeFiles/run_tests.dir/tests/test_customer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_customer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_customer.cpp -o CMakeFiles/run_tests.dir/tests/test_customer.cpp.s
+
 CMakeFiles/run_tests.dir/tests/test_main.cpp.o: CMakeFiles/run_tests.dir/flags.make
 CMakeFiles/run_tests.dir/tests/test_main.cpp.o: tests/test_main.cpp
 CMakeFiles/run_tests.dir/tests/test_main.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/langa/project214/Chaos_Compilers_COS214_Project_2025/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/run_tests.dir/tests/test_main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/langa/project214/Chaos_Compilers_COS214_Project_2025/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/run_tests.dir/tests/test_main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_main.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_main.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_main.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_main.cpp
 
 CMakeFiles/run_tests.dir/tests/test_main.cpp.i: cmake_force
@@ -106,12 +120,14 @@ CMakeFiles/run_tests.dir/tests/test_main.cpp.s: cmake_force
 # Object files for target run_tests
 run_tests_OBJECTS = \
 "CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_customer.cpp.o" \
 "CMakeFiles/run_tests.dir/tests/test_main.cpp.o"
 
 # External object files for target run_tests
 run_tests_EXTERNAL_OBJECTS =
 
 run_tests: CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.o
+run_tests: CMakeFiles/run_tests.dir/tests/test_customer.cpp.o
 run_tests: CMakeFiles/run_tests.dir/tests/test_main.cpp.o
 run_tests: CMakeFiles/run_tests.dir/build.make
 run_tests: libproject_lib.a
@@ -119,7 +135,7 @@ run_tests: lib/libgtest_main.a
 run_tests: /home/langa/Qt/6.9.3/gcc_64/lib/libQt6Core.so.6.9.3
 run_tests: lib/libgtest.a
 run_tests: CMakeFiles/run_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/langa/project214/Chaos_Compilers_COS214_Project_2025/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable run_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/langa/project214/Chaos_Compilers_COS214_Project_2025/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable run_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run_tests.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -D TEST_TARGET=run_tests -D TEST_EXECUTABLE=/home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/langa/project214/Chaos_Compilers_COS214_Project_2025 -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=run_tests_TESTS -D CTEST_FILE=/home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.28/Modules/GoogleTestAddTests.cmake
 

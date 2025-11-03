@@ -20,6 +20,7 @@ private:
 	string name;
 	string staffID;
 	string workArea;
+	string role;
 	StaffState* state;
 	InfoDesk* infoDesk;
 	bool available;  
@@ -31,12 +32,13 @@ public:
 	void changeState();
 	void getAvailability();
 	void setAvailability(bool isAvailable);
-	Staff(std::string& name,std::string& id);
+	Staff(string& name,string& id,InfoDesk*infodesk);
 	virtual ~Staff();
 	virtual void setNextInChain(Staff* next);
 	virtual void assistCustomer(Customer *cc); // start Assisting customer
 	std::string getName();
 	std::string getID();
+	virtual void setRole()=0;
 	std::string getStaffType();
 	Staff* getNextInChain();
 	std::string getStateName();

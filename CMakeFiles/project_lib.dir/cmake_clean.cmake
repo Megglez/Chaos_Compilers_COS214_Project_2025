@@ -4,8 +4,6 @@ file(REMOVE_RECURSE
   "project_lib_autogen"
   "CMakeFiles/project_lib.dir/project_lib_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/project_lib.dir/project_lib_autogen/mocs_compilation.cpp.o.d"
-  "CMakeFiles/project_lib.dir/src/Customer/Action.cpp.o"
-  "CMakeFiles/project_lib.dir/src/Customer/Action.cpp.o.d"
   "CMakeFiles/project_lib.dir/src/Customer/Browse.cpp.o"
   "CMakeFiles/project_lib.dir/src/Customer/Browse.cpp.o.d"
   "CMakeFiles/project_lib.dir/src/Customer/Customer.cpp.o"

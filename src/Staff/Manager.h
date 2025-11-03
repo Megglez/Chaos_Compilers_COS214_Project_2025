@@ -10,14 +10,15 @@ class Manager : public Staff
 private:
 Inventory *subject;
 public:
-	Inventory *subject;
-	string trackInventory();
-	string getInventory();
-	void trackStaff();
+	
+	string *trackInventory();
+	void manageStaff();
 	Manager();
 	virtual ~Manager();
 	bool canHandleEnquiry();
-	void performDuty();
+	void performDuty();//for staffs
+	void setRole() override
+	
 
 	
 };

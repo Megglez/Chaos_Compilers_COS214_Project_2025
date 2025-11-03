@@ -492,30 +492,6 @@ run_tests_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.s
 .PHONY : run_tests_autogen/mocs_compilation.cpp.s
 
-src/Customer/Action.o: src/Customer/Action.cpp.o
-.PHONY : src/Customer/Action.o
-
-# target to build an object file
-src/Customer/Action.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project_lib.dir/build.make CMakeFiles/project_lib.dir/src/Customer/Action.cpp.o
-.PHONY : src/Customer/Action.cpp.o
-
-src/Customer/Action.i: src/Customer/Action.cpp.i
-.PHONY : src/Customer/Action.i
-
-# target to preprocess a source file
-src/Customer/Action.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project_lib.dir/build.make CMakeFiles/project_lib.dir/src/Customer/Action.cpp.i
-.PHONY : src/Customer/Action.cpp.i
-
-src/Customer/Action.s: src/Customer/Action.cpp.s
-.PHONY : src/Customer/Action.s
-
-# target to generate assembly for a file
-src/Customer/Action.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project_lib.dir/build.make CMakeFiles/project_lib.dir/src/Customer/Action.cpp.s
-.PHONY : src/Customer/Action.cpp.s
-
 src/Customer/Browse.o: src/Customer/Browse.cpp.o
 .PHONY : src/Customer/Browse.o
 
@@ -1956,6 +1932,30 @@ src/Staff/StaffState.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project_lib.dir/build.make CMakeFiles/project_lib.dir/src/Staff/StaffState.cpp.s
 .PHONY : src/Staff/StaffState.cpp.s
 
+tests/test_customer.o: tests/test_customer.cpp.o
+.PHONY : tests/test_customer.o
+
+# target to build an object file
+tests/test_customer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_customer.cpp.o
+.PHONY : tests/test_customer.cpp.o
+
+tests/test_customer.i: tests/test_customer.cpp.i
+.PHONY : tests/test_customer.i
+
+# target to preprocess a source file
+tests/test_customer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_customer.cpp.i
+.PHONY : tests/test_customer.cpp.i
+
+tests/test_customer.s: tests/test_customer.cpp.s
+.PHONY : tests/test_customer.s
+
+# target to generate assembly for a file
+tests/test_customer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_customer.cpp.s
+.PHONY : tests/test_customer.cpp.s
+
 tests/test_main.o: tests/test_main.cpp.o
 .PHONY : tests/test_main.o
 
@@ -2020,9 +2020,6 @@ help:
 	@echo "... run_tests_autogen/mocs_compilation.o"
 	@echo "... run_tests_autogen/mocs_compilation.i"
 	@echo "... run_tests_autogen/mocs_compilation.s"
-	@echo "... src/Customer/Action.o"
-	@echo "... src/Customer/Action.i"
-	@echo "... src/Customer/Action.s"
 	@echo "... src/Customer/Browse.o"
 	@echo "... src/Customer/Browse.i"
 	@echo "... src/Customer/Browse.s"
@@ -2203,6 +2200,9 @@ help:
 	@echo "... src/Staff/StaffState.o"
 	@echo "... src/Staff/StaffState.i"
 	@echo "... src/Staff/StaffState.s"
+	@echo "... tests/test_customer.o"
+	@echo "... tests/test_customer.i"
+	@echo "... tests/test_customer.s"
 	@echo "... tests/test_main.o"
 	@echo "... tests/test_main.i"
 	@echo "... tests/test_main.s"

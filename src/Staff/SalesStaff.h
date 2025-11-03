@@ -6,13 +6,15 @@ using namespace std;
 
 class SalesStaff : public Staff
 {
+
+
 public:
 
 	SalesStaff();
 	virtual ~SalesStaff();
 	bool canHandleEnquiry();
 	void performDuty() override;
-	string response();
+	void setRole() override;
 
 	
 };

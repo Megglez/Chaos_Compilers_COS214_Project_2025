@@ -23,11 +23,11 @@ void Staff::changeState()
 	}
 }
 
-Staff::Staff(const std::string& name, const std::string& id){
+Staff::Staff(const std::string& name, const std::string& id,InfoDesk*infodesk){
 	this->name=name;
 	this->staffID=id;
 	available= true;
-	infoDesk=nullptr;
+	infoDesk=infoDesk;
 	nextInChain=nullptr;
 	currentCustomer=nullptr;
 	state=new Available();
@@ -54,7 +54,7 @@ Staff::Staff(std::string &name,std::string &id)
 
 Staff::~Staff()
 {
-	delete this->state;
+	delete this->role;
 }
 
 void Staff::setAvailability(bool isAvailable)
@@ -64,12 +64,12 @@ void Staff::setAvailability(bool isAvailable)
 
 Staff* Staff::getNextInChain()
 {
-    return nextInChain;return nextInChain;
+    return nextInChain;
 }
 
 void Staff::setNextInChain(Staff* ss)
 {
-    nextInChain = ss;nextInChain=ss;
+    nextInChain = ss;
 }
 
 std::string Staff::getName()
@@ -85,7 +85,7 @@ std::string Staff::getID()
 std::string Staff::getStaffType()
 {
 	
-	return state->getStateName();
+	return role;
 
 }
 bool Staff::getAvailability(){
@@ -197,3 +197,4 @@ void Staff::setCurrentCustomer(Customer* cc)
 {
 currentCustomer=cc;
 }
+

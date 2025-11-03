@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "run_tests_autogen/timestamp" "custom" "run_tests_autogen/deps"
   "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests_autogen/mocs_compilation.cpp" "CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.o.d"
+  "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_customer.cpp" "CMakeFiles/run_tests.dir/tests/test_customer.cpp.o" "gcc" "CMakeFiles/run_tests.dir/tests/test_customer.cpp.o.d"
   "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_main.cpp" "CMakeFiles/run_tests.dir/tests/test_main.cpp.o" "gcc" "CMakeFiles/run_tests.dir/tests/test_main.cpp.o.d"
   )
 

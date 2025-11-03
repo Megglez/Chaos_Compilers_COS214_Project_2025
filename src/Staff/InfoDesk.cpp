@@ -279,9 +279,9 @@ Staff* InfoDesk::findAvailableStaffThroughChain()
     return nullptr; // No available staff found
 }
 
-std::vector<Staff*> InfoDesk::getStaffByType(std::string type) const
+vector<Staff*> InfoDesk::getStaffByType(std::string type) const
 {
-    std::vector<Staff*> result;
+    vector<Staff*> result;
     for(Staff* ss: AllStaff)
     {
         if(ss->getStaffType()== type)
@@ -330,3 +330,9 @@ Staff *assignedStaff;
   }
 }
 
+InfoDesk::getAllStaff()
+{
+    return AllStaff;
+}
+
+ 
