@@ -35,6 +35,7 @@ public:
 
 	bool addToBasket(Plant *plants, int quantity);
 	bool removeFromBasket(Plant *plants, int quantity);
+	bool isBasketEmpty() const { return basket.empty(); }
 
 	int getId() const;
 	Action *getAction() const;
