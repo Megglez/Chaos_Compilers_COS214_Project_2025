@@ -6,7 +6,7 @@ string Manager::trackInventory() {
 	
 	ss<<"Here is the current Inventory status: "<<endl;
 
-	for(const auto& item : inventory->getInventory()) {
+	for(const auto& item : subject->getInventory()) {
 		const auto& plantPtr = item.second.first;
 		const auto& quantity = item.second.second;
 		if(plantPtr)
@@ -20,21 +20,22 @@ string Manager::trackInventory() {
 }
 
 
-
-Manager::Manager(Inventory* inventory):Staff("Manager","MGR001","")
+Manager::Manager(string name,string id,InfoDesk *info,Inventory *inventory): Staff(name,id,infoDesk), subject(inventory)
 {
 	// TODO - implement Manager::Manager
-	subject=inventory;
+	workArea ="Management Office";
+
 
 }
 
 Manager::~Manager()
 {
+	delete role;
 }
 
 bool Manager::canHandleEnquiry()
 {
-	return true;
+    return true;
 }
 
 void Manager::performDuty()
@@ -43,36 +44,52 @@ void Manager::performDuty()
 	{
 		if(getCurrentCustomer()->getQuestionType()==0) //sales advice
 		{
-			switch (/*selectedQuestion*/)
+			switch (/*getSelectedQuestion*/)
 			{
 			case 0: //"What summer plants are available?"
-				/* code */
-				//get all summer plants from inventory where type 
+				cout<<"Listing summer plants from inventory:"<<endl;
+				vector<Plant*> summerPlants;
+				summerPlants = subject->getInventory()->:FlowerBySeason("Summer");
+				for (const auto& item : summerPlants) {
+					if (item) {
+						std::cout << item->getName() << std::endl;
+					}
+				}
+
 				break;
 			case 1: //"What winter plants are available?"
-			//get all winter plants from inventory
-				/* code */
-
+			cout<<"Listing winter plants from inventory:"<<endl;
+				vector<Plant*> winterPlants;
+				summerPlants = subject->getInventory()->:FlowerBySeason("Winter");
+				for (const auto& item : winterPlants) {
+					if (item) {
+						std::cout << item->getName() << std::endl;
+					}
+				}
+				
 			case 2:   //"What is the best time of day to water my plants?"
-				/* code */ 
+				cout<<"The best time to water plants is early in the morning or late in the afternoon."<<endl;
 				break;
 
 			case 3:  //"How many categories of plants do you sell?"
 
-				/* code *// 
+				cout<<"We sell 4 categories: Succulents,Flowers,Trees and Herbs."<<endl;
 				break;	
 			
 			default:
+			cout<<"General Sales Enquiry response."<<endl;
 				break;
 			}
 		}
-		else //garden advice
+		else //garden advice: how many of plant X in stock
 		{
-			cout<<"General Enquiry response."<<endl;
+			if()
+			
+			// Now 'word' is the third word (if it exists)
+		
 		}
 	}
-	else
-{cout<< trackInventory()<<endl;}
+	
 	}
 
 

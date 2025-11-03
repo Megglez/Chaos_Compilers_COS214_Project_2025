@@ -32,7 +32,7 @@ public:
 	bool canHandleEnquiry();
 	void performDuty();
 
-	Cashiers(std::string &name, std::string &id);
+	Cashiers(std::string &name, std::string &id,InfoDesk& infodesk);
 	virtual ~Cashiers();
 };
 

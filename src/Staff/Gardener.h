@@ -13,7 +13,7 @@ queue<Plant*>plantRequestList;
 
 public:
 	Inventory *subject;
-	Gardener();
+	Gardener(std::string &name, std::string &id,InfoDesk& infodesk);
 	virtual ~Gardener();
 	void performDuty();
 	void careForPlants();
