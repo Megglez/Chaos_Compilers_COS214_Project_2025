@@ -26,10 +26,12 @@
 #include "src/Customer/Enquire.h"
 #include "src/Customer/Purchasing.h"
 #include "src/Staff/Cashiers.h"
+#include "src/Nursery/Nursery.h"
 
 #include <memory>
 #include <iostream>
 #include <vector>
+#include <map>
 
 // Function declarations
 void testGreenhouse();
@@ -67,10 +69,10 @@ void testGreenhouse()
     std::unique_ptr<Plant> Succ(SuccP->planterMethod("Cactus"));
     std::unique_ptr<Plant> Tree(TreeP->planterMethod("Willow"));
     std::unique_ptr<Plant> FlowerWinter(FlowerW->planterMethod("Snowdrops"));
-    
-    Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
-    GiftWrap* gift = new GiftWrap(Flower2);
-    Pot* pot = new Pot(gift);
+
+    Plant *Flower2 = FlowerP->planterMethod("Rose Bush");
+    GiftWrap *gift = new GiftWrap(Flower2);
+    Pot *pot = new Pot(gift);
     gift->package();
     pot->package();
     delete pot;
@@ -109,14 +111,13 @@ void testGreenhouse()
 
     Nursery nursery;
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++)
+    {
         std::cout << "\n--- Cycle " << (i + 1) << " ---" << std::endl;
-        nursery.handleChange();
-        
-        // You can add some debugging output here
-        // For example, check what season it is now:
-        Seasons* currentSeason = nursery.getCurrentSeason();
-        if (currentSeason) {
+        Seasons *currentSeason = nursery.getCurrentSeason();
+        if (currentSeason)
+        {
+            currentSeason->handleChange(&nursery);
             std::cout << "Season changed!" << std::endl;
         }
     }
@@ -142,8 +143,7 @@ void testGreenhouse()
     {
         std::cout << "- " << entry.second.first.get()->getState()->getStageName();
     }*/
-    
-    
+
     delete test_st;
     delete test_inv;
     delete FlowerP;
@@ -156,11 +156,6 @@ void testGreenhouse()
     delete Herb4;
     delete Succ5;
     delete Tree6;
-
-    /*delete command;
-    delete command2;
-    delete command3;
-    delete command4;
 }
 
 void testCustomer()

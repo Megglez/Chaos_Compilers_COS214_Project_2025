@@ -68,7 +68,9 @@ TEST(CustomerTest, StateTransitionAndSetAction)
     c.setAction(next);
     if (next)
     {
-        EXPECT_TRUE(next->getActionName() == "Enquiring" || next->getActionName() == "Browsing");
+        EXPECT_TRUE(next->getActionName() == "Enquiring" ||
+                    next->getActionName() == "Browsing" ||
+                    next->getActionName() == "Purchasing");
     }
 }
 
@@ -78,8 +80,10 @@ TEST(CustomerTest, BasketManagement)
     DummyPlant plant("TestPlant");
     Nursery nursery;
     Customer c(new Browse(&plant, 2), &nursery);
-    EXPECT_FALSE(c.addToBasket(&plant, 1)); // Not implemented, should return false
-    EXPECT_FALSE(c.removeFromBasket(&plant, 1));
+    EXPECT_TRUE(c.addToBasket(&plant, 1));
+    EXPECT_EQ(c.getBasket().size(), 1);
+    c.clearBasket();
+    EXPECT_EQ(c.getBasket().size(), 0);
 }
 
 // Test staff assignment

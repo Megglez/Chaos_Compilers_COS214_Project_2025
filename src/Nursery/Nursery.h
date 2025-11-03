@@ -50,6 +50,16 @@ public:
     Cashiers *getCashier() const { return cashier; }
     Seasons *getCurrentSeason() const { return currentSeason; }
 
+    // Setter for season changes
+    void setState(Seasons *newSeason)
+    {
+        if (currentSeason)
+        {
+            delete currentSeason;
+        }
+        currentSeason = newSeason;
+    }
+
     // Plant Factory Access
     FlowerPlanter *getFlowerFactory() const { return flowerFactory; }
     HerbPlanter *getHerbFactory() const { return herbFactory; }
@@ -66,4 +76,3 @@ public slots:
 };
 
 #endif
-

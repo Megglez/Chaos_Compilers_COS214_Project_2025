@@ -145,9 +145,21 @@ void Browse::onBrowseTimeout()
 
 Action *Browse::getNextAction()
 {
-    // FIX: Correctly instantiate a pointer to the next state, e.g., Purchasing.
-    // Assuming Purchasing uses the same constructor parameters.
-    return new Purchasing(plantsToBuy, quantities);
+    // Randomly return Browse, Enquire, or Purchasing
+    int nextState = QRandomGenerator::global()->bounded(3); // 0, 1, or 2
+
+    if (nextState == 0)
+    {
+        return new Browse(plantsToBuy, quantities);
+    }
+    else if (nextState == 1)
+    {
+        return new Enquire(plantsToBuy);
+    }
+    else
+    {
+        return new Purchasing(plantsToBuy, quantities);
+    }
 }
 
 void Browse::requestStaffAssistance(Customer *customer, InfoDesk &desk)
