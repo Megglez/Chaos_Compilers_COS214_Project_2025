@@ -88,5 +88,5 @@ std::string Spring::getSeason() {
  * - Adjusting for warmer weather conditions
  */
 void Spring::handleChange(Nursery* nursery){
-    nursery->setState(new Summer(inventory));
+    nursery->setSeason(new Summer(inventory));
 }
