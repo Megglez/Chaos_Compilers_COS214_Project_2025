@@ -1,0 +1,1920 @@
+Start testing: Nov 03 14:11 SAST
+----------------------------------------------------------
+1/48 Testing: CustomerTest.CreationAndGetters
+1/48 Test: CustomerTest.CreationAndGetters
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=CustomerTest.CreationAndGetters" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"CustomerTest.CreationAndGetters" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = CustomerTest.CreationAndGetters
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerTest
+[ RUN      ] CustomerTest.CreationAndGetters
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] CustomerTest.CreationAndGetters (0 ms)
+[----------] 1 test from CustomerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CustomerTest.CreationAndGetters" end time: Nov 03 14:11 SAST
+"CustomerTest.CreationAndGetters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/48 Testing: CustomerTest.StateTransitionAndSetAction
+2/48 Test: CustomerTest.StateTransitionAndSetAction
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=CustomerTest.StateTransitionAndSetAction" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"CustomerTest.StateTransitionAndSetAction" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = CustomerTest.StateTransitionAndSetAction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerTest
+[ RUN      ] CustomerTest.StateTransitionAndSetAction
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/tests/test_customer.cpp:71: Failure
+Value of: next->getActionName() == "Enquiring" || next->getActionName() == "Browsing"
+  Actual: false
+Expected: true
+
+Closing Info Desk.
+[  FAILED  ] CustomerTest.StateTransitionAndSetAction (0 ms)
+[----------] 1 test from CustomerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] CustomerTest.StateTransitionAndSetAction
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"CustomerTest.StateTransitionAndSetAction" end time: Nov 03 14:11 SAST
+"CustomerTest.StateTransitionAndSetAction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/48 Testing: CustomerTest.BasketManagement
+3/48 Test: CustomerTest.BasketManagement
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=CustomerTest.BasketManagement" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"CustomerTest.BasketManagement" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = CustomerTest.BasketManagement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerTest
+[ RUN      ] CustomerTest.BasketManagement
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+1Closing Info Desk.
+[       OK ] CustomerTest.BasketManagement (0 ms)
+[----------] 1 test from CustomerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CustomerTest.BasketManagement" end time: Nov 03 14:11 SAST
+"CustomerTest.BasketManagement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/48 Testing: CustomerTest.StaffAssignment
+4/48 Test: CustomerTest.StaffAssignment
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=CustomerTest.StaffAssignment" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"CustomerTest.StaffAssignment" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = CustomerTest.StaffAssignment
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerTest
+[ RUN      ] CustomerTest.StaffAssignment
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Customer 1 is now being assisted by staff member TestStaff
+Closing Info Desk.
+[       OK ] CustomerTest.StaffAssignment (0 ms)
+[----------] 1 test from CustomerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CustomerTest.StaffAssignment" end time: Nov 03 14:11 SAST
+"CustomerTest.StaffAssignment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/48 Testing: CustomerTest.CustomerCreatorRandomization
+5/48 Test: CustomerTest.CustomerCreatorRandomization
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=CustomerTest.CustomerCreatorRandomization" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"CustomerTest.CustomerCreatorRandomization" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = CustomerTest.CustomerCreatorRandomization
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerTest
+[ RUN      ] CustomerTest.CustomerCreatorRandomization
+Added new plant: A with quantity: 5
+Added new plant: B with quantity: 5
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+Closing Info Desk.
+[       OK ] CustomerTest.CustomerCreatorRandomization (3 ms)
+[----------] 1 test from CustomerTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CustomerTest.CustomerCreatorRandomization" end time: Nov 03 14:11 SAST
+"CustomerTest.CustomerCreatorRandomization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/48 Testing: CustomerTest.EnquireQuestionGetter
+6/48 Test: CustomerTest.EnquireQuestionGetter
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=CustomerTest.EnquireQuestionGetter" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"CustomerTest.EnquireQuestionGetter" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = CustomerTest.EnquireQuestionGetter
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerTest
+[ RUN      ] CustomerTest.EnquireQuestionGetter
+[       OK ] CustomerTest.EnquireQuestionGetter (0 ms)
+[----------] 1 test from CustomerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CustomerTest.EnquireQuestionGetter" end time: Nov 03 14:11 SAST
+"CustomerTest.EnquireQuestionGetter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/48 Testing: CustomerTest.MemoryManagement
+7/48 Test: CustomerTest.MemoryManagement
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=CustomerTest.MemoryManagement" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"CustomerTest.MemoryManagement" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = CustomerTest.MemoryManagement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerTest
+[ RUN      ] CustomerTest.MemoryManagement
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] CustomerTest.MemoryManagement (0 ms)
+[----------] 1 test from CustomerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CustomerTest.MemoryManagement" end time: Nov 03 14:11 SAST
+"CustomerTest.MemoryManagement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/48 Testing: CustomerTest.CustomerLeavesNursery
+8/48 Test: CustomerTest.CustomerLeavesNursery
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=CustomerTest.CustomerLeavesNursery" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"CustomerTest.CustomerLeavesNursery" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = CustomerTest.CustomerLeavesNursery
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerTest
+[ RUN      ] CustomerTest.CustomerLeavesNursery
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Customer finished enquiring and is now browsing for plants.
+Customer 1 transitioned to Browsing
+Customer 1 transitioned to Purchasing
+Customer 1 is leaving the nursery
+Customer 1 is leaving the nursery.
+Warning: Customer 1 not found in active customers list.
+Customer 1 is leaving the nursery
+Customer 1 is leaving the nursery.
+Warning: Customer 1 not found in active customers list.
+Customer 1 is leaving the nursery
+Customer 1 is leaving the nursery.
+Warning: Customer 1 not found in active customers list.
+Customer 1 is leaving the nursery
+Customer 1 is leaving the nursery.
+Warning: Customer 1 not found in active customers list.
+Customer 1 is leaving the nursery
+Customer 1 is leaving the nursery.
+Warning: Customer 1 not found in active customers list.
+Customer 1 is leaving the nursery
+Customer 1 is leaving the nursery.
+Warning: Customer 1 not found in active customers list.
+Customer 1 is leaving the nursery
+Customer 1 is leaving the nursery.
+Warning: Customer 1 not found in active customers list.
+Customer 1 is leaving the nursery
+Customer 1 is leaving the nursery.
+Warning: Customer 1 not found in active customers list.
+Closing Info Desk.
+[       OK ] CustomerTest.CustomerLeavesNursery (0 ms)
+[----------] 1 test from CustomerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CustomerTest.CustomerLeavesNursery" end time: Nov 03 14:11 SAST
+"CustomerTest.CustomerLeavesNursery" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/48 Testing: GreenhouseTest.PlantCreation
+9/48 Test: GreenhouseTest.PlantCreation
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.PlantCreation" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.PlantCreation" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.PlantCreation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.PlantCreation
+[       OK ] GreenhouseTest.PlantCreation (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.PlantCreation" end time: Nov 03 14:11 SAST
+"GreenhouseTest.PlantCreation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/48 Testing: GreenhouseTest.PlantDecorators
+10/48 Test: GreenhouseTest.PlantDecorators
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.PlantDecorators" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.PlantDecorators" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.PlantDecorators
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.PlantDecorators
+[       OK ] GreenhouseTest.PlantDecorators (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.PlantDecorators" end time: Nov 03 14:11 SAST
+"GreenhouseTest.PlantDecorators" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/48 Testing: GreenhouseTest.StockManagement
+11/48 Test: GreenhouseTest.StockManagement
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.StockManagement" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.StockManagement" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.StockManagement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.StockManagement
+Added new plant: Rose with quantity: 30
+Added new plant: Basil with quantity: 50
+Added new plant: Cactus with quantity: 60
+Added new plant: Snowdrops with quantity: 60
+[       OK ] GreenhouseTest.StockManagement (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.StockManagement" end time: Nov 03 14:11 SAST
+"GreenhouseTest.StockManagement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/48 Testing: GreenhouseTest.InventoryCatalogue
+12/48 Test: GreenhouseTest.InventoryCatalogue
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.InventoryCatalogue" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.InventoryCatalogue" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.InventoryCatalogue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.InventoryCatalogue
+Added new plant: Rose with quantity: 30
+[       OK ] GreenhouseTest.InventoryCatalogue (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.InventoryCatalogue" end time: Nov 03 14:11 SAST
+"GreenhouseTest.InventoryCatalogue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/48 Testing: GreenhouseTest.SeasonalCommands
+13/48 Test: GreenhouseTest.SeasonalCommands
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.SeasonalCommands" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.SeasonalCommands" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.SeasonalCommands
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.SeasonalCommands
+Added new plant: Rose with quantity: 30
+[       OK ] GreenhouseTest.SeasonalCommands (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.SeasonalCommands" end time: Nov 03 14:11 SAST
+"GreenhouseTest.SeasonalCommands" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/48 Testing: GreenhouseTest.InventoryInspection
+14/48 Test: GreenhouseTest.InventoryInspection
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.InventoryInspection" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.InventoryInspection" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.InventoryInspection
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.InventoryInspection
+Added new plant: Rose with quantity: 30
+[       OK ] GreenhouseTest.InventoryInspection (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.InventoryInspection" end time: Nov 03 14:11 SAST
+"GreenhouseTest.InventoryInspection" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/48 Testing: GreenhouseTest.RemoveNullPlant
+15/48 Test: GreenhouseTest.RemoveNullPlant
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.RemoveNullPlant" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.RemoveNullPlant" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.RemoveNullPlant
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.RemoveNullPlant
+[       OK ] GreenhouseTest.RemoveNullPlant (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.RemoveNullPlant" end time: Nov 03 14:11 SAST
+"GreenhouseTest.RemoveNullPlant" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/48 Testing: GreenhouseTest.RemoveValidPlant
+16/48 Test: GreenhouseTest.RemoveValidPlant
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.RemoveValidPlant" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.RemoveValidPlant" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.RemoveValidPlant
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.RemoveValidPlant
+Added new plant: Rose with quantity: 30
+[       OK ] GreenhouseTest.RemoveValidPlant (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.RemoveValidPlant" end time: Nov 03 14:11 SAST
+"GreenhouseTest.RemoveValidPlant" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/48 Testing: GreenhouseTest.RemoveEmptyUniquePtr
+17/48 Test: GreenhouseTest.RemoveEmptyUniquePtr
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.RemoveEmptyUniquePtr" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.RemoveEmptyUniquePtr" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.RemoveEmptyUniquePtr
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.RemoveEmptyUniquePtr
+[       OK ] GreenhouseTest.RemoveEmptyUniquePtr (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.RemoveEmptyUniquePtr" end time: Nov 03 14:11 SAST
+"GreenhouseTest.RemoveEmptyUniquePtr" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/48 Testing: GreenhouseTest.MixedOperationsWithNullRemoval
+18/48 Test: GreenhouseTest.MixedOperationsWithNullRemoval
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=GreenhouseTest.MixedOperationsWithNullRemoval" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"GreenhouseTest.MixedOperationsWithNullRemoval" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GreenhouseTest.MixedOperationsWithNullRemoval
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GreenhouseTest
+[ RUN      ] GreenhouseTest.MixedOperationsWithNullRemoval
+Added new plant: Rose with quantity: 30
+Added new plant: Basil with quantity: 50
+DEBUG: Count after adding plants: 2
+DEBUG: Output from null removal: 'Error: Plant pointer is null. Please pass an actual plant :>
+1'
+DEBUG: Count after null removal: 2
+DEBUG: Has error message: YES
+DEBUG: Comparing counts - AfterAdd: 2, AfterNullRemove: 2
+DEBUG: Output from valid removal: '1'
+DEBUG: Count after valid removal: 2
+DEBUG: Valid removal has no error message: YES
+DEBUG: Comparing counts - AfterNullRemove: 2, AfterValidRemove: 2
+[       OK ] GreenhouseTest.MixedOperationsWithNullRemoval (0 ms)
+[----------] 1 test from GreenhouseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GreenhouseTest.MixedOperationsWithNullRemoval" end time: Nov 03 14:11 SAST
+"GreenhouseTest.MixedOperationsWithNullRemoval" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/48 Testing: NurseryTest.NurseryInitialization
+19/48 Test: NurseryTest.NurseryInitialization
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.NurseryInitialization" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.NurseryInitialization" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.NurseryInitialization
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.NurseryInitialization
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.NurseryInitialization (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.NurseryInitialization" end time: Nov 03 14:11 SAST
+"NurseryTest.NurseryInitialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/48 Testing: NurseryTest.InventoryInitialization
+20/48 Test: NurseryTest.InventoryInitialization
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InventoryInitialization" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InventoryInitialization" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InventoryInitialization
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InventoryInitialization
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.InventoryInitialization (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InventoryInitialization" end time: Nov 03 14:11 SAST
+"NurseryTest.InventoryInitialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/48 Testing: NurseryTest.StockInitialization
+21/48 Test: NurseryTest.StockInitialization
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.StockInitialization" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.StockInitialization" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.StockInitialization
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.StockInitialization
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.StockInitialization (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.StockInitialization" end time: Nov 03 14:11 SAST
+"NurseryTest.StockInitialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/48 Testing: NurseryTest.InfoDeskInitialization
+22/48 Test: NurseryTest.InfoDeskInitialization
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InfoDeskInitialization" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InfoDeskInitialization" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InfoDeskInitialization
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InfoDeskInitialization
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.InfoDeskInitialization (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InfoDeskInitialization" end time: Nov 03 14:11 SAST
+"NurseryTest.InfoDeskInitialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/48 Testing: NurseryTest.InitialCustomerCount
+23/48 Test: NurseryTest.InitialCustomerCount
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InitialCustomerCount" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InitialCustomerCount" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InitialCustomerCount
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InitialCustomerCount
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.InitialCustomerCount (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InitialCustomerCount" end time: Nov 03 14:11 SAST
+"NurseryTest.InitialCustomerCount" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/48 Testing: NurseryTest.AddCustomer
+24/48 Test: NurseryTest.AddCustomer
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.AddCustomer" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.AddCustomer" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.AddCustomer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.AddCustomer
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.AddCustomer (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.AddCustomer" end time: Nov 03 14:11 SAST
+"NurseryTest.AddCustomer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/48 Testing: NurseryTest.AddMultipleCustomers
+25/48 Test: NurseryTest.AddMultipleCustomers
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.AddMultipleCustomers" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.AddMultipleCustomers" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.AddMultipleCustomers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.AddMultipleCustomers
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.AddMultipleCustomers (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.AddMultipleCustomers" end time: Nov 03 14:11 SAST
+"NurseryTest.AddMultipleCustomers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/48 Testing: NurseryTest.RemoveCustomer
+26/48 Test: NurseryTest.RemoveCustomer
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.RemoveCustomer" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.RemoveCustomer" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.RemoveCustomer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.RemoveCustomer
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.RemoveCustomer (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.RemoveCustomer" end time: Nov 03 14:11 SAST
+"NurseryTest.RemoveCustomer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/48 Testing: NurseryTest.CustomerCapacityLimit
+27/48 Test: NurseryTest.CustomerCapacityLimit
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.CustomerCapacityLimit" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.CustomerCapacityLimit" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.CustomerCapacityLimit
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.CustomerCapacityLimit
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 1
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 2
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+Nursery: Added new customer. Total active customers: 3
+.....Requesting assistance for customer..... 3
+All staff unavailable. Queue customer 1 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+Nursery: Added new customer. Total active customers: 4
+.....Requesting assistance for customer..... 4
+All staff unavailable. Queue customer 2 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 5
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 6
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 7
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+Nursery: Added new customer. Total active customers: 8
+.....Requesting assistance for customer..... 8
+All staff unavailable. Queue customer 3 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 9
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+Nursery: Added new customer. Total active customers: 10
+.....Requesting assistance for customer..... 10
+All staff unavailable. Queue customer 4 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+Nursery: Added new customer. Total active customers: 11
+.....Requesting assistance for customer..... 11
+All staff unavailable. Queue customer 5 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+Nursery: Added new customer. Total active customers: 12
+.....Requesting assistance for customer..... 12
+All staff unavailable. Queue customer 6 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+Nursery: Added new customer. Total active customers: 13
+.....Requesting assistance for customer..... 13
+All staff unavailable. Queue customer 7 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+Nursery: Added new customer. Total active customers: 14
+.....Requesting assistance for customer..... 14
+All staff unavailable. Queue customer 8 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 15
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: How many categories of plants do you sell?
+Nursery: Added new customer. Total active customers: 16
+.....Requesting assistance for customer..... 16
+All staff unavailable. Queue customer 9 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+Nursery: Added new customer. Total active customers: 17
+.....Requesting assistance for customer..... 17
+All staff unavailable. Queue customer 10 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+Nursery: Added new customer. Total active customers: 18
+.....Requesting assistance for customer..... 18
+All staff unavailable. Queue customer 11 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 19
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+Nursery: Added new customer. Total active customers: 20
+.....Requesting assistance for customer..... 20
+All staff unavailable. Queue customer 12 for assistance.
+Nursery is at capacity, cannot accept more customers.
+Nursery is at capacity, cannot accept more customers.
+Nursery is at capacity, cannot accept more customers.
+Nursery is at capacity, cannot accept more customers.
+Nursery is at capacity, cannot accept more customers.
+Closing Info Desk.
+[       OK ] NurseryTest.CustomerCapacityLimit (1 ms)
+[----------] 1 test from NurseryTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.CustomerCapacityLimit" end time: Nov 03 14:11 SAST
+"NurseryTest.CustomerCapacityLimit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/48 Testing: NurseryTest.AddNullCustomer
+28/48 Test: NurseryTest.AddNullCustomer
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.AddNullCustomer" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.AddNullCustomer" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.AddNullCustomer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.AddNullCustomer
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.AddNullCustomer (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.AddNullCustomer" end time: Nov 03 14:11 SAST
+"NurseryTest.AddNullCustomer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/48 Testing: NurseryTest.InventoryGetCatalogue
+29/48 Test: NurseryTest.InventoryGetCatalogue
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InventoryGetCatalogue" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InventoryGetCatalogue" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InventoryGetCatalogue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InventoryGetCatalogue
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+
+=== INVENTORY CATALOGUE ===
+===========================
+
+Closing Info Desk.
+[       OK ] NurseryTest.InventoryGetCatalogue (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InventoryGetCatalogue" end time: Nov 03 14:11 SAST
+"NurseryTest.InventoryGetCatalogue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/48 Testing: NurseryTest.InventoryStaffAttachment
+30/48 Test: NurseryTest.InventoryStaffAttachment
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InventoryStaffAttachment" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InventoryStaffAttachment" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InventoryStaffAttachment
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InventoryStaffAttachment
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.InventoryStaffAttachment (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InventoryStaffAttachment" end time: Nov 03 14:11 SAST
+"NurseryTest.InventoryStaffAttachment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/48 Testing: NurseryTest.StockPrintCatalogue
+31/48 Test: NurseryTest.StockPrintCatalogue
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.StockPrintCatalogue" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.StockPrintCatalogue" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.StockPrintCatalogue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.StockPrintCatalogue
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+======STOCK CATALOGUE======
+Closing Info Desk.
+[       OK ] NurseryTest.StockPrintCatalogue (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.StockPrintCatalogue" end time: Nov 03 14:11 SAST
+"NurseryTest.StockPrintCatalogue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/48 Testing: NurseryTest.StockGetTotalPlants
+32/48 Test: NurseryTest.StockGetTotalPlants
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.StockGetTotalPlants" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.StockGetTotalPlants" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.StockGetTotalPlants
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.StockGetTotalPlants
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.StockGetTotalPlants (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.StockGetTotalPlants" end time: Nov 03 14:11 SAST
+"NurseryTest.StockGetTotalPlants" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/48 Testing: NurseryTest.SeasonGetCurrent
+33/48 Test: NurseryTest.SeasonGetCurrent
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.SeasonGetCurrent" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.SeasonGetCurrent" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.SeasonGetCurrent
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.SeasonGetCurrent
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.SeasonGetCurrent (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.SeasonGetCurrent" end time: Nov 03 14:11 SAST
+"NurseryTest.SeasonGetCurrent" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/48 Testing: NurseryTest.SeasonHandleChange
+34/48 Test: NurseryTest.SeasonHandleChange
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.SeasonHandleChange" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.SeasonHandleChange" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.SeasonHandleChange
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.SeasonHandleChange
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Season changing from Spring to Summer
+Adjusting stock for season: Summer
+Seasonal stock adjustment completed for Summer
+Season changed to: Summer
+Closing Info Desk.
+[       OK ] NurseryTest.SeasonHandleChange (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.SeasonHandleChange" end time: Nov 03 14:11 SAST
+"NurseryTest.SeasonHandleChange" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/48 Testing: NurseryTest.InfoDeskBuildChain
+35/48 Test: NurseryTest.InfoDeskBuildChain
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InfoDeskBuildChain" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InfoDeskBuildChain" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InfoDeskBuildChain
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InfoDeskBuildChain
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Currently no staff registered with system.
+Closing Info Desk.
+[       OK ] NurseryTest.InfoDeskBuildChain (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InfoDeskBuildChain" end time: Nov 03 14:11 SAST
+"NurseryTest.InfoDeskBuildChain" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/48 Testing: NurseryTest.InfoDeskHandleNullCustomer
+36/48 Test: NurseryTest.InfoDeskHandleNullCustomer
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InfoDeskHandleNullCustomer" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InfoDeskHandleNullCustomer" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InfoDeskHandleNullCustomer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InfoDeskHandleNullCustomer
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Customer is null. Cannot assign to staff member.
+Closing Info Desk.
+[       OK ] NurseryTest.InfoDeskHandleNullCustomer (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InfoDeskHandleNullCustomer" end time: Nov 03 14:11 SAST
+"NurseryTest.InfoDeskHandleNullCustomer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/48 Testing: NurseryTest.InfoDeskAddStaff
+37/48 Test: NurseryTest.InfoDeskAddStaff
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InfoDeskAddStaff" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InfoDeskAddStaff" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InfoDeskAddStaff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InfoDeskAddStaff
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+ is now available for assistance.
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+Staff is now Busy.
+Currently no staff registered with system.
+Closing Info Desk.
+[       OK ] NurseryTest.InfoDeskAddStaff (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InfoDeskAddStaff" end time: Nov 03 14:11 SAST
+"NurseryTest.InfoDeskAddStaff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/48 Testing: NurseryTest.InfoDeskRemoveStaff
+38/48 Test: NurseryTest.InfoDeskRemoveStaff
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InfoDeskRemoveStaff" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InfoDeskRemoveStaff" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InfoDeskRemoveStaff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InfoDeskRemoveStaff
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+ is now available for assistance.
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+Staff is now Busy.
+Currently no staff registered with system.
+Closing Info Desk.
+[       OK ] NurseryTest.InfoDeskRemoveStaff (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InfoDeskRemoveStaff" end time: Nov 03 14:11 SAST
+"NurseryTest.InfoDeskRemoveStaff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/48 Testing: NurseryTest.InfoDeskAddNullStaff
+39/48 Test: NurseryTest.InfoDeskAddNullStaff
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.InfoDeskAddNullStaff" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.InfoDeskAddNullStaff" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.InfoDeskAddNullStaff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.InfoDeskAddNullStaff
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+staff is NULL. Cannot add Staff member.
+Closing Info Desk.
+[       OK ] NurseryTest.InfoDeskAddNullStaff (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.InfoDeskAddNullStaff" end time: Nov 03 14:11 SAST
+"NurseryTest.InfoDeskAddNullStaff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/48 Testing: NurseryTest.CustomerArrivalSignal
+40/48 Test: NurseryTest.CustomerArrivalSignal
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.CustomerArrivalSignal" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.CustomerArrivalSignal" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.CustomerArrivalSignal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.CustomerArrivalSignal
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 1
+Closing Info Desk.
+[       OK ] NurseryTest.CustomerArrivalSignal (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.CustomerArrivalSignal" end time: Nov 03 14:11 SAST
+"NurseryTest.CustomerArrivalSignal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/48 Testing: NurseryTest.MultipleCustomerArrivals
+41/48 Test: NurseryTest.MultipleCustomerArrivals
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.MultipleCustomerArrivals" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.MultipleCustomerArrivals" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.MultipleCustomerArrivals
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.MultipleCustomerArrivals
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 1
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What summer plants are available?
+Nursery: Added new customer. Total active customers: 2
+.....Requesting assistance for customer..... 2
+All staff unavailable. Queue customer 1 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 3
+Closing Info Desk.
+[       OK ] NurseryTest.MultipleCustomerArrivals (1 ms)
+[----------] 1 test from NurseryTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.MultipleCustomerArrivals" end time: Nov 03 14:11 SAST
+"NurseryTest.MultipleCustomerArrivals" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/48 Testing: NurseryTest.CustomerStaffAssignment
+42/48 Test: NurseryTest.CustomerStaffAssignment
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.CustomerStaffAssignment" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.CustomerStaffAssignment" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.CustomerStaffAssignment
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.CustomerStaffAssignment
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+ is now available for assistance.
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 1
+Staff is now Busy.
+Currently no staff registered with system.
+Closing Info Desk.
+[       OK ] NurseryTest.CustomerStaffAssignment (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.CustomerStaffAssignment" end time: Nov 03 14:11 SAST
+"NurseryTest.CustomerStaffAssignment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/48 Testing: NurseryTest.StaffChainBuilding
+43/48 Test: NurseryTest.StaffChainBuilding
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.StaffChainBuilding" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.StaffChainBuilding" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.StaffChainBuilding
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.StaffChainBuilding
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+ is now available for assistance.
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+ is now available for assistance.
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+ is now available for assistance.
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+Staff is now Busy.
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+Staff is now Busy.
+In chain: 
+0 SalesStaff 
+ Managers
+ Gardeners
+ Cahiers
+Staff is now Busy.
+Currently no staff registered with system.
+Closing Info Desk.
+[       OK ] NurseryTest.StaffChainBuilding (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.StaffChainBuilding" end time: Nov 03 14:11 SAST
+"NurseryTest.StaffChainBuilding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/48 Testing: NurseryTest.RemoveNonExistentCustomer
+44/48 Test: NurseryTest.RemoveNonExistentCustomer
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.RemoveNonExistentCustomer" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.RemoveNonExistentCustomer" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.RemoveNonExistentCustomer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.RemoveNonExistentCustomer
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.RemoveNonExistentCustomer (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.RemoveNonExistentCustomer" end time: Nov 03 14:11 SAST
+"NurseryTest.RemoveNonExistentCustomer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/48 Testing: NurseryTest.GettersReturnValidPointers
+45/48 Test: NurseryTest.GettersReturnValidPointers
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.GettersReturnValidPointers" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.GettersReturnValidPointers" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.GettersReturnValidPointers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.GettersReturnValidPointers
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.GettersReturnValidPointers (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.GettersReturnValidPointers" end time: Nov 03 14:11 SAST
+"NurseryTest.GettersReturnValidPointers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/48 Testing: NurseryTest.ActiveCustomersVectorIsValid
+46/48 Test: NurseryTest.ActiveCustomersVectorIsValid
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.ActiveCustomersVectorIsValid" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.ActiveCustomersVectorIsValid" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.ActiveCustomersVectorIsValid
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.ActiveCustomersVectorIsValid
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+[       OK ] NurseryTest.ActiveCustomersVectorIsValid (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.ActiveCustomersVectorIsValid" end time: Nov 03 14:11 SAST
+"NurseryTest.ActiveCustomersVectorIsValid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/48 Testing: NurseryTest.NurseryDeletionCleansUp
+47/48 Test: NurseryTest.NurseryDeletionCleansUp
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.NurseryDeletionCleansUp" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.NurseryDeletionCleansUp" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.NurseryDeletionCleansUp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.NurseryDeletionCleansUp
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created a Browsing Customer.
+Nursery: Added new customer. Total active customers: 1
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What is the best time of day to water my plants?
+Nursery: Added new customer. Total active customers: 2
+.....Requesting assistance for customer..... 2
+All staff unavailable. Queue customer 1 for assistance.
+CustomerCreator: A new customer is being created.
+Warning: Stock is empty. Customer will not target a specific plant/quantity.
+CustomerCreator: Created an Inquiring Customer with question: What winter plants do you have?
+Nursery: Added new customer. Total active customers: 3
+.....Requesting assistance for customer..... 3
+All staff unavailable. Queue customer 2 for assistance.
+Closing Info Desk.
+Closing Info Desk.
+[       OK ] NurseryTest.NurseryDeletionCleansUp (1 ms)
+[----------] 1 test from NurseryTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.NurseryDeletionCleansUp" end time: Nov 03 14:11 SAST
+"NurseryTest.NurseryDeletionCleansUp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/48 Testing: NurseryTest.MultipleNurseryInstances
+48/48 Test: NurseryTest.MultipleNurseryInstances
+Command: "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests" "--gtest_filter=NurseryTest.MultipleNurseryInstances" "--gtest_also_run_disabled_tests"
+Directory: /home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build
+"NurseryTest.MultipleNurseryInstances" start time: Nov 03 14:11 SAST
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NurseryTest.MultipleNurseryInstances
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NurseryTest
+[ RUN      ] NurseryTest.MultipleNurseryInstances
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Nursery simulation core initialized.
+Season changing from Winter to Spring
+Adjusting stock for season: Spring
+Seasonal stock adjustment completed for Spring
+Info Desk created.
+Closing Info Desk.
+Closing Info Desk.
+Closing Info Desk.
+[       OK ] NurseryTest.MultipleNurseryInstances (0 ms)
+[----------] 1 test from NurseryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NurseryTest.MultipleNurseryInstances" end time: Nov 03 14:11 SAST
+"NurseryTest.MultipleNurseryInstances" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 03 14:11 SAST

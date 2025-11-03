@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
+		},
+		{
+			"file" : "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-populate"
+		],
+		"name" : "googletest-populate"
+	}
+}

@@ -1,0 +1,9 @@
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/ChaoticPlants.dir
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/edit_cache.dir
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/rebuild_cache.dir
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/list_install_components.dir
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/install.dir
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/install/local.dir
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/install/strip.dir
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/ChaoticPlants_autogen_timestamp_deps.dir
+/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/gui/ChaoticPlants/build/CMakeFiles/ChaoticPlants_autogen.dir

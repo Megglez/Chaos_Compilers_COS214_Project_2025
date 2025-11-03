@@ -1,0 +1,5 @@
+if(EXISTS "/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests[1]_tests.cmake")
+  include("/home/keyseri/Universiteit/COS 214/COS214_Project_2025/Chaos_Compilers_COS214_Project_2025/build/run_tests[1]_tests.cmake")
+else()
+  add_test(run_tests_NOT_BUILT run_tests_NOT_BUILT)
+endif()
