@@ -26,41 +26,17 @@
 
 int main()
 {
-    // struct SellingPlants:
-    // {
-    //     int num;
-    //     std::string name;
-
-    //     SellingPlants(int num,string name):num(i),name(pn){}
-
-    //     SellingPlants(1,"Rose"){}
-    // };
-    // std::vector<SellingPlants> plants;
- 
-    // plants->push_back(SellingPlants(0,"Elephant bush"));
-    // plants->push_back(SellingPlants(1,"Candelabra Aloe vera"));
-    // plants->push_back(SellingPlants(2,"Jade"));
-    // plants->push_back(SellingPlants(3,"Red Pagoda"));
-    // plants->push_back(SellingPlants(4,"Portulaca"));
-    // plants->push_back(SellingPlants(5,"Elephant"));
-    // plants->push_back(SellingPlants(6,"Elephant"));
-    // plants->push_back(SellingPlants(7,"Elephant"));
-    // plants->push_back(SellingPlants(8,"Elephant"));
-    // plants->push_back(SellingPlants(9,"Elephant"));
-    // plants->push_back(SellingPlants(10,"Elephant"));
-    // plants->push_back(SellingPlants(11,"Elephant"));
-    // plants->push_back(SellingPlants(12,"Elephant"));
-    // plants->push_back(SellingPlants(13,"Elephant"));
-
     //creating the initial inventory
     //20 difference plants
     std::map<string,int>succulents= {{"Elephant Bush",10},{"Candelabra Aloe Vera",4},{"Jade",1},{"Red Pagoda",2},{"Portulaca",1}};
 
-    std::map<string,int,bool>flowers= {{"Bush Lily",12},{"Hibiscus",20},{"Agapanthus",13},{"King Protea",7},{"Rose",0},{"Daisy",2},{"Poppy",4},{"Orchid",0}};
+    std::map<string,int,bool>flowers= {{"Bush Lily",12,false},{"Hibiscus",20,true},{"Agapanthus",13,false},{"King Protea",7,true},{"Rose",0.true},{"Daisy",2,false},{"Poppy",4,false},{"Orchid",0,true}};
 
     std::map<string,int>trees= {{"Jacaranda",6},{"Acacia",4}};
 
     std::map<string,int>herbs= {{"Oregon",20},{"chives",24},{"parsley",22},{"sage",19}};
 
+
+    
     return 0;
 }
