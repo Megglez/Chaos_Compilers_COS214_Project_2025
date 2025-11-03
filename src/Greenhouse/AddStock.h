@@ -33,6 +33,15 @@ using namespace std;
  */
 class AddStock : public Command
 {
+private:
+    /**
+     * @brief Pointer to the inventory system
+     * 
+     * Reference to the inventory where plants will be added
+     * when the execute method is called.
+     */
+    Inventory *inventory;
+    
 public:
     
     /**
@@ -47,7 +56,7 @@ public:
      * @note The plant parameter is moved into the inventory, so the
      *       original unique_ptr will be empty after execution
      */
-    void execute(std::unique_ptr<Plant> &&plant, int quantity) override;
+    void execute(unique_ptr<Plant> &&plant, int quantity) override;
     
     /**
      * @brief Constructs an AddStock command with inventory reference
@@ -65,15 +74,6 @@ public:
      * resources it may hold.
      */
     virtual ~AddStock();
-
-private:
-    /**
-     * @brief Pointer to the inventory system
-     * 
-     * Reference to the inventory where plants will be added
-     * when the execute method is called.
-     */
-    Inventory *inventory;
 };
 
 #endif

@@ -10,9 +10,9 @@
 #define AUTUMN_H
 
 #include <iostream>
-using namespace std;
 #include "Seasons.h"
 #include "Winter.h"
+using namespace std;
 
 /**
  * @class Autumn
@@ -39,6 +39,15 @@ using namespace std;
  * @see Winter
  */
 class Autumn : public Seasons {
+private:
+    /**
+     * @brief Reference to the inventory system
+     * 
+     * Pointer to the inventory for making autumn-specific adjustments
+     * to plant quantities and development stages.
+     */
+    Inventory* inventory;
+
 public:
     /**
      * @brief Handles the transition from autumn to the next season
@@ -62,7 +71,7 @@ public:
      * 
      * @override Implements pure virtual method from Seasons base class
      */
-    virtual std::string getSeason() override;
+    virtual string getSeason() override;
     
     /**
      * @brief Constructs an Autumn season with inventory reference
@@ -83,16 +92,7 @@ public:
      * Cleans up any resources specific to the autumn season state.
      * The inventory pointer is not owned and is not deleted.
      */
-    ~Autumn();
-
-private:
-    /**
-     * @brief Reference to the inventory system
-     * 
-     * Pointer to the inventory for making autumn-specific adjustments
-     * to plant quantities and development stages.
-     */
-    Inventory* inventory;
+    virtual ~Autumn();
 };
 
 #endif

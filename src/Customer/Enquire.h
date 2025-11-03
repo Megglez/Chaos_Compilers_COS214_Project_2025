@@ -4,6 +4,8 @@
 #include "Action.h"
 #include "../Greenhouse/Plant.h"
 #include <string>
+#include <iostream>
+using namespace std;
 
 class Customer;
 class InfoDesk;
@@ -12,15 +14,15 @@ class Enquire : public Action
 {
 private:
     Plant *plantOfInterest;
-    std::string enquiryQuestion;
+    string enquiryQuestion;
 
 public:
-    Enquire(Plant *plant, const std::string &question = "") : Action("Enquiring"), plantOfInterest(plant), enquiryQuestion(question) {}
+    Enquire(Plant *plant, const string &question = "") : Action("Enquiring"), plantOfInterest(plant), enquiryQuestion(question) {}
     virtual ~Enquire() {}
 
     void handle() override;
     Action *getNextAction() override;
     void requestStaffAssistance(Customer *customer, InfoDesk &desk) override;
-    std::string getEnquiryQuestion() const { return enquiryQuestion; }
+    string getEnquiryQuestion() const { return enquiryQuestion; }
 };
 #endif
