@@ -34,7 +34,7 @@ void Customer::setAction(Action *newAction)
 
 bool Customer::addToBasket(Plant *plants, int quantity)
 {
-    if (nursery-)
+    //if (nursery-)
     plants->getName();
     return false;
 }
