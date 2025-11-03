@@ -47,11 +47,11 @@ int main()
     HerbPlanter* herbP = new HerbPlanter();
 
     for(const auto& p : succulents)
-    {
+    { 
         std::unique_ptr<Plant> SuccP(succulentP->planterMethod(p.first));
         //Nursery->setStock(std::move(SuccP), pair.second);
     }
-
+// comment so i can commit
     for(const auto& p : flowers)
     {
         if(p.second.second) // is winter flower
