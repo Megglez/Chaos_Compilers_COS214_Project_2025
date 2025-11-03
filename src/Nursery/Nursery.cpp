@@ -24,7 +24,7 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
     startPlants = new AddStock(inplace_merge)
 }
 
-void Nursery::setStock(Plant *plant, int amount)
+void Nursery::setStock(unique_ptr<Plant> &&plant, int amount)
 {
     startPlants->execute(plant, amount);
 }
