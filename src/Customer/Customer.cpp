@@ -34,7 +34,7 @@ void Customer::setAction(Action *newAction)
 
 bool Customer::addToBasket(Plant *plants, int quantity)
 {
-    std::cout << quantity;
+    if ()
     plants->getName();
     return false;
 }

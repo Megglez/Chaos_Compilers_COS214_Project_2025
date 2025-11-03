@@ -16,6 +16,7 @@
 #include "../Greenhouse/HerbPlanter.h"
 #include "../Greenhouse/TreePlanter.h"
 #include "../Greenhouse/SucculentPlanter.h"
+#include "SeasonClock.h"
 using namespace std;
 
 class Nursery : public QObject // <-- INHERIT FROM QObject
@@ -36,10 +37,6 @@ private:
     // Plant Management
     Stock *stock;
     Inventory *inventory;
-    FlowerPlanter *flowerFactory;
-    HerbPlanter *herbFactory;
-    TreePlanter *treeFactory;
-    SucculentPlanter *succulentFactory;
     Seasons *currentSeason;
     AddStock* startPlants;
 
@@ -72,6 +69,7 @@ public:
 public slots:
     // This slot receives the signal from the CustomerClock
     void handleCustomerArrivalSignal();
+    void updateSeason(Season newSeason);
 };
 
 #endif

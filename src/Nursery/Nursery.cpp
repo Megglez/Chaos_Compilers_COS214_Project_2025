@@ -1,4 +1,8 @@
 #include "Nursery.h"
+#include "Spring.h"
+#include "Summer.h"
+#include "Autumn.h"
+#include "Winter.h"
 #include <QDebug>
 
 Nursery::Nursery(QObject *parent) : QObject(parent)
@@ -13,8 +17,6 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
     // Initialize Plant Management
     inventory = new Inventory();
     stock = new Stock(inventory);
-    flowerFactory = new FlowerPlanter();
-    herbFactory = new HerbPlanter();
     currentSeason = new Summer(inventory); // Start with Summer season
 
     // Initialize Staff Management
@@ -126,4 +128,34 @@ void Nursery::handleCustomerDeparture(Customer *customer)
     {
         qDebug() << "Warning: Customer" << customer->getId() << "not found in active customers list.";
     }
+}
+
+void Nursery::updateSeason(Season newSeason)
+{
+    qDebug() << "Nursery updating season state...";
+    if (currentSeason) {
+        delete currentSeason; // Delete the old season object
+    }
+
+    // Create the new season object.
+    // The constructor for each Season (e.g., Spring(inventory))
+    // automatically executes its command (e.g., SpringCommand)
+    // and updates the inventory.
+    switch (newSeason)
+    {
+        case SPRING:
+            currentSeason = new Spring(inventory);
+            break;
+        case SUMMER:
+            currentSeason = new Summer(inventory);
+            break;
+        case AUTUMN:
+            currentSeason = new Autumn(inventory);
+            break;
+        case WINTER:
+            currentSeason = new Winter(inventory);
+            break;
+    }
+    
+    qDebug() << "Nursery season changed to:" << currentSeason->getSeason().c_str();
 }

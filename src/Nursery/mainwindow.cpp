@@ -64,7 +64,9 @@ void MainWindow::handleSeasonChange(Season newSeason)
         case WINTER: seasonName = "Winter"; break;
     }
     qDebug() << "ACTION: SEASON CHANGED to" << seasonName;
-    
+    if (nursery) {
+        nursery->updateSeason(newSeason);
+    }
     if (nursery && nursery->getCurrentSeason()) {
         // Log the season change since we don't have UI labels yet
         qDebug() << "Season changed to:" << seasonName;

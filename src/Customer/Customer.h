@@ -21,7 +21,7 @@ class Customer : public QObject
 private:
 	Action *action;
 	int id;
-	vector<Plant *> basket;
+	vector<Plant*> basket;
 	Staff *assignedStaff = nullptr;
 	Nursery *nursery;
 
