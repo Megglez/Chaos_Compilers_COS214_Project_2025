@@ -30,7 +30,9 @@ CustomerCreator::~CustomerCreator()
 
 Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
 {
-    qDebug() << "CustomerCreator: A new customer is being created.";
+    qDebug() << "=== CustomerCreator: Creating new customer ===";
+    qDebug() << "Stock pointer:" << stock;
+    qDebug() << "Stock size:" << (stock ? stock->getStockListSize() : 0);
 
     std::vector<Plant *> chosenPlants;
     std::vector<int> quantitiesWanted;
@@ -141,8 +143,22 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
         }
         else if (chosenPlants.size() > 0)
         {
-            newCustomer = new Customer(new Browse(chosenPlants, quantitiesWanted), nursery, nursery);
-            qDebug() << "CustomerCreator: Created a Browsing Customer.";
+            // Clone the plants so we have our own copies
+            std::vector<Plant *> clonedPlants;
+            for (Plant *plant : chosenPlants)
+            {
+                if (plant)
+                {
+                    clonedPlants.push_back(plant->clone());
+                    qDebug() << "CustomerCreator: Cloned plant" << plant->getName().c_str() << "for customer";
+                }
+            }
+            qDebug() << "CustomerCreator: About to create Browse with" << clonedPlants.size() << "plants and" << quantitiesWanted.size() << "quantities";
+            Browse *browseAction = new Browse(clonedPlants, quantitiesWanted);
+            qDebug() << "CustomerCreator: Browse created, checking contents...";
+            qDebug() << "CustomerCreator: Browse has" << browseAction->getPlantsToBuy().size() << "plants";
+            newCustomer = new Customer(browseAction, nursery, nursery);
+            qDebug() << "CustomerCreator: Created a Browsing Customer with" << clonedPlants.size() << "plants.";
         }
         else
         {

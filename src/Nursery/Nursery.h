@@ -15,6 +15,8 @@
 #include "../Greenhouse/Summer.h"
 #include "../Greenhouse/FlowerPlanter.h"
 #include "../Greenhouse/HerbPlanter.h"
+#include "../Greenhouse/TreePlanter.h"
+#include "../Greenhouse/SucculentPlanter.h"
 using namespace std;
 
 class Nursery : public QObject // <-- INHERIT FROM QObject
@@ -38,6 +40,8 @@ Q_OBJECT // REQUIRED
     Inventory *inventory;
     FlowerPlanter *flowerFactory;
     HerbPlanter *herbFactory;
+    TreePlanter *treeFactory;
+    SucculentPlanter *succulentFactory;
     Seasons *currentSeason;
 
 public:

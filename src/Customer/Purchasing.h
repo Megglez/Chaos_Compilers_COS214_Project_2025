@@ -112,5 +112,17 @@ public:
      * Directs customer to available cashier for payment processing.
      */
     void requestStaffAssistance(Customer *customer, InfoDesk &desk) override;
+
+    /**
+     * @brief Get the list of plants to purchase
+     * @return std::vector<Plant*> Vector of plant pointers
+     */
+    std::vector<Plant *> getPlantsToBuy() const { return plantsToBuy; }
+
+    /**
+     * @brief Get the quantities for each plant
+     * @return std::vector<int> Vector of quantities
+     */
+    std::vector<int> getQuantities() const { return quantities; }
 };
 #endif

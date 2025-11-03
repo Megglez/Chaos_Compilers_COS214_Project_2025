@@ -17,8 +17,39 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
     stock = new Stock(inventory);
     flowerFactory = new FlowerPlanter();
     herbFactory = new HerbPlanter();
+    treeFactory = new TreePlanter();
+    succulentFactory = new SucculentPlanter();
     currentSeason = new Spring(inventory);
-    
+
+    // Add diverse initial plants to stock for customers to browse
+    // Flowers
+    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Rose")), 20);
+    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Tulip")), 15);
+    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Lily")), 10);
+    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Sunflower")), 12);
+    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Daisy")), 18);
+
+    // Herbs
+    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Basil")), 25);
+    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Mint")), 30);
+    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Rosemary")), 16);
+    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Thyme")), 14);
+    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Oregano")), 22);
+
+    // Trees
+    stock->Add(std::unique_ptr<Plant>(treeFactory->planterMethod("Oak")), 8);
+    stock->Add(std::unique_ptr<Plant>(treeFactory->planterMethod("Maple")), 6);
+    stock->Add(std::unique_ptr<Plant>(treeFactory->planterMethod("Pine")), 10);
+    stock->Add(std::unique_ptr<Plant>(treeFactory->planterMethod("Apple")), 7);
+
+    // Succulents
+    stock->Add(std::unique_ptr<Plant>(succulentFactory->planterMethod("Aloe")), 24);
+    stock->Add(std::unique_ptr<Plant>(succulentFactory->planterMethod("Cactus")), 28);
+    stock->Add(std::unique_ptr<Plant>(succulentFactory->planterMethod("Jade")), 19);
+    stock->Add(std::unique_ptr<Plant>(succulentFactory->planterMethod("Echeveria")), 13);
+
+    qDebug() << "Initial stock added:" << stock->getStockListSize() << "plant types";
+
     // Initialize Staff Management
     infoDesk = new InfoDesk();
 
@@ -53,6 +84,8 @@ Nursery::~Nursery()
     delete inventory;
     delete flowerFactory;
     delete herbFactory;
+    delete treeFactory;
+    delete succulentFactory;
     delete currentSeason;
 }
 void Nursery::handleCustomerArrivalSignal()

@@ -48,8 +48,8 @@ void Browse::startBrowsing(Customer *customer)
                   << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "a generic plant") << std::endl;
     }
 
-    // Generate random time between 5 and 10 seconds (in milliseconds)
-    int sleepTime = QRandomGenerator::global()->bounded(6) + 5; // 5 to 10 seconds
+    // Generate random time between 20 and 40 seconds (in milliseconds)
+    int sleepTime = QRandomGenerator::global()->bounded(21) + 20; // 20 to 40 seconds
     std::cout << "Customer will browse for " << sleepTime << " seconds..." << std::endl;
 
     // Start timer (convert seconds to milliseconds)
