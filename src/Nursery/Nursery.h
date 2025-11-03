@@ -1,15 +1,3 @@
-/**
- * @file Nursery.h
- * @brief Facade class that coordinates all nursery subsystems
- * 
- * The Nursery class acts as the main facade for the plant nursery simulation system.
- * It manages customers, staff, inventory, stock, and seasonal changes, providing a
- * unified interface for the entire nursery operation.
- * 
- * @author Chaos_Compilers
- * @date 2025
- */
-
 #ifndef NURSERY_H
 #define NURSERY_H
 
@@ -25,9 +13,6 @@
 #include "../Greenhouse/Inventory.h"
 #include "../Greenhouse/Seasons.h"
 #include "../Greenhouse/Summer.h"
-#include "../Greenhouse/Spring.h"
-#include "../Greenhouse/Winter.h"
-#include "../Greenhouse/Autumn.h"
 #include "../Greenhouse/FlowerPlanter.h"
 #include "../Greenhouse/HerbPlanter.h"
 #include "../Greenhouse/TreePlanter.h"
@@ -35,17 +20,6 @@
 #include "SeasonClock.h"
 using namespace std;
 
-/**
- * @class Nursery
- * @brief Main facade class for the plant nursery simulation system
- * 
- * This class implements the Facade pattern to provide a simplified interface
- * to the complex subsystems of the nursery including customer management,
- * staff coordination, inventory tracking, and seasonal plant stock management.
- * Inherits from QObject to support Qt's signal-slot mechanism for event handling.
- * 
- * @note Inherits from QObject for Qt signal-slot functionality
- */
 class Nursery : public QObject // <-- INHERIT FROM QObject
 {
     Q_OBJECT // REQUIRED
@@ -68,14 +42,6 @@ private:
     AddStock* startPlants;              ///< Command for adding initial plant stock
 
 public:
-    /**
-     * @brief Constructs a new Nursery object
-     * 
-     * Initializes all subsystems including inventory, stock, info desk, and season.
-     * Sets up the initial state with Spring season and populates stock with plants.
-     * 
-     * @param parent Optional parent QObject for Qt object hierarchy
-     */
     explicit Nursery(QObject *parent = nullptr);
     
     /**
@@ -86,23 +52,8 @@ public:
     ~Nursery(); //override;
 
     // Getters
-    
-    /**
-     * @brief Gets the stock management system
-     * @return Pointer to the Stock object
-     */
     Stock *getStock() const { return stock; }
-    
-    /**
-     * @brief Gets the inventory catalogue system
-     * @return Pointer to the Inventory object
-     */
     Inventory *getInventory() const { return inventory; }
-    
-    /**
-     * @brief Gets the info desk for staff management
-     * @return Pointer to the InfoDesk object
-     */
     InfoDesk *getInfoDesk() const { return infoDesk; }
     
     /**
@@ -129,11 +80,8 @@ public:
     void setSeason(Seasons* newSeason);
 
     // Plant Factory Access
-    // FlowerPlanter *getFlowerFactory() const { return flowerFactory; }
-    // HerbPlanter *getHerbFactory() const { return herbFactory; }
-    // TreePlanter *getTreeFactory() const { return treeFactory; }
-    // SucculentPlanter *getSucculentFactory() const { return succulentFactory; }
-
+    FlowerPlanter *getFlowerFactory() const { return flowerFactory; }
+    HerbPlanter *getHerbFactory() const { return herbFactory; }
 
     // Customer Management
     
@@ -146,21 +94,7 @@ public:
      * @param customer Pointer to the customer to add
      */
     void addCustomer(Customer *customer);
-    
-    /**
-     * @brief Removes a customer from the active customers list
-     * 
-     * @param customer Pointer to the customer to remove
-     */
     void removeCustomer(Customer *customer);
-    
-    /**
-     * @brief Handles a customer leaving the nursery
-     * 
-     * Removes customer from active list, updates count, and frees any assigned staff.
-     * 
-     * @param customer Pointer to the departing customer
-     */
     void handleCustomerDeparture(Customer *customer);
     
     /**
@@ -172,22 +106,8 @@ public:
     void handleChange();
 
 public slots:
-    /**
-     * @brief Slot that handles customer arrival signals
-     * 
-     * Creates a new random customer using the customer factory and adds them
-     * to the nursery if capacity allows.
-     */
+    // This slot receives the signal from the CustomerClock
     void handleCustomerArrivalSignal();
-    
-    /**
-     * @brief Slot that handles season change signals
-     * 
-     * Updates the current season and adjusts plant stock accordingly.
-     * 
-     * @param newSeason The new season to transition to
-     */
-    void updateSeason(Season newSeason);
 };
 
 #endif

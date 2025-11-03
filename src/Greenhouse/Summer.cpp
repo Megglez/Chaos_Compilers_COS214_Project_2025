@@ -81,5 +81,5 @@ Summer::~Summer(){
  * - Updating plant stages for cooler weather
  */
 void Summer::handleChange(Nursery* nursery){
-    nursery->setSeason(new Autumn(inventory));
+    nursery->setState(new Autumn(inventory));
 }

@@ -1,14 +1,3 @@
-/**
- * @file Clock.cpp
- * @brief Implementation of the Clock base class
- * 
- * Provides the implementation for the generic timer functionality
- * used by all specialized clock classes.
- * 
- * @author Chaos_Compilers
- * @date 2025
- */
-
 #include "Clock.h"
 #include <QDebug>
 
