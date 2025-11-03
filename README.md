@@ -29,6 +29,6 @@ https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025
 | Inge Keyser | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/IngeKeyser) | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](https://www.linkedin.com/in/inge-keyser)|Code Implementation |
 | Blessing Gibendi | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/u24827313) | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)]() |Code Implementation |
 | Divo Köhler | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/u24607526) | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](http://www.linkedin.com/in/divo-kohler-1023b6397) |Code Implementation, Documentation |
-| Langa Vakalisa | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/langa-vk)| [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)]() | | 
+| Langa Vakalisa | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/langa-vk)| [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)]() |Code Implementation | 
 
 
