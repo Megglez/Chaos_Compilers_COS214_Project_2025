@@ -107,48 +107,52 @@ Integrating the abstract concept of the customer posed a significant design chal
   1. Loamy soil is the most common used by most plants.
   2. Succulent soil, which is a mix of coarse sand, perlite and normal soil.
   3. Peat soil is used for herbs as well as some trees.
+  4. It is assumed the gardeners will use the correct soil type.
  
-- Using water comes in  4 types:
-  1.  Drought resistant plants like succulents and some types of flowers such as the century plant require watering every one or one and a half weeks.
-  2.  Native species that are used to the climate require only watering every 4 to 6 days such as many of the shrubs, bamboo and herbs.
-  3.  Saplings only require watering every 2-3 days with exceptions for drought resistant trees.
-  4.  Many flowering plants usually require watering every single day.
+- Using water comes with two states for a plant:
+  1. Because of the timer changing once in a season(meaning the timer triggers every 3 months), plants who are watered once in the season will live and plants that have not been watered die. A plant may be watered more than once a season and the plant will still live except for succulent plants which die if they are watered more than once.
+  2. The plant  has either not been watered or has been watered.
 
 - Amount of sunlight is ranked in the same way with 3 possibilities:
+  - Different amounts of sunlight is assigned to different plant types but it is assumed that the gardeners will ensure they receive the correct amount of sunlight.
   1. Complete sun.
   2. Semi shaded.
   3. No/minimal sunlight.
  
-- We made the assumption that if something is perennial, then it will grow and die after one season cycle.
+- We made the assumption that if something is perennial, it will grow and die after one season cycle.
 
--  Plants bloom mainly in the summer or winter. Spring and autumn are sowing and growing seasons, but still have a change of plants blooming during their season.
+- Plants bloom mainly in the summer or winter. Spring and autumn are sowing and growing seasons, but still have a change of plants blooming during their season.
+
+- Flowers bloom mainly in the summer or winter. Spring and autumn are wilting and growing seasons, but still have a change of plants blooming during their season.
+
+- Flowers are the only plants to be either winter or summer plants, the rest are perennial.
 
 -  Plants that will be grown and sold in our nursery:\
    $\color{grey}{(Format: Plant name, Seeds planted season, Blooms season (winter or summer or perennial)).}$
 
    - Succulents:
-     - Elephant bush, autumn, al, winter
-     - Candelabra Aloe vera, winter, winter, perennial
-     - Jade plant, all, all, perennial
-     - red pagoda, winter, spring/summer,autumn
-     - Portulaca, summer ,winter, summer
+     - Elephant bush, any season, perennial
+     - Candelabra Aloe vera, any season, perennial
+     - Jade plant, any season, perennial
+     - red pagoda, any season, perennial
+     - Portulaca, any season, perennial
 
     - Flowering plants:
-      - Bush lily, winter, summer, autumn
-      - Wild hibiscus ,summer, winter, summer
-      - Agapanthus, winter, summer ,autumn
-      - King Protea, winter ,al, perennial
-      - Roses, winter ,summer ,autumn
-      - Daisy, winter ,summer, autumn
-      - Poppy, winter ,summer ,autumn
-      - Orchid, summer, winter ,spring
+      - Bush lily, winter, summer
+      - Wild hibiscus, summer, winter
+      - Agapanthus, winter, summer
+      - King Protea, summer, winter
+      - Rose, summer, winter
+      - Daisy, winter, summer
+      - Poppy, winter, summer
+      - Orchid, summer, winter
 
     - Trees:
-      - Jacaranda, winter, spring ,perennial
-      - Acacia tree ,winter, summer, perennial
+      - Jacaranda, winter, perennial
+      - Acacia , summer, perennial
 
     - Herbs:
-      - Thymn,Oregon,chives parsley,sage, spring ,summer, perennial.
+      - Thyme, Oregon, chives, parsley, sage, summer, perennial.
 </br>
 
 ## 4. Design Patterns Used and Their Functional Requirements
@@ -263,4 +267,5 @@ Tackling Design Patterns [WWW Document], n.d. URL https://www.cs.up.ac.za/cs/lma
 GitHub Repository: https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025
 
 Google Document link: https://docs.google.com/document/d/1pNxXny8WA27NGEMK5c35jEXHrr4iKFu1k3Qw_p5Tn5Q/edit?usp=sharing
+
 
