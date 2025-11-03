@@ -91,5 +91,5 @@ std::string Winter::getSeason() {
  * - Marking the beginning of new growth cycle
  */
 void Winter::handleChange(Nursery* nursery){
-    nursery->setState(new Spring(inventory));
+    nursery->setSeason(new Spring(inventory));
 }

@@ -11,21 +11,28 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
     customerCount = 0;
     customerLimit = 20; // Can be adjusted as needed
 
-    // Initialize Plant Management
+        // Initialize Plant Management
     inventory = new Inventory();
     stock = new Stock(inventory);
-    flowerFactory = new FlowerPlanter();
-    herbFactory = new HerbPlanter();
     currentSeason = new Spring(inventory);
     
     // Initialize Staff Management
     infoDesk = new InfoDesk();
-    startPlants = new AddStock(inplace_merge)
+    startPlants = new AddStock(inventory);
 }
 
 void Nursery::setStock(unique_ptr<Plant> plant, int amount)
 {
-    startPlants->execute(plant, amount);
+    startPlants->execute(move(plant), amount);
+}
+
+void Nursery::setSeason(Seasons* newSeason)
+{
+    if (currentSeason) {
+        delete currentSeason;
+    }
+    currentSeason = newSeason;
+    qDebug() << "Season changed to:" << currentSeason->getSeason().c_str();
 }
 
 Nursery::~Nursery()

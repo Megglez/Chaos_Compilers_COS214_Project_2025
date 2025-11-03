@@ -55,6 +55,7 @@ public:
 
     //Setters
     void setStock(unique_ptr<Plant> plant, int amount);
+    void setSeason(Seasons* newSeason);
 
     // Plant Factory Access
     // FlowerPlanter *getFlowerFactory() const { return flowerFactory; }

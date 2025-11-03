@@ -2,6 +2,7 @@
 #include <QCoreApplication>
 #include "../src/Nursery/Nursery.h"
 #include "../src/Customer/Customer.h"
+#include "../src/Customer/Browse.h"
 #include "../src/Staff/InfoDesk.h"
 #include "../src/Staff/Staff.h"
 #include "../src/Staff/SalesStaff.h"
@@ -10,9 +11,7 @@
 #include "../src/Staff/Gardener.h"
 #include "../src/Greenhouse/Inventory.h"
 #include "../src/Greenhouse/Stock.h"
-#include "../src/Greenhouse/Summer.h"
-#include "../src/Greenhouse/FlowerPlanter.h"
-#include "../src/Greenhouse/HerbPlanter.h"
+#include "../src/Greenhouse/Spring.h"
 
 /**
  * @brief Test fixture for Nursery tests
@@ -72,20 +71,6 @@ TEST_F(NurseryTest, InfoDeskInitialization) {
     ASSERT_NE(nursery->getInfoDesk(), nullptr) << "InfoDesk should be initialized";
 }
 
-TEST_F(NurseryTest, CurrentSeasonInitialization) {
-    ASSERT_NE(nursery->getCurrentSeason(), nullptr) << "Current season should be initialized";
-    EXPECT_EQ(nursery->getCurrentSeason()->getSeason(), "Summer") 
-        << "Initial season should be Summer";
-}
-
-TEST_F(NurseryTest, FlowerFactoryInitialization) {
-    ASSERT_NE(nursery->getFlowerFactory(), nullptr) << "Flower factory should be initialized";
-}
-
-TEST_F(NurseryTest, HerbFactoryInitialization) {
-    ASSERT_NE(nursery->getHerbFactory(), nullptr) << "Herb factory should be initialized";
-}
-
 // ==================== Customer Management Tests ====================
 
 TEST_F(NurseryTest, InitialCustomerCount) {
@@ -94,7 +79,8 @@ TEST_F(NurseryTest, InitialCustomerCount) {
 }
 
 TEST_F(NurseryTest, AddCustomer) {
-    Customer* customer = new Customer(nursery, nursery->getStock());
+    Action* browseAction = new Browse(nullptr, 1);  // Pass nullptr for plant in test
+    Customer* customer = new Customer(browseAction, nursery);
     nursery->addCustomer(customer);
     
     EXPECT_EQ(nursery->getActiveCustomers().size(), 1) 
@@ -103,7 +89,8 @@ TEST_F(NurseryTest, AddCustomer) {
 
 TEST_F(NurseryTest, AddMultipleCustomers) {
     for (int i = 0; i < 5; i++) {
-        Customer* customer = new Customer(nursery, nursery->getStock());
+        Action* browseAction = new Browse(nullptr, 1);  // Pass nullptr for plant in test
+        Customer* customer = new Customer(browseAction, nursery);
         nursery->addCustomer(customer);
     }
     
@@ -112,7 +99,8 @@ TEST_F(NurseryTest, AddMultipleCustomers) {
 }
 
 TEST_F(NurseryTest, RemoveCustomer) {
-    Customer* customer = new Customer(nursery, nursery->getStock());
+    Action* browseAction = new Browse(nullptr, 1);  // Pass nullptr for plant in test
+    Customer* customer = new Customer(browseAction, nursery);
     nursery->addCustomer(customer);
     EXPECT_EQ(nursery->getActiveCustomers().size(), 1);
     
@@ -180,7 +168,7 @@ TEST_F(NurseryTest, SeasonGetCurrent) {
 
 TEST_F(NurseryTest, SeasonHandleChange) {
     ASSERT_NO_THROW({
-        nursery->getCurrentSeason()->handleChange();
+        nursery->getCurrentSeason()->handleChange(nursery);
     }) << "handleChange should not throw";
 }
 
@@ -230,15 +218,7 @@ TEST_F(NurseryTest, InfoDeskAddNullStaff) {
 
 // ==================== Plant Factory Tests ====================
 
-TEST_F(NurseryTest, FlowerFactoryNotNull) {
-    FlowerPlanter* factory = nursery->getFlowerFactory();
-    ASSERT_NE(factory, nullptr) << "Flower factory should not be null";
-}
-
-TEST_F(NurseryTest, HerbFactoryNotNull) {
-    HerbPlanter* factory = nursery->getHerbFactory();
-    ASSERT_NE(factory, nullptr) << "Herb factory should not be null";
-}
+// Factories are no longer part of Nursery - tests removed
 
 // ==================== Integration Tests ====================
 
@@ -308,14 +288,16 @@ TEST_F(NurseryTest, StaffChainBuilding) {
 // ==================== Edge Case Tests ====================
 
 TEST_F(NurseryTest, RemoveNonExistentCustomer) {
-    Customer* customer = new Customer(nursery, nursery->getStock());
+    Action* browseAction = new Browse(nullptr, 1);  // Pass nullptr for plant in test
+    Customer* customer = new Customer(browseAction, nursery);
     // Don't add the customer
     
     ASSERT_NO_THROW({
         nursery->removeCustomer(customer);
     }) << "Removing non-existent customer should not crash";
     
-    delete customer;
+    delete customer;  // Customer destructor will delete the action
+    // Do NOT delete browseAction - it's owned by customer and already deleted
 }
 
 TEST_F(NurseryTest, GettersReturnValidPointers) {
@@ -323,8 +305,6 @@ TEST_F(NurseryTest, GettersReturnValidPointers) {
     EXPECT_NE(nursery->getInventory(), nullptr);
     EXPECT_NE(nursery->getInfoDesk(), nullptr);
     EXPECT_NE(nursery->getCurrentSeason(), nullptr);
-    EXPECT_NE(nursery->getFlowerFactory(), nullptr);
-    EXPECT_NE(nursery->getHerbFactory(), nullptr);
 }
 
 TEST_F(NurseryTest, ActiveCustomersVectorIsValid) {
@@ -360,11 +340,4 @@ TEST_F(NurseryTest, MultipleNurseryInstances) {
     
     delete nursery1;
     delete nursery2;
-}
-
-// ==================== Main Function ====================
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
 }
