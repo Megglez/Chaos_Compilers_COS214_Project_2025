@@ -21,6 +21,7 @@ Plant::Plant(int water, int soil, int sunlight, StageOfDevelopment* stage, CareS
     this->sunlight = sunlight;
     this->stage = stage;
     this->strategy = strategy; 
+    watered = 0;
 }
 
 /**
@@ -76,6 +77,8 @@ void Plant::helpPlant()
         cout<<"Dead:"<<endl;
         std::cout << "Unfortunately, your plant is dead, and there's no amount of water that can save it. Sorrows, sorrows, prayers\n" << std::endl;
     }
+    watered++;
+
 }
 
 /**
@@ -160,4 +163,13 @@ int Plant::getSunlight(){
  */
 CareStrategy* Plant::getCare(){
     return strategy;
+}
+
+
+int Plant::getWatered(){
+    return watered;
+}
+
+void Plant::setWatered(int w){
+    watered = w;
 }

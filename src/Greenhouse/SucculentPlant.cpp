@@ -90,3 +90,39 @@ SucculentPlant::~SucculentPlant()
  * Currently serves as a no-operation placeholder to satisfy the interface contract.
  */
 void SucculentPlant::package(){}
+
+void SucculentPlant::helpPlant(){
+    if(watered == 0){
+        if(stage->getStageName() == "Seed"){ 
+            cout << "Seed care: " << endl;
+            std::string message = "Gentle misting and warm conditions\n";
+            strategy->helpPlant(message);
+            grow();
+            
+        } else if(stage->getStageName() == "Sapling"){
+            cout << "Sapling care: " << endl;
+            std::string message = "Regular watering and protection from harsh elements\n";
+            strategy->helpPlant(message);
+            grow();
+            
+        } else if(stage->getStageName() == "Prime"){
+            cout << "Prime care: " << endl;
+            std::string message = "Full care regimen for mature plant\n";
+            strategy->helpPlant(message);
+            grow();
+            
+        } else if(stage->getStageName() == "Wilting"){
+            cout << "Wilting care: " << endl;
+            std::string message = "Extra attention and recovery measures\n";
+            strategy->helpPlant(message);
+            grow();
+
+        } else if(stage->getStageName() == "Dead"){
+            cout<<"Dead:"<<endl;
+            std::cout << "Unfortunately, your plant is dead, and there's no amount of water that can save it. Sorrows, sorrows, prayers\n" << std::endl;
+        }
+        watered++;
+    }else{
+        cout << "The succulent was already watered. Please refrain from watering the succulent." << endl;
+    }
+}

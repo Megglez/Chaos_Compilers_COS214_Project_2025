@@ -65,6 +65,8 @@ public:
      * packaging functionality specific to succulents.
      */
     virtual void package() override;
+
+    virtual void helpPlant() override;
 };
 
 #endif

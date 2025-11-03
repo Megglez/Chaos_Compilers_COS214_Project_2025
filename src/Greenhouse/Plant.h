@@ -26,6 +26,7 @@ protected:
     CareStrategy* strategy;         ///< Care strategy (Strategy pattern)
     string name;                    ///< Name identifier for the plant
     string type;                    ///< Plant type classification
+    int watered;
 
 public:
     /**
@@ -154,6 +155,9 @@ public:
      * @return CareStrategy* Pointer to the care strategy object
      */
     virtual CareStrategy* getCare();
+
+    int getWatered();
+    void setWatered(int w);
 };
 
 #endif
