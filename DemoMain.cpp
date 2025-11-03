@@ -76,7 +76,7 @@ int main()
         //Nursery->setStock(std::move(SuccP), pair.second);
     }
 
-    //creating the different staff members
+    //creating the different staff members idk how to unclude this in manageStaff function
     Cashiers* cashier1 = new Cashiers("Kyle","C001");
     Cashiers* cashier2 = new Cashiers("Sandra","C002");
     Cashiers* cashier3 = new Cashiers("Jenice","C003");
@@ -112,7 +112,6 @@ int main()
         cout << "2. Manage Staff" << endl;
         cout << "3. Process Customer Orders" << endl;
         cout << "4. Process Garden Maintenance"<<endl;
-
         cout << "5. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
@@ -162,16 +161,61 @@ int main()
         switch(managerChoice)
         {
             case 1:
+                int staffchoice;
                 std::vector<Staff*> staffList = infoDesk->getStaffByType("Sales");
                 cout<< "\nSales Staff Management." << endl;
                 cout<< "1. Add a Sales Staff"<<endl;
                 cout<< "2. Remove a Sales Staff"<<endl;
+                cin>> staffchoice;
+                switch(staffchoice)
+                {
+                    case 1:
+                        //addSalesStaff();
+                        break;
+                    case 2:
+                        //removeSalesStaff();
+                        break;
+                    default:
+                        cout << "Invalid choice. Returning to main menu." << endl;
+                }
                 break;
             case 2:
+             int staffchoice;
                 std::vector<Staff*> staffList = infoDesk->getStaffByType("Gardener");
+                cout<< "\nGardener Staff Management." << endl;
+                cout<< "1. Add a Gardener Staff"<<endl;
+                cout<< "2. Remove a Gardener Staff"<<endl;
+                cin>> staffchoice;
+                switch(staffchoice)
+                {
+                    case 1:
+                        //addGardenerStaff();
+                        break;
+                    case 2:
+                        //removeGardenerStaff();
+                        break;
+                    default:
+                        cout << "Invalid choice. Returning to main menu." << endl;
+                }
                 break;
             case 3:
+                int staffchoice;
                 std::vector<Staff*> staffList = infoDesk->getStaffByType("Cashier");
+                cout<< "\nCashier Staff Management." << endl;
+                cout<< "1. Add a Cashier Staff"<<endl;
+                cout<< "2. Remove a Cashier Staff"<<endl;
+                cin>> staffchoice;
+                switch(staffchoice)
+                {
+                    case 1:
+                        //addCashierStaff();
+                        break;
+                    case 2:
+                        //removeCashierStaff();
+                        break;
+                    default:
+                        cout << "Invalid choice. Returning to main menu." << endl;
+                }   
                 break;
             default:
                 cout << "Invalid choice. Returning to main menu." << endl;
@@ -196,4 +240,56 @@ int main()
                 cout << "Invalid choice. Returning to main menu." << endl;
         }
     }   
+
+    void processCustomerOrders()
+    {
+        int choice;
+        cout << "\nProcess Customer Orders Selected." << endl;
+        //processOrders();
+        cout << "1. Return To Menu" << endl;
+        cout << "2. Exit" << endl;
+        cin >> choice;
+        if(cin.fail())
+        {   
+            clearBuffer();
+            cout << "Invalid input. Please enter a number between 1 and 2." << endl;
+            return;
+        }
+        switch(choice)
+        {
+            case 1:
+                displayMenu();
+            case 2:
+                exit(0);
+            default:
+                cout << "Invalid choice. Returning to main menu." << endl;
+        }
+    }
+
+    void processGardenMaintenance()
+    {
+        int choice;
+        cout << "\nProcess Garden Maintenance Selected." << endl;
+        //processMaintenance();
+        cout << "1. Return To Menu" << endl;
+        cout << "2. Exit" << endl;
+        cin >> choice;
+        if(cin.fail())
+        {   
+            clearBuffer();
+            cout << "Invalid input. Please enter a number between 1 and 2." << endl;
+            return;
+        }
+        switch(choice)
+        {
+            case 1:
+                displayMenu();
+            case 2:
+                exit(0);
+            default:
+                cout << "Invalid choice. Returning to main menu." << endl;
+        }
+    }
+
+
 
