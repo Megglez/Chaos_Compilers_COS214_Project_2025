@@ -3,7 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}",
                 "/home/blegibz/Qt/6.10.0/gcc_64/include",
                 "/home/blegibz/Qt/6.10.0/gcc_64/include/QtCore",
                 "/home/blegibz/Qt/6.10.0/gcc_64/include/QtGui",
@@ -30,7 +31,17 @@
             "compilerPath": "/usr/bin/g++",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/src",
+                    "/home/blegibz/Qt/6.10.0/gcc_64/include",
+                    "/usr/include",
+                    "/usr/local/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
         }
     ],
     "version": 4

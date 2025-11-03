@@ -50,7 +50,22 @@ public:
      * @brief Virtual destructor for proper polymorphism
      */
     virtual ~Prime();
+    /**
+     * @brief returns the name of he current stage the plant is in
+     * @return a string of the name of the curent stage
+     */
     virtual std::string getStageName() override;
+
+    /**
+     * @brief Creates a deep copy of the StageOfDevelopment object
+     * 
+     * @return StageOfDevelopment* A pointer to a newly allocated copy of the current object.
+     * The caller is responsible for managing the memory of the returned object.
+     * 
+     * @note This method implements the Prototype pattern, allowing polymorphic copying
+     * of derived stage objects without knowing their concrete types.
+     * 
+     */
     virtual StageOfDevelopment* clone() override;
 };
 

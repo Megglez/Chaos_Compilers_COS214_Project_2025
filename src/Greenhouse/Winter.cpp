@@ -9,6 +9,7 @@
 
 #include "Winter.h"
 #include "WinterCommand.h"
+#include "../Nursery/Nursery.h"
 
 /**
  * @brief Constructs Winter season and executes winter commands
@@ -89,6 +90,6 @@ std::string Winter::getSeason() {
  * - Preparing for spring planting season
  * - Marking the beginning of new growth cycle
  */
-void Winter::handleChange(){
-    //c->setState(new Spring(inventory));
+void Winter::handleChange(Nursery* nursery){
+    nursery->setState(new Spring(inventory));
 }

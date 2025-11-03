@@ -129,8 +129,17 @@ public:
      */
     virtual ~Inventory();
 
+    /**
+     * @brief returns the inventoryList
+     * @returns std::map<std::string, std::pair<std::unique_ptr<Plant>
+     */
     std::map<std::string, std::pair<std::unique_ptr<Plant>, int>>& getInventory();
 
+    /**
+     * @brief returns the number of stock of tha plant
+     * @returns int
+     */
+    int getPlantNumber(std::unique_ptr<Plant> plant);
 };
 
 #endif
