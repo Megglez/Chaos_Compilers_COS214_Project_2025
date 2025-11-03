@@ -135,6 +135,11 @@ public:
      */
     std::map<std::string, std::pair<std::unique_ptr<Plant>, int>>& getInventory();
 
+    /**
+     * @brief returns the number of stock of tha plant
+     * @returns int
+     */
+    int getPlantNumber(std::unique_ptr<Plant> plant);
 };
 
 #endif

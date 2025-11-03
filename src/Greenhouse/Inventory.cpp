@@ -413,3 +413,17 @@ void Inventory::notify(std::string& message) {
 Inventory::~Inventory()
 {
 }
+
+int Inventory::getPlantNumber(std::unique_ptr<Plant> plant){
+    int quantity;
+    if(plant){
+        auto it = inventoryList.find(plant->getName()); 
+        if (it != inventoryList.end()) {
+            quantity = it->second.second;
+        }else{
+            std::cout << "Error: Plant not found." << std::endl;
+        }
+    }else{
+        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
+    }
+}
