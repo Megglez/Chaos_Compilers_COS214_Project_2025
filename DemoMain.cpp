@@ -21,6 +21,11 @@
 #include "src/Greenhouse/Pot.h"
 #include "src/Greenhouse/SpecialArrangement.h"
 #include "src/Nursery/Nursery.h"
+#include "src/Staff/Cashiers.h"
+#include "src/Staff/Gardener.h"
+#include "src/Staff/Manager.h"
+#include "src/Staff/SalesStaff.h"
+#include "src/Staff/InfoDesk.h"
 #include <map>
 #include <limits>
 #include <string>
@@ -124,11 +129,12 @@ int main()
         return choice;
     }
 
-    void displayInventory()
+    void displayInventory(Nursery* nur)
     {
         int choice;
         cout << "\nInventory Management Selected." << endl;
-        //getInventory();
+        nur->getInventory()->getCatalogue();
+
         cout << "1. Return To Menu" << endl;
         cout << "2. Exit" << endl;
         cin >> choice;

@@ -55,15 +55,7 @@ private:
 	 * @brief Unique identifier for this customer
 	 */
 	int id;
-
-	/**
-	 * @brief Customer's shopping basket containing selected plants
-	 */
-	vector<Plant *> basket;
-
-	/**
-	 * @brief Staff member currently assisting this customer (if any)
-	 */
+	vector<Plant*> basket;
 	Staff *assignedStaff = nullptr;
 
 	/**

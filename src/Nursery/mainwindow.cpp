@@ -1,3 +1,14 @@
+/**
+ * @file mainwindow.cpp
+ * @brief Implementation of the MainWindow GUI class
+ * 
+ * Contains the implementation of all MainWindow methods for coordinating
+ * the nursery simulation through the Qt GUI framework.
+ * 
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h" // Assuming you fixed the "./ui_mainwindow.h" path
 
@@ -64,7 +75,9 @@ void MainWindow::handleSeasonChange(Season newSeason)
         case WINTER: seasonName = "Winter"; break;
     }
     qDebug() << "ACTION: SEASON CHANGED to" << seasonName;
-    
+    if (nursery) {
+        nursery->updateSeason(newSeason);
+    }
     if (nursery && nursery->getCurrentSeason()) {
         // Log the season change since we don't have UI labels yet
         qDebug() << "Season changed to:" << seasonName;

@@ -73,5 +73,5 @@ std::string Autumn::getSeason(){
  * @endcode
  */
 void Autumn::handleChange(Nursery* nursery){
-    nursery->setState(new Winter(inventory));
+    nursery->setSeason(new Winter(inventory));
 }
