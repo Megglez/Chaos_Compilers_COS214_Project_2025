@@ -40,6 +40,7 @@ void Staff::update(const std::string &update)
 }
 
 
+
 Staff::~Staff()
 {
 	delete this->role;
