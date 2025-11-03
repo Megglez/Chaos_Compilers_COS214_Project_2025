@@ -22,7 +22,11 @@
 #include "src/Greenhouse/SpecialArrangement.h"
 #include "src/Nursery/Nursery.h"
 #include <map>
+#include <limits>
+#include <string>
+#include <iostream>
 #include <memory>
+using namespace std;
 
 int main()
 {
@@ -72,6 +76,119 @@ int main()
         //Nursery->setStock(std::move(SuccP), pair.second);
     }
 
-    
+    //creating the different staff members
+    Cashiers* cashier1 = new Cashiers("Kyle","C001");
+    Cashiers* cashier2 = new Cashiers("Sandra","C002");
+    Cashiers* cashier3 = new Cashiers("Jenice","C003");
+
+    Gardener* gardener1 = new Gardener("Micheal","G001");
+    Gardener* gardener2 = new Gardener("Cindy","G002"); 
+    Gardener* gardener3 = new Gardener("Eve","G003");
+
+    SalesStaff* sales1 = new SalesStaff("Christene","S001");
+    SalesStaff* sales2 = new SalesStaff("David","S002");
+    SalesStaff* sales3 = new SalesStaff("Frank","S003");
+
+    Manager* manager1 = new Manager("Susan","M001");
+    Manager* manager2 = new Manager("George","M002");
+    Manager* manager3 = new Manager("Hannah","M003");
     return 0;
+
+    InfoDesk* infoDesk = new InfoDesk();
 }
+
+    void clearBuffer()
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+
+    int displayMenu()
+    {
+        int choice;
+        cout<<"\n===============================\n";
+        cout << "=== Nursery Management System ===" << endl;
+        cout << "1. View Inventory" << endl;
+        cout << "2. Manage Staff" << endl;
+        cout << "3. Process Customer Orders" << endl;
+        cout << "4. Process Garden Maintenance"<<endl;
+        cout << "5. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        if(cin.fail())
+        {
+            clearBuffer();
+            cout << "Invalid input. Please enter a number between 1 and 4." << endl;
+            return -1;
+        }
+        return choice;
+    }
+
+    void handleInventory()
+    {
+        int choice;
+        cout << "\nInventory Management Selected." << endl;
+        //getInventory();
+        cout << "1. Return To Menu" << endl;
+        cout << "2. Exit" << endl;
+        cin >> choice;
+        if(cin.fail())
+        {   
+            clearBuffer();
+            cout << "Invalid input. Please enter a number between 1 and 2." << endl;
+            return;
+        }
+        switch(choice)
+        {
+            case 1:
+                displayMenu();
+            case 2:
+                exit(0);
+            default:
+                cout << "Invalid choice. Returning to main menu." << endl;
+        }
+    }
+    void handleStaff()
+    {
+        int choice;
+        int managerChoice;
+        cout << "\nStaff Management Select Staff Type." << endl;
+        cout << "1. Sales Staff" << endl;
+        cout << "2. Gardener Staff" << endl;
+        cout << "3. Cashier Staff" << endl;
+        cin>> managerChoice;
+        switch(managerChoice)
+        {
+            case 1:
+                std::vector<Staff*> staffList = infoDesk->getStaffByType("Manager");
+                break;
+            case 2:
+                std::vector<Staff*> staffList = infoDesk->getStaffByType("Manager");
+                break;
+            case 3:
+                std::vector<Staff*> staffList = infoDesk->getStaffByType("Manager");
+                break;
+            default:
+                cout << "Invalid choice. Returning to main menu." << endl;
+        }
+
+        cout << "1. Return To Menu" << endl;
+        cout << "2. Exit" << endl;
+        cin >> choice;
+        if(cin.fail())
+        {   
+            clearBuffer();
+            cout << "Invalid input. Please enter a number between 1 and 2." << endl;
+            return;
+        }
+        switch(choice)
+        {
+            case 1:
+                displayMenu();
+            case 2:
+                exit(0);
+            default:
+                cout << "Invalid choice. Returning to main menu." << endl;
+        }
+    }   
+
