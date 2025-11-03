@@ -5,7 +5,6 @@ void Available::handle() {
 	if(this->staff)
 	{
 		std::cout<< "This staff member is has no tasks to complete - Available."<<std::endl;
-		return;
 	}
 
 	

@@ -1,16 +1,11 @@
 #ifndef GARDENER_H
 #define GARDENER_H
 #include <iostream>
-#include "../Staff/Staff.h"
+#include "Staff.h"
 using namespace std;
 
 class Gardener : public Staff
 {
-
-private:
- 
-queue<Plant*>plantRequestList;
-
 public:
 	Inventory *subject;
 	Gardener(std::string &name, std::string &id,InfoDesk& infodesk);

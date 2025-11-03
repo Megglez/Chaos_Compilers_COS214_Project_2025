@@ -60,7 +60,7 @@ target_include_directories(project_lib
 file(GLOB TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp)
 if(TEST_SOURCES)
   add_executable(run_tests ${TEST_SOURCES})
-  target_link_libraries(run_tests PRIVATE project_lib GTest::gtest_main Qt::Core)
+  target_link_libraries(run_tests PRIVATE project_lib GTest::gtest_main)
   include(GoogleTest)
   gtest_discover_tests(run_tests)
 endif()

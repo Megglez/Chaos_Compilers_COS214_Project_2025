@@ -1,3 +1,11 @@
+/**
+ * @file Browse.cpp
+ * @brief Implementation of the Browse action class
+ *
+ * Implements browsing behavior with asynchronous timer-based state transitions,
+ * plant selection, and inventory management integration.
+ */
+
 #include "Browse.h"
 #include "Purchasing.h" // Needed for getNextAction()
 #include "Customer.h"   // Need full Customer definition

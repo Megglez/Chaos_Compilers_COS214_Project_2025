@@ -1,5 +1,23 @@
 #include "Gardener.h"
 
+void Gardener::helpPlant() {
+	// TODO - implement Gardener::helpPlant
+	
+}
+
+void Gardener::getCareStrategy() {
+	// TODO - implement Gardener::getCareStrategy
+	
+}
+
+bool Gardener::getAvailability() {
+    return Staff::getAvailability();
+}
+
+void Gardener::setAvailability(bool isAvailable) {
+    Staff::setAvailability(isAvailable);
+	
+}
 
 Gardener::Gardener(std::string &name, std::string &id,InfoDesk& infodesk) {
 
@@ -17,8 +35,7 @@ void Gardener::performDuty()
 // attend to customers
 if(getCurrentCustomer())
 {
-
-}
+    return true;
 }
 
 void Gardener::setRole(){

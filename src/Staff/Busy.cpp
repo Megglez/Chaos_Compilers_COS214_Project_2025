@@ -7,8 +7,6 @@ void Busy::handle() {
 	if(staff)
 	{
 		cout<<staff->getName()<< " is completing this task."<<std::endl;
-		staff.
-
  
 		
 		//staff->setCurrentCustomer(nullptr);

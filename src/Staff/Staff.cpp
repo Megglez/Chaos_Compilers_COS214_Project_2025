@@ -108,8 +108,8 @@ void Staff::completeTask()
 	currentCustomer=cc;
 	this->changeState();
 	available=false;
-	cc->setAssignedStaff(this);
 	performDuty();
+	cc->setAssignedStaff(this);
 
  }
 

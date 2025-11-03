@@ -1,3 +1,11 @@
+/**
+ * @file Customer.cpp
+ * @brief Implementation of the Customer class
+ *
+ * Implements customer behavior including state management, basket operations,
+ * staff interactions, and state transitions through the State pattern.
+ */
+
 #include "Customer.h"
 #include <QDebug>
 #include "../Staff/Staff.h"

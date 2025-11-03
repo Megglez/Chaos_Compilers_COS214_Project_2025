@@ -8,7 +8,6 @@ class CustomerClock : public Clock
     Q_OBJECT
 public:
     explicit CustomerClock(QObject *parent = nullptr);
-    ~CustomerClock() {}
     void startCustomerClock(); 
 
 signals:

@@ -1,3 +1,11 @@
+/**
+ * @file Purchasing.cpp
+ * @brief Implementation of the Purchasing action class
+ *
+ * Implements purchasing behavior including cashier queue management,
+ * checkout processing, and customer departure after purchase completion.
+ */
+
 #include "Purchasing.h"
 #include "Customer.h"
 #include "../Staff/InfoDesk.h"
