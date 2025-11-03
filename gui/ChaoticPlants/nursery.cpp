@@ -316,14 +316,14 @@ void NurseryWindow::setupScene()
     QGraphicsRectItem *checkout = scene->addRect(SCENE_WIDTH - 150, SCENE_HEIGHT - 80, 130, 70,
                                                  QPen(Qt::darkRed, 2),
                                                  QBrush(QColor(255, 218, 185)));
-    QGraphicsTextItem *checkoutLabel = scene->addText("Checkout");
+    QGraphicsTextItem *checkoutLabel = scene->addText("Cashier");
     checkoutLabel->setPos(SCENE_WIDTH - 130, SCENE_HEIGHT - 60);
 
     // Draw Inventory box under season label (right side, main white area)
     int invBoxWidth = 220;
-    int invBoxHeight = 300;                  // Increased height for more content
-    int invBoxX = SCENE_WIDTH - invBoxWidth; // Moved 20px to the right
-    int invBoxY = 60;
+    int invBoxHeight = 300;                       // Increased height for more content
+    int invBoxX = SCENE_WIDTH - invBoxWidth + 60; // Moved 60px to the right
+    int invBoxY = 40;                             // Moved 20px up from 60
 
     // Create background box
     inventoryBox = scene->addRect(invBoxX, invBoxY, invBoxWidth, invBoxHeight,
