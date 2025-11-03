@@ -2,16 +2,15 @@
 
 
 
-Cashiers::Cashiers(std::string& name,std::string& id):Staff(name,id) {
+Cashiers::Cashiers(std::string& name,std::string& id,):Staff(name,id) {
 	// TODO - implement Cashiers::Cashiers
 	workArea="Till";
 
 }
 
 Cashiers::~Cashiers() {
-    if (subject) {
-        delete subject;
-    }
+
+    
 }
 
 std::string Cashiers::getStaffType() {

@@ -16,6 +16,8 @@ public:
 	Gardener();
 	virtual ~Gardener();
 	void performDuty();
+	void careForPlants();
+	void setRole() override;
 	
 
 };

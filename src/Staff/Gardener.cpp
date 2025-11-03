@@ -25,3 +25,7 @@ if(currentCustomer)
 
 }
 }
+
+void Gardener::setRole(){
+		this->role = "Gardener";
+	}
