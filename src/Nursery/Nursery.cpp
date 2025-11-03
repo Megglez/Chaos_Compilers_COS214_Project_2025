@@ -1,3 +1,14 @@
+/**
+ * @file Nursery.cpp
+ * @brief Implementation of the Nursery facade class
+ * 
+ * Contains the implementation of all Nursery methods for managing
+ * the complete nursery simulation system.
+ * 
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Nursery.h"
 #include <QDebug>
 #include "../Greenhouse/Spring.h"

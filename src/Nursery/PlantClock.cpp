@@ -1,3 +1,14 @@
+/**
+ * @file PlantClock.cpp
+ * @brief Implementation of the PlantClock class
+ * 
+ * Implements plant update timing for checking plant states and growth
+ * in the nursery simulation.
+ * 
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "PlantClock.h"
 #include <QDebug>
 

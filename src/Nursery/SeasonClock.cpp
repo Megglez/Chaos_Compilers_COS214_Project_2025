@@ -1,3 +1,14 @@
+/**
+ * @file SeasonClock.cpp
+ * @brief Implementation of the SeasonClock class
+ * 
+ * Implements seasonal transition timing for the nursery simulation,
+ * cycling through the four seasons at regular intervals.
+ * 
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "SeasonClock.h"
 #include <QDebug>
 
