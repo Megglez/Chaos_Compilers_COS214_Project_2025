@@ -23,14 +23,14 @@ string Manager::trackInventory() {
 Manager::Manager(string name,string id,InfoDesk *info,Inventory *inventory): Staff(name,id,infoDesk), subject(inventory)
 {
 	// TODO - implement Manager::Manager
-	workArea ="Management Office";
+	
 
 
 }
 
 Manager::~Manager()
 {
-	delete role;
+	
 }
 
 bool Manager::canHandleEnquiry()
@@ -49,7 +49,7 @@ void Manager::performDuty()
 			case 0: //"What summer plants are available?"
 				cout<<"Listing summer plants from inventory:"<<endl;
 				vector<Plant*> summerPlants;
-				summerPlants = subject->getInventory()->:FlowerBySeason("Summer");
+				summerPlants = subject->getInventory()->FlowerBySeason("Summer");
 				for (const auto& item : summerPlants) {
 					if (item) {
 						std::cout << item->getName() << std::endl;
@@ -60,7 +60,7 @@ void Manager::performDuty()
 			case 1: //"What winter plants are available?"
 			cout<<"Listing winter plants from inventory:"<<endl;
 				vector<Plant*> winterPlants;
-				summerPlants = subject->getInventory()->:FlowerBySeason("Winter");
+				summerPlants = subject->getInventory()->FlowerBySeason("Winter");
 				for (const auto& item : winterPlants) {
 					if (item) {
 						std::cout << item->getName() << std::endl;

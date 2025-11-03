@@ -1,46 +1,21 @@
 #include "SalesStaff.h"
 
-void SalesStaff::interact() {
-	// TODO - implement SalesStaff::interact
-	
-}
-
-void SalesStaff::QnA() {
-	// TODO - implement SalesStaff::QnA
-	
-}
-
-void SalesStaff::findPlant() {
-	// TODO - implement SalesStaff::findPlant
-	
-}
-
-bool SalesStaff::getAvailability() {
-    return Staff::getAvailability();
-}
-
-void SalesStaff::setAvailability(bool isAvailable) {
-    Staff::setAvailability(isAvailable);
-	
-}
 
 SalesStaff::SalesStaff() {
 	// TODO - implement SalesStaff::SalesStaff
-workArea ="Sales Floor";
+
 	
 }
 
 SalesStaff::~SalesStaff()
 {
-	delete role;
+	
 
 }
 
 void SalesStaff::performDuty()
 {
-    interact();
-    QnA();
-    findPlant();
+
 }
 
 bool SalesStaff::canHandleEnquiry()
@@ -55,7 +30,7 @@ switch (/*getSelectedQuestion*/)
 			case 0: //"What summer plants are available?"
 				cout<<"Listing summer plants from inventory:"<<endl;
 				vector<Plant*> summerPlants;
-				summerPlants = subject->getInventory()->:FlowerBySeason("Summer");
+				summerPlants = subject->getInventory()->FlowerBySeason("Summer");
 				for (const auto& item : summerPlants) {
 					if (item) {
 						std::cout << item->getName() << std::endl;
@@ -66,7 +41,7 @@ switch (/*getSelectedQuestion*/)
 			case 1: //"What winter plants are available?"
 			cout<<"Listing winter plants from inventory:"<<endl;
 				vector<Plant*> winterPlants;
-				summerPlants = subject->getInventory()->:FlowerBySeason("Winter");
+				summerPlants = subject->getInventory()->FlowerBySeason("Winter");
 				for (const auto& item : winterPlants) {
 					if (item) {
 						std::cout << item->getName() << std::endl;
@@ -92,7 +67,7 @@ switch (/*getSelectedQuestion*/)
 
  void SalesStaff::setRole()
  {
-	 this->role = "SalesStaff";
+	
  }
 
 

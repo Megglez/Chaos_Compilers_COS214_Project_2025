@@ -4,10 +4,11 @@
 #include "StaffState.h"
 #include "Available.h"
 #include "Busy.h"
+#include "Inventory.h"
 using namespace std;
  
 class StaffState;
-class Inventory;
+//class Inventory;
 class InfoDesk;  // Forward declaration
 class Customer;  // Forward declaration
 class Staff
