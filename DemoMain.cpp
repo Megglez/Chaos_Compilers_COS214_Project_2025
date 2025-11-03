@@ -112,6 +112,7 @@ int main()
         cout << "2. Manage Staff" << endl;
         cout << "3. Process Customer Orders" << endl;
         cout << "4. Process Garden Maintenance"<<endl;
+
         cout << "5. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
@@ -124,7 +125,7 @@ int main()
         return choice;
     }
 
-    void handleInventory()
+    void displayInventory()
     {
         int choice;
         cout << "\nInventory Management Selected." << endl;
@@ -148,6 +149,7 @@ int main()
                 cout << "Invalid choice. Returning to main menu." << endl;
         }
     }
+
     void handleStaff()
     {
         int choice;
@@ -160,13 +162,16 @@ int main()
         switch(managerChoice)
         {
             case 1:
-                std::vector<Staff*> staffList = infoDesk->getStaffByType("Manager");
+                std::vector<Staff*> staffList = infoDesk->getStaffByType("Sales");
+                cout<< "\nSales Staff Management." << endl;
+                cout<< "1. Add a Sales Staff"<<endl;
+                cout<< "2. Remove a Sales Staff"<<endl;
                 break;
             case 2:
-                std::vector<Staff*> staffList = infoDesk->getStaffByType("Manager");
+                std::vector<Staff*> staffList = infoDesk->getStaffByType("Gardener");
                 break;
             case 3:
-                std::vector<Staff*> staffList = infoDesk->getStaffByType("Manager");
+                std::vector<Staff*> staffList = infoDesk->getStaffByType("Cashier");
                 break;
             default:
                 cout << "Invalid choice. Returning to main menu." << endl;
