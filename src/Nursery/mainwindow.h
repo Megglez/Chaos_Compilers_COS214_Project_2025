@@ -7,6 +7,7 @@
 #include "SeasonClock.h"
 #include "CustomerClock.h"
 #include "Nursery.h"
+#include "../Greenhouse/Seasons.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,5 +34,6 @@ private:
     PlantClock *plantClock;
     SeasonClock *seasonClock;
     CustomerClock *customerClock;
+    Nursery *nursery;
 };
 #endif // MAINWINDOW_H

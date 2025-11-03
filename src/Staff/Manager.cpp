@@ -5,14 +5,7 @@ void Manager::trackInventory() {
 	
 }
 
-bool Manager::getAvailability() {
-    return Staff::getAvailability();
-}
 
-void Manager::setAvailability(bool isAvailable) {
-    Staff::setAvailability(isAvailable);
-	
-}
 
 Manager::Manager() {
 	// TODO - implement Manager::Manager
@@ -23,12 +16,7 @@ Manager::~Manager()
 {
 }
 
-void Manager::performDuty()
+bool SalesStaff::canHandleEnquiry()
 {
-    trackInventory();
-}
-
-bool Manager::canHandleEnquiry()
-{
-    return true;
+	return true;
 }

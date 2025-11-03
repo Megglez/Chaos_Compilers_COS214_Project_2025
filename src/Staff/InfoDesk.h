@@ -4,18 +4,20 @@
 #include <queue>
 #include <vector>
 #include <algorithm>
-#include <string>
+#include "./Customer/Customer.h"
+//#include "Staff.h"
 
-// Forward declarations
+using namespace std;
+
 class Staff;
-class Customer;
+//class Customer;
 class InfoDesk {
 	private:
 	 // 
 	Staff*chainHead; //staff member with most priority
 	std::queue<Customer*> waitingCustomers; // queued customers 
 	std::vector<Staff*> AllStaff; 
-	std::vector<Staff*> AvailableStaff;
+	
 	Staff* findAvailableStaffThroughChain();
 
 public:

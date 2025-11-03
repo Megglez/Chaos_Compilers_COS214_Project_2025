@@ -39,7 +39,7 @@ void Staff::update(const std::string &update)
 	std::cout << "New Notification: " << update << std::endl;
 }
 
-Staff::Staff()
+Staff::Staff(std::string &name,std::string &id)
 {
     name = "";
     staffID = "";
@@ -119,8 +119,8 @@ void Staff::completeTask()
 	currentCustomer=cc;
 	this->changeState();
 	available=false;
-	performDuty();
 	cc->setAssignedStaff(this);
+	performDuty();
 
  }
 

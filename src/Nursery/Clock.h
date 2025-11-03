@@ -24,7 +24,7 @@ private slots:
     void onInternalTimeout(); 
 
 private:
-    QTimer *internalTimer;
+    QTimer* internalTimer;
 };
 
 #endif
