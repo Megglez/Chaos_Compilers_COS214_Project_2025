@@ -15,12 +15,20 @@ CXXFLAGS = -g -std=c++17 -Wall -Wextra $(QT_INCLUDES) $(QT_DEFINES)   # ← adde
 QT_INCLUDES = $(shell pkg-config --cflags Qt5Core Qt5Gui Qt5Widgets 2>/dev/null || echo "-I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtWidgets")
 QT_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
 QT_LIBS = $(shell pkg-config --libs Qt5Core Qt5Gui Qt5Widgets 2>/dev/null || echo "-lQt5Core -lQt5Gui -lQt5Widgets")
+CXXFLAGS = -g -std=c++17 -Wall -Wextra $(QT_INCLUDES)
+QT_DIR = /home/blegibz/Qt/6.10.0/gcc_64
+QT_INCLUDES = -I$(QT_DIR)/include -I$(QT_DIR)/include/QtCore -I$(QT_DIR)/include/QtGui -I$(QT_DIR)/include/QtWidgets
+QT_LIBS = -L$(QT_DIR)/lib -lQt6Core -lQt6Gui -lQt6Widgets
 GCOV_FLAGS = -fprofile-arcs -ftest-coverage
 
 # Find all source files in src subfolders
 SRC_DIRS = src/Greenhouse src/Staff src/Customer src/Nursery
 SRCS = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
-SRCS := $(filter-out %_test.cpp %Test.cpp src/Nursery/mainwindow.cpp src/Nursery/main.cpp, $(SRCS))
+# Add ONLY Nursery.cpp but NOT mainwindow.cpp
+SRCS += src/Nursery/Nursery.cpp
+SRCS := $(filter-out %_test.cpp %Test.cpp, $(SRCS))
+SRCS := $(filter-out src/Nursery/mainwindow.cpp, $(SRCS))  # ← EXCLUDE mainwindow.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 

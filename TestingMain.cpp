@@ -24,6 +24,7 @@
 #include "src/Customer/Customer.h"
 #include "src/Customer/Browse.h"
 #include "src/Customer/Enquire.h"
+#include "src/Nursery/Nursery.h"
 
 #include <memory>
 #include <iostream>
@@ -65,13 +66,13 @@ void testGreenhouse()
     std::unique_ptr<Plant> Succ(SuccP->planterMethod("Cactus"));
     std::unique_ptr<Plant> Tree(TreeP->planterMethod("Willow"));
     std::unique_ptr<Plant> FlowerWinter(FlowerW->planterMethod("Snowdrops"));
-
-    Plant *Flower2 = FlowerP->planterMethod("Rose Bush");
-    GiftWrap *gift = new GiftWrap(Flower2);
-    // Pot* pot = new Pot(gift);
+    
+    Plant* Flower2 = FlowerP->planterMethod("Rose Bush");
+    GiftWrap* gift = new GiftWrap(Flower2);
+    Pot* pot = new Pot(gift);
     gift->package();
-    // pot->package();
-    delete gift;
+    pot->package();
+    delete pot;
 
     // testing the different strategies
     cout << "\n=====Plants Help Strategies=====" << endl;
@@ -105,7 +106,21 @@ void testGreenhouse()
     test_inv->getCatalogue();
     test_inv->getCatalogue();
 
-    StateCommand *command = new SpringCommand(test_inv);
+    Nursery nursery;
+
+    for (int i = 0; i < 10; i++) {
+        std::cout << "\n--- Cycle " << (i + 1) << " ---" << std::endl;
+        nursery.handleChange();
+        
+        // You can add some debugging output here
+        // For example, check what season it is now:
+        Seasons* currentSeason = nursery.getCurrentSeason();
+        if (currentSeason) {
+            std::cout << "Season changed!" << std::endl;
+        }
+    }
+
+    /*StateCommand* command = new SpringCommand(test_inv);
     command->execute();
     test_inv->getCatalogue();
 
@@ -125,8 +140,9 @@ void testGreenhouse()
     for (const auto &entry : inv)
     {
         std::cout << "- " << entry.second.first.get()->getState()->getStageName();
-    }
-
+    }*/
+    
+    
     delete test_st;
     delete test_inv;
     delete FlowerP;
@@ -140,7 +156,7 @@ void testGreenhouse()
     delete Succ5;
     delete Tree6;
 
-    delete command;
+    /*delete command;
     delete command2;
     delete command3;
     delete command4;

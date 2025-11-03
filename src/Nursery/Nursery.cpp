@@ -1,5 +1,6 @@
 #include "Nursery.h"
 #include <QDebug>
+#include "../Greenhouse/Spring.h"
 
 Nursery::Nursery(QObject *parent) : QObject(parent)
 {
@@ -13,8 +14,10 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
     // Initialize Plant Management
     inventory = new Inventory();
     stock = new Stock(inventory);
-    currentSeason = new Summer(inventory); // Start with Summer season
-
+    flowerFactory = new FlowerPlanter();
+    herbFactory = new HerbPlanter();
+    currentSeason = new Spring(inventory);
+    
     // Initialize Staff Management
     infoDesk = new InfoDesk();
     startPlants = new AddStock(inplace_merge)

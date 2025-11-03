@@ -99,6 +99,10 @@ void Stock::printStock(){
 	}
 }
 
+/**
+* @brief Returns the total number of plants in the stock
+* @return int for the number of plants
+*/
 int Stock::getTotalPlants(){
 	return StockList.size();
 }

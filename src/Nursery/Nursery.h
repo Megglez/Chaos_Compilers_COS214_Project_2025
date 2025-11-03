@@ -24,7 +24,7 @@ using namespace std;
 
 class Nursery : public QObject // <-- INHERIT FROM QObject
 {
-Q_OBJECT // REQUIRED
+    Q_OBJECT // REQUIRED
 private:
 
     // Customer Management
@@ -45,7 +45,7 @@ private:
 
 public:
     explicit Nursery(QObject *parent = nullptr);
-    virtual ~Nursery() override;
+    ~Nursery(); //override;
 
     // Getters
     Stock *getStock() const { return stock; }
@@ -76,3 +76,4 @@ public slots:
 };
 
 #endif
+
