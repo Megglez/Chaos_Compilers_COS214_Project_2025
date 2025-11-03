@@ -8,6 +8,7 @@
 
 #include "Autumn.h"
 #include "AutumnCommand.h"
+#include "../Nursery/Nursery.h"
 
 /**
  * @brief Constructs Autumn season and executes autumn commands
@@ -71,8 +72,6 @@ std::string Autumn::getSeason(){
  * }
  * @endcode
  */
-void Autumn::handleChange(){
-    //c->setState(new Winter(inventory));
-    // TODO: Implement state transition to Winter
-    // TODO: Need access to context object to call setState()
+void Autumn::handleChange(Nursery* nursery){
+    nursery->setState(new Winter(inventory));
 }

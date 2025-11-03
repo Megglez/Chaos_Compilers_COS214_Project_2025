@@ -8,6 +8,7 @@
 #include "../Customer/CustomerCreator.h"
 #include "../Staff/Staff.h"
 #include "../Staff/InfoDesk.h"
+#include "../Staff/Cashiers.h"
 #include "../Greenhouse/Stock.h"
 #include "../Greenhouse/Inventory.h"
 #include "../Greenhouse/Seasons.h"
@@ -30,6 +31,7 @@ Q_OBJECT // REQUIRED
 
     // Staff Management
     InfoDesk *infoDesk;
+    Cashiers *cashier;
     vector<Staff *> staff;
 
     // Plant Management
@@ -44,12 +46,22 @@ Q_OBJECT // REQUIRED
 public:
     explicit Nursery(QObject *parent = nullptr);
     virtual ~Nursery() override;
-
     // Getters
     Stock *getStock() const { return stock; }
     Inventory *getInventory() const { return inventory; }
     InfoDesk *getInfoDesk() const { return infoDesk; }
+    Cashiers *getCashier() const { return cashier; }
     Seasons *getCurrentSeason() const { return currentSeason; }
+
+    // Setter for season changes
+    void setState(Seasons *newSeason)
+    {
+        if (currentSeason)
+        {
+            delete currentSeason;
+        }
+        currentSeason = newSeason;
+    }
 
     // Plant Factory Access
     FlowerPlanter *getFlowerFactory() const { return flowerFactory; }

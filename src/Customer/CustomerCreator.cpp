@@ -3,7 +3,11 @@
 #include <random>
 #include <map>
 #include <string>
+#include <algorithm>
 #include "../Nursery/Nursery.h"
+#include "../Greenhouse/GiftWrap.h"
+#include "../Greenhouse/Pot.h"
+#include "../Greenhouse/SpecialArrangement.h"
 
 CustomerCreator::CustomerCreator()
 {
@@ -17,8 +21,8 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
 {
     qDebug() << "CustomerCreator: A new customer is being created.";
 
-    Plant *chosenPlant = nullptr;
-    int quantityWanted = 0;
+    std::vector<Plant *> chosenPlants;
+    std::vector<int> quantitiesWanted;
 
     random_device rd;
     mt19937 gen(rd());
@@ -26,13 +30,57 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
 
     if (stock && stock->getStockListSize() > 0)
     {
-        uniform_int_distribution<> plantDist(0, stock->getStockListSize() - 1);
-        int plantIndex = plantDist(gen);
+        // Random integer between 0 and 1 to determine if customer wants 1 or 2 plants
+        uniform_int_distribution<> numTypesDist(0, 1);
+        int numPlants = numTypesDist(gen) + 1; // Results in 1 or 2
 
-        chosenPlant = stock->getPlantByIndex(plantIndex);
-
+        // Random index between 0 and last index of stock vector for plant selection
+        uniform_int_distribution<> plantIndexDist(0, stock->getStockListSize() - 1);
         uniform_int_distribution<> quantityDist(1, 10);
-        quantityWanted = quantityDist(gen);
+
+        // Keep track of already selected plant names to ensure distinct plant types
+        std::vector<std::string> selectedPlantNames;
+
+        for (int i = 0; i < numPlants; i++)
+        {
+            Plant *chosenPlant = nullptr;
+            int attempts = 0;
+            const int maxAttempts = 50; // Prevent infinite loop
+
+            // Generate random index and get the plant
+            // Ensure the plant name is different from already selected plants
+            do
+            {
+                int plantIndex = plantIndexDist(gen);
+                chosenPlant = stock->getPlantByIndex(plantIndex);
+                attempts++;
+
+                // If only 1 plant available in stock, or too many attempts, accept whatever we get
+                if (attempts >= maxAttempts || stock->getStockListSize() == 1)
+                {
+                    break;
+                }
+            } while (chosenPlant && std::find(selectedPlantNames.begin(), selectedPlantNames.end(), chosenPlant->getName()) != selectedPlantNames.end());
+
+            // Skip if this is a duplicate plant name and we already have at least one plant
+            if (chosenPlant && std::find(selectedPlantNames.begin(), selectedPlantNames.end(), chosenPlant->getName()) != selectedPlantNames.end() && !selectedPlantNames.empty())
+            {
+                continue;
+            }
+
+            if (chosenPlant)
+            {
+                selectedPlantNames.push_back(chosenPlant->getName());
+                int quantityWanted = quantityDist(gen);
+
+                chosenPlants.push_back(chosenPlant);
+                quantitiesWanted.push_back(quantityWanted);
+
+                qDebug() << "CustomerCreator: Customer wants" << quantityWanted << "of" << chosenPlant->getName().c_str();
+            }
+        }
+
+        qDebug() << "CustomerCreator: Customer wants" << chosenPlants.size() << "plant(s).";
     }
     else
     {
@@ -44,25 +92,138 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
 
     if (actionType == 0)
     {
-        newCustomer = new Customer(new Browse(chosenPlant, quantityWanted), nursery, nursery);
-        qDebug() << "CustomerCreator: Created a Browsing Customer.";
+        // Customer is browsing - check if they want plant decorations
+        uniform_int_distribution<> decorationDist(0, 1);
+        int wantsDecoration = decorationDist(gen);
+
+        if (wantsDecoration == 1 && chosenPlants.size() > 0)
+        {
+            // Generate random decoration type (0-3)
+            uniform_int_distribution<> decorationTypeDist(0, 2);
+            int decorationType = decorationTypeDist(gen);
+
+            // Apply decoration to the plants
+            std::vector<Plant *> decoratedPlants;
+            for (Plant *plant : chosenPlants)
+            {
+                Plant *decoratedPlant = plant;
+                switch (decorationType)
+                {
+                case 0:
+                    decoratedPlant = new GiftWrap(plant->clone());
+                    qDebug() << "CustomerCreator: Customer wants GiftWrap decoration.";
+                    break;
+                case 1:
+                    decoratedPlant = new Pot(plant->clone());
+                    qDebug() << "CustomerCreator: Customer wants Pot decoration.";
+                    break;
+                case 2:
+                    decoratedPlant = new SpecialArrangement(plant->clone());
+                    qDebug() << "CustomerCreator: Customer wants SpecialArrangement decoration.";
+                    break;
+                }
+                decoratedPlants.push_back(decoratedPlant);
+            }
+
+            newCustomer = new Customer(new Browse(decoratedPlants, quantitiesWanted), nursery, nursery);
+            qDebug() << "CustomerCreator: Created a Browsing Customer with decorated plants.";
+        }
+        else if (chosenPlants.size() > 0)
+        {
+            newCustomer = new Customer(new Browse(chosenPlants, quantitiesWanted), nursery, nursery);
+            qDebug() << "CustomerCreator: Created a Browsing Customer.";
+        }
+        else
+        {
+            newCustomer = new Customer(new Browse(nullptr, 0), nursery, nursery);
+            qDebug() << "CustomerCreator: Created a Browsing Customer with no plants.";
+        }
     }
     else
     {
-        // Create map of enquiry questions
-        std::map<int, std::string> enquiryQuestions = {
-            {0, "What summer plants are available?"},
-            {1, "What winter plants do you have?"},
-            {2, "What is the best time of day to water my plants?"},
-            {3, "How many categories of plants do you sell?"}};
+        // Customer is enquiring - determine question type (0 = advice, 1 = information)
+        uniform_int_distribution<> questionTypeDist(0, 1);
+        int questionType = questionTypeDist(gen);
+        std::string selectedQuestion;
 
-        // Generate random question key (0-3)
-        uniform_int_distribution<> questionDist(0, 3);
-        int questionKey = questionDist(gen);
-        std::string selectedQuestion = enquiryQuestions[questionKey];
+        if (questionType == 0)
+        {
+            // Advice question - use the map with random selection
+            std::map<int, std::string> adviceQuestions = {
+                {0, "What summer plants are available?"},
+                {1, "What winter plants do you have?"},
+                {2, "What is the best time of day to water my plants?"},
+                {3, "How many categories of plants do you sell?"}};
 
-        newCustomer = new Customer(new Enquire(chosenPlant, selectedQuestion), nursery, nursery);
-        qDebug() << "CustomerCreator: Created an Inquiring Customer with question:" << selectedQuestion.c_str();
+            // Generate random question key (0-3)
+            uniform_int_distribution<> questionDist(0, 3);
+            int questionKey = questionDist(gen);
+            selectedQuestion = adviceQuestions[questionKey];
+
+            if (chosenPlants.size() > 0)
+            {
+                newCustomer = new Customer(new Enquire(chosenPlants, selectedQuestion, 0), nursery, nursery);
+                qDebug() << "CustomerCreator: Created an Inquiring Customer with advice question:" << selectedQuestion.c_str();
+            }
+            else
+            {
+                newCustomer = new Customer(new Enquire(nullptr, selectedQuestion, 0), nursery, nursery);
+                qDebug() << "CustomerCreator: Created an Inquiring Customer with advice question (no plants).";
+            }
+        }
+        else
+        {
+            // Information question - ask about inventory quantity of a specific plant
+            if (stock && stock->getStockListSize() > 0)
+            {
+                // Generate random index between 0 and max index of stock vector
+                uniform_int_distribution<> plantIndexDist(0, stock->getStockListSize() - 1);
+                int plantIndex = plantIndexDist(gen);
+                Plant *questionPlant = stock->getPlantByIndex(plantIndex);
+
+                if (questionPlant)
+                {
+                    // Get the inventory to check quantity
+                    int quantity = 0;
+                    if (nursery)
+                    {
+                        Inventory *inventory = nursery->getInventory();
+                        if (inventory)
+                        {
+                            auto &invMap = inventory->getInventory();
+                            auto it = invMap.find(questionPlant->getName());
+                            if (it != invMap.end())
+                            {
+                                quantity = it->second.second;
+                            }
+                        }
+                    }
+
+                    // Create the information question
+                    selectedQuestion = "How many " + questionPlant->getName() + " do you have in stock?";
+
+                    // Create customer with the plant they're asking about
+                    std::vector<Plant *> enquiryPlants = {questionPlant};
+                    newCustomer = new Customer(new Enquire(enquiryPlants, selectedQuestion, 1), nursery, nursery);
+                    qDebug() << "CustomerCreator: Created an Inquiring Customer with information question:"
+                             << selectedQuestion.c_str() << "(Answer:" << quantity << ")";
+                }
+                else
+                {
+                    // Fallback to advice question if plant not found
+                    selectedQuestion = "What plants do you have available?";
+                    newCustomer = new Customer(new Enquire(nullptr, selectedQuestion, 0), nursery, nursery);
+                    qDebug() << "CustomerCreator: Created an Inquiring Customer with fallback question.";
+                }
+            }
+            else
+            {
+                // Stock is empty, fallback to advice question
+                selectedQuestion = "What plants do you have available?";
+                newCustomer = new Customer(new Enquire(nullptr, selectedQuestion, 0), nursery, nursery);
+                qDebug() << "CustomerCreator: Created an Inquiring Customer with fallback question (empty stock).";
+            }
+        }
     }
 
     return newCustomer;

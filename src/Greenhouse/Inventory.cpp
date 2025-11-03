@@ -159,6 +159,7 @@ void Inventory::updatePlantStagesForSeason(const std::string& season) {
  */
 StageOfDevelopment* Inventory::determineStageForSeason(Plant* plant, const std::string& season) {
     std::string plantType = plant->getType();
+    int watered = plant->getWatered();
     
     if (season == "Spring") {
         // Spring: Most plants start growing
@@ -249,6 +250,8 @@ void Inventory::seasonalChange(std::string& fromSeason, std::string& toSeason){
 
 
 
+
+
 /**
  * @brief Adjusts stock levels based on seasonal requirements
  * @param season The season to adjust stock for
@@ -263,13 +266,26 @@ void Inventory::adjustStockForSeason(const std::string& season) {
     std::cout << "Adjusting stock for season: " << season << std::endl;
     
 
-    for (auto& [plantName, plantData] : inventoryList) {
-        
-        auto& [plantPtr, currentStock] = plantData;
-        
+    // Iterate with iterator so we can safely erase dead plants while traversing
+    for (auto it = inventoryList.begin(); it != inventoryList.end(); ) {
+        std::string plantName = it->first;
+        auto& plantData = it->second;
+        auto& plantPtr = plantData.first;
+        auto& currentStock = plantData.second;
+
         if (plantPtr) {
+            // If the plant has zero water, it dies and should be removed from inventory
+            int watered = plantPtr->getWatered();
+            if (watered == 0) {
+                std::cout << "Plant '" << plantName << "' has no water left and died. Removing from inventory." << std::endl;
+                std::string message = plantName + " has died due to lack of water and removed from inventory";
+                notify(message);
+                it = inventoryList.erase(it);
+                continue; // move to next element
+            }
+
             int newStockLevel = currentStock; // Default to current stock
-            
+
             // Check if it's a Winter flower using the virtual method
             if (plantPtr->isWinter()) {
                 // Winter flowers have reversed seasonal cycle
@@ -342,7 +358,11 @@ void Inventory::adjustStockForSeason(const std::string& season) {
             
             // Update the stock level
             currentStock = newStockLevel;
+            plantPtr->setWatered(0);
         }
+
+        
+        ++it;
     }
     
     std::cout << "Seasonal stock adjustment completed for " << season << std::endl;
@@ -419,4 +439,18 @@ void Inventory::notify(std::string& message) {
  */
 Inventory::~Inventory()
 {
+}
+
+int Inventory::getPlantNumber(std::unique_ptr<Plant> plant){
+    int quantity;
+    if(plant){
+        auto it = inventoryList.find(plant->getName()); 
+        if (it != inventoryList.end()) {
+            quantity = it->second.second;
+        }else{
+            std::cout << "Error: Plant not found." << std::endl;
+        }
+    }else{
+        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
+    }
 }

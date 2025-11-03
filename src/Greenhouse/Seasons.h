@@ -12,6 +12,7 @@
 #include <iostream>
 using namespace std;
 #include "StateCommand.h"
+class Nursery;
 
 /**
  * @class Seasons
@@ -50,7 +51,7 @@ public:
      * 
      * @post The system transitions to the next appropriate season
      */
-    virtual void handleChange() = 0; // should take in facade as the context
+    virtual void handleChange(Nursery* nursery) = 0; // should take in facade as the context
     
     /**
      * @brief Gets the name of the current season

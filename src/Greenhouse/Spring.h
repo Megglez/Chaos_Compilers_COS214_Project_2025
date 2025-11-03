@@ -12,6 +12,7 @@
 #include <iostream>
 using namespace std;
 #include "Seasons.h"
+#include "Summer.h"
 
 /**
  * @class Spring
@@ -53,7 +54,7 @@ public:
      * 
      * @post The system transitions from spring to summer season
      */
-    virtual void handleChange() override;
+    virtual void handleChange(Nursery* nursery) override;
     
     /**
      * @brief Returns the name of the spring season
