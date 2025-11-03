@@ -7,7 +7,6 @@ https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025
 
 ## Documentation
 
-* [Functional and Non-Functional Requirements](https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025/blob/Documentation/Functional%26NonFunctionalRequirements.md)
 * [Report](https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025/blob/Documentation/Report.md)
 * [README](https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025/blob/main/README.md)
 
