@@ -139,7 +139,9 @@ public:
      * @brief returns the number of stock of tha plant
      * @returns int
      */
-    int getPlantNumber(std::unique_ptr<Plant> plant);
+    int getPlantNumber(Plant* plant);
+
+    vector<Plant*> FlowerBySeason(std::string season);
 };
 
 #endif

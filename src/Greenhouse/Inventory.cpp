@@ -456,3 +456,24 @@ int Inventory::getPlantNumber(Plant* plant){ //make plant pointer
     }
   return quantity;
 }
+
+
+vector<Plant*> Inventory::FlowerBySeason(std::string season){
+    vector<Plant*> flowers;
+    for (auto& [plantName, plantData] : inventoryList) {
+        auto& [plantPtr, currentStock] = plantData;
+        
+        if (plantPtr && plantPtr->getType() == "flower") {
+            if(season == "Summer"){
+                if(!plantPtr->isWinter()){
+                    flowers.push_back(plantPtr.get());
+                }
+            }else if(season == "Winter"){
+                if(plantPtr->isWinter()){
+                    flowers.push_back(plantPtr.get());
+                }
+            }
+        }
+    }
+    return flowers;
+}
