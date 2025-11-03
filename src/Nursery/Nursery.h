@@ -12,6 +12,9 @@
 #include "../Greenhouse/Inventory.h"
 #include "../Greenhouse/Seasons.h"
 #include "../Greenhouse/Summer.h"
+#include "../Greenhouse/Spring.h"
+#include "../Greenhouse/Winter.h"
+#include "../Greenhouse/Autumn.h"
 #include "../Greenhouse/FlowerPlanter.h"
 #include "../Greenhouse/HerbPlanter.h"
 #include "../Greenhouse/TreePlanter.h"
@@ -51,13 +54,13 @@ public:
     Seasons *getCurrentSeason() const { return currentSeason; }
 
     //Setters
-    void setStock(unique_ptr<Plant>&& plant, int amount);
+    void setStock(unique_ptr<Plant> plant, int amount);
 
     // Plant Factory Access
-    FlowerPlanter *getFlowerFactory() const { return flowerFactory; }
-    HerbPlanter *getHerbFactory() const { return herbFactory; }
-    TreePlanter *getTreeFactory() const { return treeFactory; }
-    SucculentPlanter *getSucculentFactory() const { return succulentFactory; }
+    // FlowerPlanter *getFlowerFactory() const { return flowerFactory; }
+    // HerbPlanter *getHerbFactory() const { return herbFactory; }
+    // TreePlanter *getTreeFactory() const { return treeFactory; }
+    // SucculentPlanter *getSucculentFactory() const { return succulentFactory; }
 
 
     // Customer Management

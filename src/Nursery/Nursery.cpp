@@ -1,8 +1,4 @@
 #include "Nursery.h"
-#include "Spring.h"
-#include "Summer.h"
-#include "Autumn.h"
-#include "Winter.h"
 #include <QDebug>
 
 Nursery::Nursery(QObject *parent) : QObject(parent)
@@ -24,7 +20,7 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
     startPlants = new AddStock(inplace_merge)
 }
 
-void Nursery::setStock(unique_ptr<Plant> &&plant, int amount)
+void Nursery::setStock(unique_ptr<Plant> plant, int amount)
 {
     startPlants->execute(plant, amount);
 }
@@ -50,8 +46,6 @@ Nursery::~Nursery()
     // Clean up plant management
     delete stock;
     delete inventory;
-    delete flowerFactory;
-    delete herbFactory;
     delete currentSeason;
 }
 
