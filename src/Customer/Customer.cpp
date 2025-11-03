@@ -34,16 +34,25 @@ void Customer::setAction(Action *newAction)
 
 bool Customer::addToBasket(Plant *plants, int quantity)
 {
-    std::cout << quantity;
-    plants->getName();
-    return false;
+    if (!plants || quantity <= 0)
+    {
+        return false;
+    }
+
+    for (int i = 0; i < quantity; i++)
+    {
+        basket.push_back(plants);
+    }
+
+    std::cout << "Customer " << id << " added " << quantity << " of "
+              << plants->getName() << " to basket." << std::endl;
+    return true;
 }
 
-bool Customer::removeFromBasket(Plant *plants, int quantity)
+void Customer::clearBasket()
 {
-    std::cout << quantity;
-    plants->getName();
-    return false;
+    std::cout << "Customer " << id << " basket cleared. Had " << basket.size() << " items." << std::endl;
+    basket.clear();
 }
 
 int Customer::getId() const

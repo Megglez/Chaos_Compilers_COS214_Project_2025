@@ -30,7 +30,7 @@ TARGET = TestingMain
 all: $(TARGET)
 
 # MOC files needed for Qt classes
-MOC_SRCS = src/Customer/moc_Customer.cpp src/Nursery/moc_Nursery.cpp src/Nursery/moc_Clock.cpp \
+MOC_SRCS = src/Customer/moc_Customer.cpp src/Customer/moc_Browse.cpp src/Nursery/moc_Nursery.cpp src/Nursery/moc_Clock.cpp \
            src/Nursery/moc_CustomerClock.cpp src/Nursery/moc_PlantClock.cpp src/Nursery/moc_SeasonClock.cpp
 MOC_OBJS = $(MOC_SRCS:.cpp=.o)
 
@@ -40,6 +40,9 @@ $(TARGET): TestingMain.cpp $(OBJS) $(MOC_OBJS)
 
 # Generate MOC files for Qt classes
 src/Customer/moc_Customer.cpp: src/Customer/Customer.h
+	moc-qt5 $(QT_INCLUDES) $< -o $@
+
+src/Customer/moc_Browse.cpp: src/Customer/Browse.h
 	moc-qt5 $(QT_INCLUDES) $< -o $@
 
 src/Nursery/moc_Nursery.cpp: src/Nursery/Nursery.h

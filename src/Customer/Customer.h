@@ -34,10 +34,12 @@ public:
 	void processNextAction(); // Process state transitions and handle departures
 
 	bool addToBasket(Plant *plants, int quantity);
-	bool removeFromBasket(Plant *plants, int quantity);
+	void clearBasket();
+	const std::vector<Plant *> &getBasket() const { return basket; }
 
 	int getId() const;
 	Action *getAction() const;
+	Nursery *getNursery() const { return nursery; }
 
 	void setAssignedStaff(Staff *staff);
 	Staff *getAssignedStaff() const { return assignedStaff; }

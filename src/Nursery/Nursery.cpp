@@ -1,4 +1,5 @@
 #include "Nursery.h"
+#include "../Staff/Cashiers.h"
 #include <QDebug>
 
 Nursery::Nursery(QObject *parent) : QObject(parent)
@@ -19,6 +20,12 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
 
     // Initialize Staff Management
     infoDesk = new InfoDesk();
+
+    // Initialize Cashier
+    std::string cashierName = "John";
+    std::string cashierId = "CASH001";
+    cashier = new Cashiers(cashierName, cashierId);
+    cashier->subject = inventory;
 }
 
 Nursery::~Nursery()
@@ -33,6 +40,7 @@ Nursery::~Nursery()
 
     // Clean up staff
     delete infoDesk;
+    delete cashier;
     for (Staff *s : staff)
     {
         delete s;
@@ -46,7 +54,6 @@ Nursery::~Nursery()
     delete herbFactory;
     delete currentSeason;
 }
-
 void Nursery::handleCustomerArrivalSignal()
 {
     if (customerCount >= customerLimit)

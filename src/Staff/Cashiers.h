@@ -9,19 +9,31 @@ using namespace std;
 class Cashiers : public Staff
 {
 private:
-std::queue<Customer*> CustomerQueue;
-Customer *currentCustomer;
+	std::queue<Customer *> customerQueue;
+	Customer *currentCustomer;
+	bool isProcessing;
+
 public:
 	Inventory *subject;
-	void makeTransaction();
-	std::string getStaffType();
-	bool canHandleEnquiry() ;
-	void performDuty();
-	void emptyBasket();
-	Cashiers(std::string& name, std::string& id);
-	virtual ~Cashiers();
-	
 
+	// Queue management
+	void enqueueCustomer(Customer *customer);
+	Customer *dequeueCustomer();
+	bool hasCustomersInQueue() const;
+	int getQueueSize() const;
+
+	// Transaction processing
+	void makeTransaction();
+	void emptyBasket(Customer *customer);
+	void processNextCustomer();
+
+	// Staff interface
+	std::string getStaffType();
+	bool canHandleEnquiry();
+	void performDuty();
+
+	Cashiers(std::string &name, std::string &id);
+	virtual ~Cashiers();
 };
 
 #endif
