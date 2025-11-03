@@ -1,6 +1,12 @@
 #include "Nursery.h"
 #include "../Staff/Cashiers.h"
+#include "../Greenhouse/AddStock.h"
+#include "../Greenhouse/Autumn.h"
+#include "../Greenhouse/Winter.h"
+#include "../Greenhouse/Summer.h"
 #include <QDebug>
+#include <algorithm>
+#include <memory>
 #include "../Greenhouse/Spring.h"
 
 Nursery::Nursery(QObject *parent) : QObject(parent)
@@ -162,3 +168,6 @@ void Nursery::handleCustomerDeparture(Customer *customer)
         qDebug() << "Warning: Customer" << customer->getId() << "not found in active customers list.";
     }
 }
+
+// Note: If seasonal update functionality is needed, it should be declared in the header first
+// The setState method in the header can be used for setting seasons

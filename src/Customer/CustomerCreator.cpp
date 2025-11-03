@@ -177,8 +177,8 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
         {
             // Advice question - use the map with random selection
             std::map<int, std::string> adviceQuestions = {
-                {0, "What summer plants are available?"},
-                {1, "What winter plants do you have?"},
+                {0, "What summer flowers are available?"},
+                {1, "What winter flowers do you have?"},
                 {2, "What is the best time of day to water my plants?"},
                 {3, "How many categories of plants do you sell?"}};
 
