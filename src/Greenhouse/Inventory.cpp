@@ -441,8 +441,8 @@ Inventory::~Inventory()
 {
 }
 
-int Inventory::getPlantNumber(std::unique_ptr<Plant> plant){ //make plant pointer
-    int quantity =0 ;
+int Inventory::getPlantNumber(Plant* plant){ //make plant pointer
+    int quantity = 0 ;
     if(plant){
         auto it = inventoryList.find(plant->getName()); 
         if (it != inventoryList.end()) {
