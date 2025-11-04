@@ -43,15 +43,23 @@ void Purchasing::handle(Customer *customer)
     Nursery *nursery = customer->getNursery();
     if (nursery)
     {
-        Cashiers *cashier = nursery->getCashier();
-        if (cashier)
+        InfoDesk *infoDesk = nursery->getInfoDesk();
+        if (infoDesk)
         {
-            std::cout << "Customer " << customer->getId() << " joining cashier queue..." << std::endl;
-            cashier->enqueueCustomer(customer);
-        }
-        else
-        {
-            std::cerr << "Error: No cashier available in nursery." << std::endl;
+            std::vector<Staff *> cashiers = infoDesk->getStaffByType("Cashier");
+            if (!cashiers.empty())
+            {
+                Cashiers *cashier = dynamic_cast<Cashiers *>(cashiers[0]);
+                if (cashier)
+                {
+                    std::cout << "Customer " << customer->getId() << " joining cashier queue..." << std::endl;
+                    cashier->enqueueCustomer(customer);
+                }
+            }
+            else
+            {
+                std::cerr << "Error: No cashier available in nursery." << std::endl;
+            }
         }
     }
     else

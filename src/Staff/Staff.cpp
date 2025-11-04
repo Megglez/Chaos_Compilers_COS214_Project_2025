@@ -2,35 +2,35 @@
 #include "../Customer/Customer.h"
 #include "InfoDesk.h"
 
-
 void Staff::changeState()
 {
 	// TODO - implement Staff ::changeState
-	if(this->state)
+	if (this->state)
 	{
-		if(this->state->getStateName()=="Busy")
+		if (this->state->getStateName() == "Busy")
 		{
 			delete this->state;
-			this->state=new Available();
+			this->state = new Available();
 			this->state->setContext(this);
 		}
 		else
-		{	delete this->state;
-			this->state=new Busy();
+		{
+			delete this->state;
+			this->state = new Busy();
 			this->state->setContext(this);
 		}
-	
 	}
 }
 
-Staff::Staff(const std::string& name, const std::string& id){
-	this->name=name;
-	this->staffID=id;
-	available= true;
-	infoDesk=nullptr;
-	nextInChain=nullptr;
-	currentCustomer=nullptr;
-	state=new Available();
+Staff::Staff(const std::string &name, const std::string &id, InfoDesk *infodesk)
+{
+	this->name = name;
+	this->staffID = id;
+	available = true;
+	infoDesk = infodesk;
+	nextInChain = nullptr;
+	currentCustomer = nullptr;
+	state = new Available();
 	state->setContext(this);
 }
 
@@ -39,60 +39,47 @@ void Staff::update(const std::string &update)
 	std::cout << "New Notification: " << update << std::endl;
 }
 
-Staff::Staff()
-{
-    name = "";
-    staffID = "";
-    available = true;
-    infoDesk = nullptr;
-    nextInChain = nullptr;
-    currentCustomer = nullptr;
-    state = new Available();
-    state->setContext(this);
-
-}
-
 Staff::~Staff()
 {
-	delete this->state;
+	delete state;
 }
 
 void Staff::setAvailability(bool isAvailable)
 {
-	available=isAvailable;
+	available = isAvailable;
 }
 
-Staff* Staff::getNextInChain()
+Staff *Staff::getNextInChain()
 {
-    return nextInChain;return nextInChain;
+	return nextInChain;
 }
 
-void Staff::setNextInChain(Staff* ss)
+void Staff::setNextInChain(Staff *ss)
 {
-    nextInChain = ss;nextInChain=ss;
+	nextInChain = ss;
 }
 
 std::string Staff::getName()
 {
-return name;
+	return name;
 }
 
 std::string Staff::getID()
 {
- return staffID;
+	return staffID;
 }
 
 std::string Staff::getStaffType()
 {
-	
-	return state->getStateName();
 
+	return role;
 }
-bool Staff::getAvailability(){
-return available;	
+bool Staff::getAvailability()
+{
+	return available;
 }
 
-InfoDesk * Staff::getInfodesk()
+InfoDesk *Staff::getInfodesk()
 {
 	return this->infoDesk;
 }
@@ -100,100 +87,96 @@ InfoDesk * Staff::getInfodesk()
 void Staff::completeTask()
 {
 	state->handle();
- }
+}
 
-  void Staff::assistCustomer(Customer *cc)
- {
-	if(!cc)
+void Staff::assistCustomer(Customer *cc)
+{
+	if (!cc)
 	{
-		cout<<"Staff "<< name<< "cannot assist null Customer"<<std::endl;
+		cout << "Staff " << name << "cannot assist null Customer" << std::endl;
 		return;
 	}
-	if(!getAvailability())
+	if (!getAvailability()) // but staff will be available
 	{
-	cout<<"Staff "<< name<< "is not Available."<<endl;
+		cout << "Staff " << name << "is not Available." << endl;
 		return;
 	}
 
-	cout<<"Staff "<<name<< " is assisting Customer "<<cc->getId();
-	currentCustomer=cc;
+	cout << "Staff " << name << " is assisting Customer " << cc->getId();
+	currentCustomer = cc;
 	this->changeState();
-	available=false;
+	available = false;
 	performDuty();
 	cc->setAssignedStaff(this);
-
- }
-
- Staff* Staff::handleEnquiryRequest()
- {
-if(canHandleEnquiry()&& getAvailability())
-{
-	std::cout<< getStaffType()<<" "<<name<< "can handle enquiry."<<std::endl;
-}
-return this;
-
-if(nextInChain)
-{
-std::cout<< getStaffType()<<" "<<name<< "can't handle enquiry.Passing on to.."<<std::endl;
-	std::cout<<nextInChain->getStaffType();
-	return nextInChain->handleEnquiryRequest();
 }
 
-//otherwise
-std::cout<<"No staff avaialable to handle enquiry."<<std::endl;
-return nullptr;
- }
+Staff *Staff::handleEnquiryRequest()
+{
+	if (canHandleEnquiry() && getAvailability())
+	{
+		std::cout << getStaffType() << " " << name << "can handle enquiry." << std::endl;
+		return this;
+	}
+
+	if (nextInChain)
+	{
+		std::cout << getStaffType() << " " << name << "can't handle enquiry.Passing on to.." << std::endl;
+		std::cout << nextInChain->getStaffType();
+		return nextInChain->handleEnquiryRequest();
+	}
+
+	// otherwise
+	std::cout << "No staff avaialable to handle enquiry." << std::endl;
+	return nullptr;
+}
 
 void Staff::registerToAllStaff(InfoDesk *desk)
 {
-	if(!desk)
+	if (!desk)
 	{
-		std::cout<<"cannot register. Null Infodesk."<<std::endl;
+		std::cout << "cannot register. Null Infodesk." << std::endl;
 		return;
 	}
 
-	if(infoDesk)
+	if (infoDesk)
 	{
-		std::cout<<"Staff already registered in AllStaff."<<std::endl;
+		std::cout << "Staff already registered in AllStaff." << std::endl;
 		return;
 	}
 
-	infoDesk=desk;
+	infoDesk = desk;
 	desk->addStaff(this);
-	std::cout<<name<< " registered from AllStaff."<<std::endl;
-
- }
-
-void Staff ::unregisterFromAllStaff()
- {
-if(!infoDesk)
-{
-	std::cout<<"Staff not registered!"<<std::endl;
-	return;
+	std::cout << name << " registered from AllStaff." << std::endl;
 }
 
-this->infoDesk->removeStaff(this);
-infoDesk=nullptr;
-std::cout<<name<< " unregistered from AllStaff."<<std::endl;
+void Staff ::unregisterFromAllStaff()
+{
+	if (!infoDesk)
+	{
+		std::cout << "Staff not registered!" << std::endl;
+		return;
+	}
 
+	this->infoDesk->removeStaff(this);
+	infoDesk = nullptr;
+	std::cout << name << " unregistered from AllStaff." << std::endl;
 }
 
 std::string Staff::getStateName()
 {
- if(state)
- {
-	return state->getStateName();
- }
- return "Unknown";
+	if (state)
+	{
+		return state->getStateName();
+	}
+	return "Unknown";
 }
 
-Customer* Staff::getCurrentCustomer()
+Customer *Staff::getCurrentCustomer()
 {
 	return currentCustomer;
-
 }
 
-void Staff::setCurrentCustomer(Customer* cc)
+void Staff::setCurrentCustomer(Customer *cc)
 {
-currentCustomer=cc;
+	currentCustomer = cc;
 }

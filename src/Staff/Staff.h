@@ -4,48 +4,50 @@
 #include "StaffState.h"
 #include "Available.h"
 #include "Busy.h"
+#include "../Greenhouse/Inventory.h"
 using namespace std;
- 
+
 class StaffState;
-class Inventory;
-class InfoDesk;  // Forward declaration
-class Customer;  // Forward declaration
+// class Inventory;
+class InfoDesk; // Forward declaration
+class Customer; // Forward declaration
 class Staff
 {
-private:
+protected:
 	string name;
 	string staffID;
 	string workArea;
-	StaffState* state;
-	InfoDesk* infoDesk;
-	bool available;  
-	Staff* nextInChain;
-	Customer* currentCustomer;
+	string role;
+	StaffState *state;
+	InfoDesk *infoDesk;
+	bool available;
+	Staff *nextInChain;
+	Customer *currentCustomer;
 
 public:
 	virtual void update(const std::string &update);
 	void changeState();
-	virtual bool getAvailability();
-	virtual void setAvailability(bool isAvailable);
-	Staff();
-	Staff(const std::string& name, const std::string& id);
+	bool getAvailability();
+	void setAvailability(bool isAvailable);
+	Staff(const string &name, const string &id, InfoDesk *infodesk);
 	virtual ~Staff();
-	virtual void setNextInChain(Staff* next);
+	virtual void setNextInChain(Staff *next);
 	virtual void assistCustomer(Customer *cc); // start Assisting customer
 	std::string getName();
 	std::string getID();
-	std::string getStaffType();
-	Staff* getNextInChain();
+	virtual void setRole() = 0;
+	std::string getStaffType(); // basically get role
+	Staff *getNextInChain();
 	std::string getStateName();
-	Customer * getCurrentCustomer();
-	void setCurrentCustomer(Customer * cc);
-	InfoDesk* getInfodesk();
-	Staff* handleEnquiryRequest();
+	Customer *getCurrentCustomer();
+	void setCurrentCustomer(Customer *cc);
+	InfoDesk *getInfodesk();
+	Staff *handleEnquiryRequest();
 	virtual void performDuty() = 0;
 	void completeTask();
-	virtual bool canHandleEnquiry()=0;
-	void registerToAllStaff(InfoDesk*desk);
-	void unregisterFromAllStaff();
+	virtual bool canHandleEnquiry() = 0;
+	void registerToAllStaff(InfoDesk *desk); // self registering
+	void unregisterFromAllStaff();			 // self unregistering
 };
 
 #endif

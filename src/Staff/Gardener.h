@@ -8,16 +8,13 @@ class Gardener : public Staff
 {
 public:
 	Inventory *subject;
-	void helpPlant();
-	void getCareStrategy();
-	bool getAvailability() override;
-	void setAvailability(bool isAvailable) override;
+	Gardener(std::string &name, std::string &id, InfoDesk *infodesk);
+	virtual ~Gardener();
 	void performDuty() override;
 	bool canHandleEnquiry() override;
-	Gardener();
-	virtual ~Gardener();
-	
-
+	void careForPlants();
+	void careForPlants(Plant *plant);
+	void setRole() override;
 };
 
 #endif

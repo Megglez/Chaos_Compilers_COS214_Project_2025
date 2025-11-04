@@ -42,10 +42,8 @@ void Customer::setAction(Action *newAction)
 
 bool Customer::addToBasket(Plant *plants, int quantity)
 {
-    if (!plants || quantity <= 0)
-    {
-        return false;
-    }
+    // if (nursery-)
+    plants->getName();
 
     for (int i = 0; i < quantity; i++)
     {

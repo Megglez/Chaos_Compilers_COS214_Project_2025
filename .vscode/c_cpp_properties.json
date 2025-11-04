@@ -2,6 +2,7 @@
     "configurations": [
         {
             "name": "Linux",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
             "includePath": [
                 "${workspaceFolder}/src",
                 "${workspaceFolder}",
@@ -9,6 +10,12 @@
                 "/home/blegibz/Qt/6.10.0/gcc_64/include/QtCore",
                 "/home/blegibz/Qt/6.10.0/gcc_64/include/QtGui",
                 "/home/blegibz/Qt/6.10.0/gcc_64/include/QtWidgets",
+                
+                "/home/langa/Qt/6.9.3/gcc_64/include",
+                "/home/langa/Qt/6.9.3/gcc_64/include/QtCore",
+                "/home/langa/Qt/6.9.3/gcc_64/include/QtGui",
+                "/home/langa/Qt/6.9.3/gcc_64/include/QtWidgets",
+
                 "/usr/include/qt5",
                 "/usr/include/qt5/QtCore",
                 "/usr/include/qt5/QtGui",
@@ -22,6 +29,15 @@
                 "${workspaceFolder}/build/_deps/googletest-src/googlemock/include",
                 "${workspaceFolder}/gui/ChaoticPlants/build",
                 "${workspaceFolder}/gui/ChaoticPlants/build/ChaoticPlants_autogen/include"
+                ,
+                "/usr/include/qt6",
+                "/usr/include/qt6/QtCore",
+                "/usr/include/qt6/QtGui",
+                "/usr/include/qt6/QtWidgets",
+                "/usr/local/Qt-6.9.3/include",
+                "/usr/local/Qt-6.9.3/include/QtCore",
+                "/usr/local/Qt-6.9.3/include/QtGui",
+                "/usr/local/Qt-6.9.3/include/QtWidgets"
             ],
             "defines": [
                 "QT_CORE_LIB",

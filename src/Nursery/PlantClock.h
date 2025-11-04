@@ -7,6 +7,18 @@ class PlantClock : public Clock
     Q_OBJECT
 public:
     explicit PlantClock(QObject *parent = nullptr);
+    
+    /**
+     * @brief Destroys the PlantClock object
+     */
+    ~PlantClock() {}
+    
+    /**
+     * @brief Starts the plant update clock
+     * 
+     * Initializes the clock to begin emitting plant update signals
+     * at regular intervals.
+     */
     void startPlantClock(); 
 
 signals:

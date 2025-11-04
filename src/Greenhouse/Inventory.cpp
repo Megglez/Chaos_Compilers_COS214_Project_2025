@@ -563,7 +563,7 @@ Inventory::~Inventory()
 {
 }
 
-int Inventory::getPlantNumber(std::unique_ptr<Plant> plant)
+int Inventory::getPlantNumber(Plant *plant)
 {
     int quantity = 0;
     if (plant)
@@ -583,4 +583,31 @@ int Inventory::getPlantNumber(std::unique_ptr<Plant> plant)
         std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
     }
     return quantity;
+}
+vector<Plant *> Inventory::FlowerBySeason(std::string season)
+{
+    vector<Plant *> flowers;
+    for (auto &[plantName, plantData] : inventoryList)
+    {
+        auto &[plantPtr, currentStock] = plantData;
+
+        if (plantPtr && plantPtr->getType() == "flower")
+        {
+            if (season == "Summer")
+            {
+                if (!plantPtr->isWinter())
+                {
+                    flowers.push_back(plantPtr.get());
+                }
+            }
+            else if (season == "Winter")
+            {
+                if (plantPtr->isWinter())
+                {
+                    flowers.push_back(plantPtr.get());
+                }
+            }
+        }
+    }
+    return flowers;
 }

@@ -76,25 +76,25 @@ TEST_F(GreenhouseTest, PlantCreation)
 }
 
 // Test plant decorators
-TEST_F(GreenhouseTest, PlantDecorators)
-{
-    // Test gift wrap - create separate plant instance
-    Plant *flower1 = flowerPlanter->planterMethod("Rose Bush");
-    PlantDecorator *gift = new GiftWrap(flower1);
+TEST_F(GreenhouseTest, PlantDecorators) {
+    Plant* flower = flowerPlanter->planterMethod("Rose Bush");
+    
+    // Test gift wrap - decorator owns the plant, so don't delete flower separately
+    PlantDecorator* gift = new GiftWrap(flower);
     testing::internal::CaptureStdout();
     gift->package();
     std::string giftOutput = testing::internal::GetCapturedStdout();
     EXPECT_FALSE(giftOutput.empty());
-    delete gift; // This deletes both gift and flower1
+    delete gift;  // This will delete the wrapped flower too
 
-    // Test pot - create separate plant instance
-    Plant *flower2 = flowerPlanter->planterMethod("Rose Bush");
-    PlantDecorator *pot = new Pot(flower2);
+    // Create a new flower for the pot test
+    Plant* flower2 = flowerPlanter->planterMethod("Rose Bush");
+    PlantDecorator* pot = new Pot(flower2);
     testing::internal::CaptureStdout();
     pot->package();
     std::string potOutput = testing::internal::GetCapturedStdout();
     EXPECT_FALSE(potOutput.empty());
-    delete pot; // This deletes both pot and flower2
+    delete pot;  // This will delete the wrapped flower too
 }
 
 // Test stock management
