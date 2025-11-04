@@ -14,25 +14,30 @@ class InfoDesk {
 	 // 
 	Staff*chainHead; //staff member with most priority
 	std::queue<Customer*> waitingCustomers; // queued customers 
-	std::vector<Staff*> AllStaff; 
-	std::vector<Staff*> AvailableStaff;
-	Staff* findAvailableStaffThroughChain();
+	std::vector<Staff*> AllStaff; //all staff registered to infodesk
+	//Staff* findAvailableStaffThroughChain();
 
 public:
 	virtual void notify(Staff* staff);// notify 
+
 	InfoDesk();
-	virtual ~InfoDesk(); 
-	InfoDesk* getInfodesk();
+	~InfoDesk(); 
+	InfoDesk* getInfodesk(); 
+
 	void buildChain();
 	void clearChain();
 	//assogns staff to customer
 	void handleCustomer(Customer* customer); // called by requestAssistance
+
+	Staff* findQnAStaff(Customer*customer);
+	Staff * findInventoryStaff(Customer*customer);
+
 	bool FindAvailableStaff(Customer* cc);
 	bool removeStaff(Staff *ss);
 	bool addStaff(Staff* ss);
 	void processWaitingCustomers();
 	void notifyStaffAvailable(Staff* freedStaff);
-	vector<Staff*> getStaffByType(std::string ss) const;
+	vector<Staff*> getStaffByType(std::string ss) const;// vector of staff of type ss
 	void AssignStaffToCustomer(Customer* cc);
 	vector<Staff*> getAllStaff();
 	

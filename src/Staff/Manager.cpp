@@ -1,4 +1,7 @@
+//#include "Enquire.h"
 #include "Manager.h"
+
+
 
 string Manager::trackInventory() {
 	// TODO - implement Manager::trackInventory
@@ -44,9 +47,9 @@ void Manager::performDuty()
 	{
 		if(getCurrentCustomer()->getQuestionType()==0) //sales advice
 		{
-			switch (/*getSelectedQuestion*/)
+			switch (getCurrentCustomer()->getAction()->getEnquiryQuestion())
 			{
-			case 0: //"What summer plants are available?"
+			case "What summer flowers are available": 
 				cout<<"Listing summer plants from inventory:"<<endl;
 				vector<Plant*> summerPlants;
 				summerPlants = subject->getInventory()->FlowerBySeason("Summer");
@@ -57,35 +60,57 @@ void Manager::performDuty()
 				}
 
 				break;
-			case 1: //"What winter plants are available?"
+
+			case "What winter plants are available?":
 			cout<<"Listing winter plants from inventory:"<<endl;
 				vector<Plant*> winterPlants;
-				summerPlants = subject->getInventory()->FlowerBySeason("Winter");
+				winterPlants = subject->getInventory()->FlowerBySeason("Winter");
 				for (const auto& item : winterPlants) {
 					if (item) {
 						std::cout << item->getName() << std::endl;
 					}
 				}
 				
-			case 2:   //"What is the best time of day to water my plants?"
+			case "What is the best time of day to water my plants?":
 				cout<<"The best time to water plants is early in the morning or late in the afternoon."<<endl;
 				break;
 
-			case 3:  //"How many categories of plants do you sell?"
+			case "How many categories of plants do you sell?":
 
 				cout<<"We sell 4 categories: Succulents,Flowers,Trees and Herbs."<<endl;
-				break;	
+				break;
+				
 			
 			default:
 			cout<<"General Sales Enquiry response."<<endl;
 				break;
 			}
 		}
-		else //garden advice: how many of plant X in stock
+		if(getCurrentCustomer()->getAction()->getEnquiryQuestion()) //garden advice: how many of plant X in stock
 		{
-			if()
+			string ss=getCurrentCustomer()->getAction()->getEnquiryQuestion();
+			std::istringstream iss(yourString);
+			std::string word;
+			int count = 0;
+			while(iss >> word) {
+			++count;
+			if (count == 3) {
+			// word is the 3rd word
+			break;}
+
+
+			}
+		for(const auto& item : subject->getInventory()) {
+		const auto& plantName= item.first; 
+		const auto& quantity = item.second.second;
+		if(plantName==word)
+		{
+			cout << "Plant: " << plantName << ", Quantity: " << quantity << std::endl;
+			break;
+		}
+		
+	}
 			
-			// Now 'word' is the third word (if it exists)
 		
 		}
 	}

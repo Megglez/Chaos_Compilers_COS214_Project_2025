@@ -98,7 +98,7 @@ void Staff::completeTask()
 		cout<<"Staff "<< name<< "cannot assist null Customer"<<std::endl;
 		return;
 	}
-	if(!getAvailability())
+	if(!getAvailability())//but staff will be available
 	{
 	cout<<"Staff "<< name<< "is not Available."<<endl;
 		return;
