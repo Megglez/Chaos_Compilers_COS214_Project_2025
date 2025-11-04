@@ -1,4 +1,4 @@
-# Chaotic Plants
+# Chaotic Plants :seedling:
 <p>Step into a world bursting with life in this simulation game where you can manage your very own plant nursery, inspired by the vibrant growth of spring, you are in complete control of a bustling green enterprise!</p>
 
 ## GitHub and Google Doc Report
@@ -162,7 +162,7 @@ chmod +x gui/ChaoticPlants/build/ChaoticPlants
 | Name | GitHub | LinkedIn | Description |
 |:------|:-----:|:-----:|:------|
 | Megan Lai | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/Megglez)| [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](https://www.linkedin.com/in/megan-lai-720685368/) |Team Lead, Code Implementation, Documentation, GitHub|
-| Inge Keyser | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/IngeKeyser) | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](https://www.linkedin.com/in/inge-keyser)|Code Implementation |
+| Inge Keyser | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/IngeKeyser) | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](https://www.linkedin.com/in/inge-keyser)|Code Implementation, Documentation |
 | Blessing Gibendi | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/u24827313) | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)]() |Code Implementation |
 | Divo Köhler | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/u24607526) | [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)](http://www.linkedin.com/in/divo-kohler-1023b6397) |Code Implementation, Documentation |
 | Langa Vakalisa | [![GitHub](https://github.com/user-attachments/assets/050f18aa-f67f-4341-aa21-d31e286f71e6)](https://github.com/langa-vk)| [![LinkedIn](https://github.com/user-attachments/assets/efe5faca-b4f1-4708-9e15-d1999d78c77c)]() |Code Implementation | 
