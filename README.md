@@ -1,7 +1,9 @@
 # Chaotic Plants
 <p>Step into a world bursting with life in this simulation game where you can manage your very own plant nursery, inspired by the vibrant growth of spring, you are in complete control of a bustling green enterprise!</p>
 
-## GitHub
+## GitHub and Google Doc Report
+
+https://docs.google.com/document/d/1pNxXny8WA27NGEMK5c35jEXHrr4iKFu1k3Qw_p5Tn5Q/edit?usp=sharing
 
 https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025
 
