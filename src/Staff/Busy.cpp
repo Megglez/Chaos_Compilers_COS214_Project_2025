@@ -9,7 +9,7 @@ void Busy::handle() {
 		cout<<staff->getName()<< " is completing this task."<<std::endl;
  
 		
-		//staff->setCurrentCustomer(nullptr);
+		staff->setCurrentCustomer(nullptr);
  		this->staff->changeState();
  		this->staff->setAvailability(true);
 		InfoDesk* infod = staff->getInfodesk();

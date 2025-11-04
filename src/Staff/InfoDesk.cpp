@@ -1,10 +1,11 @@
 #include "InfoDesk.h"
 #include "Staff.h"
 #include "../Customer/Customer.h"
+using namespace std;
 
 void InfoDesk::notify(Staff *staff)
 {
-    std::cout << "Customer needs your assistance";
+    cout << "Customer needs your assistance";
     staff->getID(); // remove later
 
 }
@@ -17,14 +18,14 @@ InfoDesk::InfoDesk()
     {
         waitingCustomers.pop();
     }
-    std::cout<<"Info Desk created."<<std::endl;
+    cout<<"Info Desk created."<<endl;
 
 	
 }
 
 InfoDesk::~InfoDesk()
 {
-    std::cout<<"Closing Info Desk."<<std::endl;
+    cout<<"Closing Info Desk."<<endl;
 }
 
 InfoDesk* InfoDesk::getInfodesk()
@@ -75,7 +76,7 @@ void InfoDesk::handleCustomer(Customer* customer) // called by enquiring custome
    else
    {
     waitingCustomers.push(customer);
-    std::cout<<"All staff unavailable. Queue customer "<< waitingCustomers.size()<<" for assistance."<<std::endl;
+    cout<<"All staff unavailable. Queue customer "<< waitingCustomers.size()<<" for assistance."<<endl;
    }
    
    //inventory advice
@@ -103,7 +104,7 @@ Staff* InfoDesk::findQnAStaff(Customer *customer)
 
    for(Staff* staff: AllStaff)
    {
-    if(staff->getStaffType=="SalesStaff" && staff->getAvailability())
+    if(staff->getStaffType()=="SalesStaff" && staff->getAvailability())
     {
         cout<<"Found Sales Staff: " << staff->getName()<<endl;
         return staff;
@@ -112,13 +113,14 @@ Staff* InfoDesk::findQnAStaff(Customer *customer)
 
       for(Staff* staff: AllStaff)
    {
-    if(staff->getStaffType=="Manager" && staff->getAvailability())
+    if(staff->getStaffType()=="Manager" && staff->getAvailability())
     {
         cout<<"Found Manager: " << staff->getName()<<endl;
         return staff;
     }
    }
    cout<<"No QnA Staff available currently."<<endl;
+   return nullptr.
 
 }
 
@@ -129,7 +131,7 @@ Staff* InfoDesk::findInventoryStaff(Customer *customer)
 
    for(Staff* staff: AllStaff)
    {
-    if(staff->getStaffType=="Gardener" && staff->getAvailability())
+    if(staff->getStaffType()=="Gardener" && staff->getAvailability())
     {
         cout<<"Found Gardener: " << staff->getName()<<endl;
         return staff;
@@ -137,13 +139,14 @@ Staff* InfoDesk::findInventoryStaff(Customer *customer)
    }
 for(Staff* staff: AllStaff)
    {
-    if(staff->getStaffType=="Manager" && staff->getAvailability())
+    if(staff->getStaffType()=="Manager" && staff->getAvailability())
     {
         cout<<"Found Manager: " << staff->getName()<<endl;
         return staff;
     }
    }
    cout<<"No Inventory Staff available currently."<<endl;
+   return nullptr;
 }
 
 
@@ -204,14 +207,14 @@ void InfoDesk::processWaitingCustomers()
         }
 Staff* assignedStaff ;
 
-        if(customer->getAction().getEnquiryQuestionType()==0) //sales advice
+        if(customer->getAction()->getEnquiryQuestionType()==0) //sales advice
         {
             assignedStaff = findQnAStaff(customer);
         }
         else if(customer->getAction()->getQuestionType()==1) //inventory advice
             {
               
-                assignedStaff->findInventoryStaff(customer);
+                assignedStaff=findInventoryStaff(customer);
             }
 
         if(assignedStaff)
@@ -231,7 +234,7 @@ Staff* assignedStaff ;
 
         while (foundStaff)
         {
-           cout<<"Continuing to process waiting customers..."<<std::endl;
+           cout<<"Continuing to process waiting customers..."<<endl;
            cout<<"Customers left in queue: "<< waitingCustomers.size()<<endl;
               if(!waitingCustomers.empty())
               {
@@ -243,7 +246,7 @@ Staff* assignedStaff ;
                     tempQueue.pop();
                     if(!tempQueue.empty())
                     {
-                        std::cout<<"->..."<<std::endl;
+                        std::cout<<"->..."<<endl;
                     }
                 }
               } cout<<endl;

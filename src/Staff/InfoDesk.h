@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <string>
 
+using namespace std;
+
 // Forward declarations
 class Staff;
 class Customer;
