@@ -27,7 +27,7 @@ Manager::Manager(string name,string id,InfoDesk *info,Inventory *inventory): Sta
 {
 	// TODO - implement Manager::Manager
 	
-
+setRole();
 
 }
 

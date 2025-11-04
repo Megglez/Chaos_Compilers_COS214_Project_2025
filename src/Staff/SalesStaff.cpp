@@ -1,20 +1,15 @@
 #include "SalesStaff.h"
 
 
-SalesStaff::SalesStaff() {
+SalesStaff::SalesStaff(string& name,string& id,InfoDesk*infodesk) : Staff(name,id,infodesk){
 	// TODO - implement SalesStaff::SalesStaff
-
+setRole();
 	
 }
 
 SalesStaff::~SalesStaff()
 {
 	
-
-}
-
-void SalesStaff::performDuty()
-{
 
 }
 
@@ -25,9 +20,11 @@ bool SalesStaff::canHandleEnquiry()
 
 void SalesStaff::performDuty()  //1 job
 {
-switch (/*getSelectedQuestion*/)
+//aleady checked question type=0;
+
+switch (getCurrentCustomer()->getAction()->getEnquiryQuestion())
 			{
-			case 0: //"What summer plants are available?"
+			case "What summer flowers are available": 
 				cout<<"Listing summer plants from inventory:"<<endl;
 				vector<Plant*> summerPlants;
 				summerPlants = subject->getInventory()->FlowerBySeason("Summer");
@@ -38,36 +35,38 @@ switch (/*getSelectedQuestion*/)
 				}
 
 				break;
-			case 1: //"What winter plants are available?"
+
+			case "What winter plants are available?":
 			cout<<"Listing winter plants from inventory:"<<endl;
 				vector<Plant*> winterPlants;
-				summerPlants = subject->getInventory()->FlowerBySeason("Winter");
+				winterPlants = subject->getInventory()->FlowerBySeason("Winter");
 				for (const auto& item : winterPlants) {
 					if (item) {
 						std::cout << item->getName() << std::endl;
 					}
 				}
 				
-			case 2:   //"What is the best time of day to water my plants?"
+			case "What is the best time of day to water my plants?":
 				cout<<"The best time to water plants is early in the morning or late in the afternoon."<<endl;
 				break;
 
-			case 3:  //"How many categories of plants do you sell?"
+			case "How many categories of plants do you sell?":
 
 				cout<<"We sell 4 categories: Succulents,Flowers,Trees and Herbs."<<endl;
-				break;	
+				break;
+				
 			
 			default:
 			cout<<"General Sales Enquiry response."<<endl;
 				break;
-			}
+		}
 		}
 	
 
 
  void SalesStaff::setRole()
  {
-	
+	role="SalesStaff";
  }
 
 

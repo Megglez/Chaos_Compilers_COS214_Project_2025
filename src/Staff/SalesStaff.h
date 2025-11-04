@@ -12,10 +12,8 @@ public:
 
 	void performDuty() override;
 	bool canHandleEnquiry() override;
-	SalesStaff();
+	SalesStaff(string& name,string& id,InfoDesk*infodesk);
 	virtual ~SalesStaff();
-	bool canHandleEnquiry();
-	void performDuty() override;
 	void setRole() override;
 
 	

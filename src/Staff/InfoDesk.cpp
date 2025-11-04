@@ -13,6 +13,10 @@ InfoDesk::InfoDesk()
 {
     // TODO - implement InfoDesk::InfoDesk
     chainHead=nullptr;
+    while(!waitingCustomers.empty())
+    {
+        waitingCustomers.pop();
+    }
     std::cout<<"Info Desk created."<<std::endl;
 
 	
@@ -203,6 +207,7 @@ Staff* assignedStaff ;
         if(customer->getAction().getEnquiryQuestionType()==0) //sales advice
         {
             assignedStaff = findQnAStaff(customer);
+        }
         else if(customer->getAction()->getQuestionType()==1) //inventory advice
             {
               
@@ -305,7 +310,7 @@ void InfoDesk::buildChain()
     }
 
     std::vector<std::string> order= {"Sales","Gardener","Manager","Cashier"};
-    std::vector<Staff*> sales = getStaffByType("Sales");
+    std::vector<Staff*> sales = getStaffByType("SalesStaff");
     std::vector<Staff*> gardeners = getStaffByType("Gardener");
     std::vector<Staff*> managers = getStaffByType("Manager");
     std::vector<Staff*> chashiers = getStaffByType("Cashier");
@@ -408,7 +413,7 @@ Staff* InfoDesk::findAvailableStaffThroughChain()
     Staff* current = chainHead;
     while (current) {
         // Check if the current staff member is available
-        if (current->getStaffType() == "Available") {
+        if (current->getAvailability() == true) {
             return current;
         }
         current = current->getNextInChain();

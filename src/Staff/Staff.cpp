@@ -43,7 +43,7 @@ void Staff::update(const std::string &update)
 
 Staff::~Staff()
 {
-	delete this->role;
+delete
 }
 
 void Staff::setAvailability(bool isAvailable)
@@ -118,8 +118,9 @@ void Staff::completeTask()
 if(canHandleEnquiry()&& getAvailability())
 {
 	std::cout<< getStaffType()<<" "<<name<< "can handle enquiry."<<std::endl;
+	return this;
 }
-return this;
+
 
 if(nextInChain)
 {

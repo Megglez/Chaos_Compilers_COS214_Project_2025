@@ -36,7 +36,7 @@ public:
 	std::string getName();
 	std::string getID();
 	virtual void setRole()=0;
-	std::string getStaffType();
+	std::string getStaffType();//basically get role
 	Staff* getNextInChain();
 	std::string getStateName();
 	Customer * getCurrentCustomer();
@@ -46,8 +46,8 @@ public:
 	virtual void performDuty() = 0;
 	void completeTask();
 	virtual bool canHandleEnquiry()=0;
-	void registerToAllStaff(InfoDesk*desk);
-	void unregisterFromAllStaff();
+	void registerToAllStaff(InfoDesk*desk);//self registering
+	void unregisterFromAllStaff(); //self unregistering
 };
 
 #endif
