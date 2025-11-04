@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 enable_testing()
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # --- Find Qt (Required for project_lib for QObject-based files like Clock.h) ---
 # We only require Core and Widgets.
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Widgets)
@@ -50,6 +52,7 @@ target_link_libraries(project_lib PRIVATE Qt::Core) # Link to Qt::Core for QObje
 target_include_directories(project_lib
   PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${Qt${QT_VERSION_MAJOR}Core_INCLUDE_DIRS}
 )
 
 
@@ -57,7 +60,7 @@ target_include_directories(project_lib
 file(GLOB TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp)
 if(TEST_SOURCES)
   add_executable(run_tests ${TEST_SOURCES})
-  target_link_libraries(run_tests PRIVATE project_lib GTest::gtest_main Qt::Core)
+  target_link_libraries(run_tests PRIVATE project_lib GTest::gtest_main)
   include(GoogleTest)
   gtest_discover_tests(run_tests)
 endif()

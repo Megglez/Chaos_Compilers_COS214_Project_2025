@@ -1,51 +1,72 @@
 #include "SalesStaff.h"
 
 
-
-SalesStaff::SalesStaff() {
+SalesStaff::SalesStaff(string& name,string& id,InfoDesk*infodesk) : Staff(name,id,infodesk){
 	// TODO - implement SalesStaff::SalesStaff
+setRole();
 	
 }
 
 SalesStaff::~SalesStaff()
 {
+	
+
 }
 
 bool SalesStaff::canHandleEnquiry()
 {
-	return true;
+    return true;
 }
 
-void SalesStaff::performDuty()
+void SalesStaff::performDuty()  //1 job
 {
-if(getCurrentCustomer())//someone to help
-{	
-	string response;
-	string enquiry;
-	cout<<"What is your Enquiry?"<<endl;
-	cin>>response;
-	string pos1 = "Do you have"; //inventory 
-	string pos2 = "Where are the"; //directions
-	string pos3 = "What do I do"; //QnA
-	if(enquiry.find(pos1)!=string::npos)
-	{
-		response = "Yes we do."
-	}
-	else if(enquiry.find(pos2)!=string::npos)
-	{
-		response = "Isle 3."
-	}
-	else if(enquiry.find(pos3)!=string::npos)
-	{
-		response = "Move it to the shade for 2 weeks.";
-	}
-	else{
-		response = "Sure.";
-	}
-}
+//aleady checked question type=0;
 
-return response;
-}
+switch (getCurrentCustomer()->getAction()->getEnquiryQuestion())
+			{
+			case "What summer flowers are available": 
+				cout<<"Listing summer plants from inventory:"<<endl;
+				vector<Plant*> summerPlants;
+				summerPlants = subject->getInventory()->FlowerBySeason("Summer");
+				for (const auto& item : summerPlants) {
+					if (item) {
+						std::cout << item->getName() << std::endl;
+					}
+				}
 
+				break;
+
+			case "What winter plants are available?":
+			cout<<"Listing winter plants from inventory:"<<endl;
+				vector<Plant*> winterPlants;
+				winterPlants = subject->getInventory()->FlowerBySeason("Winter");
+				for (const auto& item : winterPlants) {
+					if (item) {
+						std::cout << item->getName() << std::endl;
+					}
+				}
+				
+			case "What is the best time of day to water my plants?":
+				cout<<"The best time to water plants is early in the morning or late in the afternoon."<<endl;
+				break;
+
+			case "How many categories of plants do you sell?":
+
+				cout<<"We sell 4 categories: Succulents,Flowers,Trees and Herbs."<<endl;
+				break;
+				
+			
+			default:
+			cout<<"General Sales Enquiry response."<<endl;
+				break;
+		}
+		}
+	
+
+
+ void SalesStaff::setRole()
+ {
+	role="SalesStaff";
+ }
 
 

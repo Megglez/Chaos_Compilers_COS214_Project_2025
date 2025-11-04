@@ -1,3 +1,11 @@
+/**
+ * @file Enquire.cpp
+ * @brief Implementation of the Enquire action class
+ *
+ * Implements enquiry behavior including question handling, staff assistance
+ * requests, and state transitions to Browse or leaving the nursery.
+ */
+
 #include "Enquire.h"
 #include "Browse.h"
 #include "Customer.h"
@@ -34,9 +42,10 @@ Action *Enquire::getNextAction()
     {
         // Customer transitions to Browse state
         cout << "Customer finished enquiring and is now browsing for plants." << endl;
-        // Create Browse action with the same plant they were asking about
-        // Default quantity of 1 if they decide to browse
-        return new Browse(plantOfInterest, 1);
+        // Create Browse action with the same plants they were asking about
+        // Default quantity of 1 for each plant if they decide to browse
+        std::vector<int> defaultQuantities(plantsOfInterest.size(), 1);
+        return new Browse(plantsOfInterest, defaultQuantities);
     }
 }
 

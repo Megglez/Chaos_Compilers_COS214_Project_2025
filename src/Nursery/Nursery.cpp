@@ -1,15 +1,5 @@
-/**
- * @file Nursery.cpp
- * @brief Implementation of the Nursery facade class
- * 
- * Contains the implementation of all Nursery methods for managing
- * the complete nursery simulation system.
- * 
- * @author Chaos_Compilers
- * @date 2025
- */
-
 #include "Nursery.h"
+#include "../Staff/Cashiers.h"
 #include <QDebug>
 #include "../Greenhouse/Spring.h"
 
@@ -22,7 +12,7 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
     customerCount = 0;
     customerLimit = 20; // Can be adjusted as needed
 
-        // Initialize Plant Management
+    // Initialize Plant Management
     inventory = new Inventory();
     stock = new Stock(inventory);
     currentSeason = new Spring(inventory);
@@ -58,6 +48,7 @@ Nursery::~Nursery()
 
     // Clean up staff
     delete infoDesk;
+    delete cashier;
     for (Staff *s : staff)
     {
         delete s;
@@ -67,9 +58,10 @@ Nursery::~Nursery()
     // Clean up plant management
     delete stock;
     delete inventory;
+    delete flowerFactory;
+    delete herbFactory;
     delete currentSeason;
 }
-
 void Nursery::handleCustomerArrivalSignal()
 {
     if (customerCount >= customerLimit)

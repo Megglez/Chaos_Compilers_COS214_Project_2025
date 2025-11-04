@@ -1,3 +1,11 @@
+/**
+ * @file Customer.cpp
+ * @brief Implementation of the Customer class
+ *
+ * Implements customer behavior including state management, basket operations,
+ * staff interactions, and state transitions through the State pattern.
+ */
+
 #include "Customer.h"
 #include <QDebug>
 #include "../Staff/Staff.h"
@@ -39,11 +47,20 @@ bool Customer::addToBasket(Plant *plants, int quantity)
     return false;
 }
 
-bool Customer::removeFromBasket(Plant *plants, int quantity)
+    for (int i = 0; i < quantity; i++)
+    {
+        basket.push_back(plants);
+    }
+
+    std::cout << "Customer " << id << " added " << quantity << " of "
+              << plants->getName() << " to basket." << std::endl;
+    return true;
+}
+
+void Customer::clearBasket()
 {
-    std::cout << quantity;
-    plants->getName();
-    return false;
+    std::cout << "Customer " << id << " basket cleared. Had " << basket.size() << " items." << std::endl;
+    basket.clear();
 }
 
 int Customer::getId() const

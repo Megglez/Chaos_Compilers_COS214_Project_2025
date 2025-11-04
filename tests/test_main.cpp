@@ -24,20 +24,23 @@
 
 #include <memory>
 
-class GreenhouseTest : public ::testing::Test {
+class GreenhouseTest : public ::testing::Test
+{
 protected:
-    void SetUp() override {
+    void SetUp() override
+    {
         flowerPlanter = new FlowerPlanter();
         herbPlanter = new HerbPlanter();
         succulentPlanter = new SucculentPlanter();
         treePlanter = new TreePlanter();
         winterFlowerPlanter = new FlowerPlanter(true);
-        
+
         inventory = new Inventory();
         stock = new Stock(inventory);
     }
 
-    void TearDown() override {
+    void TearDown() override
+    {
         delete flowerPlanter;
         delete herbPlanter;
         delete succulentPlanter;
@@ -47,17 +50,18 @@ protected:
         delete stock;
     }
 
-    Planter* flowerPlanter;
-    Planter* herbPlanter;
-    Planter* succulentPlanter;
-    Planter* treePlanter;
-    Planter* winterFlowerPlanter;
-    Inventory* inventory;
-    Stock* stock;
+    Planter *flowerPlanter;
+    Planter *herbPlanter;
+    Planter *succulentPlanter;
+    Planter *treePlanter;
+    Planter *winterFlowerPlanter;
+    Inventory *inventory;
+    Stock *stock;
 };
 
 // Test plant creation with different planters
-TEST_F(GreenhouseTest, PlantCreation) {
+TEST_F(GreenhouseTest, PlantCreation)
+{
     std::unique_ptr<Plant> flower(flowerPlanter->planterMethod("Rose"));
     std::unique_ptr<Plant> herb(herbPlanter->planterMethod("Basil"));
     std::unique_ptr<Plant> succulent(succulentPlanter->planterMethod("Cactus"));
@@ -94,7 +98,8 @@ TEST_F(GreenhouseTest, PlantDecorators) {
 }
 
 // Test stock management
-TEST_F(GreenhouseTest, StockManagement) {
+TEST_F(GreenhouseTest, StockManagement)
+{
     std::unique_ptr<Plant> flower(flowerPlanter->planterMethod("Rose"));
     std::unique_ptr<Plant> herb(herbPlanter->planterMethod("Basil"));
     std::unique_ptr<Plant> succulent(succulentPlanter->planterMethod("Cactus"));
@@ -117,7 +122,8 @@ TEST_F(GreenhouseTest, StockManagement) {
 }
 
 // Test inventory and catalogue
-TEST_F(GreenhouseTest, InventoryCatalogue) {
+TEST_F(GreenhouseTest, InventoryCatalogue)
+{
     std::unique_ptr<Plant> flower(flowerPlanter->planterMethod("Rose"));
     stock->Add(std::move(flower), 30);
 
@@ -129,12 +135,13 @@ TEST_F(GreenhouseTest, InventoryCatalogue) {
 }
 
 // Test seasonal state commands
-TEST_F(GreenhouseTest, SeasonalCommands) {
+TEST_F(GreenhouseTest, SeasonalCommands)
+{
     std::unique_ptr<Plant> flower(flowerPlanter->planterMethod("Rose"));
     stock->Add(std::move(flower), 30);
 
     // Test Spring command
-    StateCommand* springCommand = new SpringCommand(inventory);
+    StateCommand *springCommand = new SpringCommand(inventory);
     testing::internal::CaptureStdout();
     springCommand->execute();
     inventory->getCatalogue();
@@ -143,7 +150,7 @@ TEST_F(GreenhouseTest, SeasonalCommands) {
     delete springCommand;
 
     // Test Summer command
-    StateCommand* summerCommand = new SummerCommand(inventory);
+    StateCommand *summerCommand = new SummerCommand(inventory);
     testing::internal::CaptureStdout();
     summerCommand->execute();
     inventory->getCatalogue();
@@ -152,7 +159,7 @@ TEST_F(GreenhouseTest, SeasonalCommands) {
     delete summerCommand;
 
     // Test Autumn command
-    StateCommand* autumnCommand = new AutumnCommand(inventory);
+    StateCommand *autumnCommand = new AutumnCommand(inventory);
     testing::internal::CaptureStdout();
     autumnCommand->execute();
     inventory->getCatalogue();
@@ -161,7 +168,7 @@ TEST_F(GreenhouseTest, SeasonalCommands) {
     delete autumnCommand;
 
     // Test Winter command
-    StateCommand* winterCommand = new WinterCommand(inventory);
+    StateCommand *winterCommand = new WinterCommand(inventory);
     testing::internal::CaptureStdout();
     winterCommand->execute();
     inventory->getCatalogue();
@@ -171,15 +178,17 @@ TEST_F(GreenhouseTest, SeasonalCommands) {
 }
 
 // Test inventory content inspection
-TEST_F(GreenhouseTest, InventoryInspection) {
+TEST_F(GreenhouseTest, InventoryInspection)
+{
     std::unique_ptr<Plant> flower(flowerPlanter->planterMethod("Rose"));
     stock->Add(std::move(flower), 30);
 
-    const auto& inv = inventory->getInventory();
+    const auto &inv = inventory->getInventory();
     EXPECT_FALSE(inv.empty());
-    
+
     // Test that we can iterate through inventory
-    for (const auto& entry : inv) {
+    for (const auto &entry : inv)
+    {
         EXPECT_NE(entry.second.first.get(), nullptr);
         // Depending on your implementation, you might want to check:
         EXPECT_NE(entry.second.first.get()->getState(), nullptr);
@@ -188,99 +197,102 @@ TEST_F(GreenhouseTest, InventoryInspection) {
 }
 
 // Test Stock Remove with null pointer
-TEST_F(GreenhouseTest, RemoveNullPlant) {
+TEST_F(GreenhouseTest, RemoveNullPlant)
+{
     // Test removing a null plant pointer
     testing::internal::CaptureStdout();
-    stock->Remove(nullptr);  // This should print an error message
+    stock->Remove(nullptr); // This should print an error message
     std::string removeOutput = testing::internal::GetCapturedStdout();
-    
-    EXPECT_NE(removeOutput.find("Error: Plant pointer is null. Please pass an actual plant :>"), 
+
+    EXPECT_NE(removeOutput.find("Error: Plant pointer is null. Please pass an actual plant :>"),
               std::string::npos);
 }
 
 // Test Stock Remove with valid plant
-TEST_F(GreenhouseTest, RemoveValidPlant) {
+TEST_F(GreenhouseTest, RemoveValidPlant)
+{
     // First add a plant to stock
     std::unique_ptr<Plant> flower(flowerPlanter->planterMethod("Rose"));
     stock->Add(std::move(flower), 30);
-    
+
     int initialCount = stock->getTotalPlants();
-    
+
     // Try to remove a plant that exists
     std::unique_ptr<Plant> plantToRemove(flowerPlanter->planterMethod("Rose"));
     testing::internal::CaptureStdout();
     stock->Remove(std::move(plantToRemove));
     std::string removeOutput = testing::internal::GetCapturedStdout();
-    
+
     int finalCount = stock->getTotalPlants();
-    
+
     // The count should decrease (or your implementation might handle it differently)
     // Also verify no error message was printed
-    EXPECT_EQ(removeOutput.find("Error: Plant pointer is null. Please pass an actual plant :>"), 
+    EXPECT_EQ(removeOutput.find("Error: Plant pointer is null. Please pass an actual plant :>"),
               std::string::npos);
 }
 
 // Test Stock Remove with empty unique_ptr
-TEST_F(GreenhouseTest, RemoveEmptyUniquePtr) {
+TEST_F(GreenhouseTest, RemoveEmptyUniquePtr)
+{
     testing::internal::CaptureStdout();
-    
+
     // Create an empty unique_ptr (nullptr)
     std::unique_ptr<Plant> emptyPlant(nullptr);
     stock->Remove(std::move(emptyPlant));
-    
+
     std::string removeOutput = testing::internal::GetCapturedStdout();
-    
-    EXPECT_NE(removeOutput.find("Error: Plant pointer is null. Please pass an actual plant :>"), 
+
+    EXPECT_NE(removeOutput.find("Error: Plant pointer is null. Please pass an actual plant :>"),
               std::string::npos);
 }
 
 // Test mixed operations: Add valid plants, then try to remove null
 // Test mixed operations: Add valid plants, then try to remove null
-TEST_F(GreenhouseTest, MixedOperationsWithNullRemoval) {
+TEST_F(GreenhouseTest, MixedOperationsWithNullRemoval)
+{
     std::unique_ptr<Plant> flower(flowerPlanter->planterMethod("Rose"));
     std::unique_ptr<Plant> herb(herbPlanter->planterMethod("Basil"));
-    
+
     stock->Add(std::move(flower), 30);
     stock->Add(std::move(herb), 50);
-    
+
     int countAfterAdd = stock->getTotalPlants();
     std::cout << "DEBUG: Count after adding plants: " << countAfterAdd << std::endl;
-    
+
     // Try to remove null plant
     testing::internal::CaptureStdout();
     stock->Remove(nullptr);
     std::string nullRemoveOutput = testing::internal::GetCapturedStdout();
     std::cout << "DEBUG: Output from null removal: '" << nullRemoveOutput << "'" << std::endl;
-    
+
     int countAfterNullRemove = stock->getTotalPlants();
     std::cout << "DEBUG: Count after null removal: " << countAfterNullRemove << std::endl;
-    
+
     // Verify error message was printed
     bool hasErrorMessage = (nullRemoveOutput.find("Error: Plant pointer is null. Please pass an actual plant :>") != std::string::npos);
     std::cout << "DEBUG: Has error message: " << (hasErrorMessage ? "YES" : "NO") << std::endl;
     EXPECT_TRUE(hasErrorMessage);
-    
+
     // Verify stock count remains unchanged after null removal attempt
     std::cout << "DEBUG: Comparing counts - AfterAdd: " << countAfterAdd << ", AfterNullRemove: " << countAfterNullRemove << std::endl;
     EXPECT_EQ(countAfterAdd, countAfterNullRemove);
-    
+
     // Now remove a valid plant
     std::unique_ptr<Plant> plantToRemove(herbPlanter->planterMethod("Basil"));
     testing::internal::CaptureStdout();
     stock->Remove(std::move(plantToRemove));
     std::string validRemoveOutput = testing::internal::GetCapturedStdout();
     std::cout << "DEBUG: Output from valid removal: '" << validRemoveOutput << "'" << std::endl;
-    
+
     int countAfterValidRemove = stock->getTotalPlants();
     std::cout << "DEBUG: Count after valid removal: " << countAfterValidRemove << std::endl;
-    
+
     // Verify no error message for valid removal
     bool hasNoErrorMessage = (validRemoveOutput.find("Error: Plant pointer is null. Please pass an actual plant :>") == std::string::npos);
     std::cout << "DEBUG: Valid removal has no error message: " << (hasNoErrorMessage ? "YES" : "NO") << std::endl;
     EXPECT_TRUE(hasNoErrorMessage);
-    
+
     // Stock count should decrease after valid removal
     std::cout << "DEBUG: Comparing counts - AfterNullRemove: " << countAfterNullRemove << ", AfterValidRemove: " << countAfterValidRemove << std::endl;
     EXPECT_EQ(countAfterValidRemove, countAfterNullRemove);
 }
-

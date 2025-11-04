@@ -36,11 +36,12 @@ OBJS = $(SRCS:.cpp=.o)
 
 # Main target for TestingMain.cpp
 TARGET = TestingMain
+DEMO_TARGET = DemoMain
 
 all: $(TARGET)
 
 # MOC files needed for Qt classes
-MOC_SRCS = src/Customer/moc_Customer.cpp src/Nursery/moc_Nursery.cpp src/Nursery/moc_Clock.cpp \
+MOC_SRCS = src/Customer/moc_Customer.cpp src/Customer/moc_Browse.cpp src/Nursery/moc_Nursery.cpp src/Nursery/moc_Clock.cpp \
            src/Nursery/moc_CustomerClock.cpp src/Nursery/moc_PlantClock.cpp src/Nursery/moc_SeasonClock.cpp
 MOC_OBJS = $(MOC_SRCS:.cpp=.o)
 
@@ -51,6 +52,9 @@ $(TARGET): TestingMain.cpp $(OBJS) $(MOC_OBJS)
 # Generate MOC files for Qt classes
 src/Customer/moc_Customer.cpp: src/Customer/Customer.h
 	$(MOC) $(QT_INCLUDES) $< -o $@
+
+src/Customer/moc_Browse.cpp: src/Customer/Browse.h
+	moc-qt5 $(QT_INCLUDES) $< -o $@
 
 src/Nursery/moc_Nursery.cpp: src/Nursery/Nursery.h
 	$(MOC) $(QT_INCLUDES) $< -o $@
@@ -78,6 +82,13 @@ src/Nursery/moc_SeasonClock.cpp: src/Nursery/SeasonClock.h
 
 run: $(TARGET)
 	./$(TARGET)
+
+# Demo target for DemoMain.cpp
+$(DEMO_TARGET): DemoMain.cpp $(OBJS) $(MOC_OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(QT_LIBS)
+
+demo: $(DEMO_TARGET)
+	./$(DEMO_TARGET)
 
 # Test target (if you add test files in tests/)
 TEST_SRCS = $(wildcard tests/*.cpp)
@@ -122,9 +133,9 @@ clean_gcda:
 	rm -f *.gcda *.gcno
 
 clean:
-	rm -f $(OBJS) $(MOC_OBJS) $(TEST_OBJS) $(TARGET) $(TEST_TARGET) *.o *.gcov *.gcda *.gcno *.gz *.html *.css output.txt coverage.txt $(MOC_SRCS)
+	rm -f $(OBJS) $(MOC_OBJS) $(TEST_OBJS) $(TARGET) $(DEMO_TARGET) $(TEST_TARGET) *.o *.gcov *.gcda *.gcno *.gz *.html *.css output.txt coverage.txt $(MOC_SRCS)
 
-.PHONY: all run clean test valgrind valgrind_test gdb gdb_test coverage coverage_test report clean_gcda
+.PHONY: all run demo clean test valgrind valgrind_test gdb gdb_test coverage coverage_test report clean_gcda
 
 # Run CMake and execute unit tests
 unit_tests:

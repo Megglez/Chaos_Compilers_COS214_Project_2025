@@ -1,23 +1,25 @@
 #ifndef MANAGER_H
 #define MANAGER_H
 #include <iostream>
+#include <sstream>
+
 #include "Staff.h"
 using namespace std;
 
 class Manager : public Staff
 {
-
-private:
-Inventory *subject;
+	private:
+		Inventory* subject;
 public:
-	Inventory *subject;
+	
 	string trackInventory();
-	string getInventory();
-	void trackStaff();
-	Manager();
+	void manageStaff();
+	Manager(string name,string id, InfoDesk* infodesk, Inventory* inventory);
 	virtual ~Manager();
 	bool canHandleEnquiry();
-	void performDuty();
+	void performDuty();//for staffs
+	void setRole() override;
+	
 
 	
 };
