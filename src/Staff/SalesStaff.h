@@ -1,19 +1,20 @@
 #ifndef SALESSTAFF_H
 #define SALESSTAFF_H
 #include <iostream>
-#include "Staff.h"
+#include "../Staff/Staff.h"
 using namespace std;
 
 class SalesStaff : public Staff
 {
+
 public:
-	void interact();
-	void QnA();
-	void findPlant();
-	void getAvailability();
-	void setAvailability();
-	SalesStaff();
+	Inventory *subject;
+
+	void performDuty() override;
+	bool canHandleEnquiry() override;
+	SalesStaff(string &name, string &id, InfoDesk *infodesk);
 	virtual ~SalesStaff();
+	void setRole() override;
 };
 
 #endif

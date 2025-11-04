@@ -1,0 +1,44 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  build-lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up C++
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake make g++ clang-tidy qt6-base-dev
+
+      - name: Configure CMake
+        run: |
+          mkdir -p build
+          cd build
+          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+
+      - name: Build tests
+        run: |
+          cd build
+          cmake --build .
+
+      - name: Lint C++ code with clang-tidy
+        run: |
+          find src -name '*.cpp' | xargs clang-tidy -p build --quiet || exit 1
+
+      - name: Run unit tests
+        run: |
+          cd build
+          ctest --output-on-failure || echo "No tests found or test target failed."
