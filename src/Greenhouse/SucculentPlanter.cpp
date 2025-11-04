@@ -19,7 +19,7 @@
  * complex initialization logic for SucculentPlant objects and providing sensible
  * default values optimized for succulent plant requirements.
  */
-Plant* SucculentPlanter::planterMethod(std::string name) 
+Plant* SucculentPlanter::planterMethod(string name) 
 {
     int water = 1;      // Low water requirement - succulents are drought-tolerant
     int sunlight = 1;   // Moderate sunlight - bright indirect light preferred

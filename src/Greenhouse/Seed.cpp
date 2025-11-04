@@ -52,7 +52,7 @@ Seed::~Seed()
 * @brief returns the name of he current stage the plant is in
 * @return a string of the name of the curent stage
 */
-std::string Seed::getStageName(){
+string Seed::getStageName(){
     return "Seed";
 }
 

@@ -57,7 +57,7 @@ public:
      * Removes the plant from local stock and executes a remove command
      * on the main inventory system.
      */
-    void Remove(std::unique_ptr<Plant> plant);
+    void Remove(unique_ptr<Plant> plant);
     
     /**
      * @brief Adds a plant to stock and inventory
@@ -67,7 +67,7 @@ public:
      * Adds the plant to local stock and executes an add command
      * on the main inventory system with the specified quantity.
      */
-    void Add(std::unique_ptr<Plant> plant, int quantity);
+    void Add(unique_ptr<Plant> plant, int quantity);
     
     /**
      * @brief Displays the current stock catalogue
@@ -99,7 +99,7 @@ public:
 private:
     Command* command; ///< Current command being executed
     Inventory* inventory; ///< Reference to the main inventory system
-    std::vector<Plant*> StockList; ///< Local collection of plants
+    vector<Plant*> StockList; ///< Local collection of plants
 };
 
 #endif

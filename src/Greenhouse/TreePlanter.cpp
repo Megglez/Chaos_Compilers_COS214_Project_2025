@@ -18,7 +18,7 @@
  * complex initialization logic for TreePlant objects and providing sensible
  * default values for tree-specific attributes.
  */
-Plant* TreePlanter::planterMethod(std::string name) 
+Plant* TreePlanter::planterMethod(string name) 
 {
     int water = 3;
     int sunlight = 2;

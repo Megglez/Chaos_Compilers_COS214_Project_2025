@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 #include "CareStrategy.h"
-#
 using namespace std;
 class StageOfDevelopment;
 

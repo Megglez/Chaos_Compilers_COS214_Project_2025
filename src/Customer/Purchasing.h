@@ -36,17 +36,6 @@ class InfoDesk;
  */
 class Purchasing : public Action
 {
-private:
-    /**
-     * @brief Plants the customer is purchasing
-     */
-    std::vector<Plant *> plantsToBuy;
-
-    /**
-     * @brief Quantities for each plant to purchase
-     */
-    std::vector<int> quantities;
-
 public:
     /**
      * @brief Construct a Purchasing action for a single plant
@@ -55,7 +44,7 @@ public:
      *
      * Creates a purchase action for one plant type.
      */
-    Purchasing(Plant *plant, int quantity) : Action("Purchasing")
+    Purchasing(Plant* plant, int quantity) : Action("Purchasing")
     {
         if (plant)
         {
@@ -72,7 +61,7 @@ public:
      * Creates a purchase action for multiple plant types.
      * Vectors must be the same size.
      */
-    Purchasing(std::vector<Plant *> plants, std::vector<int> quants) : Action("Purchasing"), plantsToBuy(plants), quantities(quants) {}
+    Purchasing(vector<Plant*> plants, vector<int> quants) : Action("Purchasing"), plantsToBuy(plants), quantities(quants) {}
 
     /**
      * @brief Virtual destructor
@@ -93,7 +82,7 @@ public:
      *
      * Adds customer to cashier queue and processes checkout.
      */
-    void handle(Customer *customer) override;
+    void handle(Customer* customer) override;
 
     /**
      * @brief Get the next action after purchasing
@@ -102,7 +91,7 @@ public:
      * After purchasing, the customer leaves the nursery.
      * Returns nullptr to indicate completion.
      */
-    Action *getNextAction() override;
+    Action* getNextAction() override;
 
     /**
      * @brief Request staff assistance for checkout
@@ -111,18 +100,29 @@ public:
      *
      * Directs customer to available cashier for payment processing.
      */
-    void requestStaffAssistance(Customer *customer, InfoDesk &desk) override;
+    void requestStaffAssistance(Customer* customer, InfoDesk& desk) override;
 
     /**
      * @brief Get the list of plants to purchase
-     * @return std::vector<Plant*> Vector of plant pointers
+     * @return vector<Plant*> Vector of plant pointers
      */
-    std::vector<Plant *> getPlantsToBuy() const { return plantsToBuy; }
+    vector<Plant*> getPlantsToBuy() const { return plantsToBuy; }
 
     /**
      * @brief Get the quantities for each plant
-     * @return std::vector<int> Vector of quantities
+     * @return vector<int> Vector of quantities
      */
-    std::vector<int> getQuantities() const { return quantities; }
+    vector<int> getQuantities() const { return quantities; }
+
+private:
+    /**
+     * @brief Plants the customer is purchasing
+     */
+    vector<Plant *> plantsToBuy;
+
+    /**
+     * @brief Quantities for each plant to purchase
+     */
+    vector<int> quantities;
 };
 #endif

@@ -3,6 +3,7 @@
 #define PLANTDECORATOR_H
 
 #include "Plant.h"
+using namespace std;
 
 /**
  * @brief Abstract base class for Plant decorators following the Decorator pattern

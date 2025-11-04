@@ -9,6 +9,7 @@
 #include <string>
 #include "Plant.h"
 #include "StageOfDevelopment.h"
+using namespace std;
 
 // Forward declarations for stage classes
 class Seed;
@@ -28,18 +29,6 @@ class Staff;
  */
 class Inventory
 {
-private:
-    std::map<std::string, std::pair<std::unique_ptr<Plant>, int>> inventoryList; ///< Map of plant names to plant objects and quantities
-    std::vector<Staff*> staffList; ///< List of staff members to notify
-
-public:
-    /**
-     * @brief Protected default constructor
-     */
-    Inventory();
-    
-   
-
 public:
     /**
      * @brief Main action method for inventory operations
@@ -51,46 +40,46 @@ public:
      * @param plant Unique pointer to the plant to add
      * @param quantity Number of plants to add (default: 1)
      */
-    void addPlant(std::unique_ptr<Plant> plant, int quantity = 1);
+    void addPlant(unique_ptr<Plant> plant, int quantity = 1);
     
     /**
      * @brief Removes a specified quantity of plants from inventory
      * @param plant Unique pointer to the plant to remove
      * @param quantity Number of plants to remove
      */
-    void removePlant(std::unique_ptr<Plant> plant, int quantity);
+    void removePlant(unique_ptr<Plant> plant, int quantity);
     
     /**
      * @brief Removes all instances of a specific plant from inventory
      * @param plant Unique pointer to the plant to remove completely
      */
-    void removeAll(std::unique_ptr<Plant> plant);
+    void removeAll(unique_ptr<Plant> plant);
     
     /**
      * @brief Handles seasonal transition and updates inventory accordingly
      * @param fromSeason The current season being transitioned from
      * @param toSeason The new season being transitioned to
      */
-    void seasonalChange(std::string& fromSeason, std::string& toSeason);
+    void seasonalChange(string& fromSeason, string& toSeason);
     
     /**
      * @brief Adjusts stock levels based on seasonal requirements
      * @param season The season to adjust stock for
      */
-    void adjustStockForSeason(const std::string& season);
+    void adjustStockForSeason(const string& season);
     
     /**
      * @brief Updates stock level for a specific plant type
      * @param targetType The type of plant to update
      * @param newStockLevel The new stock level to set
      */
-    void updateStockByPlantType(const std::string& targetType, int newStockLevel);
+    void updateStockByPlantType(const string& targetType, int newStockLevel);
     
     /**
      * @brief Updates development stages of all plants for a new season
      * @param season The new season to adjust stages for
      */
-    void updatePlantStagesForSeason(const std::string& season);
+    void updatePlantStagesForSeason(const string& season);
     
     /**
      * @brief Determines the appropriate development stage for a plant in a given season
@@ -98,7 +87,7 @@ public:
      * @param season The season to determine stage for
      * @return Pointer to the appropriate StageOfDevelopment object
      */
-    StageOfDevelopment* determineStageForSeason(Plant* plant, const std::string& season);
+    StageOfDevelopment* determineStageForSeason(Plant* plant, const string& season);
     
    
     /**
@@ -122,7 +111,7 @@ public:
      * @brief Notifies all attached staff members with a message
      * @param message The message to send to staff members
      */
-    void notify(std::string& message);
+    void notify(string& message);
     
     /**
      * @brief Virtual destructor
@@ -131,15 +120,25 @@ public:
 
     /**
      * @brief returns the inventoryList
-     * @returns std::map<std::string, std::pair<std::unique_ptr<Plant>
+     * @returns map<string, pair<unique_ptr<Plant>
      */
-    std::map<std::string, std::pair<std::unique_ptr<Plant>, int>>& getInventory();
+    map<string, pair<unique_ptr<Plant>, int>>& getInventory();
 
     /**
      * @brief returns the number of stock of tha plant
      * @returns int
      */
-    int getPlantNumber(std::unique_ptr<Plant> plant);
+    int getPlantNumber(unique_ptr<Plant> plant);
+
+protected:
+    /**
+     * @brief Protected default constructor
+     */
+    Inventory();
+
+private:
+    map<string, pair<unique_ptr<Plant>, int>> inventoryList; ///< Map of plant names to plant objects and quantities
+    vector<Staff*> staffList; ///< List of staff members to notify    
 };
 
 #endif

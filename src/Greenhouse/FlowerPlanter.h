@@ -28,7 +28,7 @@ public:
      * Includes seasonal awareness for winter conditions.
      * @warning The caller is responsible for managing the memory of the returned Plant pointer
      */
-    virtual Plant* planterMethod(std::string name) override;
+    virtual Plant* planterMethod(string name) override;
     
     /**
      * @brief Constructs a FlowerPlanter with optional seasonal configuration

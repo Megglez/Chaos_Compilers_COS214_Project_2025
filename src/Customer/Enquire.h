@@ -36,22 +36,6 @@ class InfoDesk;
  */
 class Enquire : public Action
 {
-private:
-    /**
-     * @brief Plants the customer is asking about
-     */
-    std::vector<Plant *> plantsOfInterest;
-
-    /**
-     * @brief The question being asked
-     */
-    std::string enquiryQuestion;
-
-    /**
-     * @brief Type of question: 0 = advice, 1 = information
-     */
-    int questionType;
-
 public:
     /**
      * @brief Construct an Enquire action for a single plant
@@ -61,7 +45,7 @@ public:
      *
      * Creates an enquiry about a specific plant.
      */
-    Enquire(Plant *plant, const std::string &question = "", int qType = 0) : Action("Enquiring"), enquiryQuestion(question), questionType(qType)
+    Enquire(Plant* plant, const string& question = "", int qType = 0) : Action("Enquiring"), enquiryQuestion(question), questionType(qType)
     {
         if (plant)
             plantsOfInterest.push_back(plant);
@@ -75,7 +59,7 @@ public:
      *
      * Creates an enquiry about multiple plants.
      */
-    Enquire(std::vector<Plant *> plants, const std::string &question = "", int qType = 0) : Action("Enquiring"), plantsOfInterest(plants), enquiryQuestion(question), questionType(qType) {}
+    Enquire(vector<Plant*> plants, const string& question = "", int qType = 0) : Action("Enquiring"), plantsOfInterest(plants), enquiryQuestion(question), questionType(qType) {}
 
     /**
      * @brief Virtual destructor
@@ -98,7 +82,7 @@ public:
      * - Return to browsing (new Browse action)
      * - Leave the nursery (nullptr)
      */
-    Action *getNextAction() override;
+    Action* getNextAction() override;
 
     /**
      * @brief Request staff assistance for answering questions
@@ -107,19 +91,19 @@ public:
      *
      * Forwards the enquiry to the info desk to find available staff.
      */
-    void requestStaffAssistance(Customer *customer, InfoDesk &desk) override;
+    void requestStaffAssistance(Customer* customer, InfoDesk& desk) override;
 
     /**
      * @brief Get the enquiry question text
-     * @return std::string The question being asked
+     * @return string The question being asked
      */
-    std::string getEnquiryQuestion() const { return enquiryQuestion; }
+    string getEnquiryQuestion() const { return enquiryQuestion; }
 
     /**
      * @brief Get the plants the customer is asking about
-     * @return std::vector<Plant*> Vector of plants of interest
+     * @return vector<Plant*> Vector of plants of interest
      */
-    std::vector<Plant *> getPlantsOfInterest() const { return plantsOfInterest; }
+    vector<Plant*> getPlantsOfInterest() const { return plantsOfInterest; }
 
     /**
      * @brief Get the question type
@@ -132,12 +116,12 @@ public:
 
     /**
      * @brief Get the advice question if this is an advice-type enquiry
-     * @return std::string The advice question, or empty string if not an advice question
+     * @return string The advice question, or empty string if not an advice question
      *
      * Returns the question text only if questionType is 0 (advice question).
      * If this is an information question (type 1), returns an empty string.
      */
-    std::string getAdviceQuestion() const
+    string getAdviceQuestion() const
     {
         if (questionType == 0)
         {
@@ -145,5 +129,21 @@ public:
         }
         return "";
     }
+
+private:
+    /**
+     * @brief Plants the customer is asking about
+     */
+    vector<Plant*> plantsOfInterest;
+
+    /**
+     * @brief The question being asked
+     */
+    string enquiryQuestion;
+
+    /**
+     * @brief Type of question: 0 = advice, 1 = information
+     */
+    int questionType;
 };
 #endif

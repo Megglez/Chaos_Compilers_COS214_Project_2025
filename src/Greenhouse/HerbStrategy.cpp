@@ -9,8 +9,8 @@
  * demonstrating the concrete implementation of herb care strategy.
  * Herbs typically require regular harvesting, moderate watering, and good drainage.
  */
-void HerbStrategy::helpPlant(std::string& care) {
-    cout << "Herb currently being cared for by: " << care << std::endl;
+void HerbStrategy::helpPlant(string& care) {
+    cout << "Herb currently being cared for by: " << care << endl;
 }
 
 /**

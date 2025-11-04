@@ -32,16 +32,8 @@ using namespace std;
  * @see Winter
  * @see Autumn
  */
-class WinterCommand: public StateCommand{
-private:
-    /**
-     * @brief Reference to the inventory system
-     * 
-     * Pointer to the inventory where winter seasonal adjustments
-     * will be applied. Used to invoke seasonalChange method.
-     */
-    Inventory* inventory;
-    
+class WinterCommand: public StateCommand
+{    
 public:
     /**
      * @brief Executes the winter seasonal transition command
@@ -75,6 +67,15 @@ public:
      * is not owned by this class and is not deleted.
      */
     ~WinterCommand();
+
+private:
+    /**
+     * @brief Reference to the inventory system
+     * 
+     * Pointer to the inventory where winter seasonal adjustments
+     * will be applied. Used to invoke seasonalChange method.
+     */
+    Inventory* inventory;
 };
 
 #endif

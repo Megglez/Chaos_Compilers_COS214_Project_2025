@@ -19,7 +19,7 @@
  * default values optimized for herb plant requirements. Herbs like basil,
  * mint, and rosemary thrive with these settings.
  */
-Plant* HerbPlanter::planterMethod(std::string name){
+Plant* HerbPlanter::planterMethod(string name){
     int water = 2;      // Moderate water requirement - herbs need consistent moisture
     int sunlight = 3;   // Good sunlight - most herbs require ample light for flavor
     int soil = 3;       // Well-draining soil essential to prevent root rot

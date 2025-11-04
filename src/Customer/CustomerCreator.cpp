@@ -28,14 +28,14 @@ CustomerCreator::~CustomerCreator()
 {
 }
 
-Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
+Customer *CustomerCreator::createNewCustomer(Nursery* nursery, Stock* stock)
 {
     qDebug() << "=== CustomerCreator: Creating new customer ===";
     qDebug() << "Stock pointer:" << stock;
     qDebug() << "Stock size:" << (stock ? stock->getStockListSize() : 0);
 
-    std::vector<Plant *> chosenPlants;
-    std::vector<int> quantitiesWanted;
+     vector<Plant*> chosenPlants;
+     vector<int> quantitiesWanted;
 
     random_device rd;
     mt19937 gen(rd());
@@ -52,11 +52,11 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
         uniform_int_distribution<> quantityDist(1, 10);
 
         // Keep track of already selected plant names to ensure distinct plant types
-        std::vector<std::string> selectedPlantNames;
+        vector<string> selectedPlantNames;
 
         for (int i = 0; i < numPlants; i++)
         {
-            Plant *chosenPlant = nullptr;
+            Plant* chosenPlant = nullptr;
             int attempts = 0;
             const int maxAttempts = 50; // Prevent infinite loop
 
@@ -73,10 +73,10 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
                 {
                     break;
                 }
-            } while (chosenPlant && std::find(selectedPlantNames.begin(), selectedPlantNames.end(), chosenPlant->getName()) != selectedPlantNames.end());
+            } while (chosenPlant && find(selectedPlantNames.begin(), selectedPlantNames.end(), chosenPlant->getName()) != selectedPlantNames.end());
 
             // Skip if this is a duplicate plant name and we already have at least one plant
-            if (chosenPlant && std::find(selectedPlantNames.begin(), selectedPlantNames.end(), chosenPlant->getName()) != selectedPlantNames.end() && !selectedPlantNames.empty())
+            if (chosenPlant && find(selectedPlantNames.begin(), selectedPlantNames.end(), chosenPlant->getName()) != selectedPlantNames.end() && !selectedPlantNames.empty())
             {
                 continue;
             }
@@ -100,7 +100,7 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
         qDebug() << "Warning: Stock is empty. Customer will not target a specific plant/quantity.";
     }
 
-    Customer *newCustomer = nullptr;
+    Customer* newCustomer = nullptr;
     int actionType = actionDist(gen);
 
     if (actionType == 0)
@@ -116,10 +116,10 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
             int decorationType = decorationTypeDist(gen);
 
             // Apply decoration to the plants
-            std::vector<Plant *> decoratedPlants;
-            for (Plant *plant : chosenPlants)
+            vector<Plant*> decoratedPlants;
+            for (Plant* plant : chosenPlants)
             {
-                Plant *decoratedPlant = plant;
+                Plant* decoratedPlant = plant;
                 switch (decorationType)
                 {
                 case 0:
@@ -144,8 +144,8 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
         else if (chosenPlants.size() > 0)
         {
             // Clone the plants so we have our own copies
-            std::vector<Plant *> clonedPlants;
-            for (Plant *plant : chosenPlants)
+            vector<Plant*> clonedPlants;
+            for (Plant* plant : chosenPlants)
             {
                 if (plant)
                 {
@@ -154,7 +154,7 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
                 }
             }
             qDebug() << "CustomerCreator: About to create Browse with" << clonedPlants.size() << "plants and" << quantitiesWanted.size() << "quantities";
-            Browse *browseAction = new Browse(clonedPlants, quantitiesWanted);
+            Browse* browseAction = new Browse(clonedPlants, quantitiesWanted);
             qDebug() << "CustomerCreator: Browse created, checking contents...";
             qDebug() << "CustomerCreator: Browse has" << browseAction->getPlantsToBuy().size() << "plants";
             newCustomer = new Customer(browseAction, nursery, nursery);
@@ -171,12 +171,12 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
         // Customer is enquiring - determine question type (0 = advice, 1 = information)
         uniform_int_distribution<> questionTypeDist(0, 1);
         int questionType = questionTypeDist(gen);
-        std::string selectedQuestion;
+        string selectedQuestion;
 
         if (questionType == 0)
         {
             // Advice question - use the map with random selection
-            std::map<int, std::string> adviceQuestions = {
+            map<int, string> adviceQuestions = {
                 {0, "What summer flowers are available?"},
                 {1, "What winter flowers do you have?"},
                 {2, "What is the best time of day to water my plants?"},
@@ -206,7 +206,7 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
                 // Generate random index between 0 and max index of stock vector
                 uniform_int_distribution<> plantIndexDist(0, stock->getStockListSize() - 1);
                 int plantIndex = plantIndexDist(gen);
-                Plant *questionPlant = stock->getPlantByIndex(plantIndex);
+                Plant* questionPlant = stock->getPlantByIndex(plantIndex);
 
                 if (questionPlant)
                 {
@@ -214,7 +214,7 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
                     int quantity = 0;
                     if (nursery)
                     {
-                        Inventory *inventory = nursery->getInventory();
+                        Inventory* inventory = nursery->getInventory();
                         if (inventory)
                         {
                             auto &invMap = inventory->getInventory();
@@ -230,7 +230,7 @@ Customer *CustomerCreator::createNewCustomer(Nursery *nursery, Stock *stock)
                     selectedQuestion = "How many " + questionPlant->getName() + " do you have in stock?";
 
                     // Create customer with the plant they're asking about
-                    std::vector<Plant *> enquiryPlants = {questionPlant};
+                    vector<Plant*> enquiryPlants = {questionPlant};
                     newCustomer = new Customer(new Enquire(enquiryPlants, selectedQuestion, 1), nursery, nursery);
                     qDebug() << "CustomerCreator: Created an Inquiring Customer with information question:"
                              << selectedQuestion.c_str() << "(Answer:" << quantity << ")";

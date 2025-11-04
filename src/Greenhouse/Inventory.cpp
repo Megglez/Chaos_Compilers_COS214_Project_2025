@@ -30,7 +30,7 @@ void Inventory::action()
 {
     // TODO: Implement what this function is supposed to do.
     // For example, it could advance the state of all plants.
-    std::cout << "Inventory action/update called!" << std::endl;
+    cout << "Inventory action/update called!" << endl;
 }
 
 
@@ -43,25 +43,25 @@ void Inventory::action()
  * If it's a new plant, creates a new entry in the inventory map.
  */
 
-void Inventory::addPlant(std::unique_ptr<Plant> plant, int quantity) {
+void Inventory::addPlant(unique_ptr<Plant> plant, int quantity) {
     if(plant){
-        std::string plantName = plant->getName(); // Assuming Plant has getName()
+        string plantName = plant->getName(); // Assuming Plant has getName()
         
         auto it = inventoryList.find(plantName);
         if (it != inventoryList.end()) {
             // Plant exists - update quantity
             it->second.second += quantity;
-            std::cout << "Added " << quantity << " " << plantName << ". Total: " << it->second.second << std::endl;
+            cout << "Added " << quantity << " " << plantName << ". Total: " << it->second.second << endl;
         } else {
             // New plant - insert with quantity
-            inventoryList[plantName] = std::make_pair(std::move(plant), quantity);
-            std::cout << "Added new plant: " << plantName 
-                    << " with quantity: " << quantity << std::endl;
-            std::string message = plantName + " has just been added to the Inventory";
+            inventoryList[plantName] = make_pair(move(plant), quantity);
+            cout << "Added new plant: " << plantName 
+                    << " with quantity: " << quantity << endl;
+            string message = plantName + " has just been added to the Inventory";
             notify(message);
         }	
     }else{
-        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
+        cout << "Error: Plant pointer is null. Please pass an actual plant :>" << endl;
     }
 }
 
@@ -73,32 +73,32 @@ void Inventory::addPlant(std::unique_ptr<Plant> plant, int quantity) {
  * Reduces the quantity of the specified plant. If quantity reaches zero,
  * removes the plant entirely from inventory. Notifies staff of changes.
  */
-void Inventory::removePlant(std::unique_ptr<Plant> plant, int quantity) {
+void Inventory::removePlant(unique_ptr<Plant> plant, int quantity) {
     if(plant){
         auto it = inventoryList.find(plant->getName()); 
         if (it != inventoryList.end()) {
             if (it->second.second >= quantity) {
                 it->second.second -= quantity;
-                std::cout << "Removed " << quantity << " " << plant->getName() 
-                        << ". Remaining: " << it->second.second << std::endl;
+                cout << "Removed " << quantity << " " << plant->getName() 
+                        << ". Remaining: " << it->second.second << endl;
                 
                 // Remove entry if quantity reaches zero
                 if (it->second.second == 0) {
                     inventoryList.erase(it);
-                    std::cout << plant->getName() << " is now out of stock." << std::endl; // replace with plant->getName()
-                    std::string message = plant->getName() + "is now out of Stock. Please restock soon";// replace with plant->getName()
+                    cout << plant->getName() << " is now out of stock." << endl; // replace with plant->getName()
+                    string message = plant->getName() + "is now out of Stock. Please restock soon";// replace with plant->getName()
                     notify(message);
                 }
             } else {
-                std::cout << "Error: Only " << it->second.second << " " << plant->getName() << " available. Cannot remove " // replace with plant->getName()
-                << quantity << std::endl;
+                cout << "Error: Only " << it->second.second << " " << plant->getName() << " available. Cannot remove " // replace with plant->getName()
+                << quantity << endl;
 
             }
         } else {
-            std::cout << "Error: Plant " << plant->getName() << " not found in inventory." << std::endl; // replace with plant->getName()
+            cout << "Error: Plant " << plant->getName() << " not found in inventory." << endl; // replace with plant->getName()
         }
     }else{
-        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
+        cout << "Error: Plant pointer is null. Please pass an actual plant :>" << endl;
     }
 }
 
@@ -109,31 +109,35 @@ void Inventory::removePlant(std::unique_ptr<Plant> plant, int quantity) {
  * Completely removes the plant from inventory regardless of quantity.
  * Useful for discontinuing plant types or complete stock clearance.
  */
-void Inventory::removeAll(std::unique_ptr<Plant> plant){
+void Inventory::removeAll(unique_ptr<Plant> plant){
     if(plant){
         auto it = inventoryList.find(plant->getName()); // replace with plant->getName()
-        std::string message = plant->getName() + " has just been removed from the inventory";
+        string message = plant->getName() + " has just been removed from the inventory";
         if (it != inventoryList.end()) {
             inventoryList.erase(it);
             notify(message);
         }else {
-            std::cout << "Error: Plant " << plant->getName() << " not found in inventory." << std::endl; // replace with plant->getName()
+            cout << "Error: Plant " << plant->getName() << " not found in inventory." << endl; // replace with plant->getName()
         }
     }else{
-        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
+        cout << "Error: Plant pointer is null. Please pass an actual plant :>" << endl;
     }
 
+}
+
+void Inventory::updateStockByPlantType(const string &targetType, int newStockLevel)
+{
 }
 
 /**
  * @brief Updates development stages of all plants for a new season
  * @param season The new season to adjust stages for
- * 
+ *
  * Applies seasonal development changes to all plants in inventory.
  * Each plant's stage is evaluated and potentially updated based on
  * the new seasonal conditions.
  */
-void Inventory::updatePlantStagesForSeason(const std::string& season) {
+void Inventory::updatePlantStagesForSeason(const string& season) {
     for (auto& [plantName, plantData] : inventoryList) {
         auto& [plantPtr, currentStock] = plantData;
         
@@ -141,7 +145,7 @@ void Inventory::updatePlantStagesForSeason(const std::string& season) {
             StageOfDevelopment* newStage = determineStageForSeason(plantPtr.get(), season);
             if (newStage) {
                 plantPtr->setStage(newStage); // Assuming you have a setter for the stage
-                std::cout << plantName << " stage updated for " << season << std::endl;
+                cout << plantName << " stage updated for " << season << endl;
             }
         }
     }
@@ -157,8 +161,8 @@ void Inventory::updatePlantStagesForSeason(const std::string& season) {
  * appropriate development stage. Implements plant lifecycle logic
  * based on seasonal changes.
  */
-StageOfDevelopment* Inventory::determineStageForSeason(Plant* plant, const std::string& season) {
-    std::string plantType = plant->getType();
+StageOfDevelopment* Inventory::determineStageForSeason(Plant* plant, const string& season) {
+    string plantType = plant->getType();
     int watered = plant->getWatered();
     
     if (season == "Spring") {
@@ -237,12 +241,12 @@ StageOfDevelopment* Inventory::determineStageForSeason(Plant* plant, const std::
  * Coordinates both stock adjustments and plant stage changes during
  * seasonal transitions. Notifies all staff members of the seasonal change.
  */
-void Inventory::seasonalChange(std::string& fromSeason, std::string& toSeason){
-    std::cout << "Season changing from " << fromSeason << " to " << toSeason << std::endl;
+void Inventory::seasonalChange(string& fromSeason, string& toSeason){
+    cout << "Season changing from " << fromSeason << " to " << toSeason << endl;
     adjustStockForSeason(toSeason);
     updatePlantStagesForSeason(toSeason);
 
-    std::string message = "The Inventory has just been adjusted for the " + toSeason;
+    string message = "The Inventory has just been adjusted for the " + toSeason;
     for(Staff* staff: staffList){
         staff->update(message);
     }
@@ -262,13 +266,13 @@ void Inventory::seasonalChange(std::string& fromSeason, std::string& toSeason){
  * 
  * Decided modify it to include WinterFlowers
  */
-void Inventory::adjustStockForSeason(const std::string& season) {
-    std::cout << "Adjusting stock for season: " << season << std::endl;
+void Inventory::adjustStockForSeason(const string& season) {
+    cout << "Adjusting stock for season: " << season << endl;
     
 
     // Iterate with iterator so we can safely erase dead plants while traversing
     for (auto it = inventoryList.begin(); it != inventoryList.end(); ) {
-        std::string plantName = it->first;
+        string plantName = it->first;
         auto& plantData = it->second;
         auto& plantPtr = plantData.first;
         auto& currentStock = plantData.second;
@@ -277,8 +281,8 @@ void Inventory::adjustStockForSeason(const std::string& season) {
             // If the plant has zero water, it dies and should be removed from inventory
             int watered = plantPtr->getWatered();
             if (watered == 0) {
-                std::cout << "Plant '" << plantName << "' has no water left and died. Removing from inventory." << std::endl;
-                std::string message = plantName + " has died due to lack of water and removed from inventory";
+                cout << "Plant '" << plantName << "' has no water left and died. Removing from inventory." << endl;
+                string message = plantName + " has died due to lack of water and removed from inventory";
                 notify(message);
                 it = inventoryList.erase(it);
                 continue; // move to next element
@@ -299,12 +303,12 @@ void Inventory::adjustStockForSeason(const std::string& season) {
                     newStockLevel = 0;    // Dormant season - no stock
                 }
                 
-                std::cout << "Winter flower '" << plantName << "' stock adjusted from " 
-                          << currentStock << " to " << newStockLevel << " for " << season << std::endl;
+                cout << "Winter flower '" << plantName << "' stock adjusted from " 
+                          << currentStock << " to " << newStockLevel << " for " << season << endl;
                           
             } else {
                 // Handle regular plants by type
-                std::string plantType = plantPtr->getType();
+                string plantType = plantPtr->getType();
                 
                 if (season == "Spring") {
                     if (plantType == "Succulent") {
@@ -351,9 +355,9 @@ void Inventory::adjustStockForSeason(const std::string& season) {
                     }
                 }
                 
-                std::cout << "Regular " << plantType << " '" << plantName 
+                cout << "Regular " << plantType << " '" << plantName 
                           << "' stock adjusted from " << currentStock << " to " 
-                          << newStockLevel << " for " << season << std::endl;
+                          << newStockLevel << " for " << season << endl;
             }
             
             // Update the stock level
@@ -365,7 +369,7 @@ void Inventory::adjustStockForSeason(const std::string& season) {
         ++it;
     }
     
-    std::cout << "Seasonal stock adjustment completed for " << season << std::endl;
+    cout << "Seasonal stock adjustment completed for " << season << endl;
 }
 
 
@@ -377,11 +381,11 @@ void Inventory::adjustStockForSeason(const std::string& season) {
  * and inventory checking purposes.
  */
 void Inventory::getCatalogue() {
-	std::cout << "\n=== INVENTORY CATALOGUE ===" << std::endl;
+	cout << "\n=== INVENTORY CATALOGUE ===" << endl;
     for (const auto& entry : inventoryList) {
-        std::cout << "- " << entry.first << ": " << entry.second.second << " units" << std::endl;
+        cout << "- " << entry.first << ": " << entry.second.second << " units" << endl;
     }
-    std::cout << "===========================\n" << std::endl;
+    cout << "===========================\n" << endl;
 }
 
 /**
@@ -404,17 +408,17 @@ void Inventory::attach(Staff* staff) {
  */
 void Inventory::detach(Staff* staff) {
     if(staff){
-        auto it = std::find(staffList.begin(), staffList.end(), staff);
+        auto it = find(staffList.begin(), staffList.end(), staff);
         if (it != staffList.end()) {
             staffList.erase(it);
         }
     }else{
-        std::cout << "Error: staff pointer is null. Please pass an actual  :>" << std::endl;
+        cout << "Error: staff pointer is null. Please pass an actual  :>" << endl;
     }
 
 }
 
-std::map<std::string, std::pair<std::unique_ptr<Plant>, int>>& Inventory::getInventory(){
+map<string, pair<unique_ptr<Plant>, int>>& Inventory::getInventory(){
     return inventoryList;
 }
 
@@ -425,7 +429,7 @@ std::map<std::string, std::pair<std::unique_ptr<Plant>, int>>& Inventory::getInv
  * Sends a notification to all registered staff observers.
  * Used for communicating important inventory changes and updates.
  */
-void Inventory::notify(std::string& message) {
+void Inventory::notify(string& message) {
 	for(Staff* staff: staffList){
 		staff->update(message);
 	}
@@ -441,16 +445,16 @@ Inventory::~Inventory()
 {
 }
 
-int Inventory::getPlantNumber(std::unique_ptr<Plant> plant){
+int Inventory::getPlantNumber(unique_ptr<Plant> plant){
     int quantity;
     if(plant){
         auto it = inventoryList.find(plant->getName()); 
         if (it != inventoryList.end()) {
             quantity = it->second.second;
         }else{
-            std::cout << "Error: Plant not found." << std::endl;
+            cout << "Error: Plant not found." << endl;
         }
     }else{
-        std::cout << "Error: Plant pointer is null. Please pass an actual plant :>" << std::endl;
+        cout << "Error: Plant pointer is null. Please pass an actual plant :>" << endl;
     }
 }

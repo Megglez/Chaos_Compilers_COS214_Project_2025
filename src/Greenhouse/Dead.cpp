@@ -55,7 +55,7 @@ Dead::~Dead()
     // Cleanup code if needed
 }
 
-std::string Dead::getStageName(){
+string Dead::getStageName(){
     return "Dead";
 }
 

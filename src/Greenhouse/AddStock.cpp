@@ -22,16 +22,16 @@
  * 
  * @par Example:
  * @code
- * auto plant = std::make_unique<Plant>("Rose", "flower");
+ * auto plant = make_unique<Plant>("Rose", "flower");
  * AddStock addCommand(&inventory);
- * addCommand.execute(std::move(plant), 10);  // Adds 10 rose plants
+ * addCommand.execute(move(plant), 10);  // Adds 10 rose plants
  * // 'plant' is now empty after move
  * @endcode
  * 
  * @see Inventory::addPlant
  */
-void AddStock::execute(std::unique_ptr<Plant>&& plant, int quantity) {
-	inventory->addPlant(std::move(plant), quantity);
+void AddStock::execute(unique_ptr<Plant>&& plant, int quantity) {
+	inventory->addPlant(move(plant), quantity);
 }
 
 /**

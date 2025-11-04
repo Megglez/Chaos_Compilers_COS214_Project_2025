@@ -69,7 +69,6 @@ public:
      *
      * @note Takes ownership of the created customer; caller responsible for deletion
      */
-    Customer *createNewCustomer(Nursery *nursery, Stock *stock);
+    Customer* createNewCustomer(Nursery* nursery, Stock* stock);
 };
-
 #endif

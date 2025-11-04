@@ -8,11 +8,6 @@ using namespace std;
 
 class Cashiers : public Staff
 {
-private:
-	std::queue<Customer *> customerQueue;
-	Customer *currentCustomer;
-	bool isProcessing;
-
 public:
 	Inventory *subject;
 
@@ -28,12 +23,18 @@ public:
 	void processNextCustomer();
 
 	// Staff interface
-	std::string getStaffType();
+	string getStaffType();
 	bool canHandleEnquiry();
 	void performDuty();
 
-	Cashiers(std::string &name, std::string &id);
+	Cashiers(string &name, string &id);
 	virtual ~Cashiers();
+
+private:
+	queue<Customer *> customerQueue;
+	Customer *currentCustomer;
+	bool isProcessing;
+
 };
 
 #endif

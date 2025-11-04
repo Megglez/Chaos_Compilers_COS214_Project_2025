@@ -48,7 +48,7 @@ Autumn::~Autumn(){
 
 }
 
-std::string Autumn::getSeason(){
+string Autumn::getSeason(){
     return "Autumn";
 }
 

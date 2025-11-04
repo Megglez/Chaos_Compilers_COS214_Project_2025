@@ -15,6 +15,8 @@
 #include <QObject>
 #include <QTimer>
 #include <QDebug>
+using namespace std;
+
 class Customer;
 class InfoDesk;
 
@@ -37,26 +39,6 @@ class InfoDesk;
 class Browse : public QObject, public Action
 {
     Q_OBJECT
-private:
-    /**
-     * @brief List of plants the customer is considering
-     */
-    std::vector<Plant *> plantsToBuy;
-
-    /**
-     * @brief Quantities for each plant in plantsToBuy
-     */
-    std::vector<int> quantities;
-
-    /**
-     * @brief Timer for asynchronous browsing duration
-     */
-    QTimer *browseTimer;
-
-    /**
-     * @brief Pointer to the customer performing this action
-     */
-    Customer *currentCustomer;
 
 public:
     /**
@@ -66,7 +48,7 @@ public:
      *
      * Creates a browsing action with one plant and initializes the timer.
      */
-    Browse(Plant *plant, int quantity) : Action("Browsing"), QObject(nullptr), currentCustomer(nullptr)
+    Browse(Plant* plant, int quantity) : Action("Browsing"), QObject(nullptr), currentCustomer(nullptr)
     {
         if (plant)
         {
@@ -85,7 +67,7 @@ public:
      * Creates a browsing action with multiple plants and initializes the timer.
      * The plants vector can contain decorated plants (GiftWrap, Pot, etc.).
      */
-    Browse(std::vector<Plant *> plants, std::vector<int> quants) : Action("Browsing"), QObject(nullptr), plantsToBuy(plants), quantities(quants), currentCustomer(nullptr)
+    Browse(vector<Plant*> plants, vector<int> quants) : Action("Browsing"), QObject(nullptr), plantsToBuy(plants), quantities(quants), currentCustomer(nullptr)
     {
         browseTimer = new QTimer(this);
         connect(browseTimer, &QTimer::timeout, this, &Browse::onBrowseTimeout);
@@ -139,19 +121,40 @@ public:
      *
      * Transitions the customer from Browse to Enquire state.
      */
-    void requestStaffAssistance(Customer *customer, InfoDesk &desk) override;
+    void requestStaffAssistance(Customer* customer, InfoDesk& desk) override;
 
     /**
      * @brief Get the list of plants to buy
-     * @return std::vector<Plant*> Vector of plant pointers
+     * @return vector<Plant*> Vector of plant pointers
      */
-    std::vector<Plant *> getPlantsToBuy() const { return plantsToBuy; }
+    vector<Plant*> getPlantsToBuy() const { return plantsToBuy; }
 
     /**
      * @brief Get the quantities for each plant
-     * @return std::vector<int> Vector of quantities
+     * @return vector<int> Vector of quantities
      */
-    std::vector<int> getQuantities() const { return quantities; }
+    vector<int> getQuantities() const { return quantities; }
+
+private:
+    /**
+     * @brief List of plants the customer is considering
+     */
+    vector<Plant*> plantsToBuy;
+
+    /**
+     * @brief Quantities for each plant in plantsToBuy
+     */
+    vector<int> quantities;
+
+    /**
+     * @brief Timer for asynchronous browsing duration
+     */
+    QTimer *browseTimer;
+
+    /**
+     * @brief Pointer to the customer performing this action
+     */
+    Customer *currentCustomer;
 
 private slots:
     /**

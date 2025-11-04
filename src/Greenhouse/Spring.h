@@ -10,9 +10,9 @@
 #define SPRING_H
 
 #include <iostream>
-using namespace std;
 #include "Seasons.h"
 #include "Summer.h"
+using namespace std;
 
 /**
  * @class Spring
@@ -62,7 +62,7 @@ public:
      * 
      * @override Implements pure virtual method from Seasons base class
      */
-    virtual std::string getSeason() override;
+    virtual string getSeason() override;
     
     /**
      * @brief Constructs a Spring season with inventory reference

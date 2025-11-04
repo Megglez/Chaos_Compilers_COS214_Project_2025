@@ -42,7 +42,7 @@ Summer::Summer(Inventory* inv): inventory(inv){
     commands->execute();
 }
 
-std::string Summer::getSeason() {
+string Summer::getSeason() {
     return "Summer";
 }
 

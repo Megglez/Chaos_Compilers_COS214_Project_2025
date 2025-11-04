@@ -6,7 +6,7 @@ void Busy::handle() {
 
 	if(staff)
 	{
-		cout<<staff->getName()<< " is completing this task."<<std::endl;
+		cout<<staff->getName()<< " is completing this task."<<endl;
  
 		
 		staff->setCurrentCustomer(nullptr);
@@ -17,7 +17,7 @@ void Busy::handle() {
 		{
 			infod->notifyStaffAvailable(staff);
 		}
- 		std::cout<< "Staff has assisted customer. Staff is now Available."<<std::endl;
+ 		cout<< "Staff has assisted customer. Staff is now Available."<<endl;
 		//remove staff from Infodesk::AvailableStaff
 
 	}
@@ -35,7 +35,7 @@ Busy::~Busy()
 }
 
 
-std::string Busy::getStateName()const
+string Busy::getStateName()const
 {
 	return "Busy";
 }

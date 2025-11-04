@@ -45,32 +45,6 @@ class Customer : public QObject
 {
 	Q_OBJECT
 
-private:
-	/**
-	 * @brief Current action/state of the customer
-	 */
-	Action *action;
-
-	/**
-	 * @brief Unique identifier for this customer
-	 */
-	int id;
-
-	/**
-	 * @brief Customer's shopping basket containing selected plants
-	 */
-	vector<Plant *> basket;
-
-	/**
-	 * @brief Staff member currently assisting this customer (if any)
-	 */
-	Staff *assignedStaff = nullptr;
-
-	/**
-	 * @brief Reference to the nursery this customer is visiting
-	 */
-	Nursery *nursery;
-
 public:
 	/**
 	 * @brief Construct a new Customer object
@@ -80,7 +54,7 @@ public:
 	 *
 	 * Creates a customer with a unique ID and initial state.
 	 */
-	Customer(Action *action, Nursery *nursery, QObject *parent = nullptr);
+	Customer(Action* action, Nursery* nursery, QObject* parent = nullptr);
 
 	/**
 	 * @brief Destroy the Customer object
@@ -102,7 +76,7 @@ public:
 	 *
 	 * Transitions the customer to a new state, deleting the old action.
 	 */
-	void setAction(Action *newAction);
+	void setAction(Action* newAction);
 
 	/**
 	 * @brief Process state transition to next action
@@ -120,7 +94,7 @@ public:
 	 *
 	 * Adds the specified quantity of a plant to the shopping basket.
 	 */
-	bool addToBasket(Plant *plants, int quantity);
+	bool addToBasket(Plant* plants, int quantity);
 
 	/**
 	 * @brief Clear all items from the basket
@@ -133,7 +107,7 @@ public:
 	 * @brief Get the customer's basket contents
 	 * @return const std::vector<Plant*>& Reference to the basket
 	 */
-	const std::vector<Plant *> &getBasket() const { return basket; }
+	const vector<Plant*>& getBasket() const { return basket; }
 
 	/**
 	 * @brief Get the customer's unique ID
@@ -145,25 +119,51 @@ public:
 	 * @brief Get the customer's current action
 	 * @return Action* Pointer to the current action
 	 */
-	Action *getAction() const;
+	Action* getAction() const;
 
 	/**
 	 * @brief Get the nursery this customer is visiting
 	 * @return Nursery* Pointer to the nursery
 	 */
-	Nursery *getNursery() const { return nursery; }
+	Nursery* getNursery() const { return nursery; }
 
 	/**
 	 * @brief Assign a staff member to assist this customer
 	 * @param staff Pointer to the staff member
 	 */
-	void setAssignedStaff(Staff *staff);
+	void setAssignedStaff(Staff* staff);
 
 	/**
 	 * @brief Get the currently assigned staff member
 	 * @return Staff* Pointer to assigned staff, or nullptr if none
 	 */
-	Staff *getAssignedStaff() const { return assignedStaff; }
+	Staff* getAssignedStaff() const { return assignedStaff; }
+
+private:
+	/**
+	 * @brief Current action/state of the customer
+	 */
+	Action* action;
+
+	/**
+	 * @brief Unique identifier for this customer
+	 */
+	int id;
+
+	/**
+	 * @brief Customer's shopping basket containing selected plants
+	 */
+	vector<Plant*> basket;
+
+	/**
+	 * @brief Staff member currently assisting this customer (if any)
+	 */
+	Staff* assignedStaff = nullptr;
+
+	/**
+	 * @brief Reference to the nursery this customer is visiting
+	 */
+	Nursery* nursery;
 };
 
 #endif

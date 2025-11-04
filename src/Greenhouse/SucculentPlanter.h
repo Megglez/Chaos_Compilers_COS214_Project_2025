@@ -29,7 +29,7 @@ public:
      * and initializes it with a Seed stage and SucculentStrategy care strategy.
      * @warning The caller is responsible for managing the memory of the returned Plant pointer
      */
-    virtual Plant* planterMethod(std::string name) override;
+    virtual Plant* planterMethod(string name) override;
     
     /**
      * @brief Default constructor for SucculentPlanter

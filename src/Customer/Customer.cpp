@@ -52,14 +52,14 @@ bool Customer::addToBasket(Plant *plants, int quantity)
         basket.push_back(plants);
     }
 
-    std::cout << "Customer " << id << " added " << quantity << " of "
-              << plants->getName() << " to basket." << std::endl;
+    cout << "Customer " << id << " added " << quantity << " of "
+              << plants->getName() << " to basket." << endl;
     return true;
 }
 
 void Customer::clearBasket()
 {
-    std::cout << "Customer " << id << " basket cleared. Had " << basket.size() << " items." << std::endl;
+    cout << "Customer " << id << " basket cleared. Had " << basket.size() << " items." << endl;
     basket.clear();
 }
 

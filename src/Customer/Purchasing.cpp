@@ -16,11 +16,11 @@
 void Purchasing::handle()
 {
     // TODO: Implement actual purchasing logic
-    std::cout << "Customer is purchasing:" << std::endl;
+    cout << "Customer is purchasing:" << endl;
     for (size_t i = 0; i < plantsToBuy.size(); i++)
     {
-        std::cout << "  - " << quantities[i] << " of "
-                  << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "unknown plant") << std::endl;
+        cout << "  - " << quantities[i] << " of "
+                  << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "unknown plant") << endl;
     }
 }
 
@@ -28,15 +28,15 @@ void Purchasing::handle(Customer *customer)
 {
     if (!customer)
     {
-        std::cerr << "Error: Null customer in Purchasing state." << std::endl;
+        cerr << "Error: Null customer in Purchasing state." << endl;
         return;
     }
 
-    std::cout << "Customer " << customer->getId() << " is ready to purchase:" << std::endl;
+    cout << "Customer " << customer->getId() << " is ready to purchase:" << endl;
     for (size_t i = 0; i < plantsToBuy.size(); i++)
     {
-        std::cout << "  - " << quantities[i] << " of "
-                  << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "unknown plant") << std::endl;
+        cout << "  - " << quantities[i] << " of "
+                  << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "unknown plant") << endl;
     }
 
     // Get the cashier from nursery and enqueue the customer
@@ -46,17 +46,17 @@ void Purchasing::handle(Customer *customer)
         Cashiers *cashier = nursery->getCashier();
         if (cashier)
         {
-            std::cout << "Customer " << customer->getId() << " joining cashier queue..." << std::endl;
+            cout << "Customer " << customer->getId() << " joining cashier queue..." << endl;
             cashier->enqueueCustomer(customer);
         }
         else
         {
-            std::cerr << "Error: No cashier available in nursery." << std::endl;
+            cerr << "Error: No cashier available in nursery." << endl;
         }
     }
     else
     {
-        std::cerr << "Error: Customer has no nursery assigned." << std::endl;
+        cerr << "Error: Customer has no nursery assigned." << endl;
     }
 }
 
@@ -69,6 +69,6 @@ Action *Purchasing::getNextAction()
 
 void Purchasing::requestStaffAssistance(Customer *customer, InfoDesk &desk)
 {
-    std::cout << "Customer needs assistance with purchase. Requesting staff help." << std::endl;
+    cout << "Customer needs assistance with purchase. Requesting staff help." << endl;
     desk.handleCustomer(customer);
 }

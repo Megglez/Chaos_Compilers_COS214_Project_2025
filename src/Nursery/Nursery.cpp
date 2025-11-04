@@ -29,30 +29,30 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
 
     // Add diverse initial plants to stock for customers to browse
     // Flowers
-    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Rose")), 20);
-    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Tulip")), 15);
-    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Lily")), 10);
-    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Sunflower")), 12);
-    stock->Add(std::unique_ptr<Plant>(flowerFactory->planterMethod("Daisy")), 18);
+    stock->Add(unique_ptr<Plant>(flowerFactory->planterMethod("Rose")), 20);
+    stock->Add(unique_ptr<Plant>(flowerFactory->planterMethod("Tulip")), 15);
+    stock->Add(unique_ptr<Plant>(flowerFactory->planterMethod("Lily")), 10);
+    stock->Add(unique_ptr<Plant>(flowerFactory->planterMethod("Sunflower")), 12);
+    stock->Add(unique_ptr<Plant>(flowerFactory->planterMethod("Daisy")), 18);
 
     // Herbs
-    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Basil")), 25);
-    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Mint")), 30);
-    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Rosemary")), 16);
-    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Thyme")), 14);
-    stock->Add(std::unique_ptr<Plant>(herbFactory->planterMethod("Oregano")), 22);
+    stock->Add(unique_ptr<Plant>(herbFactory->planterMethod("Basil")), 25);
+    stock->Add(unique_ptr<Plant>(herbFactory->planterMethod("Mint")), 30);
+    stock->Add(unique_ptr<Plant>(herbFactory->planterMethod("Rosemary")), 16);
+    stock->Add(unique_ptr<Plant>(herbFactory->planterMethod("Thyme")), 14);
+    stock->Add(unique_ptr<Plant>(herbFactory->planterMethod("Oregano")), 22);
 
     // Trees
-    stock->Add(std::unique_ptr<Plant>(treeFactory->planterMethod("Oak")), 8);
-    stock->Add(std::unique_ptr<Plant>(treeFactory->planterMethod("Maple")), 6);
-    stock->Add(std::unique_ptr<Plant>(treeFactory->planterMethod("Pine")), 10);
-    stock->Add(std::unique_ptr<Plant>(treeFactory->planterMethod("Apple")), 7);
+    stock->Add(unique_ptr<Plant>(treeFactory->planterMethod("Oak")), 8);
+    stock->Add(unique_ptr<Plant>(treeFactory->planterMethod("Maple")), 6);
+    stock->Add(unique_ptr<Plant>(treeFactory->planterMethod("Pine")), 10);
+    stock->Add(unique_ptr<Plant>(treeFactory->planterMethod("Apple")), 7);
 
     // Succulents
-    stock->Add(std::unique_ptr<Plant>(succulentFactory->planterMethod("Aloe")), 24);
-    stock->Add(std::unique_ptr<Plant>(succulentFactory->planterMethod("Cactus")), 28);
-    stock->Add(std::unique_ptr<Plant>(succulentFactory->planterMethod("Jade")), 19);
-    stock->Add(std::unique_ptr<Plant>(succulentFactory->planterMethod("Echeveria")), 13);
+    stock->Add(unique_ptr<Plant>(succulentFactory->planterMethod("Aloe")), 24);
+    stock->Add(unique_ptr<Plant>(succulentFactory->planterMethod("Cactus")), 28);
+    stock->Add(unique_ptr<Plant>(succulentFactory->planterMethod("Jade")), 19);
+    stock->Add(unique_ptr<Plant>(succulentFactory->planterMethod("Echeveria")), 13);
 
     qDebug() << "Initial stock added:" << stock->getStockListSize() << "plant types";
 
@@ -60,8 +60,8 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
     infoDesk = new InfoDesk();
 
     // Initialize Cashier
-    std::string cashierName = "John";
-    std::string cashierId = "CASH001";
+    string cashierName = "John";
+    string cashierId = "CASH001";
     cashier = new Cashiers(cashierName, cashierId);
     cashier->subject = inventory;
 }
@@ -125,7 +125,7 @@ void Nursery::addCustomer(Customer *customer)
 
 void Nursery::removeCustomer(Customer *customer)
 {
-    auto it = std::find(activeCustomers.begin(), activeCustomers.end(), customer);
+    auto it = find(activeCustomers.begin(), activeCustomers.end(), customer);
     if (it != activeCustomers.end())
     {
         activeCustomers.erase(it);
@@ -144,7 +144,7 @@ void Nursery::handleCustomerDeparture(Customer *customer)
     qDebug() << "Customer" << customer->getId() << "is leaving the nursery.";
 
     // Remove from active customers list and update count
-    auto it = std::find(activeCustomers.begin(), activeCustomers.end(), customer);
+    auto it = find(activeCustomers.begin(), activeCustomers.end(), customer);
     if (it != activeCustomers.end())
     {
         activeCustomers.erase(it);
@@ -167,6 +167,10 @@ void Nursery::handleCustomerDeparture(Customer *customer)
     {
         qDebug() << "Warning: Customer" << customer->getId() << "not found in active customers list.";
     }
+}
+
+void Nursery::handleChange()
+{
 }
 
 // Note: If seasonal update functionality is needed, it should be declared in the header first

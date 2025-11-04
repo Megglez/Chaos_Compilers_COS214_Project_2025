@@ -9,10 +9,10 @@
 #ifndef SPRCOMMAND_H
 #define SPRCOMMAND_H
 
-using namespace std;
 #include <iostream>
 #include "StateCommand.h"
 #include "Inventory.h"
+using namespace std;
 
 /**
  * @class SpringCommand
@@ -34,16 +34,7 @@ using namespace std;
  * @see Spring
  * @see Winter
  */
-class SpringCommand: public StateCommand{
-private:
-    /**
-     * @brief Reference to the inventory system
-     * 
-     * Pointer to the inventory where spring seasonal adjustments
-     * will be applied. Used to invoke seasonalChange method.
-     */
-    Inventory* inventory;
-    
+class SpringCommand: public StateCommand{  
 public:
     /**
      * @brief Executes the spring seasonal transition command
@@ -79,6 +70,15 @@ public:
      * is not owned by this class and is not deleted.
      */
     ~SpringCommand();
+
+private:
+    /**
+     * @brief Reference to the inventory system
+     * 
+     * Pointer to the inventory where spring seasonal adjustments
+     * will be applied. Used to invoke seasonalChange method.
+     */
+    Inventory* inventory;
 };
 
 #endif

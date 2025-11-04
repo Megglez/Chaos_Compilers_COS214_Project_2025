@@ -22,7 +22,7 @@ public:
      * 
      * @note Outputs the current care method to standard output with flower-specific context
      */
-    virtual void helpPlant(std::string& care) override;
+    virtual void helpPlant(string& care) override;
     
     /**
      * @brief Default constructor for FlowerStrategy

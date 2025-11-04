@@ -12,7 +12,7 @@ public:
 	void handle();
 	Busy();
 	virtual ~Busy();
-	std::string getStateName()const override;
+	string getStateName()const override;
 	bool canAcceptCustomer() override;
 };
 

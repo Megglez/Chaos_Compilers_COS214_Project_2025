@@ -12,31 +12,21 @@ class InfoDesk;  // Forward declaration
 class Customer;  // Forward declaration
 class Staff
 {
-private:
-	string name;
-	string staffID;
-	string workArea;
-	StaffState* state;
-	InfoDesk* infoDesk;
-	bool available;  
-	Staff* nextInChain;
-	Customer* currentCustomer;
-
 public:
-	virtual void update(const std::string &update);
+	virtual void update(const string &update);
 	void changeState();
 	virtual bool getAvailability();
 	virtual void setAvailability(bool isAvailable);
 	Staff();
-	Staff(const std::string& name, const std::string& id);
+	Staff(const string& name, const string& id);
 	virtual ~Staff();
 	virtual void setNextInChain(Staff* next);
 	virtual void assistCustomer(Customer *cc); // start Assisting customer
-	std::string getName();
-	std::string getID();
-	std::string getStaffType();
+	string getName();
+	string getID();
+	string getStaffType();
 	Staff* getNextInChain();
-	std::string getStateName();
+	string getStateName();
 	Customer * getCurrentCustomer();
 	void setCurrentCustomer(Customer * cc);
 	InfoDesk* getInfodesk();
@@ -46,6 +36,16 @@ public:
 	virtual bool canHandleEnquiry()=0;
 	void registerToAllStaff(InfoDesk*desk);
 	void unregisterFromAllStaff();
+
+private:
+	string name;
+	string staffID;
+	string workArea;
+	StaffState* state;
+	InfoDesk* infoDesk;
+	bool available;  
+	Staff* nextInChain;
+	Customer* currentCustomer;
 };
 
 #endif

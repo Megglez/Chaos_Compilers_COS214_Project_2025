@@ -48,10 +48,50 @@ using namespace std;
 class Nursery : public QObject // <-- INHERIT FROM QObject
 {
 Q_OBJECT // REQUIRED
-    private :
+
+public:
+    explicit Nursery(QObject *parent = nullptr);
+    virtual ~Nursery() override;
+    // Getters
+    Stock *getStock() const { return stock; }
+    Inventory *getInventory() const { return inventory; }
+    InfoDesk *getInfoDesk() const { return infoDesk; }
+    Cashiers *getCashier() const { return cashier; }
+    Seasons *getCurrentSeason() const { return currentSeason; }
+
+    // void setSeason(Seasons* newSeason);  // Commented out - not implemented
+    // void setStock(unique_ptr<Plant> plant, int amount);  // Commented out - causes issues
+    // Setter for season changes
+    void setState(Seasons *newSeason)
+    {
+        if (currentSeason)
+        {
+            delete currentSeason;
+        }
+        currentSeason = newSeason;
+    }
+
+    // Plant Factory Access
+    FlowerPlanter *getFlowerFactory() const { return flowerFactory; }
+    HerbPlanter *getHerbFactory() const { return herbFactory; }
+    TreePlanter *getTreeFactory() const { return treeFactory; }
+    SucculentPlanter *getSucculentFactory() const { return succulentFactory; }
+
     // Customer Management
-    vector<Customer *>
-        activeCustomers;
+    void addCustomer(Customer *customer);
+    void removeCustomer(Customer *customer);
+    void handleCustomerDeparture(Customer *customer);
+    const vector<Customer *> &getActiveCustomers() const { return activeCustomers; }
+    void handleChange();
+
+public slots:
+    // This slot receives the signal from the CustomerClock
+    void handleCustomerArrivalSignal();
+    // void updateSeason(Season newSeason);  // Commented out - Season enum not defined
+
+private :
+    // Customer Management
+    vector<Customer*> activeCustomers;
     CustomerCreator *customerFactory;
     int customerCount;
     int customerLimit;
@@ -69,44 +109,6 @@ Q_OBJECT // REQUIRED
     TreePlanter *treeFactory;
     SucculentPlanter *succulentFactory;
     Seasons *currentSeason;
-
-public:
-    explicit Nursery(QObject *parent = nullptr);
-    virtual ~Nursery() override;
-    // Getters
-    Stock *getStock() const { return stock; }
-    Inventory *getInventory() const { return inventory; }
-    InfoDesk *getInfoDesk() const { return infoDesk; }
-    Cashiers *getCashier() const { return cashier; }
-    Seasons *getCurrentSeason() const { return currentSeason; }
-
-    // void setSeason(Seasons* newSeason);  // Commented out - not implemented
-    // void setStock(std::unique_ptr<Plant> plant, int amount);  // Commented out - causes issues
-    // Setter for season changes
-    void setState(Seasons *newSeason)
-    {
-        if (currentSeason)
-        {
-            delete currentSeason;
-        }
-        currentSeason = newSeason;
-    }
-
-    // Plant Factory Access
-    FlowerPlanter *getFlowerFactory() const { return flowerFactory; }
-    HerbPlanter *getHerbFactory() const { return herbFactory; }
-
-    // Customer Management
-    void addCustomer(Customer *customer);
-    void removeCustomer(Customer *customer);
-    void handleCustomerDeparture(Customer *customer);
-    const std::vector<Customer *> &getActiveCustomers() const { return activeCustomers; }
-    void handleChange();
-
-public slots:
-    // This slot receives the signal from the CustomerClock
-    void handleCustomerArrivalSignal();
-    // void updateSeason(Season newSeason);  // Commented out - Season enum not defined
 };
 
 #endif

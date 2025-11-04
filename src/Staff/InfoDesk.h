@@ -9,15 +9,8 @@
 // Forward declarations
 class Staff;
 class Customer;
-class InfoDesk {
-	private:
-	 // 
-	Staff*chainHead; //staff member with most priority
-	std::queue<Customer*> waitingCustomers; // queued customers 
-	std::vector<Staff*> AllStaff; 
-	std::vector<Staff*> AvailableStaff;
-	Staff* findAvailableStaffThroughChain();
-
+class InfoDesk 
+{
 public:
 	virtual void notify(Staff* staff);// notify 
 	InfoDesk();
@@ -32,13 +25,15 @@ public:
 	bool addStaff(Staff* ss);
 	void processWaitingCustomers();
 	void notifyStaffAvailable(Staff* freedStaff);
-	std::vector<Staff*> getStaffByType(std::string ss) const;
+	vector<Staff*> getStaffByType(string ss) const;
 	void AssignStaffToCustomer(Customer* cc);
 	
-
-
-
-
+private:
+	Staff* chainHead; //staff member with most priority
+	queue<Customer*> waitingCustomers; // queued customers 
+	vector<Staff*> AllStaff; 
+	vector<Staff*> AvailableStaff;
+	Staff* findAvailableStaffThroughChain();
 };
 
 #endif

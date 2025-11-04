@@ -24,7 +24,7 @@ public:
      * @note Concrete implementations should provide specific care instructions
      * tailored to particular plant types and their unique requirements.
      */
-    virtual void helpPlant(std::string& care) = 0;
+    virtual void helpPlant(string& care) = 0;
     
     /**
      * @brief Default constructor for CareStrategy base class

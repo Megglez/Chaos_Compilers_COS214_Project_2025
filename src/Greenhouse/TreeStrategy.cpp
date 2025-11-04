@@ -8,8 +8,8 @@
  * This method outputs the current care approach being used for tree maintenance,
  * demonstrating the concrete implementation of the tree care strategy.
  */
-void TreeStrategy::helpPlant(std::string& care) {
-    cout << "Tree currently being cared for by: " << care << std::endl;
+void TreeStrategy::helpPlant(string& care) {
+    cout << "Tree currently being cared for by: " << care << endl;
 }
 
 /**

@@ -44,7 +44,7 @@ Action *Enquire::getNextAction()
         cout << "Customer finished enquiring and is now browsing for plants." << endl;
         // Create Browse action with the same plants they were asking about
         // Default quantity of 1 for each plant if they decide to browse
-        std::vector<int> defaultQuantities(plantsOfInterest.size(), 1);
+        vector<int> defaultQuantities(plantsOfInterest.size(), 1);
         return new Browse(plantsOfInterest, defaultQuantities);
     }
 }

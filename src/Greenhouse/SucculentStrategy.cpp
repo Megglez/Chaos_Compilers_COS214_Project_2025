@@ -9,9 +9,9 @@
  * demonstrating the concrete implementation of succulent care strategy.
  * Succulents typically require less frequent watering and well-draining soil.
  */
-void SucculentStrategy::helpPlant(std::string& care) 
+void SucculentStrategy::helpPlant(string& care) 
 {
-    cout << "Succulent currently being cared for by: " << care << std::endl;
+    cout << "Succulent currently being cared for by: " << care << endl;
 }
 
 /**

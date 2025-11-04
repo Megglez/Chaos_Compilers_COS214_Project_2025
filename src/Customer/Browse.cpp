@@ -17,11 +17,11 @@
 
 void Browse::handle()
 {
-    std::cout << "Customer is browsing. They are considering buying:" << std::endl;
+    cout << "Customer is browsing. They are considering buying:" << endl;
     for (size_t i = 0; i < plantsToBuy.size(); i++)
     {
-        std::cout << "  - " << quantities[i] << " of "
-                  << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "a generic plant") << std::endl;
+        cout << "  - " << quantities[i] << " of "
+                  << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "a generic plant") << endl;
     }
 }
 
@@ -35,22 +35,22 @@ void Browse::startBrowsing(Customer *customer)
 {
     if (!customer)
     {
-        std::cerr << "Error: Browse::startBrowsing() received null customer pointer." << std::endl;
+        cerr << "Error: Browse::startBrowsing() received null customer pointer." << endl;
         return;
     }
 
     currentCustomer = customer;
 
-    std::cout << "Customer is browsing. They are considering buying:" << std::endl;
+    cout << "Customer is browsing. They are considering buying:" << endl;
     for (size_t i = 0; i < plantsToBuy.size(); i++)
     {
-        std::cout << "  - " << quantities[i] << " of "
-                  << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "a generic plant") << std::endl;
+        cout << "  - " << quantities[i] << " of "
+                  << (plantsToBuy[i] ? plantsToBuy[i]->getName() : "a generic plant") << endl;
     }
 
     // Generate random time between 20 and 40 seconds (in milliseconds)
     int sleepTime = QRandomGenerator::global()->bounded(21) + 20; // 20 to 40 seconds
-    std::cout << "Customer will browse for " << sleepTime << " seconds..." << std::endl;
+    cout << "Customer will browse for " << sleepTime << " seconds..." << endl;
 
     // Start timer (convert seconds to milliseconds)
     browseTimer->start(sleepTime * 1000);
@@ -58,21 +58,21 @@ void Browse::startBrowsing(Customer *customer)
 
 void Browse::onBrowseTimeout()
 {
-    std::cout << "Browse time completed. Customer deciding next action..." << std::endl;
+    cout << "Browse time completed. Customer deciding next action..." << endl;
 
     // Decide next state: 0 = Enquire, 1 = Purchasing
     int nextState = QRandomGenerator::global()->bounded(2);
 
     if (!currentCustomer)
     {
-        std::cerr << "Error: Browse timeout but no customer reference stored." << std::endl;
+        cerr << "Error: Browse timeout but no customer reference stored." << endl;
         return;
     }
 
     if (nextState == 0)
     {
         // Go to infodesk (enquire)
-        std::cout << "Customer decided to enquire. Going to infodesk." << std::endl;
+        cout << "Customer decided to enquire. Going to infodesk." << endl;
         if (currentCustomer->getAction())
             delete currentCustomer->getAction();
         currentCustomer->setAction(new Enquire(plantsToBuy));
@@ -81,24 +81,24 @@ void Browse::onBrowseTimeout()
     else
     {
         // Try to purchase all plants in the list
-        std::cout << "Customer decided to purchase." << std::endl;
+        cout << "Customer decided to purchase." << endl;
         Nursery *nursery = currentCustomer->getNursery();
         if (!nursery)
         {
-            std::cerr << "Error: No nursery assigned to customer." << std::endl;
+            cerr << "Error: No nursery assigned to customer." << endl;
             return;
         }
         Inventory *inventory = nursery->getInventory();
         if (!inventory)
         {
-            std::cerr << "Error: No inventory available." << std::endl;
+            cerr << "Error: No inventory available." << endl;
             return;
         }
         auto &invMap = inventory->getInventory();
 
         // Process each plant type the customer wants
-        std::vector<Plant *> plantsToPurchase;
-        std::vector<int> quantitiesToPurchase;
+        vector<Plant *> plantsToPurchase;
+    	vector<int> quantitiesToPurchase;
 
         for (size_t i = 0; i < plantsToBuy.size(); i++)
         {
@@ -108,14 +108,14 @@ void Browse::onBrowseTimeout()
             if (!plant)
                 continue;
 
-            std::string plantName = plant->getName();
+            string plantName = plant->getName();
             auto it = invMap.find(plantName);
             int available = 0;
             if (it != invMap.end())
             {
                 available = it->second.second;
             }
-            int toTake = std::min(quantity, available);
+            int toTake = min(quantity, available);
 
             if (toTake > 0)
             {
@@ -126,21 +126,21 @@ void Browse::onBrowseTimeout()
                 }
                 // Update inventory
                 it->second.second -= toTake;
-                std::cout << "Customer added " << toTake << " of " << plantName
-                          << " to basket. Inventory now: " << it->second.second << std::endl;
+                cout << "Customer added " << toTake << " of " << plantName
+                          << " to basket. Inventory now: " << it->second.second << endl;
 
                 plantsToPurchase.push_back(plant);
                 quantitiesToPurchase.push_back(toTake);
             }
             else
             {
-                std::cout << "No stock available for " << plantName << ". Customer cannot add to basket." << std::endl;
+                cout << "No stock available for " << plantName << ". Customer cannot add to basket." << endl;
             }
             // If customer wanted more than available, take max and set inventory to zero
             if (quantity > available && it != invMap.end())
             {
                 it->second.second = 0;
-                std::cout << "Customer wanted more " << plantName << " than available. Inventory set to zero." << std::endl;
+                cout << "Customer wanted more " << plantName << " than available. Inventory set to zero." << endl;
             }
         }
 
@@ -174,6 +174,6 @@ void Browse::requestStaffAssistance(Customer *customer, InfoDesk &desk)
 {
     // Browsing customer decides to Enquire. Transition to the Enquire state.
     desk.getInfodesk();
-    std::cout << "Customer wants to Enquire while browsing. Transitioning to Enquire state." << std::endl;
+    cout << "Customer wants to Enquire while browsing. Transitioning to Enquire state." << endl;
     customer->setAction(new Enquire(plantsToBuy));
 }

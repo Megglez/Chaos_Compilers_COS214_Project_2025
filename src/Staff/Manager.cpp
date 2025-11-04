@@ -1,7 +1,6 @@
 #include "Manager.h"
 
 void Manager::trackInventory() {
-	// TODO - implement Manager::trackInventory
 	
 }
 
@@ -15,7 +14,6 @@ void Manager::setAvailability(bool isAvailable) {
 }
 
 Manager::Manager() {
-	// TODO - implement Manager::Manager
 	
 }
 

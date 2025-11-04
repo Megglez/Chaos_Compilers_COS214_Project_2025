@@ -10,8 +10,9 @@
 #define SEASONS_H
 
 #include <iostream>
-using namespace std;
 #include "StateCommand.h"
+using namespace std;
+
 class Nursery;
 
 /**
@@ -60,7 +61,7 @@ public:
      * Pure virtual method that returns the identifier for the
      * concrete season implementation (e.g., "summer", "winter").
      */
-    virtual std::string getSeason() = 0;
+    virtual string getSeason() = 0;
     
     /**
      * @brief Default constructor for Seasons base class

@@ -23,7 +23,7 @@ void Staff::changeState()
 	}
 }
 
-Staff::Staff(const std::string& name, const std::string& id){
+Staff::Staff(const string& name, const string& id){
 	this->name=name;
 	this->staffID=id;
 	available= true;
@@ -34,9 +34,9 @@ Staff::Staff(const std::string& name, const std::string& id){
 	state->setContext(this);
 }
 
-void Staff::update(const std::string &update)
+void Staff::update(const string &update)
 {
-	std::cout << "New Notification: " << update << std::endl;
+	cout << "New Notification: " << update << endl;
 }
 
 Staff::Staff()
@@ -72,17 +72,17 @@ void Staff::setNextInChain(Staff* ss)
     nextInChain = ss;nextInChain=ss;
 }
 
-std::string Staff::getName()
+string Staff::getName()
 {
 return name;
 }
 
-std::string Staff::getID()
+string Staff::getID()
 {
  return staffID;
 }
 
-std::string Staff::getStaffType()
+string Staff::getStaffType()
 {
 	
 	return state->getStateName();
@@ -106,7 +106,7 @@ void Staff::completeTask()
  {
 	if(!cc)
 	{
-		cout<<"Staff "<< name<< "cannot assist null Customer"<<std::endl;
+		cout<<"Staff "<< name<< "cannot assist null Customer"<<endl;
 		return;
 	}
 	if(!getAvailability())
@@ -128,19 +128,19 @@ void Staff::completeTask()
  {
 if(canHandleEnquiry()&& getAvailability())
 {
-	std::cout<< getStaffType()<<" "<<name<< "can handle enquiry."<<std::endl;
+	cout<< getStaffType()<<" "<<name<< "can handle enquiry."<<endl;
 }
 return this;
 
 if(nextInChain)
 {
-std::cout<< getStaffType()<<" "<<name<< "can't handle enquiry.Passing on to.."<<std::endl;
-	std::cout<<nextInChain->getStaffType();
+cout<< getStaffType()<<" "<<name<< "can't handle enquiry.Passing on to.."<<endl;
+	cout<<nextInChain->getStaffType();
 	return nextInChain->handleEnquiryRequest();
 }
 
 //otherwise
-std::cout<<"No staff avaialable to handle enquiry."<<std::endl;
+cout<<"No staff avaialable to handle enquiry."<<endl;
 return nullptr;
  }
 
@@ -148,19 +148,19 @@ void Staff::registerToAllStaff(InfoDesk *desk)
 {
 	if(!desk)
 	{
-		std::cout<<"cannot register. Null Infodesk."<<std::endl;
+		cout<<"cannot register. Null Infodesk."<<endl;
 		return;
 	}
 
 	if(infoDesk)
 	{
-		std::cout<<"Staff already registered in AllStaff."<<std::endl;
+		cout<<"Staff already registered in AllStaff."<<endl;
 		return;
 	}
 
 	infoDesk=desk;
 	desk->addStaff(this);
-	std::cout<<name<< " registered from AllStaff."<<std::endl;
+	cout<<name<< " registered from AllStaff."<<endl;
 
  }
 
@@ -168,17 +168,17 @@ void Staff ::unregisterFromAllStaff()
  {
 if(!infoDesk)
 {
-	std::cout<<"Staff not registered!"<<std::endl;
+	cout<<"Staff not registered!"<<endl;
 	return;
 }
 
 this->infoDesk->removeStaff(this);
 infoDesk=nullptr;
-std::cout<<name<< " unregistered from AllStaff."<<std::endl;
+cout<<name<< " unregistered from AllStaff."<<endl;
 
 }
 
-std::string Staff::getStateName()
+string Staff::getStateName()
 {
  if(state)
  {

@@ -20,7 +20,7 @@
  * awareness allows for appropriate behavior adjustments during winter months
  * when many flowering plants have different growth patterns.
  */
-Plant* FlowerPlanter::planterMethod(std::string name) 
+Plant* FlowerPlanter::planterMethod(string name) 
 {
     int water = 4;      // Ample water requirement - flowers need consistent moisture for blooming
     int sunlight = 2;   // Moderate sunlight - many flowers thrive with balanced light exposure

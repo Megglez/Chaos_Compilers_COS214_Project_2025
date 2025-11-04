@@ -51,10 +51,10 @@ Stock::~Stock()
  * 
  * @see AddStock
  */
-void Stock::Add(std::unique_ptr<Plant> plant, int quantity){
+void Stock::Add(unique_ptr<Plant> plant, int quantity){
 	StockList.push_back(plant->clone());  
 	command = new AddStock(inventory);
-	command->execute(std::move(plant), quantity);
+	command->execute(move(plant), quantity);
 	delete command;  // Clean up!
     command = nullptr;
 }
@@ -71,12 +71,12 @@ void Stock::Add(std::unique_ptr<Plant> plant, int quantity){
  * 
  * @see RemoveStock
  */
-void Stock::Remove(std::unique_ptr<Plant> plant){
+void Stock::Remove(unique_ptr<Plant> plant){
 	if(command){
 		delete command;
 	}
 	command = new RemoveStock(inventory);
-	command->execute(std::move(plant), 1);
+	command->execute(move(plant), 1);
 	delete command;
 	command = nullptr;
 }
@@ -93,9 +93,9 @@ void Stock::Remove(std::unique_ptr<Plant> plant){
  * 
  */
 void Stock::printStock(){
-	std::cout << "======STOCK CATALOGUE======" << std::endl;
+	cout << "======STOCK CATALOGUE======" << endl;
 	for (auto it = StockList.begin(); it != StockList.end(); ++it) {
-		std::cout << (*it)->getName() << "-" << (*it)->getType() << std::endl; //replace with (*it)->getName() + (*it)->getType()
+		cout << (*it)->getName() << "-" << (*it)->getType() << endl; //replace with (*it)->getName() + (*it)->getType()
 	}
 }
 
@@ -119,11 +119,11 @@ size_t Stock::getStockListSize() const {
  * @brief Retrieves a plant at the specified index
  * @param index Index of the plant to retrieve
  * @return Plant* Pointer to the plant at the specified index
- * @throws std::out_of_range if index is out of bounds
+ * @throws out_of_range if index is out of bounds
  */
 Plant* Stock::getPlantByIndex(size_t index) {
     if (index >= StockList.size()) {
-        throw std::out_of_range("Plant index out of range");
+        throw out_of_range("Plant index out of range");
     }
     return StockList[index];
 }

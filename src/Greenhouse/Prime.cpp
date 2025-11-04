@@ -57,7 +57,7 @@ Prime::~Prime()
 * @brief returns the name of he current stage the plant is in
 * @return a string of the name of the curent stage
 */
-std::string Prime::getStageName(){
+string Prime::getStageName(){
     return "Prime";
 }
 

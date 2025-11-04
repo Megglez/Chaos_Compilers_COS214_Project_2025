@@ -53,7 +53,7 @@ Wilting::~Wilting() {
     // Cleanup code if needed
 }
 
-std::string Wilting::getStageName(){
+string Wilting::getStageName(){
     return "Wilting";
 }
 

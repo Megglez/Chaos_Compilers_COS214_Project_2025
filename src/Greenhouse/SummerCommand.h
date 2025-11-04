@@ -33,16 +33,8 @@ using namespace std;
  * @see Summer
  * @see Spring
  */
-class SummerCommand: public StateCommand{
-private:
-    /**
-     * @brief Reference to the inventory system
-     * 
-     * Pointer to the inventory where summer seasonal adjustments
-     * will be applied. Used to invoke seasonalChange method.
-     */
-    Inventory* inventory;
-    
+class SummerCommand: public StateCommand
+{    
 public:
     /**
      * @brief Executes the summer seasonal transition command
@@ -76,6 +68,15 @@ public:
      * is not owned by this class and is not deleted.
      */
     ~SummerCommand();
+
+private:
+    /**
+     * @brief Reference to the inventory system
+     * 
+     * Pointer to the inventory where summer seasonal adjustments
+     * will be applied. Used to invoke seasonalChange method.
+     */
+    Inventory* inventory;    
 };
 
 #endif

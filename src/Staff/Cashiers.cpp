@@ -2,7 +2,7 @@
 #include "../Customer/Customer.h"
 #include <iostream>
 
-Cashiers::Cashiers(std::string &name, std::string &id) : Staff(name, id)
+Cashiers::Cashiers(string &name, string &id) : Staff(name, id)
 {
     currentCustomer = nullptr;
     subject = nullptr;
@@ -15,7 +15,7 @@ Cashiers::~Cashiers()
     // Customers in queue are managed by Nursery
 }
 
-std::string Cashiers::getStaffType()
+string Cashiers::getStaffType()
 {
     return "Cashier";
 }
@@ -30,8 +30,8 @@ void Cashiers::enqueueCustomer(Customer *customer)
     if (customer)
     {
         customerQueue.push(customer);
-        std::cout << "Customer " << customer->getId() << " added to cashier queue. Queue size: "
-                  << customerQueue.size() << std::endl;
+        cout << "Customer " << customer->getId() << " added to cashier queue. Queue size: "
+                  << customerQueue.size() << endl;
 
         // If cashier is not currently processing, start processing
         if (!isProcessing)
@@ -50,8 +50,8 @@ Customer *Cashiers::dequeueCustomer()
 
     Customer *customer = customerQueue.front();
     customerQueue.pop();
-    std::cout << "Customer " << customer->getId() << " dequeued from cashier. Remaining in queue: "
-              << customerQueue.size() << std::endl;
+    cout << "Customer " << customer->getId() << " dequeued from cashier. Remaining in queue: "
+              << customerQueue.size() << endl;
     return customer;
 }
 
@@ -77,8 +77,8 @@ void Cashiers::processNextCustomer()
     if (currentCustomer)
     {
         isProcessing = true;
-        std::cout << "Cashier " << getName() << " is now processing Customer "
-                  << currentCustomer->getId() << std::endl;
+        cout << "Cashier " << getName() << " is now processing Customer "
+                  << currentCustomer->getId() << endl;
         makeTransaction();
     }
 }
@@ -96,11 +96,11 @@ void Cashiers::makeTransaction()
 {
     if (currentCustomer != nullptr)
     {
-        std::cout << "Processing transaction for Customer " << currentCustomer->getId() << std::endl;
+        cout << "Processing transaction for Customer " << currentCustomer->getId() << endl;
         emptyBasket(currentCustomer);
 
         // Transaction complete - customer leaves
-        std::cout << "Transaction complete for Customer " << currentCustomer->getId() << std::endl;
+        cout << "Transaction complete for Customer " << currentCustomer->getId() << endl;
         currentCustomer->processNextAction(); // This will trigger customer departure
 
         currentCustomer = nullptr;
@@ -121,7 +121,7 @@ void Cashiers::emptyBasket(Customer *customer)
         return;
     }
 
-    std::cout << "Emptying basket for Customer " << customer->getId() << std::endl;
+    cout << "Emptying basket for Customer " << customer->getId() << endl;
     customer->clearBasket();
-    std::cout << "Customer " << customer->getId() << " has completed their purchase." << std::endl;
+    cout << "Customer " << customer->getId() << " has completed their purchase." << endl;
 }

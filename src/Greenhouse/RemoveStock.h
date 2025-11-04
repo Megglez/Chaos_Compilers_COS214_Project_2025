@@ -53,7 +53,7 @@ public:
      *       plant object may not be removed if the inventory uses a map
      *       structure with plant names as keys.
      */
-    void execute(std::unique_ptr<Plant>&& plant, int quantity = 1) override;
+    void execute(unique_ptr<Plant>&& plant, int quantity = 1) override;
     
     /**
      * @brief Constructs a RemoveStock command with inventory reference

@@ -48,8 +48,8 @@ SummerCommand::SummerCommand(Inventory* inv): inventory(inv){
  * @see Inventory::updatePlantStagesForSeason
  */
 void SummerCommand::execute(){
-    std::string spring = "Spring";
-    std::string summer = "Summer";
+    string spring = "Spring";
+    string summer = "Summer";
     inventory->seasonalChange(spring, summer);
 }
 

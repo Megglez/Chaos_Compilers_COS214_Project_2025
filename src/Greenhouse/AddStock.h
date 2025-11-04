@@ -47,7 +47,7 @@ public:
      * @note The plant parameter is moved into the inventory, so the
      *       original unique_ptr will be empty after execution
      */
-    void execute(std::unique_ptr<Plant> &&plant, int quantity) override;
+    void execute(unique_ptr<Plant> &&plant, int quantity) override;
     
     /**
      * @brief Constructs an AddStock command with inventory reference
@@ -74,6 +74,7 @@ private:
      * when the execute method is called.
      */
     Inventory *inventory;
+    
 };
 
 #endif

@@ -10,9 +10,9 @@
  * Flowers typically require specific care like deadheading, proper pruning,
  * seasonal fertilization, and appropriate sunlight for optimal blooming.
  */
-void FlowerStrategy::helpPlant(std::string& care) 
+void FlowerStrategy::helpPlant(string& care) 
 {
-    cout << "Flower currently being cared for by: " << care << std::endl;
+    cout << "Flower currently being cared for by: " << care << endl;
 }
 
 /**

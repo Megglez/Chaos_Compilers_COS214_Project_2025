@@ -55,10 +55,10 @@ public:
     /**
      * @brief Gets the name of the development stage
      * 
-     * @return std::string The name identifier for this specific stage of development
+     * @return string The name identifier for this specific stage of development
      * 
      */
-    virtual std::string getStageName() override;
+    virtual string getStageName() override;
     /**
      * @brief Creates a deep copy of the StageOfDevelopment object
      * 

@@ -65,7 +65,7 @@ public:
      * 
      * @override Implements pure virtual method from Seasons base class
      */
-    virtual std::string getSeason() override;
+    virtual string getSeason() override;
     
     /**
      * @brief Constructs a Winter season with inventory reference

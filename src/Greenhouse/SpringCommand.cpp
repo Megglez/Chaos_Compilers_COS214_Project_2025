@@ -53,8 +53,8 @@ SpringCommand::SpringCommand(Inventory* inv): inventory(inv){
  * @see Inventory::updatePlantStagesForSeason
  */
 void SpringCommand::execute(){
-    std::string winter = "Winter";
-    std::string spring = "Spring";
+    string winter = "Winter";
+    string spring = "Spring";
     inventory->seasonalChange(winter, spring);
 }
 
