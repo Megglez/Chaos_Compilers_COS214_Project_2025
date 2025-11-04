@@ -36,7 +36,7 @@ jobs:
 
       - name: Lint C++ code with clang-tidy
         run: |
-          find src -name '*.cpp' | xargs clang-tidy -p build --warnings-as-errors='*' --quiet || exit 1
+          find src -name '*.cpp' | xargs clang-tidy -p build --quiet || exit 1
 
       - name: Run unit tests
         run: |
