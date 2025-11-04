@@ -13,6 +13,141 @@ https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025
 
 ## Compiling and Running Chaotic Plants
 
+### Prerequisites
+
+Before building and running Chaotic Plants, ensure you have the following installed:
+
+- **CMake** (version 3.16 or higher)
+- **Qt5** or **Qt6** (Core and Widgets modules)
+- **C++ Compiler** with C++17 support (g++, clang++)
+- **Make** build system
+
+### Installation Instructions
+
+#### Ubuntu/Debian
+```bash
+sudo apt-get update
+sudo apt-get install cmake build-essential qt5-default qtbase5-dev
+```
+
+#### Fedora/RHEL
+```bash
+sudo dnf install cmake gcc-c++ qt5-qtbase-devel
+```
+
+#### macOS
+```bash
+brew install cmake qt@5
+```
+
+### Building the Project
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Megglez/Chaos_Compilers_COS214_Project_2025.git
+   cd Chaos_Compilers_COS214_Project_2025
+   ```
+
+2. **Build Using Makefile (Recommended)**
+   ```bash
+   make
+   ```
+   This will:
+   - Build the GUI application in `gui/ChaoticPlants/build/`
+   - Compile all source files
+   - Link Qt libraries
+   - Generate the executable
+
+3. **Alternative: Build Using CMake Directly**
+   ```bash
+   cd gui/ChaoticPlants
+   mkdir -p build
+   cd build
+   cmake ..
+   make
+   ```
+
+### Running the Application
+
+After building, run the application with:
+
+```bash
+# From the project root directory
+cd gui/ChaoticPlants/build
+./ChaoticPlants
+```
+
+Or use the makefile target:
+```bash
+make run
+```
+
+### Running Unit Tests
+
+To build and run the unit test suite:
+
+```bash
+# Build tests
+make unit_tests
+
+# Run tests
+./run_tests
+```
+
+Or from the build directory:
+```bash
+cd build
+cmake ..
+make
+./run_tests
+```
+
+### Project Structure
+
+```
+Chaos_Compilers_COS214_Project_2025/
+├── src/                    # Source code
+│   ├── Customer/          # Customer management
+│   ├── Greenhouse/        # Plant and inventory systems
+│   ├── Nursery/          # Main facade and GUI
+│   └── Staff/            # Staff and iterator pattern
+├── gui/ChaoticPlants/    # Qt GUI application
+├── tests/                # Unit tests
+├── CMakeLists.txt        # CMake configuration
+├── makefile              # Build automation
+└── README.md             # This file
+```
+
+### Troubleshooting
+
+**Qt Libraries Not Found**
+```bash
+# Set Qt path explicitly
+export CMAKE_PREFIX_PATH=/path/to/qt5
+cmake ..
+```
+
+**Build Errors**
+```bash
+# Clean build
+make clean
+make
+```
+
+**Permission Denied**
+```bash
+# Make executable runnable
+chmod +x gui/ChaoticPlants/build/ChaoticPlants
+```
+
+### Features
+
+- **Plant Nursery Simulation** - Manage a virtual plant nursery
+- **Customer Management** - Handle customer arrivals and requests
+- **Seasonal Changes** - Plants adapt to different seasons
+- **Staff Management** - Assign staff to assist customers
+- **Iterator Pattern** - Process customer queues efficiently
+- **Real-time Updates** - Clock-based event system
 
 ## Technologies
 
