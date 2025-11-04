@@ -1,3 +1,10 @@
+/**
+ * @file SucculentPlanter.cpp
+ * @brief Implementation of the SucculentPlanter class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "SucculentPlanter.h"
 #include "SucculentPlant.h"
 #include "SucculentStrategy.h"

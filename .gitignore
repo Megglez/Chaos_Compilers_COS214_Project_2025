@@ -42,6 +42,7 @@
 
 /build
 /gcovr-report
+/docs
 
 ##################
 # Qt/C++ Build Artifacts

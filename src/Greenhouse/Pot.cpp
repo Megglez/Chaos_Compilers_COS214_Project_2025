@@ -1,3 +1,10 @@
+/**
+ * @file Pot.cpp
+ * @brief Implementation of the Pot class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Pot.h"
 
 /**

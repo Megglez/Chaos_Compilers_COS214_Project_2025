@@ -1,3 +1,10 @@
+/**
+ * @file Prime.cpp
+ * @brief Implementation of the Prime class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Prime.h"
 #include "Wilting.h"
 #include "Plant.h"

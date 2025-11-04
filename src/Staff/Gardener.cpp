@@ -1,3 +1,10 @@
+/**
+ * @file Gardener.cpp
+ * @brief Implementation of the Gardener class for plant care and inventory queries
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Gardener.h"
 #include "../Customer/Customer.h"
 #include "../Customer/Enquire.h"

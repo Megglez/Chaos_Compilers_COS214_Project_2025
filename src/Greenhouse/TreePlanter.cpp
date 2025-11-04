@@ -1,3 +1,10 @@
+/**
+ * @file TreePlanter.cpp
+ * @brief Implementation of the TreePlanter class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "TreePlanter.h"
 #include "TreeStrategy.h"
 #include "TreePlant.h"

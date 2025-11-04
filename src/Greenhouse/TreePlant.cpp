@@ -1,3 +1,10 @@
+/**
+ * @file TreePlant.cpp
+ * @brief Implementation of the TreePlant class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "TreePlant.h"
 #include "StageOfDevelopment.h"
 

@@ -1,3 +1,10 @@
+/**
+ * @file SeasonClock.cpp
+ * @brief Implementation of the SeasonClock class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "SeasonClock.h"
 #include <QDebug>
 

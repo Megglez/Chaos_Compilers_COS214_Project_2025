@@ -1,3 +1,10 @@
+/**
+ * @file Dead.cpp
+ * @brief Implementation of the Dead class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Dead.h"
 #include "Plant.h"
 

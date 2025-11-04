@@ -1,3 +1,10 @@
+/**
+ * @file Plant.cpp
+ * @brief Implementation of the Plant class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Plant.h"
 #include "StageOfDevelopment.h" 
 #include "Seed.h"

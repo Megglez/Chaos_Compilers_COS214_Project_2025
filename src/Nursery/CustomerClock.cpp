@@ -1,3 +1,10 @@
+/**
+ * @file CustomerClock.cpp
+ * @brief Implementation of the CustomerClock class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "CustomerClock.h"
 #include <QDebug>
 

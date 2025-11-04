@@ -1,3 +1,10 @@
+/**
+ * @file CareStrategy.cpp
+ * @brief Implementation of the CareStrategy class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "CareStrategy.h"
 
 /**

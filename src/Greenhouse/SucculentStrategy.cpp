@@ -1,3 +1,10 @@
+/**
+ * @file SucculentStrategy.cpp
+ * @brief Implementation of the SucculentStrategy class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "SucculentStrategy.h"
 
 /**

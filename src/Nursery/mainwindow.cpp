@@ -1,3 +1,10 @@
+/**
+ * @file mainwindow.cpp
+ * @brief Implementation of the mainwindow class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h" // Assuming you fixed the "./ui_mainwindow.h" path
 

@@ -1,3 +1,10 @@
+/**
+ * @file SucculentPlant.cpp
+ * @brief Implementation of the SucculentPlant class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "SucculentPlant.h"
 #include "StageOfDevelopment.h"
 

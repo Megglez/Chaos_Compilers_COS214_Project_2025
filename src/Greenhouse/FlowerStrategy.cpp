@@ -1,3 +1,10 @@
+/**
+ * @file FlowerStrategy.cpp
+ * @brief Implementation of the FlowerStrategy class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "FlowerStrategy.h"
 
 /**

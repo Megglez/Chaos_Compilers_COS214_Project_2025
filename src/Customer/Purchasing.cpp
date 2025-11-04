@@ -6,6 +6,13 @@
  * checkout processing, and customer departure after purchase completion.
  */
 
+/**
+ * @file Purchasing.cpp
+ * @brief Implementation of the Purchasing action state for customers
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Purchasing.h"
 #include "Customer.h"
 #include "../Staff/InfoDesk.h"

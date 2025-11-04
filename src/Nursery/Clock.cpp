@@ -1,3 +1,10 @@
+/**
+ * @file Clock.cpp
+ * @brief Implementation of the Clock class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Clock.h"
 #include <QDebug>
 

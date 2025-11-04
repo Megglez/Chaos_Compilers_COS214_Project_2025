@@ -1,3 +1,10 @@
+/**
+ * @file Manager.cpp
+ * @brief Implementation of the Manager class for staff and inventory management
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Manager.h"
 #include "../Customer/Customer.h"
 #include "../Customer/Enquire.h"

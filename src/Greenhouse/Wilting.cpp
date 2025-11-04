@@ -1,3 +1,10 @@
+/**
+ * @file Wilting.cpp
+ * @brief Implementation of the Wilting class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Wilting.h"
 #include "Plant.h"
 #include "Dead.h"

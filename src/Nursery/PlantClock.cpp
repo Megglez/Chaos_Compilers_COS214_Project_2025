@@ -1,3 +1,10 @@
+/**
+ * @file PlantClock.cpp
+ * @brief Implementation of the PlantClock class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "PlantClock.h"
 #include <QDebug>
 

@@ -1,3 +1,10 @@
+/**
+ * @file Busy.cpp
+ * @brief Implementation of the Busy class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Busy.h"
 #include "Staff.h"
 #include "InfoDesk.h"
