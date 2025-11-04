@@ -15,7 +15,7 @@ class InfoDesk {
 	Staff*chainHead; //staff member with most priority
 	std::queue<Customer*> waitingCustomers; // queued customers 
 	std::vector<Staff*> AllStaff; //all staff registered to infodesk
-	//Staff* findAvailableStaffThroughChain();
+	Staff* findAvailableStaffThroughChain();
 
 public:
 	virtual void notify(Staff* staff);// notify 
