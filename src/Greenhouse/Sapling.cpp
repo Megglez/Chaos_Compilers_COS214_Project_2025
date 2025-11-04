@@ -1,3 +1,10 @@
+/**
+ * @file Sapling.cpp
+ * @brief Implementation of the Sapling class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Sapling.h"
 #include "Prime.h"
 #include "Plant.h"

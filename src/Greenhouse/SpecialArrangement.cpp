@@ -1,3 +1,10 @@
+/**
+ * @file SpecialArrangement.cpp
+ * @brief Implementation of the SpecialArrangement class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "SpecialArrangement.h"
 
 void SpecialArrangement::package() {

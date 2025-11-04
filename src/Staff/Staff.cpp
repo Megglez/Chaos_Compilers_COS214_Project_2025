@@ -1,3 +1,10 @@
+/**
+ * @file Staff.cpp
+ * @brief Implementation of the Staff base class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Staff.h"
 #include "../Customer/Customer.h"
 #include "InfoDesk.h"

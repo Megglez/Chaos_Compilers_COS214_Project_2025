@@ -1,3 +1,10 @@
+/**
+ * @file HerbPlanter.cpp
+ * @brief Implementation of the HerbPlanter class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "HerbPlanter.h"
 #include "HerbStrategy.h"
 #include "HerbPlant.h"

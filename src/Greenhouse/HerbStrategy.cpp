@@ -1,3 +1,10 @@
+/**
+ * @file HerbStrategy.cpp
+ * @brief Implementation of the HerbStrategy class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "HerbStrategy.h"
 
 /**

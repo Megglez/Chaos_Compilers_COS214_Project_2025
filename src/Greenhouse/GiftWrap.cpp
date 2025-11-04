@@ -1,3 +1,10 @@
+/**
+ * @file GiftWrap.cpp
+ * @brief Implementation of the GiftWrap class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "GiftWrap.h"
 
 /**

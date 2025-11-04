@@ -1,3 +1,10 @@
+/**
+ * @file StaffState.cpp
+ * @brief Implementation of the StaffState class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "StaffState.h"
 
 void StaffState::handle()

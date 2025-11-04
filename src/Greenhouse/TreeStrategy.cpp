@@ -1,3 +1,10 @@
+/**
+ * @file TreeStrategy.cpp
+ * @brief Implementation of the TreeStrategy class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "TreeStrategy.h"
 
 /**

@@ -1,3 +1,10 @@
+/**
+ * @file Seed.cpp
+ * @brief Implementation of the Seed class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Seed.h"
 #include "Sapling.h"
 #include "Plant.h"

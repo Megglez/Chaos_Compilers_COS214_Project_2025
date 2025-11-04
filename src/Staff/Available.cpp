@@ -1,3 +1,10 @@
+/**
+ * @file Available.cpp
+ * @brief Implementation of the Available class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Available.h"
 
 void Available::handle() {

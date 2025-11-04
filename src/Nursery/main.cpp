@@ -1,3 +1,10 @@
+/**
+ * @file main.cpp
+ * @brief Implementation of the main class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include <QApplication>
 #include "mainwindow.h" // Include the actual main window header
 

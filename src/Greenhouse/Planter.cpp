@@ -1,3 +1,10 @@
+/**
+ * @file Planter.cpp
+ * @brief Implementation of the Planter class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Planter.h"
 
 /**

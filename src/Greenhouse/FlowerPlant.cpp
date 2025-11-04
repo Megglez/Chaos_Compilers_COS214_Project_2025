@@ -1,3 +1,10 @@
+/**
+ * @file FlowerPlant.cpp
+ * @brief Implementation of the FlowerPlant class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "FlowerPlant.h"
 #include <string>
 #include "StageOfDevelopment.h"

@@ -1,3 +1,10 @@
+/**
+ * @file Cashiers.cpp
+ * @brief Implementation of the Cashiers class for handling customer transactions
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Cashiers.h"
 #include "../Customer/Customer.h"
 #include <iostream>

@@ -1,3 +1,10 @@
+/**
+ * @file PlantDecorator.cpp
+ * @brief Implementation of the PlantDecorator class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "PlantDecorator.h"
 #include "StageOfDevelopment.h"
 

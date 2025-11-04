@@ -1,3 +1,10 @@
+/**
+ * @file SalesStaff.cpp
+ * @brief Implementation of the SalesStaff class for customer sales assistance
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "SalesStaff.h"
 #include "../Customer/Customer.h"
 #include "../Customer/Enquire.h"

@@ -1,3 +1,10 @@
+/**
+ * @file HerbPlant.cpp
+ * @brief Implementation of the HerbPlant class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "HerbPlant.h"
 #include "StageOfDevelopment.h"
 

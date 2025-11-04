@@ -1,3 +1,10 @@
+/**
+ * @file StageOfDevelopment.cpp
+ * @brief Implementation of the StageOfDevelopment class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "StageOfDevelopment.h"
 
 /**

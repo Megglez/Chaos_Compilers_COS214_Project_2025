@@ -1,3 +1,10 @@
+/**
+ * @file Nursery.cpp
+ * @brief Implementation of the Nursery facade class
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "Nursery.h"
 #include "../Staff/Cashiers.h"
 #include "../Greenhouse/AddStock.h"

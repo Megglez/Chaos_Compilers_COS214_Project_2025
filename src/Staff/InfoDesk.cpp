@@ -1,3 +1,10 @@
+/**
+ * @file InfoDesk.cpp
+ * @brief Implementation of the InfoDesk class for staff coordination and customer routing
+ * @author Chaos_Compilers
+ * @date 2025
+ */
+
 #include "InfoDesk.h"
 #include "Staff.h"
 #include "../Customer/Customer.h"
