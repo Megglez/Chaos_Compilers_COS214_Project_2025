@@ -14,6 +14,7 @@
 #include <vector>
 #include <QObject>
 #include <QTimer>
+#include <QDebug>
 class Customer;
 class InfoDesk;
 
@@ -115,7 +116,7 @@ public:
      * @brief Start asynchronous browsing with timer
      * @param customer The customer who is browsing
      *
-     * Initiates a random duration browse period (5-10 seconds) after which
+     * Initiates a random duration browse period (20-40 seconds) after which
      * the customer will transition to the next action.
      */
     void startBrowsing(Customer *customer);
