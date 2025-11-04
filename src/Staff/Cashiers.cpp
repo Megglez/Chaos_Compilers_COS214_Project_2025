@@ -2,7 +2,7 @@
 #include "../Customer/Customer.h"
 #include <iostream>
 
-Cashiers::Cashiers(std::string &name, std::string &id) : Staff(name, id)
+Cashiers::Cashiers(std::string &name, std::string &id,InfoDesk& infodesk) : Staff(name, id,infodesk)
 {
     currentCustomer = nullptr;
     subject = nullptr;

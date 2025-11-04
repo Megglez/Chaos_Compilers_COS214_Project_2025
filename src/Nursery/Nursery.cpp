@@ -58,12 +58,21 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
 
     // Initialize Staff Management
     infoDesk = new InfoDesk();
+    startPlants = new AddStock(inventory);
+}
 
-    // Initialize Cashier
-    std::string cashierName = "John";
-    std::string cashierId = "CASH001";
-    cashier = new Cashiers(cashierName, cashierId);
-    cashier->subject = inventory;
+void Nursery::setStock(unique_ptr<Plant> plant, int amount)
+{
+    startPlants->execute(move(plant), amount);
+}
+
+void Nursery::setSeason(Seasons* newSeason)
+{
+    if (currentSeason) {
+        delete currentSeason;
+    }
+    currentSeason = newSeason;
+    qDebug() << "Season changed to:" << currentSeason->getSeason().c_str();
 }
 
 Nursery::~Nursery()
@@ -121,6 +130,10 @@ void Nursery::addCustomer(Customer *customer)
         activeCustomers.push_back(customer);
         customerCount++;
     }
+}
+
+void Nursery::handleChange(){
+    currentSeason->handleChange(this);
 }
 
 void Nursery::removeCustomer(Customer *customer)

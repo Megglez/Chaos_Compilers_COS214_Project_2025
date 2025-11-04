@@ -1,0 +1,452 @@
+[
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/project_lib_autogen/mocs_compilation.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/mocs_compilation.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/project_lib.dir/project_lib_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Customer/Browse.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Browse.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Browse.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Customer/Browse.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Customer/Customer.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Customer.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Customer.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Customer/Customer.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Customer/CustomerCreator.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/CustomerCreator.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/CustomerCreator.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Customer/CustomerCreator.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Customer/Enquire.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Enquire.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Enquire.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Customer/Enquire.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Customer/Purchasing.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Purchasing.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Customer/Purchasing.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Customer/Purchasing.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/AddStock.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/AddStock.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/AddStock.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/AddStock.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Autumn.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Autumn.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Autumn.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Autumn.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/AutumnCommand.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/AutumnCommand.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/AutumnCommand.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/AutumnCommand.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/CareStrategy.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/CareStrategy.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/CareStrategy.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/CareStrategy.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Command.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Command.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Command.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Command.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Dead.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Dead.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Dead.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Dead.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/FlowerPlant.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/FlowerPlant.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/FlowerPlant.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/FlowerPlant.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/FlowerPlanter.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/FlowerPlanter.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/FlowerPlanter.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/FlowerPlanter.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/FlowerStrategy.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/FlowerStrategy.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/FlowerStrategy.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/FlowerStrategy.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/GiftWrap.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/GiftWrap.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/GiftWrap.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/GiftWrap.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/HerbPlant.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/HerbPlant.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/HerbPlant.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/HerbPlant.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/HerbPlanter.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/HerbPlanter.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/HerbPlanter.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/HerbPlanter.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/HerbStrategy.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/HerbStrategy.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/HerbStrategy.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/HerbStrategy.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Inventory.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Inventory.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Inventory.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Inventory.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Plant.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Plant.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Plant.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Plant.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/PlantDecorator.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/PlantDecorator.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/PlantDecorator.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/PlantDecorator.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Planter.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Planter.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Planter.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Planter.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Pot.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Pot.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Pot.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Pot.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Prime.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Prime.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Prime.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Prime.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/RemoveStock.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/RemoveStock.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/RemoveStock.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/RemoveStock.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Sapling.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Sapling.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Sapling.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Sapling.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Seasons.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Seasons.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Seasons.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Seasons.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Seed.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Seed.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Seed.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Seed.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/SpecialArrangement.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SpecialArrangement.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SpecialArrangement.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/SpecialArrangement.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Spring.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Spring.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Spring.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Spring.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/SpringCommand.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SpringCommand.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SpringCommand.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/SpringCommand.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/StageOfDevelopment.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/StageOfDevelopment.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/StageOfDevelopment.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/StageOfDevelopment.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/StateCommand.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/StateCommand.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/StateCommand.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/StateCommand.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Stock.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Stock.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Stock.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Stock.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/SucculentPlant.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SucculentPlant.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SucculentPlant.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/SucculentPlant.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/SucculentPlanter.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SucculentPlanter.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SucculentPlanter.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/SucculentPlanter.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/SucculentStrategy.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SucculentStrategy.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SucculentStrategy.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/SucculentStrategy.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Summer.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Summer.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Summer.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Summer.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/SummerCommand.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SummerCommand.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/SummerCommand.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/SummerCommand.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/TreePlant.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/TreePlant.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/TreePlant.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/TreePlant.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/TreePlanter.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/TreePlanter.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/TreePlanter.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/TreePlanter.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/TreeStrategy.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/TreeStrategy.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/TreeStrategy.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/TreeStrategy.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Wilting.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Wilting.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Wilting.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Wilting.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/Winter.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Winter.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/Winter.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/Winter.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Greenhouse/WinterCommand.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/WinterCommand.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Greenhouse/WinterCommand.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Greenhouse/WinterCommand.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Nursery/Clock.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Clock.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Clock.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Nursery/Clock.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Nursery/CustomerClock.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/CustomerClock.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/CustomerClock.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Nursery/CustomerClock.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Nursery/Nursery.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Nursery.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Nursery.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Nursery/Nursery.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Nursery/PlantClock.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/PlantClock.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/PlantClock.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Nursery/PlantClock.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Nursery/SeasonClock.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/SeasonClock.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/SeasonClock.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Nursery/SeasonClock.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/Available.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Available.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Available.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/Available.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/Busy.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Busy.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Busy.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/Busy.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/Cashiers.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Cashiers.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Cashiers.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/Cashiers.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/FindAvailableStaff.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/FindAvailableStaff.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/FindAvailableStaff.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/FindAvailableStaff.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/Gardener.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Gardener.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Gardener.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/Gardener.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/InfoDesk.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/InfoDesk.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/InfoDesk.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/InfoDesk.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/Manager.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Manager.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Manager.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/Manager.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/SalesStaff.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/SalesStaff.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/SalesStaff.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/SalesStaff.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/Staff.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Staff.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/Staff.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/Staff.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/project_lib_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/project_lib.dir/src/Staff/StaffState.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/StaffState.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Staff/StaffState.cpp",
+  "output": "CMakeFiles/project_lib.dir/src/Staff/StaffState.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests_autogen/include -I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtWidgets -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests_autogen/mocs_compilation.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/run_tests.dir/run_tests_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests_autogen/include -I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtWidgets -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/run_tests.dir/tests/test_customer.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_customer.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_customer.cpp",
+  "output": "CMakeFiles/run_tests.dir/tests/test_customer.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/run_tests_autogen/include -I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtWidgets -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -std=gnu++17 -fPIC -o CMakeFiles/run_tests.dir/tests/test_main.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_main.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/tests/test_main.cpp",
+  "output": "CMakeFiles/run_tests.dir/tests/test_main.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock/gmock_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock/gmock_autogen/mocs_compilation.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock/gmock_autogen/mocs_compilation.cpp",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock/gmock_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock/gmock_main_autogen/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock/gmock_main_autogen/mocs_compilation.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock/gmock_main_autogen/mocs_compilation.cpp",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googlemock/gmock_main_autogen/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest/gtest_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/gtest_autogen/mocs_compilation.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest/gtest_autogen/mocs_compilation.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest/gtest_autogen/mocs_compilation.cpp",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/gtest_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest/gtest_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest/gtest_main_autogen/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest/gtest_main_autogen/mocs_compilation.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest/gtest_main_autogen/mocs_compilation.cpp",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-build/googletest/gtest_main_autogen/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/include -isystem /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Nursery_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtWidgets -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtGui -std=gnu++17 -fPIC -o CMakeFiles/Nursery.dir/Nursery_autogen/mocs_compilation.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Nursery_autogen/mocs_compilation.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Nursery_autogen/mocs_compilation.cpp",
+  "output": "src/Nursery/CMakeFiles/Nursery.dir/Nursery_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Nursery_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtWidgets -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtGui -std=gnu++17 -fPIC -o CMakeFiles/Nursery.dir/main.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/main.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/main.cpp",
+  "output": "src/Nursery/CMakeFiles/Nursery.dir/main.cpp.o"
+},
+{
+  "directory": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/Nursery_autogen/include -I/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtCore -isystem /home/langa/Qt/6.9.3/gcc_64/include -isystem /home/langa/Qt/6.9.3/gcc_64/mkspecs/linux-g++ -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtWidgets -isystem /home/langa/Qt/6.9.3/gcc_64/include/QtGui -std=gnu++17 -fPIC -o CMakeFiles/Nursery.dir/mainwindow.cpp.o -c /home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/mainwindow.cpp",
+  "file": "/home/langa/project214/Chaos_Compilers_COS214_Project_2025/src/Nursery/mainwindow.cpp",
+  "output": "src/Nursery/CMakeFiles/Nursery.dir/mainwindow.cpp.o"
+}
+]

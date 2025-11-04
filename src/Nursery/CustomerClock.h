@@ -8,6 +8,18 @@ class CustomerClock : public Clock
     Q_OBJECT
 public:
     explicit CustomerClock(QObject *parent = nullptr);
+    
+    /**
+     * @brief Destroys the CustomerClock object
+     */
+    ~CustomerClock() {}
+    
+    /**
+     * @brief Starts the customer arrival clock
+     * 
+     * Initializes the clock to begin emitting customer arrival signals
+     * at random intervals.
+     */
     void startCustomerClock(); 
 
 signals:

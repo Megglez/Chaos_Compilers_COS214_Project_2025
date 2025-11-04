@@ -23,11 +23,11 @@ void Staff::changeState()
 	}
 }
 
-Staff::Staff(const std::string& name, const std::string& id){
+Staff::Staff(const std::string& name, const std::string& id,InfoDesk*infodesk){
 	this->name=name;
 	this->staffID=id;
 	available= true;
-	infoDesk=nullptr;
+	infoDesk=infoDesk;
 	nextInChain=nullptr;
 	currentCustomer=nullptr;
 	state=new Available();
@@ -39,22 +39,11 @@ void Staff::update(const std::string &update)
 	std::cout << "New Notification: " << update << std::endl;
 }
 
-Staff::Staff()
-{
-    name = "";
-    staffID = "";
-    available = true;
-    infoDesk = nullptr;
-    nextInChain = nullptr;
-    currentCustomer = nullptr;
-    state = new Available();
-    state->setContext(this);
 
-}
 
 Staff::~Staff()
 {
-	delete this->state;
+delete
 }
 
 void Staff::setAvailability(bool isAvailable)
@@ -64,12 +53,12 @@ void Staff::setAvailability(bool isAvailable)
 
 Staff* Staff::getNextInChain()
 {
-    return nextInChain;return nextInChain;
+    return nextInChain;
 }
 
 void Staff::setNextInChain(Staff* ss)
 {
-    nextInChain = ss;nextInChain=ss;
+    nextInChain = ss;
 }
 
 std::string Staff::getName()
@@ -85,7 +74,7 @@ std::string Staff::getID()
 std::string Staff::getStaffType()
 {
 	
-	return state->getStateName();
+	return role;
 
 }
 bool Staff::getAvailability(){
@@ -109,7 +98,7 @@ void Staff::completeTask()
 		cout<<"Staff "<< name<< "cannot assist null Customer"<<std::endl;
 		return;
 	}
-	if(!getAvailability())
+	if(!getAvailability())//but staff will be available
 	{
 	cout<<"Staff "<< name<< "is not Available."<<endl;
 		return;
@@ -129,8 +118,9 @@ void Staff::completeTask()
 if(canHandleEnquiry()&& getAvailability())
 {
 	std::cout<< getStaffType()<<" "<<name<< "can handle enquiry."<<std::endl;
+	return this;
 }
-return this;
+
 
 if(nextInChain)
 {
@@ -197,3 +187,4 @@ void Staff::setCurrentCustomer(Customer* cc)
 {
 currentCustomer=cc;
 }
+
