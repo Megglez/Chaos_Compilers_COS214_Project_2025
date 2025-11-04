@@ -4,50 +4,50 @@
 #include "StaffState.h"
 #include "Available.h"
 #include "Busy.h"
-#include "Inventory.h"
+#include "../Greenhouse/Inventory.h"
 using namespace std;
- 
+
 class StaffState;
-//class Inventory;
-class InfoDesk;  // Forward declaration
-class Customer;  // Forward declaration
+// class Inventory;
+class InfoDesk; // Forward declaration
+class Customer; // Forward declaration
 class Staff
 {
-private:
+protected:
 	string name;
 	string staffID;
 	string workArea;
 	string role;
-	StaffState* state;
-	InfoDesk* infoDesk;
-	bool available;  
-	Staff* nextInChain;
-	Customer* currentCustomer;
+	StaffState *state;
+	InfoDesk *infoDesk;
+	bool available;
+	Staff *nextInChain;
+	Customer *currentCustomer;
 
 public:
 	virtual void update(const std::string &update);
 	void changeState();
-	void getAvailability();
+	bool getAvailability();
 	void setAvailability(bool isAvailable);
-	Staff(string& name,string& id,InfoDesk*infodesk);
+	Staff(const string &name, const string &id, InfoDesk *infodesk);
 	virtual ~Staff();
-	virtual void setNextInChain(Staff* next);
+	virtual void setNextInChain(Staff *next);
 	virtual void assistCustomer(Customer *cc); // start Assisting customer
 	std::string getName();
 	std::string getID();
-	virtual void setRole()=0;
-	std::string getStaffType();//basically get role
-	Staff* getNextInChain();
+	virtual void setRole() = 0;
+	std::string getStaffType(); // basically get role
+	Staff *getNextInChain();
 	std::string getStateName();
-	Customer * getCurrentCustomer();
-	void setCurrentCustomer(Customer * cc);
-	InfoDesk* getInfodesk();
-	Staff* handleEnquiryRequest();
+	Customer *getCurrentCustomer();
+	void setCurrentCustomer(Customer *cc);
+	InfoDesk *getInfodesk();
+	Staff *handleEnquiryRequest();
 	virtual void performDuty() = 0;
 	void completeTask();
-	virtual bool canHandleEnquiry()=0;
-	void registerToAllStaff(InfoDesk*desk);//self registering
-	void unregisterFromAllStaff(); //self unregistering
+	virtual bool canHandleEnquiry() = 0;
+	void registerToAllStaff(InfoDesk *desk); // self registering
+	void unregisterFromAllStaff();			 // self unregistering
 };
 
 #endif

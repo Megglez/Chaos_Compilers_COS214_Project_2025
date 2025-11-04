@@ -40,9 +40,10 @@ public:
 class DummyStaff : public Staff
 {
 public:
-    DummyStaff() : Staff("TestStaff", "S1") {}
+    DummyStaff() : Staff("TestStaff", "S1", nullptr) {}
     void performDuty() override {}
     bool canHandleEnquiry() override { return true; }
+    void setRole() override {}
 };
 
 // Test Customer creation with Browse and Enquire

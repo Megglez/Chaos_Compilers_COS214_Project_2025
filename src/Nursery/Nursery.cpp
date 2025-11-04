@@ -58,6 +58,7 @@ Nursery::Nursery(QObject *parent) : QObject(parent)
 
     // Initialize Staff Management
     infoDesk = new InfoDesk();
+    cashier = nullptr; // Initialize to nullptr - will be created when needed
     startPlants = new AddStock(inventory);
 }
 
@@ -66,9 +67,10 @@ void Nursery::setStock(unique_ptr<Plant> plant, int amount)
     startPlants->execute(move(plant), amount);
 }
 
-void Nursery::setSeason(Seasons* newSeason)
+void Nursery::setSeason(Seasons *newSeason)
 {
-    if (currentSeason) {
+    if (currentSeason)
+    {
         delete currentSeason;
     }
     currentSeason = newSeason;
@@ -132,7 +134,8 @@ void Nursery::addCustomer(Customer *customer)
     }
 }
 
-void Nursery::handleChange(){
+void Nursery::handleChange()
+{
     currentSeason->handleChange(this);
 }
 
@@ -184,3 +187,16 @@ void Nursery::handleCustomerDeparture(Customer *customer)
 
 // Note: If seasonal update functionality is needed, it should be declared in the header first
 // The setState method in the header can be used for setting seasons
+
+Cashiers *Nursery::getCashier() const
+{
+    if (infoDesk)
+    {
+        std::vector<Staff *> cashiers = infoDesk->getStaffByType("Cashier");
+        if (!cashiers.empty())
+        {
+            return dynamic_cast<Cashiers *>(cashiers[0]);
+        }
+    }
+    return nullptr;
+}

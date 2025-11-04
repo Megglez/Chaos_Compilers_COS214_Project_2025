@@ -2,11 +2,12 @@
 #include "../Customer/Customer.h"
 #include <iostream>
 
-Cashiers::Cashiers(std::string &name, std::string &id,InfoDesk& infodesk) : Staff(name, id,infodesk)
+Cashiers::Cashiers(std::string &name, std::string &id, InfoDesk *infodesk) : Staff(name, id, infodesk)
 {
     currentCustomer = nullptr;
     subject = nullptr;
     isProcessing = false;
+    setRole();
 }
 
 Cashiers::~Cashiers()
@@ -124,4 +125,9 @@ void Cashiers::emptyBasket(Customer *customer)
     std::cout << "Emptying basket for Customer " << customer->getId() << std::endl;
     customer->clearBasket();
     std::cout << "Customer " << customer->getId() << " has completed their purchase." << std::endl;
+}
+
+void Cashiers::setRole()
+{
+    role = "Cashier";
 }

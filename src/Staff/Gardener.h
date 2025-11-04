@@ -8,13 +8,13 @@ class Gardener : public Staff
 {
 public:
 	Inventory *subject;
-	Gardener(std::string &name, std::string &id,InfoDesk& infodesk);
+	Gardener(std::string &name, std::string &id, InfoDesk *infodesk);
 	virtual ~Gardener();
-	void performDuty();
+	void performDuty() override;
+	bool canHandleEnquiry() override;
 	void careForPlants();
+	void careForPlants(Plant *plant);
 	void setRole() override;
-	
-
 };
 
 #endif

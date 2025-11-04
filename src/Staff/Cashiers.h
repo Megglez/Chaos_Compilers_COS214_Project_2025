@@ -29,10 +29,11 @@ public:
 
 	// Staff interface
 	std::string getStaffType();
-	bool canHandleEnquiry();
-	void performDuty();
+	bool canHandleEnquiry() override;
+	void performDuty() override;
+	void setRole() override;
 
-	Cashiers(std::string &name, std::string &id,InfoDesk& infodesk);
+	Cashiers(std::string &name, std::string &id, InfoDesk *infodesk);
 	virtual ~Cashiers();
 };
 

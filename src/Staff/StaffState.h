@@ -1,20 +1,20 @@
 #ifndef STAFFSTATE_H
 #define STAFFSTATE_H
 #include <iostream>
+#include <string>
 using namespace std;
-#include "../Customer/Customer.h"
 
 class Staff;
 class Customer;
-class StaffState {
-	protected:
-	Staff *staff; //staff member we are working with 
+class StaffState
+{
+protected:
+	Staff *staff; // staff member we are working with
 public:
-	
-	virtual void handle()=0; //completing the task
-	virtual std::string getStateName()const=0;
-	virtual bool canAcceptCustomer()=0;
-	void setContext(Staff* staff);
+	virtual void handle() = 0; // completing the task
+	virtual std::string getStateName() const = 0;
+	virtual bool canAcceptCustomer() = 0;
+	void setContext(Staff *staff);
 	StaffState();
 	virtual ~StaffState();
 };
