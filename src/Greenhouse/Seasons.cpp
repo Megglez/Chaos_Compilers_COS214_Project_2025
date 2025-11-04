@@ -10,7 +10,7 @@
  */
 Seasons::Seasons()
 {
-    // Intentionally empty - initialization handled by derived classes
+    commands = nullptr;
 }
 
 /**
@@ -18,5 +18,5 @@ Seasons::Seasons()
  */
 Seasons::~Seasons()
 {
-    // Intentionally empty - cleanup handled by derived classes
+    delete commands;
 }

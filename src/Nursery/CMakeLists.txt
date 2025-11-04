@@ -1,0 +1,75 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(Nursery VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core)
+
+set(PROJECT_SOURCES
+        main.cpp
+        mainwindow.cpp
+        mainwindow.h
+        mainwindow.ui
+)
+
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(Nursery
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+    )
+# Define target properties for Android with Qt 6 as:
+#    set_property(TARGET Nursery APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
+# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
+else()
+    if(ANDROID)
+        add_library(Nursery SHARED
+            ${PROJECT_SOURCES}
+        )
+
+# Define properties for Android with Qt 5 after find_package() calls as:
+#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+    else()
+        add_executable(Nursery
+            ${PROJECT_SOURCES}
+        )
+    endif()
+endif()
+    # Locate the section where your library is defined, for example:
+    # add_library(project_lib SHARED ${LIBRARY_SOURCES}) 
+
+    # Add this line immediately after the library is created:
+target_link_libraries(project_lib PRIVATE Qt::Core)
+target_link_libraries(Nursery PRIVATE Qt::Widgets Qt::Core project_lib)
+
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+if(${QT_VERSION} VERSION_LESS 6.1.0)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.Nursery)
+endif()
+set_target_properties(Nursery PROPERTIES
+    ${BUNDLE_ID_OPTION}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
+
+include(GNUInstallDirs)
+install(TARGETS Nursery
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt_finalize_executable(Nursery)
+endif()

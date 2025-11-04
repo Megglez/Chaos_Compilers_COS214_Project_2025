@@ -8,6 +8,7 @@
 
 #include "Spring.h"
 #include "SpringCommand.h"
+#include "../Nursery/Nursery.h"
 
 /**
  * @brief Constructs Spring season and executes spring commands
@@ -33,7 +34,7 @@
  * - Flowers: 90 (high stock)
  * - Trees: 100 (high stock - prime planting time)
  */
-Spring::Spring(Inventory* inv): inventory(inv){
+Spring::Spring(Inventory* inv): Seasons(), inventory(inv){
     if(commands){
         delete commands;
     }
@@ -63,7 +64,7 @@ Spring::~Spring(){
  * @note This method needs to be implemented to return the actual season name
  */
 std::string Spring::getSeason() {
-    return "spring";
+    return "Spring";
 }
 
 /**
@@ -86,6 +87,6 @@ std::string Spring::getSeason() {
  * - Preparing for peak growing season
  * - Adjusting for warmer weather conditions
  */
-void Spring::handleChange(){
-    //c->setState(new Summer(inventory));
+void Spring::handleChange(Nursery* nursery){
+    nursery->setState(new Summer(inventory));
 }

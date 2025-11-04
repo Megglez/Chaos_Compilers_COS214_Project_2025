@@ -2,18 +2,21 @@
 #define INVENTORY_H
 
 #include <iostream>
-#include "../Staff/Staff.h"
 #include <vector>
 #include <memory>
 #include <algorithm>
 #include <map>
-using namespace std;
+#include <string>
+#include "Plant.h"
 #include "StageOfDevelopment.h"
-#include "Seed.h"
-#include "Sapling.h"
-#include "Prime.h"
-#include "Wilting.h"
-#include "Dead.h"
+
+// Forward declarations for stage classes
+class Seed;
+class Sapling;
+class Prime;
+class Wilting;
+class Dead;
+class Staff;
 
 /**
  * @class Inventory
@@ -29,16 +32,13 @@ private:
     std::map<std::string, std::pair<std::unique_ptr<Plant>, int>> inventoryList; ///< Map of plant names to plant objects and quantities
     std::vector<Staff*> staffList; ///< List of staff members to notify
 
-protected:
+public:
     /**
      * @brief Protected default constructor
      */
     Inventory();
     
-    /**
-     * @brief Protected destructor
-     */
-    ~Inventory() = default;
+   
 
 public:
     /**
@@ -100,13 +100,7 @@ public:
      */
     StageOfDevelopment* determineStageForSeason(Plant* plant, const std::string& season);
     
-    /**
-     * @brief Gets the type of a plant
-     * @param plant Pointer to the plant to check
-     * @return String representing the plant type
-     */
-    std::string getPlantType(Plant* plant);
-    
+   
     /**
      * @brief Displays the current inventory catalogue
      */
@@ -134,6 +128,18 @@ public:
      * @brief Virtual destructor
      */
     virtual ~Inventory();
+
+    /**
+     * @brief returns the inventoryList
+     * @returns std::map<std::string, std::pair<std::unique_ptr<Plant>
+     */
+    std::map<std::string, std::pair<std::unique_ptr<Plant>, int>>& getInventory();
+
+    /**
+     * @brief returns the number of stock of tha plant
+     * @returns int
+     */
+    int getPlantNumber(std::unique_ptr<Plant> plant);
 };
 
 #endif

@@ -8,6 +8,7 @@
 
 #include "Summer.h"
 #include "SummerCommand.h"
+#include "../Nursery/Nursery.h"
 
 /**
  * @brief Constructs Summer season and executes summer commands
@@ -40,6 +41,11 @@ Summer::Summer(Inventory* inv): inventory(inv){
     commands = new SummerCommand(inventory);
     commands->execute();
 }
+
+std::string Summer::getSeason() {
+    return "Summer";
+}
+
 
 /**
  * @brief Destructor for Summer season
@@ -74,6 +80,6 @@ Summer::~Summer(){
  * - Preparing for autumn planting season
  * - Updating plant stages for cooler weather
  */
-void Summer::handleChange(){
-    //c->setState(new Autumn(inventory));
+void Summer::handleChange(Nursery* nursery){
+    nursery->setState(new Autumn(inventory));
 }
